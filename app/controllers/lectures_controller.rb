@@ -1,4 +1,5 @@
 class LecturesController < ApplicationController
+  before_action :authenticate_user!, only: [:edit, :update, :destroy, :create]
   before_action :set_lecture, only: [:show, :edit, :update, :destroy]
 
   # GET /lectures
@@ -24,16 +25,11 @@ class LecturesController < ApplicationController
   # POST /lectures
   # POST /lectures.json
   def create
-    @lecture = Lecture.new(lecture_params)
-
-    respond_to do |format|
-      if @lecture.save
-        format.html { redirect_to @lecture, notice: 'Lecture was successfully created.' }
-        format.json { render :show, status: :created, location: @lecture }
-      else
-        format.html { render :new }
-        format.json { render json: @lecture.errors, status: :unprocessable_entity }
-      end
+    @lecture = current_user.lectures.build(lecture_params)
+    if @lecture.save
+      redirect_to @lecture, notice: 'Lecture was successfully created.'
+    else
+      render action: 'new'
     end
   end
 
