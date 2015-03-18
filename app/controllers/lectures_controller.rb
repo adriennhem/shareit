@@ -16,16 +16,19 @@ class LecturesController < ApplicationController
   # GET /lectures/new
   def new
     @lecture = Lecture.new
+    @categories = Category.all.map{|c| [ c.name, c.id ] }
   end
 
   # GET /lectures/1/edit
   def edit
+    @categories = Category.all.map{|c| [ c.name, c.id ] }
   end
 
   # POST /lectures
   # POST /lectures.json
   def create
     @lecture = current_user.lectures.build(lecture_params)
+    @lecture.category_id = params[:category_id]
     if @lecture.save
       redirect_to @lecture, notice: 'Lecture was successfully created.'
     else
@@ -36,6 +39,7 @@ class LecturesController < ApplicationController
   # PATCH/PUT /lectures/1
   # PATCH/PUT /lectures/1.json
   def update
+    @product.category_id = params[:category_id]
     respond_to do |format|
       if @lecture.update(lecture_params)
         format.html { redirect_to @lecture, notice: 'Lecture was successfully updated.' }
@@ -65,6 +69,6 @@ class LecturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lecture_params
-      params.require(:lecture).permit(:title, :description)
+      params.require(:lecture).permit(:title, :description, :category_id)
     end
 end
