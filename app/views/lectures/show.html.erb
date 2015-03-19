@@ -17,9 +17,11 @@
 	<h2><%= @lecture.lessons.count %> Lessons</h2>
 	<%= render @lecture.lessons %>
 
+
+<% if current_user == @lecture.user %>
 	<h3>Add a lesson</h3>
 	<%= render "lessons/form" %>
 </div>
-
 <%= link_to 'Edit', edit_lecture_path(@lecture) %> |
+<% end %>
 <%= link_to 'Back', lectures_path %>

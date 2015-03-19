@@ -12,6 +12,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'simple_form'
 
+
+
 # For image uploading
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
