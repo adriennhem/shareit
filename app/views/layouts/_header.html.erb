@@ -22,7 +22,7 @@
           <span class="glyphicon glyphicon-plus">New</span>
           <% end %></li>
         <li><%= link_to 'Sign Out',  destroy_user_session_path, method: :delete %></li>
-        <li><%= link_to 'My Account', edit_user_password_path %></li>
+        <li><%= link_to 'My Account', edit_user_registration_path %></li>
         <% else %>
         <li><%= link_to 'Sign In', new_user_session_path %></li>
         <li><%= link_to 'Register',  new_user_registration_path %></li>
