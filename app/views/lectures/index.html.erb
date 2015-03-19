@@ -18,7 +18,7 @@
       <%= lecture.description %>
       </div>
       <div class="panel-footer">
-         <% if user_signed_in? && current_user %>
+         <% if current_user == lecture.user %>
          <%= link_to 'Edit', edit_lecture_path(lecture) %>
          <%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
