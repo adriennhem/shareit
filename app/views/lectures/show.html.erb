@@ -13,7 +13,13 @@
   <%= @lecture.description %>
 </p>
 
+<div class="lessons">
+	<h2><%= @lecture.lessons.count %> Lessons</h2>
+	<%= render @lecture.lessons %>
 
+	<h3>Add a lesson</h3>
+	<%= render "lessons/form" %>
+</div>
 
 <%= link_to 'Edit', edit_lecture_path(@lecture) %> |
 <%= link_to 'Back', lectures_path %>

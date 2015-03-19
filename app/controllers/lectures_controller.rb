@@ -39,7 +39,7 @@ class LecturesController < ApplicationController
   # PATCH/PUT /lectures/1
   # PATCH/PUT /lectures/1.json
   def update
-    @product.category_id = params[:category_id]
+    @lecture.category_id = params[:category_id]
     respond_to do |format|
       if @lecture.update(lecture_params)
         format.html { redirect_to @lecture, notice: 'Lecture was successfully updated.' }

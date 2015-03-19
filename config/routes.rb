@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+  
+
   devise_for :users
-  resources :lectures
+  resources :lectures do 
+    resources :lessons
+  end
+
 
   root 'lectures#index'
 
