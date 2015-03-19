@@ -13,11 +13,11 @@
       </div>
       <div class="panel-body">
       <%= image_tag lecture.picture.url(:thumb) %>
-      <%= lecture.category.name %>  
+      <%= lecture.user.email %> <br>
+      <%= lecture.category.name %> <br> 
       <%= lecture.description %>
       </div>
       <div class="panel-footer">
-        <%= link_to 'Show', lecture %>
          <% if user_signed_in? && current_user %>
          <%= link_to 'Edit', edit_lecture_path(lecture) %>
          <%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %>
