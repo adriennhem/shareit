@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150319212834) do
+ActiveRecord::Schema.define(version: 20150320004040) do
+
+  create_table "admins", force: :cascade do |t|
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,     null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.boolean  "god_mode",               default: false
+    t.boolean  "reports_only",           default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
+  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -30,8 +50,10 @@ ActiveRecord::Schema.define(version: 20150319212834) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.integer  "admin_id"
   end
 
+  add_index "lectures", ["admin_id"], name: "index_lectures_on_admin_id"
   add_index "lectures", ["user_id"], name: "index_lectures_on_user_id"
 
   create_table "lessons", force: :cascade do |t|

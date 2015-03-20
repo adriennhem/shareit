@@ -18,7 +18,7 @@
 	<%= render @lecture.lessons %>
 
 
-<% if current_user == @lecture.user %>
+<% if current_admin == @lecture.admin %>
 	<h3>Add a lesson</h3>
 	<%= render "lessons/form" %>
 </div>

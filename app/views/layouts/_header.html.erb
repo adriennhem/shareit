@@ -16,6 +16,12 @@
  
       
       <ul class="nav navbar-nav navbar-right">
+        <% if admin_signed_in? %>
+        <li><%= link_to new_lecture_path do %>
+          <span class="glyphicon glyphicon-plus">New</span>
+          <% end %></li>
+           <li><%= link_to 'Sign Out',  destroy_admin_session_path, method: :delete %></li>
+          <% end %>
         <li><%= link_to 'Home', root_path %></li>
         <% if user_signed_in? %>
         <li><%= link_to new_lecture_path do %>

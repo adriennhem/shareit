@@ -12,13 +12,11 @@
           <%= link_to lecture.title, lecture %></h3>
       </div>
       <div class="panel-body">
-      <%= image_tag lecture.picture.url(:thumb) %>
-      <%= lecture.user.email %> <br>
+      <%= image_tag lecture.picture.url(:medium) %>
+      <%= lecture.admin.email %> <br>
       <%= lecture.category.name %> <br> 
       <%= lecture.description %>
-      </div>
-      <div class="panel-footer">
-         <% if current_user == lecture.user %>
+      <% if current_admin == lecture.admin %>
          <%= link_to 'Edit', edit_lecture_path(lecture) %>
          <%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
@@ -31,26 +29,26 @@
 <h1 class="page-header">Photoshop</h1>
 
 
-
+<div class="row">
     <% @lectures.where("category_id = 2 ").each do |lecture| %>
+    <div class="col-md-3">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">
           <%= link_to lecture.title, lecture %></h3>
       </div>
       <div class="panel-body">
-      <%= image_tag lecture.picture.url(:thumb) %>
-      <%= lecture.user.email %> <br>
+      <%= image_tag lecture.picture.url(:medium) %>
+      <%= lecture.admin.email %> <br>
       <%= lecture.category.name %> <br> 
       <%= lecture.description %>
-      </div>
-      <div class="panel-footer">
-         <% if current_user == lecture.user %>
+      <% if current_admin == lecture.admin %>
          <%= link_to 'Edit', edit_lecture_path(lecture) %>
          <%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
       </div>
     </div>
+    </div>
        <% end %>
 
-<br>
+</div>
