@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   
 
+  get 'pages/home'
+
+  get 'pages/about'
+
+  get 'pages/contact'
+
   devise_for :admins
   devise_for :users
   resources :lectures do 
@@ -8,7 +14,7 @@ Rails.application.routes.draw do
   end
 
 
-  root 'lectures#index'
+  root 'pages#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
