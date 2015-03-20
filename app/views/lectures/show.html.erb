@@ -1,29 +1,24 @@
 <div class="row">
-<div id="main-homepage">
-  <h1><%= @lecture.title %></h1>
-</div>
+	<div id="main-homepage">
+	  <h1><%= @lecture.title %></h1>
+	  <h4><%= @lecture.lessons.count %> lessons to watch</h4>
+	  <p> <%= @lecture.description %></p>
+	</div>
 </div>
 
-<div class="container">
-	<div class="row">
-		<div class="col-md-12 description">
-  <%= @lecture.description %>
-	  </div>
+<div class="container-fluid">
+	<div class="lessons">
+		
+				<%= render @lecture.lessons %>
+
+	<% if current_admin == @lecture.admin %>
+	<h3>Add a lesson</h3>
+	<%= render "lessons/form" %>
 	</div>
 </div>
 
 
 
-
-<div class="lessons">
-	<h2><%= @lecture.lessons.count %> Lessons</h2>
-	<%= render @lecture.lessons %>
-
-
-<% if current_admin == @lecture.admin %>
-	<h3>Add a lesson</h3>
-	<%= render "lessons/form" %>
-</div>
 <%= link_to 'Edit', edit_lecture_path(@lecture) %> |
 <% end %>
 <%= link_to 'Back', lectures_path %>

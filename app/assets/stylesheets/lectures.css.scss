@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+// IMPORT FONTS
+
 @import url(http://fonts.googleapis.com/css?family=Monoton);
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,900,800);
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
@@ -18,6 +21,9 @@ $navbar-default-bg:#F5F5F5;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+
 
 
 // GENERAL SETTINGS
@@ -55,13 +61,58 @@ a, a:hover {
 // 	font-size:24px;
 // }
 
-.panel {
-	margin:5px;
-	width:330px;
-	height:350px;
-	display:inline-block;
+// ROOT
+
+#root {
+	border-bottom:10px solid #CF4647;
+	border-top:10px solid #EB7B59;
 }
 
+
+.main-root {
+	position:absolute;
+	top:200px;
+	left:450px;
+}
+
+
+.main-root h1 {
+	font-size:86px;
+}
+
+.main-root h2 {
+	color:#EB7B59;
+}
+
+.main-root a {
+	position:relative;
+	top:20px;
+	font-size:24px;
+}
+
+.main-root a:hover {
+	background:#fff;
+	color:#000;
+}
+
+.ggsb {
+	position:absolute;
+	bottom:10px;
+	right:10px;
+}
+
+.ggsb span {
+	font-size:18px;
+	font-family: 'Lato', sans-serif;
+	font-weight:900;
+
+}
+
+
+
+
+
+// LECTURES/INDEX
 
 #our-classes {
 	text-align:center;
@@ -78,9 +129,9 @@ a, a:hover {
 	font-family: 'Lato', sans-serif;
 	// font-weight:400;
 	font-size:56px;
-	height:300px;
+	height:220px;
 	margin-top:-20px;
-	padding-top:70px;
+	padding-top:20px;
 	border-bottom:4px solid #CF4647;
 	border-top:4px solid #EB7B59;
 }
@@ -90,6 +141,7 @@ a, a:hover {
 	box-shadow:2px 2px 2px #F8F8F8;
 	width:300px;
 	border-radius:10px;
+	height:350px;
 }
 
 .panneau-heading {
@@ -113,4 +165,36 @@ a, a:hover {
 	text-align:center;
 }
 
+// SHOW LECTURES
 
+.panneau-lesson {
+	border:1px solid #BCBCBC;
+	background:#fff;
+	width:700px;
+	margin-top:25px;
+	box-shadow:1px 1px 1px #2A363B;
+}
+
+.panneau-lesson-title h1 {
+	padding:10px 10px;
+	font-size:24px;
+}
+
+span.glyphicon-play-circle {
+	font-size:48px;
+}
+
+
+.panneau-lesson-description {
+	padding:10px 10px;
+}
+
+.panneau-lesson-footer {
+	padding:10px 10px;
+	font-size:26px;
+}
+
+.panneau-lesson-footer a:hover {
+	background:#fff;
+	color:#000;
+}
