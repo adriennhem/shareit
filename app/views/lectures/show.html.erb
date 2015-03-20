@@ -1,17 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+<div id="main-homepage">
+  <h1><%= @lecture.title %></h1>
+</div>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @lecture.title %>
-</p>
-
-<%= image_tag @lecture.picture.url(:medium) %>
-
-
-<p>
-  <strong>Description:</strong>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 description">
   <%= @lecture.description %>
-</p>
+	  </div>
+	</div>
+</div>
+
+
+
 
 <div class="lessons">
 	<h2><%= @lecture.lessons.count %> Lessons</h2>

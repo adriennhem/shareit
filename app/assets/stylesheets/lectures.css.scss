@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import url(http://fonts.googleapis.com/css?family=Monoton);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,900,800);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(http://fonts.googleapis.com/css?family=Lato:400,900);
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans);
 @import url(http://fonts.googleapis.com/css?family=Oswald:400,700);
@@ -9,9 +12,9 @@
 
 // NAVBAR
 $navbar-default-brand-color:#DA5D2D;
-$navbar-height:70px;
+$navbar-height:50px;
 $navbar-border-radius:0px;
-$navbar-default-bg:#fff;
+$navbar-default-bg:#F5F5F5;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -24,8 +27,9 @@ body {
 }
 
 h1 {
-	font-family: 'Lato', sans-serif;
+	// font-family: 'Lato', sans-serif;
 	font-size:2em;
+	// text-transform:uppercase;
 }
 
 a, a:hover {
@@ -40,18 +44,73 @@ a, a:hover {
 
 //  NAVBAR
 
-
-.navbar-brand {
-	font-family: 'Oswald', sans-serif;
-	font-size:24px;
+.nav {
+	font-family: 'Lato', sans-serif;
+	font-weight:900;
+	text-transform:uppercase;
 }
+
+// .navbar-brand {
+// 	font-family: 'Oswald', sans-serif;
+// 	font-size:24px;
+// }
 
 .panel {
 	margin:5px;
 	width:330px;
-	height:330px;
+	height:350px;
 	display:inline-block;
 }
 
+
+#our-classes {
+	text-align:center;
+	margin:50px;
+	font-size:36px;
+	text-decoration:underline;
+	padding-bottom:10px;
+}
+
+#main-homepage {
+	// text-transform:uppercase;
+	text-align:center;
+	background:#fff;
+	font-family: 'Lato', sans-serif;
+	// font-weight:400;
+	font-size:56px;
+	height:300px;
+	margin-top:-20px;
+	padding-top:70px;
+	border-bottom:4px solid #CF4647;
+	border-top:4px solid #EB7B59;
+}
+
+.panneau {
+	background:#fff;
+	box-shadow:2px 2px 2px #F8F8F8;
+	width:300px;
+	border-radius:10px;
+}
+
+.panneau-heading {
+	padding:10px 10px;
+}
+
+.panneau-body {
+	padding:10px 0;
+}
+
+.panneau-body p {
+	padding:2px 10px;
+}
+
+.panneau a:hover {
+	background:#fff;
+	color:#000;
+}
+
+.description {
+	text-align:center;
+}
 
 
