@@ -15,12 +15,10 @@
     <% @lectures.where("category_id = 1 ").each do |lecture| %>
     <div class="col-md-3 col-xs-12">
     <div class="panneau">
-      <div class="panneau-heading">
-        <h3 class="panel-title">
-          <%= link_to lecture.title, lecture %></h3>
-      </div>
       <div class="panneau-body">
       <%= image_tag lecture.picture.url(:medium) %>
+       <h3>
+          <%= link_to lecture.title, lecture %></h3>
       <p><%= lecture.admin.email %></p>
        <p><%= lecture.description %> </p>
       
@@ -43,15 +41,13 @@
     <% @lectures.where("category_id = 2 ").each do |lecture| %>
     <div class="col-md-3 col-xs-12">
     <div class="panneau">
-      <div class="panneau-heading">
-        <h3 class="panel-title">
-          <%= link_to lecture.title, lecture %></h3>
-      </div>
       <div class="panneau-body">
       <%= image_tag lecture.picture.url(:medium) %>
-      <%= lecture.admin.email %> <br>
-      <%= lecture.category.name %> <br> 
-      <%= lecture.description %> <br>
+      <div class="panneau-text"></div>
+       <h3><%= link_to lecture.title, lecture %></h3>
+     <p><%= lecture.admin.email %></p> 
+     <p><%= lecture.category.name %></p>  
+     <p><%= lecture.description %></p>
       <% if current_admin == lecture.admin %>
          <%= link_to 'Edit', edit_lecture_path(lecture) %>
          <%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %>
