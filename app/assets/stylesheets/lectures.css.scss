@@ -142,6 +142,36 @@ a, a:hover {
 	padding-bottom:10px;
 }
 
+.main-lesson-summary {
+	padding:50px 100px;
+}
+
+.main-lesson-show {
+	// text-transform:uppercase;
+	// text-align:center;
+	background:#fff;
+	font-family: 'Lato', sans-serif;
+	// font-weight:400;
+	font-size:56px;
+	height:220px;
+	margin-top:-20px;
+	padding-top:20px;
+	border-bottom:4px solid #CF4647;
+	border-top:4px solid #EB7B59;
+}
+
+.main-lesson-show h1 {
+	margin-left:300px;
+}
+
+.main-lesson-show h4 {
+	font-size:24px;
+}
+
+.main-lesson-show p {
+	font-size:18px;
+}
+
 #main-homepage {
 	// text-transform:uppercase;
 	text-align:center;
@@ -207,10 +237,19 @@ span.glyphicon-play-circle {
 	font-size:26px;
 }
 
+.panneau-lesson-footer a span {
+	padding:20px 10px;
+}
+
 .panneau-lesson-footer a:hover {
 	background:#fff;
 	color:#000;
 }
+
+a.btn-primary {
+	margin:40px;
+}
+
 
 // SIGN IN & REGISTER
 
@@ -230,4 +269,20 @@ span.glyphicon-play-circle {
 
 .panneau-signin  {
 	padding: 20px 30px;
+}
+
+// FORM LESSON
+
+.panneau-form {
+	width:960px;
+	background:#fff;
+	padding:50px 50px;
+}
+
+.panneau-form h1 {
+	padding:20px 0;
+}
+
+.panneau-form .form-actions {
+	padding:20px 0;
 }

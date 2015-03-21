@@ -1,70 +1,49 @@
-<div class="row">
-	<div id="main-homepage">
-	  <h1><%= @lecture.title %></h1>
-	  <h4><%= @lecture.lessons.count %> lessons to watch</h4>
-	  <p> <%= @lecture.description %></p>
-	</div>
-</div>
+<%= render 'lecture_band' %>
 
-
-
-<% if current_admin == @lecture.admin %>
+<% if admin_signed_in? %>
 <div class="row">
 	<div id="god-mode">
-		
 			<h3>GOD MODE ENABLED!</h3>
-		
-
-		
 			<%= link_to "Add Lesson", new_lecture_lesson_path(@lecture) %>  
-		
-		
-		
-			<%= link_to 'Edit', edit_lecture_path(@lecture) %> 
-			
+			<%= link_to 'Edit', edit_lecture_path(@lecture) %> 			
 	</div>
 </div>
 <% end %>
 
-<%= link_to lectures_path, class: "btn btn-primary" do %>
-Back to <%= @lecture.title %>
-<% end %>
+
+		<!-- Back to Lecture -->
+		<%= link_to lectures_path, class: "btn btn-primary" do %>
+		Back to <%= @lecture.title %>
+		<% end %>
 
 
-
-<div class="container-fluid">
-	<div class="lessons">
-
+<div class="row">
+		<!-- chaque lecture -->
 	 <% @lesson.each do |lesson| %>	
 		<div class="panneau-lesson col-md-offset-3 col-md-12">
-			<div class="panneau-lesson-title col-md-3">
+			<div class="panneau-lesson-title col-md-1">
 				<h1>
 					<%= lesson.etape %>.
-					<%= lesson.title %>
 				</h1>	
 			</div>
-
-		<div class="panneau-lesson-description col-md-4">
-			<%= lesson.description %>
+		<div class="panneau-lesson-description col-md-9">
+			<h1><%= lesson.title %></h1> 
+			<p><%= lesson.description %></p> 
 		</div>
-
 		<div class="panneau-lesson-footer col-md-2">
 				<%= link_to [lesson.lecture, lesson] do %>
 				<span class="glyphicon glyphicon-play-circle"></span>
 				<% end %>
 		</div>
-	
-	<div class="col-md-3">
-		<% if current_admin ==  @lecture.admin  %>
-		<%= link_to 'Delete', [lesson.lecture, lesson], method: :delete %>
-		<%= link_to 'Edit', edit_lecture_lesson_path(lesson.lecture, lesson) %>
-		<% end %>
-			</div>
-</div>
-	<% end %>
 
-		
+			<div class="col-md-3">
+				<% if admin_signed_in?  %>
+				<%= link_to 'Delete', [lesson.lecture, lesson], method: :delete %>
+				<%= link_to 'Edit', edit_lecture_lesson_path(lesson.lecture, lesson) %>
+				<% end %>
+			</div>
 	</div>
+	<% end %>
 </div>
 
 

@@ -22,7 +22,7 @@
       <p><%= lecture.admin.email %></p>
        <p><%= lecture.description %> </p>
       
-      <% if current_admin == lecture.admin %>
+      <% if admin_signed_in? %>
       <p>  <%= link_to 'Edit', edit_lecture_path(lecture) %>
          <%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %></p>
        
@@ -48,7 +48,7 @@
      <p><%= lecture.admin.email %></p> 
      <p><%= lecture.category.name %></p>  
      <p><%= lecture.description %></p>
-      <% if current_admin == lecture.admin %>
+      <% if admin_signed_in? %>
          <%= link_to 'Edit', edit_lecture_path(lecture) %>
          <%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
