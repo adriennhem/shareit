@@ -1,9 +1,16 @@
+<div class="row">
+<div id="main-homepage">
+  <h1><%= @lesson.title %></h1>
+</div>
+</div>
 
-
-<p>
-  <strong>Title:</strong>
-  <%= @lesson.title %>
-</p>
+<div class="container-fluid">
+<div class="row">
+	<div class="col-md-offset-2">
+<%= @lesson.vid.html_safe %>
+</div>
+</div>
+</div>
 
 
   <strong>Description:</strong>

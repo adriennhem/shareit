@@ -3,5 +3,5 @@ class Admin < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :lectures       
+  has_many :lectures, dependent: :destroy       
 end

@@ -16,7 +16,9 @@ class LessonsController < ApplicationController
 
   # GET /lessons/new
   def new
+    @lecture = Lecture.find params[:lecture_id]
     @lesson = Lesson.new
+
   end
 
   # GET /lessons/1/edit
@@ -29,7 +31,7 @@ class LessonsController < ApplicationController
   # POST /lessons.json
   def create
     @lecture = Lecture.find(params[:lecture_id])
-    @lesson = @lecture.lessons.create(params[:lesson].permit(:title, :description))
+    @lesson = @lecture.lessons.create(params[:lesson].permit(:title, :description, :vid, :etape))
 
     redirect_to lecture_path(@lecture)
   end
@@ -67,6 +69,6 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:title, :description, :video)
+      params.require(:lesson).permit(:title, :description, :vid, :etape)
     end
 end

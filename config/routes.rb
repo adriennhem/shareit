@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   devise_for :admins
   devise_for :users
+  
   resources :lectures do 
     resources :lessons
   end

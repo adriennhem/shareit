@@ -4,7 +4,7 @@ class Lecture < ActiveRecord::Base
 	belongs_to :category
 	belongs_to :user
 	belongs_to :admin
-	has_many :lessons
+	has_many :lessons, dependent: :destroy 
 	validates :picture, presence: true
 	validates :title, presence: true
 	validates :description, presence: true
