@@ -22,6 +22,7 @@
            <li><%= link_to 'Sign Out',  destroy_admin_session_path, method: :delete %></li>
           <% end %>
         <li><%= link_to 'Home', lectures_path %></li>
+        <li><%= link_to 'Upcoming Events', pages_upcoming_path %></li>
          <li><%= link_to 'About Us', pages_about_path %></li>
           <li><%= link_to 'Contact', pages_contact_path %></li>
         <% if user_signed_in? %>

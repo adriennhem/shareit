@@ -16,7 +16,7 @@ class LessonsController < ApplicationController
 
   # GET /lessons/new
   def new
-    @lecture = Lecture.find params[:lecture_id]
+    @lecture = Lecture.find(params[:lecture_id])
     @lesson = Lesson.new
 
   end

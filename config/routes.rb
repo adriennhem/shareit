@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
   get 'pages/contact'
 
+  get 'pages/upcoming'
+
+
+
   devise_for :admins
   devise_for :users
   

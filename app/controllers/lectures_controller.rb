@@ -11,7 +11,8 @@ class LecturesController < ApplicationController
   # GET /lectures/1
   # GET /lectures/1.json
   def show
-    @lesson = Lesson.all.order(:etape) 
+    @lessons = Lesson.where(lecture_id: @lecture.id).order(:etape)
+    # @lesson = Lesson.all.order(:etape) 
   end
 
   # GET /lectures/new
