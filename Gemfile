@@ -12,7 +12,9 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'simple_form'
 
-
+# calendar gem
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
 
 # For image uploading
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
