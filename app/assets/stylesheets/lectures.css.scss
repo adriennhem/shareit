@@ -14,17 +14,16 @@
 
 
 // NAVBAR
+
 $navbar-default-brand-color:#DA5D2D;
 $navbar-height:50px;
 $navbar-border-radius:0px;
 $navbar-default-bg:#F5F5F5;
 
+// THIRD PARTIES IMPORT
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
-
-
-
 
 // GENERAL SETTINGS
 
@@ -33,20 +32,16 @@ body {
 }
 
 h1 {
-	// font-family: 'Lato', sans-serif;
 	font-size:2em;
-	// text-transform:uppercase;
 }
 
 a, a:hover {
 	text-decoration:none;
 }
 
-
 #main {
 	background:#F6F6F6;
 }
-
 
 // GOD MODE AREA
 
@@ -80,25 +75,18 @@ a, a:hover {
 	text-transform:uppercase;
 }
 
-// .navbar-brand {
-// 	font-family: 'Oswald', sans-serif;
-// 	font-size:24px;
-// }
-
-// ROOT
+// ENTER PAGE
 
 #root {
 	border-bottom:10px solid #CF4647;
 	border-top:10px solid #EB7B59;
 }
 
-
 .main-root {
 	position:absolute;
 	top:200px;
 	left:450px;
 }
-
 
 .main-root h1 {
 	font-size:86px;
@@ -131,88 +119,6 @@ a, a:hover {
 	font-weight:900;
 }
 
-
-//  SHOW LESSON 
-
-
-
-
-// LECTURES/INDEX
-
-#our-classes {
-	text-align:center;
-	margin:50px;
-	font-size:36px;
-	// text-decoration:underline;
-	padding-bottom:10px;
-}
-
-.main-lesson-summary {
-	padding:50px 100px;
-}
-
-.main-lesson-show {
-	// text-transform:uppercase;
-	// text-align:center;
-	background:#fff;
-	font-family: 'Lato', sans-serif;
-	// font-weight:400;
-	font-size:56px;
-	height:220px;
-	margin-top:-20px;
-	padding-top:20px;
-	border-bottom:4px solid #CF4647;
-	border-top:4px solid #EB7B59;
-}
-
-.main-lesson-show h1 {
-	margin-left:50px;
-	font-size:46px;
-}
-
-.main-lesson-show h4 {
-	font-size:24px;
-}
-
-.main-lesson-show p {
-	font-size:18px;
-}
-
-#main-homepage {
-	// text-transform:uppercase;
-	text-align:center;
-	background:#fff;
-	font-family: 'Lato', sans-serif;
-	// font-weight:400;
-	font-size:56px;
-	height:220px;
-	margin-top:-20px;
-	padding-top:20px;
-	border-bottom:4px solid #CF4647;
-	border-top:4px solid #EB7B59;
-}
-
-.panneau {
-	background:#fff;
-	box-shadow:2px 2px 2px #F8F8F8;
-	width:300px;
-	border-radius:10px;
-	height:350px;
-}
-
-
-.panneau-body p {
-	padding:2px 10px;
-}
-
-.panneau a:hover {
-	background:#fff;
-	color:#000;
-}
-
-.description {
-	text-align:center;
-}
 
 // SHOW LECTURES
 
@@ -256,6 +162,99 @@ a.btn-primary {
 	margin:40px;
 }
 
+//  SHOW LESSON 
+
+.main-lesson-show {
+	// text-transform:uppercase;
+	// text-align:center;
+	background:#fff;
+	font-family: 'Lato', sans-serif;
+	// font-weight:400;
+	font-size:56px;
+	height:220px;
+	margin-top:-20px;
+	padding-top:20px;
+	border-bottom:4px solid #CF4647;
+	border-top:4px solid #EB7B59;
+}
+
+.main-lesson-show h1 {
+	margin-left:50px;
+	font-size:46px;
+}
+
+.main-lesson-show h4 {
+	font-size:24px;
+}
+
+.main-lesson-show p {
+	font-size:18px;
+}
+
+// FORM LESSON
+
+.panneau-form {
+	width:960px;
+	background:#fff;
+	padding:50px 50px;
+}
+
+.panneau-form h1 {
+	padding:20px 0;
+}
+
+.panneau-form .form-actions {
+	padding:20px 0;
+}
+
+// LECTURES/INDEX
+
+#our-classes {
+	text-align:center;
+	margin:50px;
+	font-size:36px;
+	// text-decoration:underline;
+	padding-bottom:10px;
+}
+
+.main-lesson-summary {
+	padding:50px 100px;
+}
+
+#main-homepage {
+	// text-transform:uppercase;
+	text-align:center;
+	background:#fff;
+	font-family: 'Lato', sans-serif;
+	// font-weight:400;
+	font-size:56px;
+	height:220px;
+	margin-top:-20px;
+	padding-top:20px;
+	border-bottom:4px solid #CF4647;
+	border-top:4px solid #EB7B59;
+}
+
+.panneau {
+	background:#fff;
+	box-shadow:2px 2px 2px #F8F8F8;
+	width:300px;
+	border-radius:10px;
+	height:350px;
+}
+
+.panneau-body p {
+	padding:2px 10px;
+}
+
+.panneau a:hover {
+	background:#fff;
+	color:#000;
+}
+
+.description {
+	text-align:center;
+}
 
 // SIGN IN & REGISTER
 
@@ -277,18 +276,3 @@ a.btn-primary {
 	padding: 20px 30px;
 }
 
-// FORM LESSON
-
-.panneau-form {
-	width:960px;
-	background:#fff;
-	padding:50px 50px;
-}
-
-.panneau-form h1 {
-	padding:20px 0;
-}
-
-.panneau-form .form-actions {
-	padding:20px 0;
-}

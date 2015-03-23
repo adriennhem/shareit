@@ -26,9 +26,6 @@
          <li><%= link_to 'About Us', pages_about_path %></li>
           <li><%= link_to 'Contact', pages_contact_path %></li>
         <% if user_signed_in? %>
-        <li><%= link_to new_lecture_path do %>
-          <span class="glyphicon glyphicon-plus">New</span>
-          <% end %></li>
         <li><%= link_to 'Sign Out',  destroy_user_session_path, method: :delete %></li>
         <li><%= link_to 'My Account', edit_user_registration_path %></li>
         <% else %>
