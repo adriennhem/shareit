@@ -2,277 +2,174 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-// IMPORT FONTS
-
-@import url(http://fonts.googleapis.com/css?family=Monoton);
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,900,800);
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-@import url(http://fonts.googleapis.com/css?family=Lato:400,900);
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
-@import url(http://fonts.googleapis.com/css?family=Oswald:400,700);
-
-
-// NAVBAR
-
-$navbar-default-brand-color:#DA5D2D;
-$navbar-height:50px;
+$navbar-default-bg:#fff;
 $navbar-border-radius:0px;
-$navbar-default-bg:#F5F5F5;
-
-// THIRD PARTIES IMPORT
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-// GENERAL SETTINGS
+html {
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: sans-serif;
 
-body {
-	font-family: 'Droid Sans', sans-serif;
 }
 
-h1 {
-	font-size:2em;
+// HOMEPAGE
+
+// #main-homepage {
+// 	background:url(bg.png) no-repeat center center fixed;
+// 	-webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+//   height:500px;
+//   margin:-50px auto;
+// }
+
+h1, h3, h4, h5, h6 {
+	color:#666673;
 }
 
-a, a:hover {
-	text-decoration:none;
+
+
+i.fa-video-camera {
+	color:#26c6da;
 }
 
-#main {
-	background:#F6F6F6;
+i.fa-users {
+	color:#aeea00;
 }
 
-// GOD MODE AREA
-
-#god-mode {
-	background:blue;
-	color:#fff;
+i.fa-child {
+	color:#ffb300;
 }
 
-#god-mode a, #god-mode a:hover {
- color:#fff;
- font-size:16px;
- text-decoration:none; 
- padding:50px 50px;
-}
-
-#god-mode a:hover {
-	background:none;
-}
-
-// DISQUS
-
-#disqus_thread {
-	width:500px;
-}
-
-//  NAVBAR
-
-.nav {
-	font-family: 'Lato', sans-serif;
-	font-weight:900;
-	text-transform:uppercase;
-}
-
-// ENTER PAGE
-
-#root {
-	border-bottom:10px solid #CF4647;
-	border-top:10px solid #EB7B59;
-}
-
-.main-root {
-	position:absolute;
-	top:200px;
-	left:450px;
-}
-
-.main-root h1 {
-	font-size:86px;
-}
-
-.main-root h2 {
-	color:#EB7B59;
-}
-
-.main-root a {
-	position:relative;
-	top:20px;
+#our-method i {
 	font-size:24px;
 }
 
-.main-root a:hover {
-	background:#fff;
-	color:#000;
-}
-
-.ggsb {
-	position:absolute;
-	bottom:10px;
-	right:10px;
-}
-
-.ggsb span {
-	font-size:18px;
-	font-family: 'Lato', sans-serif;
-	font-weight:900;
-}
-
-
-// SHOW LECTURES
-
-.panneau-lesson {
-	border:1px solid #BCBCBC;
-	background:#fff;
-	width:700px;
-	margin-top:25px;
-	box-shadow:1px 1px 1px #2A363B;
-}
-
-.panneau-lesson-title h1 {
-	padding:10px 10px;
-	font-size:24px;
-}
-
-span.glyphicon-play-circle {
-	font-size:48px;
-}
-
-
-.panneau-lesson-description {
-	padding:10px 10px;
-}
-
-.panneau-lesson-footer {
-	padding:10px 10px;
-	font-size:26px;
-}
-
-.panneau-lesson-footer a span {
-	padding:20px 10px;
-}
-
-.panneau-lesson-footer a:hover {
-	background:#fff;
-	color:#000;
-}
-
-a.btn-primary {
-	margin:40px;
-}
-
-//  SHOW LESSON 
-
-.main-lesson-show {
-	// text-transform:uppercase;
-	// text-align:center;
-	background:#fff;
-	font-family: 'Lato', sans-serif;
-	// font-weight:400;
-	font-size:56px;
-	height:220px;
-	margin-top:-20px;
-	padding-top:20px;
-	border-bottom:4px solid #CF4647;
-	border-top:4px solid #EB7B59;
-}
-
-.main-lesson-show h1 {
-	margin-left:50px;
-	font-size:46px;
-}
-
-.main-lesson-show h4 {
-	font-size:24px;
-}
-
-.main-lesson-show p {
-	font-size:18px;
-}
-
-// FORM LESSON
-
-.panneau-form {
-	width:960px;
-	background:#fff;
-	padding:50px 50px;
-}
-
-.panneau-form h1 {
-	padding:20px 0;
-}
-
-.panneau-form .form-actions {
-	padding:20px 0;
-}
-
-// LECTURES/INDEX
-
-#our-classes {
+#our-method h1 {
+	margin:100px auto;
 	text-align:center;
-	margin:50px;
-	font-size:36px;
-	// text-decoration:underline;
-	padding-bottom:10px;
 }
 
-.main-lesson-summary {
-	padding:50px 100px;
-}
-
-#main-homepage {
-	// text-transform:uppercase;
+#our-method .col-md-4 {
 	text-align:center;
-	background:#fff;
-	font-family: 'Lato', sans-serif;
-	// font-weight:400;
-	font-size:56px;
-	height:220px;
-	margin-top:-20px;
-	padding-top:20px;
-	border-bottom:4px solid #CF4647;
-	border-top:4px solid #EB7B59;
 }
 
-.panneau {
-	background:#fff;
-	box-shadow:2px 2px 2px #F8F8F8;
+#our-method .col-md-4 h2 {
+	font-size:20px;
+}
+
+#our-method .col-md-4 p {
+	font-size:16px;
+	font-weight:300;
+}
+// LOGIN
+
+body.login {
+  position: initial;
+  background: #f5f5f5;
+  padding-top: 0;
+}
+
+body.login #content {
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+body.login #content .panel-default {
+	box-shadow:1px 2px 2px 1px #eeeeee;
+}
+
+body.login #content h2 {
+	font-weight:300;
+	font-size:32px;
+	margin: 50px auto;
+	text-align:center;
+}
+
+.panel-lock {
 	width:300px;
-	border-radius:10px;
-	height:350px;
+	margin:0 auto;
 }
 
-.panneau-body p {
-	padding:2px 10px;
+.panel-lock .field {
+	margin:50px 0;
 }
 
-.panneau a:hover {
-	background:#fff;
-	color:#000;
+.panel-lock label {
+	font-weight:300;
+	margin:15 auto;
+	font-size:16px;
 }
 
-.description {
+
+body.login #content .form-control {
+  display: block;
+  width: 100%;
+  height: 36px;
+  padding: 8px 12px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #333333;
+  background-color: #f7f7f7;
+  background-image: none;
+  border-radius:0px;
+  border: none; 
+  border-bottom:3px solid #64b5f6;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: all border-color ease-in-out .15s, box-shadow ease-in-out .15s ease-out;
+}
+
+body.login #content .form-control:focus {
+	border-radius:0px;
+	border-bottom:10px solid #64b5f6;
+  outline: 0;
+  transition: border-bottom 0.1s ease-in;
+  box-shadow:none;
+}
+body.login #content .form-control::-moz-placeholder {
+  color: #cccccc;
+  opacity: 1;
+}
+
+body.login #content .actions {
 	text-align:center;
 }
 
-// SIGN IN & REGISTER
-
-.panel {
-	width:400px;
+body.login #content .actions button {
+	text-align:center;
+	background:#2196f3;
+	color:#fff;
+	width:200px;
+	height:40px;
+	font-size:20px;
+	font-weight:300;
+	border:none;
 }
 
-.panneau-signin {
-	width: 400px;
-	height:500px;
-	background:#fff;
+body.login #content .devise-shared {
+	text-align:center;
+	margin-top:10px;
+	margin:20px 0;
 }
 
-.panneau-signin-title {
-	padding:30px 30px;	
+// Navbar 
+
+.navbar-nav > li > a {
+  font-size: 18px;
 }
 
-.panneau-signin  {
-	padding: 20px 30px;
+.navbar-right a.btn-primary {
+	background:#ffab40 !important;
+	border-color:#ffa726 !important;
+	font-size:18px;
 }
 
+.navbar-right a.btn-primary:hover {
+	background:#ff9100 !important;
+	transition:background 0.2s ease-in;
+}

@@ -1,32 +1,29 @@
-
-<div class="panel panel-default col-md-offset-4">
-  <div class="panel-heading">
-    <h2 class="panel-title">Sign in</h2>
-  </div>
-
-  <div class="panel-body">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div id="content">
+  <div class="panel panel-default">
+    <h2>Sign in</h2>
+    <div class="panel-lock">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
       <div class="field">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true, class: "form-control" %>
       </div>
+
       <div class="field">
         <%= f.label :password %><br />
         <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
       </div>
-      <% if devise_mapping.rememberable? -%>
-        <div class="field">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
-        </div>
-      <% end -%>
-  </div> <!-- end .panel-body -->
-      <div class="panel-footer">
+     
         <div class="actions">
-          <%= f.submit "Sign In" %>
+          <%= button_to do %>
+          SIGN IN <i class="fa fa-unlock-alt"></i> 
+          <% end %>
           <% end %>
         </div>
+
+        <div class="devise-shared">
           <%= render "devise/shared/links" %>
-      </div> <!-- end .panel-footer -->
-</div> <!-- end .panel -->
+        </div>
+    </div>  <!-- end .panel-lock -->
+  </div> <!-- end .panel -->
+</div> <!-- end #content -->

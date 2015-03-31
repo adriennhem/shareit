@@ -1,9 +1,7 @@
-<div class="panel panel-default col-md-offset-4">
-  <div class="panel-heading">
-    <h2 class="panel-title">Sign up</h2>
-  </div>
-
-  <div class="panel-body">
+<div id="content">
+  <div class="panel panel-default">
+    <h2>Register</h2>
+    <div class="panel-lock">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
 
@@ -26,16 +24,17 @@
       </div>
   </div> <!-- .panel-body -->
   
-  <div class="panel-footer">
+ 
   <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+    <%= button_to do %>
+          Register <i class="fa fa-user"></i> 
+          <% end %>
 <% end %>
+    
+    <div class="devise-shared">
     <%= render "devise/shared/links" %>
-</div>
-
-
-
-
-</div> <!-- .panel -->
+  </div>
+    </div>  <!-- end .panel-lock -->
+  </div> <!-- end .panel -->
+</div> <!-- end #content -->
 
