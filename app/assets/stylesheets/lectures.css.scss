@@ -31,7 +31,9 @@ h1, h3, h4, h5, h6 {
 	color:#666673;
 }
 
-
+h1 {
+		font-size:48px;
+}
 
 i.fa-video-camera {
 	color:#26c6da;
@@ -45,17 +47,26 @@ i.fa-child {
 	color:#ffb300;
 }
 
+.shadow {
+	box-shadow:1px 1px 1px 1px #eeeeee;
+}
+
+#our-method {
+	margin-bottom:100px;
+}
+
 #our-method i {
-	font-size:24px;
+	font-size:38px;
 }
 
 #our-method h1 {
-	margin:100px auto;
+	margin:120px auto;
 	text-align:center;
 }
 
 #our-method .col-md-4 {
 	text-align:center;
+
 }
 
 #our-method .col-md-4 h2 {
@@ -64,6 +75,55 @@ i.fa-child {
 
 #our-method .col-md-4 p {
 	font-size:16px;
+	font-weight:300;
+}
+
+
+#testimonial {
+	background:#ffb300;
+	padding-bottom:90px;
+	box-shadow:1px 1px 1px 1px #eeeeee;
+}
+
+#testimonial h1 {
+	text-align:center;
+	margin:70px auto;
+	color:#fff;
+}
+
+#testimonial img {
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+}
+
+#testimonial .col-md-4 {
+	text-align:center;
+} 
+
+#testimonial blockquote, #testimonial h2 {
+	color:#fff;
+}
+
+#testimonial h2 {
+	font-size:20px;
+	float:right;
+	margin:-10px auto;
+}
+
+iframe {
+	margin-left:240px;
+	margin-bottom:100px;
+}
+
+// CONTACT
+
+#contact i {
+	font-size:90px;
+}
+
+#contact p {
+	font-size:24px;
 	font-weight:300;
 }
 // LOGIN
