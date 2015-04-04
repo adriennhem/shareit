@@ -1,14 +1,78 @@
-<div class="main-root">
-	<h1>Workshopr<span>.</span></h1>
-	<h2>Learn something that matters</h2>
-	<%= link_to 'Enter', lectures_path %>
-</div>
+<div class="row">
+  <div id="main-homepage">
+  </div>
+</div> <!-- .row #main-homepage -->
 
-<div class="ggsb">
-	<span>Powered by</span>
-	<%= image_tag("ggsb.jpg", height: "150", width: "150") %>
-</div>
+<div class="row">
+  <div class="container-fluid" id="container-method">
+    <div class="col-md-12">
+        <div class="col-md-4">
+          <i class="fa fa-users"></i>
+          <h2>Discover a Topic</h2>
+          <p>Watch the introduction to one topic.</p>
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-video-camera"></i>
+          <h2>Enroll to a workshop</h2>
+          <p>Enroll to one of our in-depth workshops. Learn at your own pace. Each videos last less than 10 minutes.</p>
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-child"></i>
+          <h2>Get Hired!</h2>
+          <p>Increase your emplyability. Completing one in depth workshop, it is acquiring one new competence. </p>
+          
+        </div>
+    </div>
+  </div>
 
+ 
+</div> <!-- .row #method  -->
+
+
+<div class="row" id="lectures-list">
+  <h1>What you can learn</h1>
+  <div class="container-fluid">
+    <div class="col-md-12">
+        <% @lectures.each do |lecture| %>
+        <div class="col-md-4 lecture">
+            <div class="lecture-box">
+              <%= image_tag lecture.picture.url(:medium) %>
+              <p><%= lecture.admin.email %></p>
+              <p><%= lecture.description %> </p>
+              <%= link_to "Enroll Now", lecture, class: "btn btn-blue" %>
+            </div> <!-- .lecture-box -->
+          </div> <!-- .col-md-4 -->
+        <% end %>
+    </div> <!-- .col-md-12 -->
+  </div> <!-- .container -->
+</div> <!-- .row -->
+
+
+<div class="row">
+  <div class="container-fluid" id="container-testimonial">
+    <h1>Testimonials</h1>
+    <div class="container">
+    <div class="col-md-12">
+      <div class="col-md-4">
+        <%= image_tag("mo.jpg", height: "120", width: "120") %>
+         <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</blockquote> 
+         <h4>- Adrien</h4>
+      </div>
+      <div class="col-md-4">
+         <%= image_tag("mo.jpg", height: "120", width: "120") %>
+         <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</blockquote> 
+        <h4>- Mohammed</h4>
+      </div>
+      <div class="col-md-4">
+        <%= image_tag("raj.jpg", height: "120", width: "120") %>
+        <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </blockquote> 
+        <h4>- Gowhshik</h4>
+      </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 <!-- if successful login redirect to letures_path -->
 

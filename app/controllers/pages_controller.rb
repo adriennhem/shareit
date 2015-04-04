@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-  	render layout: 'special_layout'
+  	@lectures = Lecture.all
   end
 
   def about
