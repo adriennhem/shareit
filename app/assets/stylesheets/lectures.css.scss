@@ -15,6 +15,7 @@ $navbar-default-link-hover-color:#ccc;
 
 // Variables
 $primary-color: #22FFFF;
+$secondary-color:#000;
 $font-body:'Noto Sans', sans-serif;
 
 // Import Files
@@ -368,8 +369,15 @@ body.login #content .devise-shared {
 }
 
 // --------------------------------------------------------------
-// 
+//  FOOTER
 // --------------------------------------------------------------
 
+#footer {
+	background:$secondary-color;
 
-
+	h1 {
+		color:#fff;
+		font-size:20px;
+		text-transform:none;
+	}
+}
