@@ -5,7 +5,12 @@ class LecturesController < ApplicationController
   # GET /lectures
   # GET /lectures.json
   def index
-    @lectures = Lecture.all
+    if params[:category]
+      @category_id = Category.find_by(name: params[:category]).id
+      @lectures = Lecture.where(category_id: @category_id).order("created_at DESC")
+    else
+      @lectures = Lecture.all
+    end
   end
 
   # GET /lectures/1

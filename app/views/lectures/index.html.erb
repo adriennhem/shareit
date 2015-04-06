@@ -9,13 +9,13 @@
 
   <div class="container-fluid">
 
-    <div class="container-left">
+    <div class="container-left col-md-10">
 
       <div class="col-md-12">
 
        <% @lectures.each do |lecture| %>
 
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="lecture-box">
           <%= image_tag lecture.picture.url(:medium) %>
           <p><%= lecture.admin.email %></p>
@@ -35,14 +35,23 @@
     
     </div> <!-- .container-left -->
   
-   <div class="container-right">
-     <!-- Here goes the category -->
+   <div class="container-right col-md-2">
+      
+
+  <% Category.all.each do |category| %>
+    <%= link_to category.name, lectures_path(category: category.name) %>
+  <% end %>
+
+
+
+
+
    </div>
   </div> <!-- .container -->
 </div> <!-- #main-library -->
 
 
-<%= render 'layouts/footer' %>
+
 
 
 

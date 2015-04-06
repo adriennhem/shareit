@@ -21,6 +21,7 @@ $primary-color: #22FFFF;
 $secondary-color:#191919;
 $font-body:'Noto Sans', sans-serif;
 $font-title:'Varela Round', sans-serif;
+$footer-height:60px;
 
 // Import Files
 @import "bootstrap-sprockets";
@@ -29,6 +30,11 @@ $font-title:'Varela Round', sans-serif;
 // --------------------------------------------------------------
 // GENERAL SETTINGS
 // --------------------------------------------------------------
+
+
+
+
+
 
 html {
   text-rendering:optimizeLegibility;
@@ -258,6 +264,20 @@ i.fa-child {
 		margin-bottom:20px;
 	}
 	
+	.lecture-box {
+		margin-top:10px;
+		margin-left:10px;
+	}
+
+	.container-right {
+		margin-top:20px;
+		background:#fff;
+		border:1px solid #ebebeb;
+
+		a {
+			border-bottom:1px solid #ebebeb;
+		}
+	}
 
 
 }
