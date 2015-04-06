@@ -1,56 +1,55 @@
+<div class="row" id="library">
+  <div class="library">
+    <h1>Library</h1>
+    <h2>Browse through our lessons</h2>
+  </div>
+</div>
 
-
-<h1 id="our-classes">Our Classes</h1>
-
-<h1 class="page-header">Web Development</h1>
-
-<div class="row">
-
-    <% @lectures.where("category_id = 1 ").each do |lecture| %>
-    <div class="col-md-3 col-xs-12">
-    <div class="panneau">
-      <div class="panneau-body">
-      <%= image_tag lecture.picture.url(:medium) %>
-       <h3>
-          <%= link_to lecture.title, lecture %></h3>
-      <p><%= lecture.admin.email %></p>
-       <p><%= lecture.description %> </p>
+<div class="row" id="main-library">
+  <div class="container-fluid">
+    <div class="container-left">
+      <div class="col-md-12">
+       <% @lectures.each do |lecture| %>
+      <div class="col-md-3">
+        <div class="lecture-box-1">
+          <%= image_tag lecture.picture.url(:medium) %>
+          <h3> <%= link_to lecture.title, lecture %></h3>
+          <p><%= lecture.admin.email %></p>
+          <p><%= lecture.description %> </p>
       
-      <% if admin_signed_in? %>
-      <p>  <%= link_to 'Edit', edit_lecture_path(lecture) %>
-         <%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-       
+          <% if admin_signed_in? %>
+          <p><%= link_to 'Edit', edit_lecture_path(lecture) %>
+          <%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %></p>
           <% end %>
-      </div>
-    </div>
-    </div>
+
+        </div> <!-- .lecture-box-1 -->
+      </div> <!-- .col-md-12 -->
+      </div> <!-- .col-md-3 -->
        <% end %>
-</div>
-<br>
+    </div> <!-- .container-left -->
+  
+   <div class="container-right">
+     <!-- Here goes the category -->
+   </div>
+  </div> <!-- .container -->
+</div> <!-- #main-library -->
 
-<h1 class="page-header">Photoshop</h1>
 
 
-<div class="row">
-    <% @lectures.where("category_id = 2 ").each do |lecture| %>
-    <div class="col-md-3 col-xs-12">
-    <div class="panneau">
-      <div class="panneau-body">
-      <%= image_tag lecture.picture.url(:medium) %>
-      <div class="panneau-text"></div>
-       <h3><%= link_to lecture.title, lecture %></h3>
-     <p><%= lecture.admin.email %></p> 
-     <p><%= lecture.category.name %></p>  
-     <p><%= lecture.description %></p>
-      <% if admin_signed_in? %>
-         <%= link_to 'Edit', edit_lecture_path(lecture) %>
-         <%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
-      </div>
-    </div>
-    </div>
-       <% end %>
 
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

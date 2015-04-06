@@ -50,29 +50,44 @@
 
 <div class="row">
   <div class="container-fluid" id="container-testimonial">
-    <h1>Testimonials</h1>
-    <div class="container">
-    <div class="col-md-12">
-      <div class="col-md-4">
-        <%= image_tag("mo.jpg", height: "120", width: "120") %>
-         <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</blockquote> 
-         <h4>- Adrien</h4>
-      </div>
-      <div class="col-md-4">
-         <%= image_tag("mo.jpg", height: "120", width: "120") %>
-         <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</blockquote> 
-        <h4>- Mohammed</h4>
-      </div>
-      <div class="col-md-4">
-        <%= image_tag("raj.jpg", height: "120", width: "120") %>
-        <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </blockquote> 
-        <h4>- Gowhshik</h4>
-      </div>
-      </div>
-    </div>
+    <h1>What people say about us</h1>
 
-  </div>
-</div>
+       <div class="col-md-12">
+        <div class="col-md-8 pull-right">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> 
+        <span>- Mohammed</span>
+        </div>
+        <div class="col-md-4 pull-left">
+         <%= image_tag("mo.jpg", height: "250", width: "250") %>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <div class="col-md-9 pull-right">
+          <div class="col-md-7">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> 
+              <span>- Mohammed</span>
+          </div>
+        <div class="col-md-5 float">
+         <%= image_tag("mo.jpg", height: "250", width: "250") %>
+        </div>
+       
+        </div>
+      </div>
+
+            <div class="col-md-12">
+        <div class="col-md-8 pull-right">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> 
+        <span>- Gowshik</span>
+        </div>
+        <div class="col-md-4">
+         <%= image_tag("raj.jpg", height: "250", width: "250") %>
+        </div>
+      </div>
+
+
+  </div> <!-- #container-testimonial -->
+</div> <!-- .row -->
 
 <!-- if successful login redirect to letures_path -->
 
