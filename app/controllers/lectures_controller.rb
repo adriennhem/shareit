@@ -1,5 +1,4 @@
 class LecturesController < ApplicationController
-  before_filter :authenticate_admin! , only: [:edit, :update, :destroy]
   before_action :set_lecture, only: [:show, :edit, :update, :destroy]
 
   # GET /lectures
@@ -33,7 +32,7 @@ class LecturesController < ApplicationController
   # POST /lectures
   # POST /lectures.json
   def create
-    @lecture = current_admin.lectures.build(lecture_params)
+    @lecture = Lectures.new(lecture_params)
     @lecture.category_id = params[:category_id]
     if @lecture.save
       redirect_to @lecture, notice: 'Lecture was successfully created.'

@@ -1,14 +1,5 @@
 <%= render 'lecture_band' %>
 
-<% if admin_signed_in? %>
-<div class="row">
-	<div id="god-mode">
-			<h3>GOD MODE ENABLED!</h3>
-			<%= link_to "Add Lesson", new_lecture_lesson_path(@lecture) %>  
-			<%= link_to 'Edit', edit_lecture_path(@lecture) %> 			
-	</div>
-</div>
-<% end %>
 
 
 		<!-- Back to Lecture -->

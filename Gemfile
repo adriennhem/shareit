@@ -11,7 +11,10 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'simple_form'
+
+# ActiveAdmin
 gem "font-awesome-rails"
+gem 'activeadmin', '~> 1.0.0.pre1'
 
 # calendar gem
 gem 'fullcalendar-rails'

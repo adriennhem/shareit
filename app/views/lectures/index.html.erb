@@ -18,14 +18,13 @@
       <div class="col-md-4">
         <div class="lecture-box">
           <%= image_tag lecture.picture.url(:medium) %>
-          <p><%= lecture.admin.email %></p>
           <p><%= lecture.description %> </p>
            <%= link_to "Start Now", lecture, class: "btn btn-blue" %>
       
-          <% if admin_signed_in? %>
+         
           <p><%= link_to 'Edit', edit_lecture_path(lecture) %>
           <%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-          <% end %>
+      
 
 
         </div> <!-- .lecture-box-1 -->

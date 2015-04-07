@@ -31,11 +31,6 @@ $footer-height:60px;
 // GENERAL SETTINGS
 // --------------------------------------------------------------
 
-
-
-
-
-
 html {
   text-rendering:optimizeLegibility;
   font-family: sans-serif;
@@ -78,11 +73,16 @@ h2 {
 // NAVBAR
 // --------------------------------------------------------------
 
+
+
+
 .navbar-nav > li > a {
   font-size: 18px;
+  text-decoration: none;
 }
 
 .navbar-right a.btn-primary {
+	text-decoration:none;
 	color:#000 !important;
 	background:$primary-color !important;
 	border-color:$primary-color !important;
@@ -109,7 +109,7 @@ h2 {
   -o-background-size: cover;
   background-size: cover;
   height:500px;
-  margin:-22px 0 0 0;
+  margin:-50px 0 0 0;
 }
 
 i.fa-video-camera {
