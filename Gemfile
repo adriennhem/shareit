@@ -15,6 +15,8 @@ gem 'simple_form'
 # ActiveAdmin
 gem "font-awesome-rails"
 gem 'activeadmin', '~> 1.0.0.pre1'
+# WYSIWYG
+gem 'ckeditor'
 
 # calendar gem
 gem 'fullcalendar-rails'

@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require ckeditor/init
 //= require moment
 //= require fullcalendar
 //= require bootstrap-sprockets
