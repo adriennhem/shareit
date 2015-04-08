@@ -1,4 +1,6 @@
 ActiveAdmin.register Lesson do
+  permit_params :title, :descriptions, :vid, :etape
+  
   belongs_to :lecture
 
 

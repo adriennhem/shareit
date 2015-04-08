@@ -30,12 +30,6 @@
 				<% end %>
 		</div>
 
-			<div class="col-md-3">
-				<% if admin_signed_in?  %>
-				<%= link_to 'Delete', [lesson.lecture, lesson], method: :delete %>
-				<%= link_to 'Edit', edit_lecture_lesson_path(lesson.lecture, lesson) %>
-				<% end %>
-			</div>
 	</div>
 	</div> <!-- end of col-md-7 -->
 	<% end %>

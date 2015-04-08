@@ -3,4 +3,6 @@ class Lecture < ActiveRecord::Base
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 	belongs_to :category
 	has_many :lessons, dependent: :destroy 
+
+	accepts_nested_attributes_for :lessons
 end
