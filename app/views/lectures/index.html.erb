@@ -7,7 +7,7 @@
 
 <div class="row" id="main-library">
 
-  <div class="container-fluid">
+  <div class="container-fluid margin-s">
 
     <div class="container-left col-md-10">
 
@@ -18,7 +18,7 @@
       <div class="col-md-4">
         <div class="lecture-box">
           <%= image_tag lecture.picture.url(:medium) %>
-          <p><%= lecture.description %> </p>
+          <p><%= truncate(lecture.description, length: 80) %> </p>
            <%= link_to "Start Now", lecture, class: "btn btn-blue" %>
       
    
@@ -36,7 +36,9 @@
       
 
   <% Category.all.each do |category| %>
+  <div class="list-category bg-white">
     <%= link_to category.name, lectures_path(category: category.name) %>
+  </div>
   <% end %>
 
 

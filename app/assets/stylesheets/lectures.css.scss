@@ -56,6 +56,10 @@ html {
   font-family: sans-serif;
 }
 
+html a {
+	text-decoration:none !important;
+}
+
 body {
 	font-size:$font-default-size;
 	font-weight:300;
@@ -79,9 +83,11 @@ h2 {
 	font-size:$font-xl-size;
 }
 
-.float {
+.float-left {
 	float:left;
 }
+
+.float-right {float:right;}
 
 .medium {
 	font-size:24px;
@@ -94,6 +100,14 @@ a.btn-primary {
 	border-color:$primary-color !important;
 	font-size:18px;
 }
+
+.l-size {font-size:$font-l-size;}
+
+.bg-white {
+	background:#fff !important;
+}
+
+.margin-s {margin-top:40px;}
 
 // --------------------------------------------------------------
 // NAVBAR
@@ -236,7 +250,6 @@ i.fa-child {
 	}
 }
 
-
 .lecture-box {
 		background:#fff;
 		height:350px;
@@ -282,28 +295,21 @@ i.fa-child {
 	}
 	
 	.lecture-box {
-		margin-top:10px;
 		margin-left:10px;
 	}
 
-	.container-right {
-		margin-top:20px;
-		background:#fff;
-		border:1px solid #ebebeb;
-
-		a {
-			border-bottom:$default-border-color;
-		}
 	}
 
 
-}
+
+
+.list-category {border:$default-border-color; width:200px; padding:10px 10px;}
 
 // --------------------------------------------------------------
 // SHOW LECTURE  
 // --------------------------------------------------------------
 
-#lesson-band {border-bottom:$default-border-color;}
+#lesson-band {border-bottom:$default-border-color; height:100px;}
 
 #lesson-container {background:$background-color;}
 
@@ -311,38 +317,29 @@ i.fa-child {
 
 .panel {}
 
+.lesson-panel-body {border:$default-border-color}
+
+.lesson-panel-body span {padding:10px 20px;}
+
+
 // --------------------------------------------------------------
 // CONTACT 
 // --------------------------------------------------------------
 
 
-#contact {
-	margin-top:30px;
-}
+#contact {margin-top:30px;}
 
-#contact i {
-	font-size:90px;
-}
+#contact i {font-size:90px;}
 
-#contact .fa-phone {
-	color:#ec407a;
-}
+#contact .fa-phone {color:#ec407a;}
 
-#contact .fa-facebook {
-	color:#42a5f5;
-}
+#contact .fa-facebook {color:#42a5f5;}
 
-#contact .fa-twitter {
-	color:#26c6da;
-}
+#contact .fa-twitter {color:#26c6da;}
 
-#contact .fa-send {
-	color:#17bda0;
-}
+#contact .fa-send {color:#17bda0;}
 
-#contact p {
-	font-size:24px;
-}
+#contact p {font-size:24px;}
 
 // --------------------------------------------------------------
 // LOGIN
