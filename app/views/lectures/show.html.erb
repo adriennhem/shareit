@@ -38,7 +38,8 @@
 				Instructor
 			</div>
 			<div class="panel-body">
-				<p>Adrien Nhem</p>
+				 <%= image_tag @lecture.teacher.picture.url(:medium) %>
+				<p><%= @lecture.teacher.name %></p>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad iusto nulla saepe aspernatur blanditiis totam distinctio. Nostrum vero est vel perferendis excepturi assumenda consequuntur animi ducimus saepe sapiente, velit eaque!</p>
 			</div>
 		</div> 

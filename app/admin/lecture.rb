@@ -1,7 +1,9 @@
 ActiveAdmin.register Lecture do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  permit_params :title, :description, :created_at, :updated_at, :category_id, :picture_file_name, :picture, :picture_content_type, :picture_file_size, :picture_updated_at, lessons_attributes: [:id, :title, :description, :vid, :etape]
+  permit_params :title, :description, :created_at, :updated_at, :category_id, :picture_file_name, :teacher_id,
+  :picture, :picture_content_type, :picture_file_size, :picture_updated_at, 
+  lessons_attributes: [:id, :title, :description, :vid, :etape]
                 
   # or
   #
@@ -14,6 +16,7 @@ ActiveAdmin.register Lecture do
   form :html => { :enctype => "multipart/form-data" } do |f|
   f.inputs "Lectures", :multipart => true do
     f.input :category_id
+    f.input :teacher_id
     f.input :title
     f.input :description
     f.input :picture, :required => false, :as => :file
