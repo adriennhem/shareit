@@ -2,13 +2,33 @@
 
 
 
-		<!-- Back to Lecture -->
-		<%= link_to lectures_path, class: "btn btn-primary" do %>
-		Back to <%= @lecture.title %>
-		<% end %>
+
+<div class="row" id="lesson-container">
+	<div class="col-md-12">
+	
+	<div class="col-md-8">
+	<div id="lesson-description-container">
+		<h1><%= @lecture.title %></h1>
+		<p><%= @lecture.description %></p>
+	</div>
+	</div>
+
+	<div class="col-md-4">
+		<div class="panel panel-defaultpull-right">
+			<div class="panel-heading">
+				Instructor
+			</div>
+			<div class="panel-body">
+				<p>Adrien Nhem</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad iusto nulla saepe aspernatur blanditiis totam distinctio. Nostrum vero est vel perferendis excepturi assumenda consequuntur animi ducimus saepe sapiente, velit eaque!</p>
+			</div>
+		</div> <!-- instructor -->
+	</div>
+
+	</div> <!-- .col-md-12 -->
+</div> <!-- #lesson-container -->
 
 
-<div class="row">
 	<div class="col-md-12">
 		<!-- chaque lecture -->
 	 <% @lessons.each do |lesson| %>

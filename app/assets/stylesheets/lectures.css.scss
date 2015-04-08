@@ -38,6 +38,7 @@ $font-xl-size:28px;
 $font-xxl-size:32px;
 $font-body-color:#212121;
 $default-border-color:1px solid #ebebeb;
+$background-color:#F5F5F5;
 
 // --------------------------------------------------------------
 // IMPORT 
@@ -84,6 +85,14 @@ h2 {
 
 .medium {
 	font-size:24px;
+}
+
+a.btn-primary {
+	text-decoration:none;
+	color:#000 !important;
+	background:$primary-color !important;
+	border-color:$primary-color !important;
+	font-size:18px;
 }
 
 // --------------------------------------------------------------
@@ -232,7 +241,7 @@ i.fa-child {
 		background:#fff;
 		height:350px;
 		width:302px;
-		border:1px solid #ebebeb;
+		border:$default-border-color;
 }	
 
 .lecture-box:hover {
@@ -289,6 +298,18 @@ i.fa-child {
 
 
 }
+
+// --------------------------------------------------------------
+// SHOW LECTURE  
+// --------------------------------------------------------------
+
+#lesson-band {border-bottom:$default-border-color;}
+
+#lesson-container {background:$background-color;}
+
+#lesson-description-container {}
+
+.panel {}
 
 // --------------------------------------------------------------
 // CONTACT 
