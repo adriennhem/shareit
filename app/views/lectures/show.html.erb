@@ -35,12 +35,12 @@
 	<div class="col-md-4">
 		<div class="panel panel-default pull-right">
 			<div class="panel-heading bg-white">
-				Instructor
+				<h4>Instructor</h4>
 			</div>
-			<div class="panel-body">
-				 <%= image_tag @lecture.teacher.picture.url(:medium) %>
-				<p><%= @lecture.teacher.name %></p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad iusto nulla saepe aspernatur blanditiis totam distinctio. Nostrum vero est vel perferendis excepturi assumenda consequuntur animi ducimus saepe sapiente, velit eaque!</p>
+			<div class="panel-body width300 margin-top-xs">
+				 <%= image_tag @lecture.teacher.picture.url(:medium), height: "150", width: "150", class: "picture" %>
+				<span class="margin-s-l"><%= @lecture.teacher.name %></span> 
+				<p class="margin-top-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad iusto nulla saepe aspernatur blanditiis totam distinctio. Nostrum vero est vel perferendis excepturi assumenda consequuntur animi ducimus saepe sapiente, velit eaque!</p>
 			</div>
 		</div> 
 	</div>

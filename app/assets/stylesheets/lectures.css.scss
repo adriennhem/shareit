@@ -51,14 +51,9 @@ $background-color:#F5F5F5;
 // GENERAL SETTINGS
 // --------------------------------------------------------------
 
-html {
-  text-rendering:optimizeLegibility;
-  font-family: sans-serif;
-}
+html {text-rendering:optimizeLegibility; font-family: sans-serif;}
 
-html a {
-	text-decoration:none !important;
-}
+html a {text-decoration:none !important;}
 
 body {
 	font-size:$font-default-size;
@@ -68,30 +63,32 @@ body {
 	font-family: $font-body, 'Helvetica Neue', Helvetica, Arial;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	color:#400;
-	font-family:$font-title;
-	text-transform:uppercase;	
-}
+h1, h2, h3, h4, h5, h6 {color:#400; font-family:$font-title; text-transform:uppercase;}
 
-h1 {
-	font-size:$font-xxl-size;
-	color:#333;
-}
+h1 {font-size:$font-xxl-size; color:#333;}
 
-h2 {
-	font-size:$font-xl-size;
-}
+h2 {font-size:$font-xl-size;}
 
-.float-left {
-	float:left;
-}
+.float-left {float:left;}
 
 .float-right {float:right;}
 
-.medium {
-	font-size:24px;
-}
+.medium {font-size:24px;}
+
+.l-size {font-size:$font-l-size;}
+
+.bg-white {background:#fff !important;}
+
+.margin-s {margin-top:40px;}
+
+.margin-top-xs {margin-top:20px;}
+
+.picture {border-radius:150px;}
+
+.margin-s-l {margin-left:10px;}
+
+.width300 {width:300px;}
+
 
 a.btn-primary {
 	text-decoration:none;
@@ -100,14 +97,6 @@ a.btn-primary {
 	border-color:$primary-color !important;
 	font-size:18px;
 }
-
-.l-size {font-size:$font-l-size;}
-
-.bg-white {
-	background:#fff !important;
-}
-
-.margin-s {margin-top:40px;}
 
 // --------------------------------------------------------------
 // NAVBAR
@@ -149,26 +138,15 @@ a.btn-primary {
   margin:-50px 0 0 0;
 }
 
-i.fa-video-camera {
-	color:$primary-color;
-}
+i.fa-video-camera {color:$primary-color;}
 
-i.fa-users {
-	color:$primary-color;
-}
+i.fa-users {color:$primary-color;}
 
-i.fa-child {
-	color:$primary-color;
-}
+i.fa-child {color:$primary-color;}
 
-#container-method {
-	margin-bottom:30px;
-	border-top:$default-border-color;
-}
+#container-method {margin-bottom:30px; border-top:$default-border-color;}
 
-#container-method i {
-	font-size:72px;
-}
+#container-method i {font-size:72px;}
 
 #container-method .col-md-4 {
 	text-align:center;
@@ -314,8 +292,6 @@ i.fa-child {
 #lesson-container {background:$background-color;}
 
 #lesson-description-container {}
-
-.panel {}
 
 .lesson-panel-body {border:$default-border-color}
 
