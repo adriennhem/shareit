@@ -17,8 +17,8 @@
 // --------------------------------------------------------------
 
 
-$navbar-default-link-color:#fff;
-$navbar-default-bg:#191919;
+$navbar-default-link-color:#212121;
+$navbar-default-bg:#fff;
 $navbar-border-radius:0px;
 $navbar-default-link-hover-color:#ccc;
 
@@ -75,6 +75,8 @@ h2 {font-size:$font-xl-size;}
 
 .medium {font-size:24px;}
 
+.s-size {font-size:$font-default-size;}
+
 .l-size {font-size:$font-l-size;}
 
 .bg-white {background:#fff !important;}
@@ -89,6 +91,7 @@ h2 {font-size:$font-xl-size;}
 
 .width300 {width:300px;}
 
+.thin {font-weight:400; font-family:$font-body}
 
 a.btn-primary {
 	text-decoration:none;
