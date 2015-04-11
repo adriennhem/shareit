@@ -1,5 +1,5 @@
 class LessonsController < ApplicationController
-  before_filter :authenticate_admin! , only: [:create, :edit, :update, :destroy]
+ 
 
   # GET /lessons
   # GET /lessons.json

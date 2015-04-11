@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150408195206) do
+ActiveRecord::Schema.define(version: 20150411152156) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -52,6 +52,13 @@ ActiveRecord::Schema.define(version: 20150408195206) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "chapters", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
     t.string   "data_content_type"
@@ -79,6 +86,7 @@ ActiveRecord::Schema.define(version: 20150408195206) do
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
     t.integer  "teacher_id"
+    t.text     "video"
   end
 
   create_table "lessons", force: :cascade do |t|
@@ -89,6 +97,7 @@ ActiveRecord::Schema.define(version: 20150408195206) do
     t.integer  "lecture_id"
     t.text     "vid"
     t.integer  "etape"
+    t.integer  "chapter_id"
   end
 
   create_table "teachers", force: :cascade do |t|
@@ -115,6 +124,12 @@ ActiveRecord::Schema.define(version: 20150408195206) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -1,7 +1,7 @@
 ActiveAdmin.register Lecture do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  permit_params :title, :description, :created_at, :updated_at, :category_id, :picture_file_name, :teacher_id,
+  permit_params :title, :description, :created_at, :updated_at, :category_id, :picture_file_name, :teacher_id, :video,
   :picture, :picture_content_type, :picture_file_size, :picture_updated_at, 
   lessons_attributes: [:id, :title, :description, :vid, :etape]
                 
@@ -18,6 +18,7 @@ ActiveAdmin.register Lecture do
     f.input :category_id
     f.input :teacher_id
     f.input :title
+    f.input :video 
     f.input :description
     f.input :picture, :required => false, :as => :file
   end
