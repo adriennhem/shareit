@@ -25,8 +25,11 @@
       <ul class="nav navbar-nav navbar-right">
            <% if user_signed_in? %>
         <li><%= link_to 'Workshops', lectures_path %></li>
-        <li><%= link_to 'My Account', edit_user_registration_path %></li>
-         <li><p class="navbar-btn"> <%= link_to 'Sign Out',  destroy_user_session_path, method: :delete, class: "btn btn-primary" %></p></li>
+
+        <li><%= link_to current_user.first_name,  edit_user_registration_path  %></li>
+
+
+        <li><p class="navbar-btn"> <%= link_to 'Sign Out',  destroy_user_session_path, method: :delete, class: "btn btn-primary" %></p></li>
         <% else %>
         <li><p class="navbar-btn"> <%= link_to 'Sign In', new_user_session_path, class: "btn btn-primary" %></p></li>
         <li><%= link_to 'Register',  new_user_registration_path %></li>
