@@ -8,9 +8,19 @@
 
 @import url('http://fonts.googleapis.com/css?family=RobotoDraft:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en');
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400);
-@import url(http://fonts.googleapis.com/css?family=Varela+Round);
-@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic);
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+
+
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300);
+
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+
+@import url(http://fonts.googleapis.com/css?family=Ek+Mukta:300,400);
+
+@import url(http://fonts.googleapis.com/css?family=Quicksand:300,400);
+
+@import url(http://fonts.googleapis.com/css?family=Lato);
 
 // --------------------------------------------------------------
 // BOOTSTRAP CHANGES
@@ -20,22 +30,25 @@
 $navbar-default-link-color:#212121;
 $navbar-default-bg:#fff;
 $navbar-border-radius:0px;
-$navbar-default-link-hover-color:#ccc;
 
 // --------------------------------------------------------------
 // SASS VARIABLES
 // --------------------------------------------------------------
 
 $primary-color:#1AAFD7;
+$color-3:#F65A5B;
+$color-4:#1abc9c;
+$color-5:#3498db;
+$color-jaune:#f1c40f;
 $secondary-color:#FF5543;
-$font-body:'Noto Sans', sans-serif;
-$font-title:'Varela Round', sans-serif;
+$font-body:'Quicksand', sans-serif;
+$font-title:'Montserrat', sans-serif;;
 $font-default-size:16px;
 $font-m-size:18px;
 $font-l-size:20px;
 $font-xl-size:28px;
 $font-xxl-size:32px;
-$font-body-color:#212121;
+$font-body-color:#8D999F;
 $default-border-color:1px solid #ebebeb;
 $background-color:#F5F5F5;
 
@@ -50,20 +63,20 @@ $background-color:#F5F5F5;
 // GENERAL SETTINGS
 // --------------------------------------------------------------
 
-html {text-rendering:optimizeLegibility; font-family: sans-serif;}
+html {text-rendering:optimizeLegibility;}
 
 html a {text-decoration:none !important;}
 
 body {
+	font-family:$font-body;
+	font-weight:400;
 	padding-top: 50px;
-	font-size:$font-default-size;
-	font-weight:300;
+	font-size:18px;
 	color:$font-body-color;
 	line-height:27px;
-	font-family: $font-body, 'Helvetica Neue', Helvetica, Arial;
 }
 
-h1, h2, h3, h4, h5, h6 {color:#400; font-family:$font-title; text-transform:uppercase;}
+h1, h2, h3, h4, h5, h6 {color:#394147; font-family:$font-title; font-weight:700;}
 
 h1 {font-size:$font-xxl-size; color:#333;}
 
@@ -89,11 +102,14 @@ h2 {font-size:$font-xl-size;}
 
 .margin-s-l {margin-left:10px;}
 
+.margin-l-l {margin-left:50px;}
+
 .width300 {width:300px;}
 
 .thin {font-weight:400; font-family:$font-body}
 
 .clear {clear:both;}
+
 
 a.btn-primary {
 	text-decoration:none;
@@ -103,12 +119,14 @@ a.btn-primary {
 	font-size:18px;
 }
 
+a.btn {font-family:$font-title;}
+
 .alert {z-index:2; margin:35px 0;}
 
 // --------------------------------------------------------------
 // NAVBAR
 // --------------------------------------------------------------
-
+nav {height:90px;}
 
 nav.navbar.shrink {
 	box-shadow: inset 0 1px #fff, 0 1px 3px rgba(34,25,25,0.4);
@@ -118,27 +136,38 @@ nav.navbar.shrink {
 	border:none !important;
 }
 
-nav {height:50px;}
 
-nav a {font-size:16px !important;}
+
+
+
+.navbar-nav > li > a:hover {color:#384046;}
+
 
 .navbar-nav > li > a {
-  font-size: 18px;
+	font-family: $font-title;
+	font-weight:400;
+	padding-top:35px !important;
+	color:#8C989E !important;
+  font-size: 16px;
   text-decoration: none;
 }
 
+
+.navbar-left > li > a {padding-top:25px !important;}
+
 .navbar-right a.btn-primary {
+	margin-top:20px !important;
 	text-decoration:none;
 	color:#fff !important;
-	background:$primary-color !important;
-	border-color:$primary-color !important;
+	background:$color-3 !important;
+	border-color:$color-3 !important;
 	font-size:18px;
 }
 
 .navbar-right a.btn-primary:hover {
 	color:#fff !important;
-	background:$primary-color !important;
-	border-color:$primary-color !important;
+	background:$color-3 !important;
+	border-color:$color-3 !important;
 	transition:background 0.2s ease-in;
 }
 
@@ -159,7 +188,7 @@ nav a {font-size:16px !important;}
   margin:-50px 0 0 0;
 }
 
-i.fa-video-camera {color:$primary-color;}
+i.fa-video-camera {color:$color-4;}
 
 i.fa-users {color:$primary-color;}
 
@@ -180,7 +209,7 @@ i.fa-child {color:$primary-color;}
 // --------------------------------------------------------------
 
 #container-testimonial {
-	background:$primary-color;
+	background:$color-jaune;
 	border-top:$default-border-color;
 	font-size:20px;
 		
@@ -189,7 +218,7 @@ i.fa-child {color:$primary-color;}
 	}
 	
 	span {
-			color:$primary-color;
+			color:$color-jaune;
 			margin-left:30px;
 	}
 
@@ -221,7 +250,7 @@ i.fa-child {color:$primary-color;}
 // --------------------------------------------------------------
 
 #lectures-list, #main-library {
-	background:#FAFAFA;
+	background:#F6F9FA;
 	border-top:$default-border-color;
 
 	h1 {
@@ -238,8 +267,8 @@ i.fa-child {color:$primary-color;}
 	}
 
 	.btn-blue {
-		background:$primary-color;
-		color:#212121;
+		background:#637A91;
+		color:$font-body;
 		font-size:18px;
 		margin:10px 70px;
 		padding:12px;
@@ -286,7 +315,7 @@ i.fa-child {color:$primary-color;}
 
 
 #main-library {
-	background:#F5F5F5;
+	
 	
 	.container-left {
 		margin-top:20px;
@@ -313,7 +342,7 @@ i.fa-child {color:$primary-color;}
 
 #lesson-band {border-bottom:$default-border-color; height:100px;}
 
-#lesson-container {background:$background-color;}
+
 
 #lesson-description-container {}
 

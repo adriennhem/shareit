@@ -4,11 +4,12 @@
 
 
 <div class="row" id="lesson-container">
+
+
 	<div class="col-md-12 margin-s">
 	
 	<div class="col-md-8">
 		<div id="lesson-description-container">
-			<h1><%= @lecture.title %></h1>
 			<%= @lecture.video.html_safe %>
 			<p class="margin-s"><%= @lecture.description %></p>
 		</div>
@@ -20,10 +21,10 @@
 		 <% @lessons.each do |lesson| %>
 
 				<div class="lesson-panel-body">
-					<span><%= lesson.etape %>.</span>
-					<span><%= lesson.title %></span>
-				 	<%= link_to [lesson.lecture, lesson], class: "float-right l-size" do %>
-					<span class="glyphicon glyphicon-play-circle"></span>
+					<span class="medium"><%= lesson.etape %>.</span>
+					<span class="medium"><%= lesson.title %></span>
+				 	<%= link_to [lesson.lecture, lesson], class: "float-right medium" do %>
+					<i class="fa fa-play-circle-o"></i>
 					<% end %>
 				</div>
 
