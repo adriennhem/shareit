@@ -91,6 +91,8 @@ h2 {font-size:$font-xl-size;}
 
 .bg-white {background:#fff !important;}
 
+.white {color:white;}
+
 .margin-s {margin-top:40px;}
 
 .margin-top-xs {margin-top:20px;}
@@ -113,6 +115,8 @@ h2 {font-size:$font-xl-size;}
 
 .mb-60 {margin-bottom:60px;}
 
+.small-caps {font-variant: small-caps;}
+
 a.btn-primary {
 	text-decoration:none;
 	color:#fff !important;
@@ -124,6 +128,8 @@ a.btn-primary {
 a.btn {font-family:$font-title;}
 
 .alert {z-index:2; margin:35px 0;}
+
+.large {font-size:56px;}
 
 // --------------------------------------------------------------
 // NAVBAR
@@ -174,10 +180,9 @@ nav.navbar.shrink {
 // HOMEPAGE
 // --------------------------------------------------------------
 
+
 #main-homepage {
 	// background:#202020;
-	filter: grayscale(90%);
-	-webkit-filter: grayscale(0.3);
 	background:url(bw-room.JPG) no-repeat center center fixed;
 	-webkit-background-size: cover;
   -moz-background-size: cover;
@@ -186,6 +191,7 @@ nav.navbar.shrink {
   height:710px;
   margin:-50px 0 0 0;
 }
+
 
 i.fa-video-camera {color:$color-4;}
 
