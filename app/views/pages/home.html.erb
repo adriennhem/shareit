@@ -7,7 +7,7 @@
 </div> <!-- .row #main-homepage -->
 
 
-<div class="row height510">
+<div class="row height610">
   <div class="container width700 vertical center">
     <h1>Learn competences that will skyrocket your career</h1>
     <p class="margin-s">No need to be a genius to understand that today's job market is getting increasingly complex. Companies are looking for people with double competences. In educational institutions you learn models and theories but not how to apply them in real life. We woork hard to bridge this gap between education and real life.</p>
@@ -16,21 +16,21 @@
 </div>
 
 
-<div class="row height510 border-top bg-blackhaze">
+<div class="row height610 border-top bg-blackhaze">
   <div class="container  width700 vertical center">
     <h1>Learn at your own pace</h1>
     <p class="margin-s">Because everyone is tired after a long day of work, our videos won't last more than 20 minutes!</p>
-    <i class="fa fa-laptop margin-s burnt big"></i>
+    <i class="fa fa-calendar margin-s burnt big"></i>
 
   </div>
 </div>
 
 
- <div class="row height510">
+ <div class="row height610 border-top">
   <div class="container width700 vertical center">
     <h1>Build your own projects</h1>
     <p class="margin-s">Reading some stuffs about some stuffs is interesting but how cool it is to build your own project?</p>
-    <i class="fa fa-rocket margin-s fountain big"></i>
+    <i class="fa fa-laptop margin-s fountain big"></i>
   </div>
 </div>
 
@@ -41,7 +41,7 @@
 
 
 <div class="row" id="lectures-list">
-  <h1>What you can learn</h1>
+  <h1>Jump in!</h1>
   <p class="center margin-top-negative mb-60">We just got started, try our HTML workshop and build your first website.</p>
   <div class="container">
     <div class="col-md-12 margin-s">
@@ -50,7 +50,7 @@
             <div class="lecture-box">
               <%= image_tag lecture.picture.url(:medium) %>
               <p><%= truncate(lecture.description, length: 80) %> </p>
-              <%= link_to "Enroll Now", lecture, class: "btn btn-blue bg-fountain" %>
+              <%= link_to "Enroll Now", lecture, class: "btn btn-blue bg-emerald" %>
             </div> <!-- .lecture-box -->
           </div> <!-- .col-md-4 -->
         <% end %>
@@ -66,7 +66,7 @@
        <div class="col-md-12">
         <div class="col-md-8 pull-right">
         <p class="medium">I was able <b>to replicate what I learnt</b> after only few hours!</p> 
-        <span>- Mohammed</span>
+        <span class="burnt montserrat">- Mohammed</span>
         </div>
         <div class="col-md-4 pull-left">
          <%= image_tag("mo.jpg", height: "250", width: "250") %>
@@ -77,7 +77,7 @@
         <div class="col-md-9 pull-right">
           <div class="col-md-7">
               <p class="medium">Lorem <b>ipsum dolor sit amet,</b> consectetur adipisicing elit.</p> 
-              <span>- Mohammed</span>
+              <span class="burnt montserrat">- Mohammed</span>
           </div>
         <div class="col-md-5 float">
          <%= image_tag("mo.jpg", height: "250", width: "250") %>
@@ -89,7 +89,7 @@
       <div class="col-md-12">
         <div class="col-md-8 pull-right">
         <p class="medium">Learning about web development was <b>really fun!</b></p> 
-        <span>- Gowshik</span>
+        <span class="burnt montserrat">- Gowshik</span>
         </div>
         <div class="col-md-4">
          <%= image_tag("raj.jpg", height: "250", width: "250") %>
