@@ -193,28 +193,13 @@ nav.navbar.shrink {
 }
 
 
-i.fa-video-camera {color:$color-4;}
 
-i.fa-users {color:$primary-color;}
-
-i.fa-child {color:$primary-color;}
-
-#container-method {margin-bottom:30px; border-top:$default-border-color;}
-
-#container-method i {font-size:72px;}
-
-#container-method .col-md-4 {
-	text-align:center;
-	margin:25px auto;
-	text-align:center;
-}
 
 // --------------------------------------------------------------
 // LEARN 1 
 // --------------------------------------------------------------
 
 .height610 {height:610px}
-
 
 .vertical {position:relative; top:50%; transform: translateY(-50%);}
 
@@ -299,6 +284,8 @@ i.fa-child {color:$primary-color;}
 
 	.btn-blue {
 		color:#fff;
+		position:absolute;
+		bottom:10px;
 		font-size:18px;
 		margin:10px 70px;
 		padding:12px;
@@ -326,40 +313,7 @@ i.fa-child {color:$primary-color;}
 // LIBRARY
 // --------------------------------------------------------------
 
-#library {
-	background:$primary-color;
-	border-bottom:$default-border-color;
 
-	.library {
-		margin:50px 0 50px 50px;
-	}
-	h1 {
-		text-transform:none;
-	}
-	h2 {
-		font-weight:300;
-		text-transform:none;
-		color:#808080;
-	}
-}
-
-
-#main-library {
-	background:#F6F9FA;
-	
-	.container-left {
-		margin-top:20px;
-	}
-	
-	.col-md-3 {
-		margin-bottom:20px;
-	}
-	
-	.lecture-box {
-		margin-left:10px;
-	}
-
-	}
 
 
 

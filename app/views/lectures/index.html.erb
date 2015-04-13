@@ -1,14 +1,12 @@
-<div class="row" id="library">
+<div class="row bg-elephant">
   <div class="library">
-    <h1 class="thin xl-size">Library</h1>
-    <h2 class="thin l-size">Browse through our lessons</h2>
+    <h1 class="thin xl-size white">Library</h1>
+    <h2 class="thin l-size white">Browse through our lessons</h2>
   </div>
 </div>
 
-<div class="row" id="main-library">
-
+<div class="row bg-blackhaze border-top">
   <div class="container-fluid margin-s">
-
     <div class="container-left col-md-10">
 
       <div class="col-md-12">
@@ -16,10 +14,11 @@
        <% @lectures.each do |lecture| %>
 
       <div class="col-md-4">
+
         <div class="lecture-box">
           <%= image_tag lecture.picture.url(:medium) %>
           <p><%= truncate(lecture.description, length: 80) %> </p>
-           <%= link_to "Start Now", lecture, class: "btn btn-blue" %>
+           <%= link_to "Start Now", lecture, class: "btn btn-blue bg-fountain" %>
       
    
       
@@ -48,9 +47,6 @@
    </div>
   </div> <!-- .container -->
 </div> <!-- #main-library -->
-
-
-
 
 
 
