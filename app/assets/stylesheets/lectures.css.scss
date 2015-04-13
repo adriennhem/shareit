@@ -6,33 +6,21 @@
 // FONTS 
 // --------------------------------------------------------------
 
-@import url('http://fonts.googleapis.com/css?family=RobotoDraft:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en');
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400);
-
-
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300);
 
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-
-@import url(http://fonts.googleapis.com/css?family=PT+Sans);
-
-@import url(http://fonts.googleapis.com/css?family=Ek+Mukta:300,400);
-
 @import url(http://fonts.googleapis.com/css?family=Quicksand:300,400);
 
-@import url(http://fonts.googleapis.com/css?family=Lato);
+
 
 // --------------------------------------------------------------
 // BOOTSTRAP CHANGES
 // --------------------------------------------------------------
 
-
-$navbar-default-link-color:#212121;
 $navbar-default-bg:#fff;
 $navbar-border-radius:0px;
 
 // --------------------------------------------------------------
-// SASS VARIABLES
+// SASS COLORS
 // --------------------------------------------------------------
 
 $primary-color:#1AAFD7;
@@ -41,16 +29,25 @@ $color-4:#1abc9c;
 $color-5:#3498db;
 $color-jaune:#f1c40f;
 $secondary-color:#FF5543;
+$font-body-color:#8D999F;
+$background-color:#F6F9FA;
+
+
+// --------------------------------------------------------------
+// SASS COLORS
+// --------------------------------------------------------------
+
 $font-body:'Quicksand', sans-serif;
-$font-title:'Montserrat', sans-serif;;
+$font-title:'Montserrat', sans-serif;
+
 $font-default-size:16px;
 $font-m-size:18px;
 $font-l-size:20px;
 $font-xl-size:28px;
 $font-xxl-size:32px;
-$font-body-color:#8D999F;
+
 $default-border-color:1px solid #ebebeb;
-$background-color:#F5F5F5;
+
 
 // --------------------------------------------------------------
 // IMPORT 
@@ -70,7 +67,7 @@ html a {text-decoration:none !important;}
 body {
 	font-family:$font-body;
 	font-weight:400;
-	padding-top: 50px;
+	padding-top:90px;
 	font-size:18px;
 	color:$font-body-color;
 	line-height:27px;
@@ -110,6 +107,11 @@ h2 {font-size:$font-xl-size;}
 
 .clear {clear:both;}
 
+.center {text-align:center;}
+
+.margin-top-negative {margin-top:-70px;}
+
+.mb-60 {margin-bottom:60px;}
 
 a.btn-primary {
 	text-decoration:none;
@@ -137,9 +139,6 @@ nav.navbar.shrink {
 }
 
 
-
-
-
 .navbar-nav > li > a:hover {color:#384046;}
 
 
@@ -153,7 +152,7 @@ nav.navbar.shrink {
 }
 
 
-.navbar-left > li > a {padding-top:25px !important;}
+.navbar-left > li > a {padding-top:30px !important; font-size:30px !important;}
 
 .navbar-right a.btn-primary {
 	margin-top:20px !important;
@@ -315,7 +314,7 @@ i.fa-child {color:$primary-color;}
 
 
 #main-library {
-	
+	background:#F6F9FA;
 	
 	.container-left {
 		margin-top:20px;
@@ -345,6 +344,8 @@ i.fa-child {color:$primary-color;}
 
 
 #lesson-description-container {}
+
+#lesson-container {background:#F6F9FA;}
 
 .lesson-panel-body {border:$default-border-color}
 
