@@ -1,32 +1,43 @@
+
+
+
 <div class="row">
   <div id="main-homepage">
   </div>
 </div> <!-- .row #main-homepage -->
 
-<div class="row">
-  <div class="container-fluid" id="container-method">
-    <div class="col-md-12 margin-top-xs">
-        <div class="col-md-4">
-          <i class="fa fa-users"></i>
-          <h2>Discover a Topic</h2>
-          <p>Watch the introduction to one topic.</p>
-        </div>
-        <div class="col-md-4">
-          <i class="fa fa-video-camera"></i>
-          <h2>Enroll to a workshop</h2>
-          <p>Enroll to one of our in-depth workshops. Learn at your own pace. Each videos last less than 10 minutes.</p>
-        </div>
-        <div class="col-md-4">
-          <i class="fa fa-child"></i>
-          <h2>Get Hired!</h2>
-          <p>Increase your emplyability. Completing one in depth workshop, it is acquiring one new competence. </p>
-          
-        </div>
-    </div>
-  </div>
 
- 
-</div> <!-- .row #method  -->
+<div class="row height510">
+  <div class="container width700 vertical center">
+    <h1>Learn competences that will skyrocket your career</h1>
+    <p class="margin-s">No need to be a genius to understand that today's job market is getting increasingly complex. Companies are looking for people with double competences. In educational institutions you learn models and theories but not how to apply them in real life. We woork hard to bridge this gap between education and real life.</p>
+    <i class="fa fa-rocket margin-s purple big"></i>
+  </div>
+</div>
+
+
+<div class="row height510 border-top bg-blackhaze">
+  <div class="container  width700 vertical center">
+    <h1>Learn at your own pace</h1>
+    <p class="margin-s">Because everyone is tired after a long day of work, our videos won't last more than 20 minutes!</p>
+    <i class="fa fa-laptop margin-s burnt big"></i>
+
+  </div>
+</div>
+
+
+ <div class="row height510">
+  <div class="container width700 vertical center">
+    <h1>Build your own projects</h1>
+    <p class="margin-s">Reading some stuffs about some stuffs is interesting but how cool it is to build your own project?</p>
+    <i class="fa fa-rocket margin-s fountain big"></i>
+  </div>
+</div>
+
+
+
+
+
 
 
 <div class="row" id="lectures-list">
@@ -39,7 +50,7 @@
             <div class="lecture-box">
               <%= image_tag lecture.picture.url(:medium) %>
               <p><%= truncate(lecture.description, length: 80) %> </p>
-              <%= link_to "Enroll Now", lecture, class: "btn btn-blue" %>
+              <%= link_to "Enroll Now", lecture, class: "btn btn-blue bg-fountain" %>
             </div> <!-- .lecture-box -->
           </div> <!-- .col-md-4 -->
         <% end %>
