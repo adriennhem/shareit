@@ -1,28 +1,21 @@
 <div class="row bg-blackhaze">
-	<div class="container mb-60">
+	<div class="container mb-60 width960">
 			<h1><%= @lecture.title %></h1>
 	</div>
 </div>
 
 <div class="row bg-blackhaze">
-	<div class="container">
+	<div class="container width960">
 		<%= @lecture.video.html_safe %>
 	</div>
 </div>
 	
 <div class="row bg-blackhaze">
-	<div class="container">
-	
-		
-			<p class="margin-s"><%= @lecture.description %> - taught by <span class="medium"><%= @lecture.teacher.name %></span>   </p>
-
-
+	<div class="container width960">
+	<p class="margin-s"><%= @lecture.description %> - taught by <span class="medium"><%= @lecture.teacher.name %></span>   </p>
 		<h1 class="margin-s">List of lessons</h1>
-
 		<div class="panel panel-default margin-s">
-
 		 <% @lessons.each do |lesson| %>
-
 				<div class="lesson-panel-body">
 					<span class="medium"><%= lesson.etape %>.</span>
 					<span class="medium"><%= lesson.title %></span>
@@ -30,12 +23,9 @@
 					<i class="fa fa-play-circle-o"></i>
 					<% end %>
 				</div>
-
 		<% end %>
-
-		</div> <!-- .container -->
-
-	</div> <!-- .row -->
+	</div> <!-- .container -->
+</div> <!-- .row -->
 
 
 
