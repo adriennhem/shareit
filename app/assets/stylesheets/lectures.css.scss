@@ -45,7 +45,6 @@ $font-m-size:18px;
 $font-l-size:20px;
 $font-xl-size:28px;
 $font-xxl-size:32px;
-
 $default-border-color:1px solid #ebebeb;
 
 
@@ -79,43 +78,151 @@ h1 {font-size:$font-xxl-size; color:#384046;}
 
 h2 {font-size:$font-xl-size;}
 
-.float-left {float:left;}
+.alert {z-index:2; margin:35px 0;}
 
-.float-right {float:right;}
+// --------------------------------------------------------------
+// COLORS
+// --------------------------------------------------------------
 
-.medium {font-size:24px;}
+a.bg-fountain:hover {background:#53BBB4}
 
-.s-size {font-size:$font-default-size;}
+a.btn-default {color:#fff; border:none}
 
-.l-size {font-size:$font-l-size;}
+a.btn-default:hover {color:#fff; border:none}
 
-.bg-white {background:#fff !important;}
+a.mirage {color:#8D999F}
+
+ // ----- COLORS ---- //
 
 .white {color:white;}
+
+.mirage {color:#8D999F}
+
+.lynch {color:#647A90}
+
+.fountain {color:#53BBB4}
+
+.burnt {color:#F27F5C}
+
+.purple {color:#858BC5 !important}
+
+.elephant {color:#2A3743}
+
+
+  // ----- BACKGROUNDS ---- //
+
+.bg-blackhaze {background:#F6F9FA}
+
+.bg-purple {background:#858BC5}
+
+.bg-lynch {background:#647A90}
+
+.bg-emerald {background:#5FCF80}
+
+.bg-elephant {background:#2A3743}
+
+.bg-fountain {background:#53BBB4}
+
+.bg-burnt {background:#F27F5C}
+
+.bg-white {background:#fff !important}
+
+.bg-grey {background:#F7F9F9}
+
+
+
+// --------------------------------------------------------------
+// BORDERS
+// --------------------------------------------------------------
+
+.picture {border-radius:150px;}
+
+.border-top {border-top:1px solid #ebebeb;}
+
+// --------------------------------------------------------------
+// SIZES
+// --------------------------------------------------------------
+
+ // ----- WIDTH ---- //
+
+.width300 {width:300px;}
+
+.width700 {max-width:700px;}
+
+ // ----- HEIGHT ---- //
+
+.height610 {height:610px}
+
+// --------------------------------------------------------------
+// POSITION
+// --------------------------------------------------------------
+
+.vertical {position:relative; top:50%; transform: translateY(-50%);}
+
+ // ----- MARGIN ---- //
 
 .margin-s {margin-top:40px;}
 
 .margin-top-xs {margin-top:20px;}
 
-.picture {border-radius:150px;}
-
 .margin-s-l {margin-left:10px;}
 
 .margin-l-l {margin-left:50px;}
 
-.width300 {width:300px;}
+.mb-60 {margin-bottom:60px;}
 
-.thin {font-weight:400; font-family:$font-body}
-
-.clear {clear:both;}
-
-.center {text-align:center;}
+.mb-150 {margin-bottom:150px}
 
 .margin-top-negative {margin-top:-70px;}
 
-.mb-60 {margin-bottom:60px;}
+ // ----- PADDINGS ---- //
+
+.pad10 {padding:10px 10px}
+
+.pad5 {padding:5px 5px}
+
+// ----- FLOAT ----- // 
+
+.center {text-align:center;}
+
+.float-left {float:left;}
+
+.float-right {float:right;}
+
+.clear {clear:both;}
+
+// --------------------------------------------------------------
+// FONTS
+// --------------------------------------------------------------
+
+
+// ----- FAMILY ----- // 
+
+.montserrat {font-family:$font-title}
+
+.quicksand {font-family:$font-body}
+
+// ----- FONT SIZE ----- // 
+
+.s-size {font-size:$font-default-size;}
+
+.l-size {font-size:$font-l-size;}
+
+.medium {font-size:24px;}
+
+.thin {font-weight:400; font-family:$font-body}
+
+.large {font-size:56px;}
+
+.big {font-size:150px !important;}
+
+// ----- FONT TRANSFORMATIONS ----- // 
 
 .small-caps {font-variant: small-caps;}
+
+// --------------------------------------------------------------
+// BUTTONS
+// --------------------------------------------------------------
 
 a.btn-primary {
 	text-decoration:none;
@@ -126,10 +233,6 @@ a.btn-primary {
 }
 
 a.btn {font-family:$font-title;}
-
-.alert {z-index:2; margin:35px 0;}
-
-.large {font-size:56px;}
 
 // --------------------------------------------------------------
 // NAVBAR
@@ -194,33 +297,6 @@ nav.navbar.shrink {
 
 
 
-
-// --------------------------------------------------------------
-// LEARN 1 
-// --------------------------------------------------------------
-
-.height610 {height:610px}
-
-.vertical {position:relative; top:50%; transform: translateY(-50%);}
-
-.purple {color:#858BC5 !important;}
-
-.big {font-size:150px !important;}
-
-.border-top {border-top:1px solid #ebebeb;}
-
-.bg-blackhaze {background:#F6F9FA;}
-
-.lynch {color:#647A90;}
-
-.bg-lynch {background:#647A90;}
-
-.burnt {color:#F27F5C;}
-
-.fountain {color:#53BBB4;}
-
-.width700 {max-width:700px;}
-
 // --------------------------------------------------------------
 // TESTIMONIAL
 // --------------------------------------------------------------
@@ -282,7 +358,9 @@ nav.navbar.shrink {
 		padding:5px 10px;
 	}
 
-	.btn-blue {
+}
+
+.btn-default {
 		color:#fff;
 		position:absolute;
 		bottom:10px;
@@ -293,12 +371,13 @@ nav.navbar.shrink {
 		width:150px;
 		text-transform:uppercase;
 	}
-}
+
+
 
 .lecture-box {
 		background:#fff;
 		height:350px;
-		width:302px;
+		width:303px;
 		border:$default-border-color;
 }	
 
@@ -467,14 +546,4 @@ footer ul li a {color:#F27F5C !important;}
 
 span.copyright {float:right;}
 
-.bg-elephant {background:#2A3743;}
 
-.elephant {color:#2A3743;}
-
-.bg-fountain {background:#53BBB4;}
-
-.bg-burnt {background:#F27F5C;}
-
-.montserrat {font-family:$font-title;}
-
-.bg-emerald {background:#5FCF80;}

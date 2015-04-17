@@ -1,52 +1,30 @@
-<div class="row bg-elephant">
-  <div class="library">
-    <h1 class="thin xl-size white">Library</h1>
-    <h2 class="thin l-size white">Browse through our lessons</h2>
-  </div>
-</div>
+
 
 <div class="row bg-blackhaze border-top">
-  <div class="container-fluid margin-s">
-    <div class="container-left col-md-10">
-
+  <div class="container mb-150">
+    <div class="container-left col-md-8">
       <div class="col-md-12">
-
        <% @lectures.each do |lecture| %>
-
-      <div class="col-md-4">
-
-        <div class="lecture-box">
-          <%= image_tag lecture.picture.url(:medium) %>
-          <p><%= truncate(lecture.description, length: 80) %> </p>
-           <%= link_to "Start Now", lecture, class: "btn btn-blue bg-fountain" %>
-      
-   
-      
-
-
-        </div> <!-- .lecture-box-1 -->
-      </div> <!-- .col-md-4 -->
+        <div class="col-md-6 lecture margin-s">
+          <div class="lecture-box">
+            <%= image_tag lecture.picture.url(:medium) %>
+            <p class="pad5"><%= truncate(lecture.description, length: 80) %> </p>
+             <%= link_to "Start Now", lecture, class: "btn btn-default bg-fountain" %>
+          </div> <!-- .lecture-box -->
+        </div> <!-- .col-md-4 -->
       <% end %>
       </div> <!-- .col-md-12 -->
-    
     </div> <!-- .container-left -->
   
-   <div class="container-right col-md-2">
-      
-
-  <% Category.all.each do |category| %>
-  <div class="list-category bg-white">
-    <%= link_to category.name, lectures_path(category: category.name) %>
-  </div>
-  <% end %>
-
-
-
-
-
-   </div>
+   <div class="container-right col-md-4 margin-s">
+      <% Category.all.each do |category| %>
+      <div class="list-category bg-white center">
+        <%= link_to category.name, lectures_path(category: category.name), class: "mirage" %>
+      </div>
+      <% end %>
+    </div>
   </div> <!-- .container -->
-</div> <!-- #main-library -->
+</div> <!-- row -->
 
 
 

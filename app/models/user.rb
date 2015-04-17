@@ -8,13 +8,11 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
   validates :first_name, presence: true
   validates :last_name, presence: true 
-  validates :email, uniqueness: true, if: :valid_email
+  validates :email, uniqueness: true
 
   def fullname
   	[first_name, last_name].join(' ')
   end 
 
-  def valid_email
-  	email.index("@grenoble-em.com", -16)
-  end
+ 
 end
