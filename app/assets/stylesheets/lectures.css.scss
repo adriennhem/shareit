@@ -108,6 +108,7 @@ a.mirage {color:#8D999F}
 
 .elephant {color:#2A3743}
 
+.cod {color:#515151}
 
   // ----- BACKGROUNDS ---- //
 
@@ -146,6 +147,8 @@ a.mirage {color:#8D999F}
  // ----- WIDTH ---- //
 
 .width300 {width:300px;}
+
+.width550 {max-width:550px}
 
 .width700 {max-width:700px;}
 
@@ -192,6 +195,8 @@ a.mirage {color:#8D999F}
 .float-right {float:right;}
 
 .clear {clear:both;}
+
+.centerd {margin:0 auto}
 
 // --------------------------------------------------------------
 // FONTS
@@ -532,7 +537,21 @@ body.login #content .devise-shared {
 //  ABOUT
 // --------------------------------------------------------------
 
-#about {background-color:$primary-color; color:#fff;}
+
+
+#about {
+
+	// background:#202020;
+	-webkit-filter: grayscale(100%); 
+	filter: grayscale(100%);
+	background:url(bg.JPG) no-repeat center center fixed;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:300px;
+
+}
 
 // --------------------------------------------------------------
 //  FOOTER
@@ -545,5 +564,6 @@ footer ul li {list-style:none; float:left; margin-right:20px;}
 footer ul li a {color:#F27F5C !important;}
 
 span.copyright {float:right;}
+
 
 
