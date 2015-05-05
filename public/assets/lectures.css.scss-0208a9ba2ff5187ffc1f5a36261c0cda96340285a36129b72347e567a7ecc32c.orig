@@ -1,0 +1,593 @@
+// Place all the styles related to the lectures controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// --------------------------------------------------------------
+// FONTS 
+// --------------------------------------------------------------
+
+
+@font-face {
+    font-family: 'Menlo';
+    src: url('/assets/HDV_Peace.eot');
+}
+
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Quicksand:300,400);
+
+
+
+// --------------------------------------------------------------
+// BOOTSTRAP CHANGES
+// --------------------------------------------------------------
+
+$navbar-default-bg:#fff;
+$navbar-border-radius:0px;
+
+// --------------------------------------------------------------
+// SASS COLORS
+// --------------------------------------------------------------
+
+$primary-color:#1AAFD7;
+$color-3:#F65A5B;
+$color-4:#1abc9c;
+$color-5:#3498db;
+$color-jaune:#f1c40f;
+$secondary-color:#FF5543;
+$font-body-color:#8D999F;
+$background-color:#F6F9FA;
+
+
+// --------------------------------------------------------------
+// SASS COLORS
+// --------------------------------------------------------------
+
+$font-body:'Quicksand', sans-serif;
+$font-title:'Montserrat', sans-serif;
+
+$font-default-size:16px;
+$font-m-size:18px;
+$font-l-size:20px;
+$font-xl-size:28px;
+$font-xxl-size:32px;
+$default-border-color:1px solid #ebebeb;
+
+
+// --------------------------------------------------------------
+// IMPORT 
+// --------------------------------------------------------------
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+// --------------------------------------------------------------
+// GENERAL SETTINGS
+// --------------------------------------------------------------
+
+html {text-rendering:optimizeLegibility;}
+
+html a {text-decoration:none !important;}
+
+body {
+	font-family:$font-body;
+	font-weight:400;
+	padding-top:90px;
+	font-size:18px;
+	color:$font-body-color;
+	line-height:27px;
+}
+
+h1, h2, h3, h4, h5, h6 {color:#394147; font-family:$font-title; font-weight:700;}
+
+h1 {font-size:$font-xxl-size; color:#384046;}
+
+h2 {font-size:$font-xl-size;}
+
+.alert {z-index:2; margin:35px 0;}
+
+// --------------------------------------------------------------
+// COLORS
+// --------------------------------------------------------------
+
+a.bg-fountain:hover {background:#53BBB4}
+
+a.btn-default {color:#fff; border:none}
+
+a.btn-default:hover {color:#fff; border:none}
+
+a.mirage {color:#8D999F}
+
+ // ----- COLORS ---- //
+
+.white {color:white;}
+
+.mirage {color:#8D999F}
+
+.lynch {color:#647A90}
+
+.fountain {color:#53BBB4}
+
+.burnt {color:#F27F5C}
+
+.purple {color:#858BC5 !important}
+
+.elephant {color:#2A3743}
+
+.cod {color:#515151}
+
+  // ----- BACKGROUNDS ---- //
+
+.bg-blackhaze {background:#F6F9FA}
+
+.bg-purple {background:#858BC5}
+
+.bg-lynch {background:#647A90}
+
+.bg-emerald {background:#5FCF80}
+
+.bg-elephant {background:#2A3743}
+
+.bg-fountain {background:#53BBB4}
+
+.bg-burnt {background:#F27F5C}
+
+.bg-white {background:#fff !important}
+
+.bg-grey {background:#F7F9F9}
+
+
+
+// --------------------------------------------------------------
+// BORDERS
+// --------------------------------------------------------------
+
+.picture {border-radius:150px;}
+
+.border-top {border-top:1px solid #ebebeb;}
+
+// --------------------------------------------------------------
+// SIZES
+// --------------------------------------------------------------
+
+ // ----- WIDTH ---- //
+
+.width300 {width:300px;}
+
+.width550 {max-width:550px}
+
+.width700 {max-width:700px;}
+
+.width960 {max-width:960px}
+
+ // ----- HEIGHT ---- //
+
+.height610 {height:610px}
+
+// --------------------------------------------------------------
+// POSITION
+// --------------------------------------------------------------
+
+.vertical {position:relative; top:50%; transform: translateY(-50%);}
+
+ // ----- MARGIN ---- //
+
+.margin-s {margin-top:40px;}
+
+.margin-top-xs {margin-top:20px;}
+
+.margin-s-l {margin-left:10px;}
+
+.margin-l-l {margin-left:50px;}
+
+.mb-60 {margin-bottom:60px;}
+
+.mb-150 {margin-bottom:150px}
+
+.margin-top-negative {margin-top:-70px;}
+
+ // ----- PADDINGS ---- //
+
+.pad10 {padding:10px 10px}
+
+.pad5 {padding:5px 5px}
+
+// ----- FLOAT ----- // 
+
+.center {text-align:center;}
+
+.float-left {float:left;}
+
+.float-right {float:right;}
+
+.clear {clear:both;}
+
+.centerd {margin:0 auto}
+
+// --------------------------------------------------------------
+// FONTS
+// --------------------------------------------------------------
+
+
+// ----- FAMILY ----- // 
+
+.montserrat {font-family:$font-title}
+
+.quicksand {font-family:$font-body}
+
+// ----- FONT SIZE ----- // 
+
+.size12 {font-size:14px}
+
+.s-size {font-size:$font-default-size;}
+
+.l-size {font-size:$font-l-size;}
+
+.medium {font-size:24px;}
+
+.thin {font-weight:400; font-family:$font-body}
+
+.large {font-size:56px;}
+
+.big {font-size:150px !important;}
+
+// ----- FONT TRANSFORMATIONS ----- // 
+
+.small-caps {font-variant: small-caps;}
+
+// --------------------------------------------------------------
+// BUTTONS
+// --------------------------------------------------------------
+
+a.btn-primary {
+	text-decoration:none;
+	color:#fff !important;
+	background:$secondary-color !important;
+	border-color:$secondary-color !important;
+	font-size:18px;
+}
+
+a.btn {font-family:$font-title;}
+
+// --------------------------------------------------------------
+// NAVBAR
+// --------------------------------------------------------------
+nav {height:90px;}
+
+nav.navbar.shrink {
+	box-shadow: inset 0 1px #fff, 0 1px 3px #ccc;
+	-moz-box-shadow: inset 0 1px #fff, 0 1px 3px #ccc;
+	-webkit-box-shadow: inset 0 1px #fff, 0 1px 3px #ccc;
+	z-index:2;
+	border:none !important;
+}
+
+
+.navbar-nav > li > a:hover {color:#384046;}
+
+
+.navbar-nav > li > a {
+	font-family: $font-title;
+	font-weight:400;
+	padding-top:35px !important;
+	color:#8C989E !important;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+
+.navbar-left > li > a {padding-top:30px !important; font-size:30px !important;}
+
+.navbar-right a.btn-primary {
+	margin-top:20px !important;
+	text-decoration:none;
+	color:#fff !important;
+	background:#F27F5C !important;
+	border-color:#F27F5C !important;
+	font-size:18px;
+}
+
+.navbar-right a.btn-primary:hover {
+	color:#fff !important;
+	background:$color-3 !important;
+	border-color:$color-3 !important;
+	transition:background 0.2s ease-in;
+}
+
+// --------------------------------------------------------------
+// HOMEPAGE
+// --------------------------------------------------------------
+
+
+#main-homepage {
+	// background:#202020;
+	background:url(bw-room.JPG) no-repeat center center fixed;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:710px;
+  margin:-50px 0 0 0;
+}
+
+
+
+// --------------------------------------------------------------
+// TESTIMONIAL
+// --------------------------------------------------------------
+
+
+#container-testimonial {
+
+	border-top:$default-border-color;
+	font-size:20px;
+		
+	p {
+		margin:30px 0 10px 30px;
+	}
+	
+	span {
+			margin-left:30px;
+	}
+
+	img {
+	float:right;
+	-webkit-filter: grayscale(0.9);
+	filter: grayscale(50%);
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	}
+
+	.float img {
+		float:left;
+	}
+
+	h1 {
+	text-align:center;
+	margin:70px auto 100px auto;}
+
+	.col-md-12 {
+		margin:50px auto;		
+  }
+}
+
+// --------------------------------------------------------------
+// LECTURES BOX
+// --------------------------------------------------------------
+
+#lectures-list, #main-library {
+	background:#F6F9FA;
+	border-top:$default-border-color;
+
+	h1 {
+		text-align: center;
+		margin:100px auto;
+	}
+	
+	.col-md-4 {
+		margin:-20px auto 100px auto;
+	}
+
+	p {
+		padding:5px 10px;
+	}
+
+}
+
+.btn-default {
+		color:#fff;
+		position:absolute;
+		bottom:10px;
+		font-size:18px;
+		margin:10px 70px;
+		padding:12px;
+		height:50px;
+		width:150px;
+		text-transform:uppercase;
+	}
+
+
+
+.lecture-box {
+		background:#fff;
+		height:350px;
+		width:303px;
+		border:$default-border-color;
+}	
+
+.lecture-box:hover {
+	transition: all 0.1s ease-in;
+	box-shadow: inset 0 1px #fff, 0 1px 3px #EBEBEB;
+	-moz-box-shadow: inset 0 1px #fff, 0 1px 3px #EBEBEB;
+	-webkit-box-shadow: inset 0 1px #fff, 0 1px 3px #EBEBEB;
+}	
+
+// --------------------------------------------------------------
+// LIBRARY
+// --------------------------------------------------------------
+
+
+
+
+
+
+.list-category {border:$default-border-color; width:200px; padding:10px 10px;}
+
+// --------------------------------------------------------------
+// SHOW LECTURE  
+// --------------------------------------------------------------
+
+#lesson-band {border-bottom:$default-border-color; height:100px;}
+
+
+
+#lesson-description-container {}
+
+#lesson-container {background:#F6F9FA;}
+
+.lesson-panel-body {border:$default-border-color}
+
+.lesson-panel-body span {padding:10px 20px;}
+
+
+// --------------------------------------------------------------
+// CONTACT 
+// --------------------------------------------------------------
+
+
+#contact {margin-top:30px;}
+
+#contact i {font-size:90px;}
+
+#contact .fa-phone {color:#ec407a;}
+
+#contact .fa-facebook {color:#42a5f5;}
+
+#contact .fa-twitter {color:#26c6da;}
+
+#contact .fa-send {color:#17bda0;}
+
+#contact p {font-size:24px;}
+
+// --------------------------------------------------------------
+// LOGIN
+// --------------------------------------------------------------
+
+
+body.login {
+  position: initial;
+  background: #f5f5f5;
+  padding-top: 0;
+}
+
+body.login #content {
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+body.login #content .panel-default {
+	box-shadow:1px 2px 2px 1px #eeeeee;
+}
+
+body.login #content h2 {
+	font-size:32px;
+	margin: 50px auto;
+	text-align:center;
+}
+
+.panel-lock {
+	width:300px;
+	margin:0 auto;
+}
+
+.panel-lock .field {
+	margin:50px 0;
+}
+
+.panel-lock label {
+	margin:15 auto;
+	font-size:16px;
+}
+
+
+body.login #content .form-control {
+  display: block;
+  width: 100%;
+  height: 36px;
+  padding: 8px 12px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #333333;
+  background-color: #f7f7f7;
+  background-image: none;
+  border-radius:0px;
+  border: none; 
+  border-bottom:3px solid #64b5f6;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: all border-color ease-in-out .15s, box-shadow ease-in-out .15s ease-out;
+}
+
+body.login #content .form-control:focus {
+	border-radius:0px;
+	border-bottom:10px solid #64b5f6;
+  outline: 0;
+  transition: border-bottom 0.1s ease-in;
+  box-shadow:none;
+}
+body.login #content .form-control::-moz-placeholder {
+  color: #cccccc;
+  opacity: 1;
+}
+
+body.login #content .actions {
+	text-align:center;
+}
+
+body.login #content .actions button {
+	text-align:center;
+	background:#2196f3;
+	color:#fff;
+	width:200px;
+	height:40px;
+	font-size:20px;
+	border:none;
+}
+
+body.login #content .devise-shared {
+	text-align:center;
+	margin-top:10px;
+	margin:20px 0;
+}
+
+// --------------------------------------------------------------
+//  ABOUT
+// --------------------------------------------------------------
+
+
+
+#about {
+
+<<<<<<< HEAD
+=======
+	// background:#202020;
+>>>>>>> blog
+	-webkit-filter: grayscale(100%); 
+	filter: grayscale(100%);
+	background:url(bg.JPG) no-repeat center center fixed;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:300px;
+
+}
+
+// --------------------------------------------------------------
+//  FOOTER
+// --------------------------------------------------------------
+
+footer {font-family:$font-title; border-top:1px solid #EAEAEA; min-height:85px; padding:25px;}
+
+footer ul li {list-style:none; float:left; margin-right:20px;}
+
+footer ul li a {color:#F27F5C !important;}
+
+span.copyright {float:right;}
+
+// --------------------------------------------------------------
+//  Blog
+// --------------------------------------------------------------
+
+#blog {
+
+	background:url(http://i58.tinypic.com/23st89f.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:300px;
+
+}
+
+
