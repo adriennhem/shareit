@@ -12,7 +12,10 @@ class PagesController < ApplicationController
   def upcoming
   end
 
+<<<<<<< HEAD
   def blog
   	@posts = Post.all
   end
+=======
+>>>>>>> blog
 end
