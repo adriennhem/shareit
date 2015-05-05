@@ -11,4 +11,8 @@ class PagesController < ApplicationController
 
   def upcoming
   end
+
+  def blog
+  	@posts = Post.all
+  end
 end

@@ -1,0 +1,14 @@
+<script async src="https://static.medium.com/embed.js"></script>
+<div class="row" id="blog">
+	
+</div>
+
+<h1 class="center">Blog</h1>
+<p class="center">You can find all the posts that we published here</p>
+
+<% @posts.each do |post| %>
+<div class="margin-s">
+<%= post.content.html_safe %>
+</div>
+<% end %>
+

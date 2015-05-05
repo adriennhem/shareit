@@ -7,6 +7,11 @@
 // --------------------------------------------------------------
 
 
+@font-face {
+    font-family: 'Menlo';
+    src: url('/assets/HDV_Peace.eot');
+}
+
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(http://fonts.googleapis.com/css?family=Quicksand:300,400);
 
@@ -108,6 +113,7 @@ a.mirage {color:#8D999F}
 
 .elephant {color:#2A3743}
 
+.cod {color:#515151}
 
   // ----- BACKGROUNDS ---- //
 
@@ -146,6 +152,8 @@ a.mirage {color:#8D999F}
  // ----- WIDTH ---- //
 
 .width300 {width:300px;}
+
+.width550 {max-width:550px}
 
 .width700 {max-width:700px;}
 
@@ -193,6 +201,8 @@ a.mirage {color:#8D999F}
 
 .clear {clear:both;}
 
+.centerd {margin:0 auto}
+
 // --------------------------------------------------------------
 // FONTS
 // --------------------------------------------------------------
@@ -205,6 +215,8 @@ a.mirage {color:#8D999F}
 .quicksand {font-family:$font-body}
 
 // ----- FONT SIZE ----- // 
+
+.size12 {font-size:14px}
 
 .s-size {font-size:$font-default-size;}
 
@@ -532,7 +544,20 @@ body.login #content .devise-shared {
 //  ABOUT
 // --------------------------------------------------------------
 
-#about {background-color:$primary-color; color:#fff;}
+
+
+#about {
+
+	-webkit-filter: grayscale(100%); 
+	filter: grayscale(100%);
+	background:url(bg.JPG) no-repeat center center fixed;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:300px;
+
+}
 
 // --------------------------------------------------------------
 //  FOOTER
@@ -546,4 +571,18 @@ footer ul li a {color:#F27F5C !important;}
 
 span.copyright {float:right;}
 
+// --------------------------------------------------------------
+//  Blog
+// --------------------------------------------------------------
+
+#blog {
+
+	background:url(http://i58.tinypic.com/23st89f.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:300px;
+
+}
 
