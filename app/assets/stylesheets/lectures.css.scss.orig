@@ -548,6 +548,10 @@ body.login #content .devise-shared {
 
 #about {
 
+<<<<<<< HEAD
+=======
+	// background:#202020;
+>>>>>>> blog
 	-webkit-filter: grayscale(100%); 
 	filter: grayscale(100%);
 	background:url(bg.JPG) no-repeat center center fixed;
