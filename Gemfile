@@ -11,6 +11,9 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'simple_form'
 
+# Email sender
+gem 'mandrill-api'
+
 # ActiveAdmin
 gem "font-awesome-rails"
 gem 'activeadmin', '~> 1.0.0.pre1'
@@ -61,8 +64,6 @@ group :development, :test do
   # Rspec test 
   gem 'rspec-rails', '~>3.0'
   
-  # Heroku recommends to add this for devise mailer 
-  gem 'foreman'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
