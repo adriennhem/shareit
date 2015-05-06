@@ -21,6 +21,9 @@ gem 'ckeditor'
 # authorization
 gem "cancan"
 
+# local variables
+gem "figaro"
+
 # calendar gem
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
@@ -58,6 +61,8 @@ group :development, :test do
   # Rspec test 
   gem 'rspec-rails', '~>3.0'
   
+  # Heroku recommends to add this for devise mailer 
+  gem 'foreman'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
