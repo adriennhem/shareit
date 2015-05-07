@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  
 
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -15,7 +14,8 @@ Rails.application.routes.draw do
 
   get 'pages/blog'
 
-
+  match '/contacts',     to: 'contacts#new',             via: 'get'
+  resources "contacts", only: [:new, :create]
 
   devise_for :users
   

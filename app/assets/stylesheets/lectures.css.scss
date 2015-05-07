@@ -7,11 +7,6 @@
 // --------------------------------------------------------------
 
 
-@font-face {
-    font-family: 'Menlo';
-    src: url('/assets/HDV_Peace.eot');
-}
-
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(http://fonts.googleapis.com/css?family=Quicksand:300,400);
 
@@ -84,6 +79,8 @@ h1 {font-size:$font-xxl-size; color:#384046;}
 h2 {font-size:$font-xl-size;}
 
 .alert {z-index:2; margin:35px 0;}
+
+.hidden { display: none; }
 
 // --------------------------------------------------------------
 // COLORS

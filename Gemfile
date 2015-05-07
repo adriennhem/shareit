@@ -10,7 +10,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'simple_form'
-
+gem 'mail_form'
 # Email sender
 gem 'mandrill-api'
 
