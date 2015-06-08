@@ -15,14 +15,17 @@
  
       
       <ul class="nav navbar-nav navbar-left">
-        <li><%= link_to "Workshopr.", root_path %></li>
+        <li><%= link_to root_path do %>
+        <%= image_tag("weblogo3.png") %>
+        <% end %>
+        </li>
         </ul>
        
       
       <ul class="nav navbar-nav navbar-right">
          
         <li><%= link_to 'Workshops', lectures_path %></li>
-        <li><%= link_to 'Upcoming Events', pages_upcoming_path %></li>
+        <li><%= link_to 'Events', pages_upcoming_path %></li>
          <li><%= link_to 'Blog', pages_blog_path %></li>
           <% if user_signed_in? %>
         <li><%= link_to current_user.first_name,  edit_user_registration_path  %></li>
@@ -30,8 +33,9 @@
         <% else %>
 
         
-        <li><%= link_to 'Register',  new_user_registration_path %></li>
-        <li><p class="navbar-btn"> <%= link_to 'Sign In', new_user_session_path, class: "btn btn-primary" %></p></li>
+        <li><%= link_to 'Register', new_user_registration_path %></li>
+
+        <li><p class="navbar-btn"> <%= link_to 'Sign In', '#sign_in', class: "btn btn-primary", data: {toggle: "modal", target: "#sign_in"}  %></p></li>
         <% end %>
 
       </ul>

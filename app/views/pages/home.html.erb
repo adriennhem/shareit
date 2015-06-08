@@ -1,27 +1,21 @@
 <div class="row">
   <div id="main-homepage">
     <div class="container-main-homepage container center vertical">
-      <h1 class="burnt large small-caps"> What if you could learn things that matter?</h1>
-      <%= link_to "View Workshops", lectures_path, class: "btn btn-primary bg-elephant" %>
+      <h1 class="white large small-caps"> What if you could learn things that matter?</h1>
+      <%= link_to "View Workshops", lectures_path, class: "btn btn-primary" %>
     </div>
   </div>
 </div> <!-- .row #main-homepage -->
 
 
-<div class="row height610">
-  <div class="container width700 vertical center">
-    <h1>Learn competences that will skyrocket your career</h1>
-    <p class="margin-s">No need to be a genius to understand that today's job market is getting increasingly complex. Companies are looking for people with double competences. In educational institutions you learn models and theories but not how to apply them in real life. We wo rk hard to bridge this gap between education and real life.</p>
-    <i class="fa fa-rocket margin-s purple big"></i>
-  </div>
-</div>
+<%= render 'section1' %>
 
 
-<div class="row height610 border-top bg-blackhaze">
+<div class="row height610 border-top bg-concrete">
   <div class="container  width700 vertical center">
     <h1>Learn at your own pace</h1>
     <p class="margin-s">Because everyone is tired after a long day of work, our videos won't last more than 20 minutes!</p>
-    <i class="fa fa-calendar margin-s burnt big"></i>
+    <i class="fa fa-calendar margin-s shamrock big"></i>
 
   </div>
 </div>
@@ -31,12 +25,12 @@
   <div class="container width700 vertical center">
     <h1>Build your own projects</h1>
     <p class="margin-s">Reading some stuffs about some stuffs is interesting but how cool it is to build your own project?</p>
-    <i class="fa fa-laptop margin-s fountain big"></i>
+    <i class="fa fa-laptop margin-s shamrock big"></i>
   </div>
 </div>
 
 
-<div class="row" id="lectures-list">
+<div class="row bg-concrete" id="lectures-list">
   <h1>Jump in!</h1>
   <p class="center margin-top-negative mb-60">We just got started, try our HTML workshop and build your first website.</p>
   <div class="container">
@@ -46,7 +40,7 @@
             <div class="lecture-box">
               <%= image_tag lecture.picture.url(:medium) %>
               <p><%= truncate(lecture.description, length: 80) %> </p>
-              <%= link_to "Enroll Now", lecture, class: "btn btn-default bg-fountain" %>
+              <%= link_to "Enroll Now", lecture, class: "btn btn-primary" %>
             </div> <!-- .lecture-box -->
           </div> <!-- .col-md-4 -->
         <% end %>
@@ -55,46 +49,7 @@
 </div> <!-- .row -->
 
 
-<div class="row">
-  <div class="container-fluid" id="container-testimonial">
-    <h1>What people say about us</h1>
-
-       <div class="col-md-12">
-        <div class="col-md-8 pull-right">
-        <p class="medium">I was able <b>to replicate what I learnt</b> after only few hours!</p> 
-        <span class="purple montserrat">- Mohammed</span>
-        </div>
-        <div class="col-md-4 pull-left">
-         <%= image_tag("mo.jpg", height: "250", width: "250") %>
-        </div>
-      </div>
-
-      <div class="col-md-12">
-        <div class="col-md-9 pull-right">
-          <div class="col-md-7">
-              <p class="medium">Lorem <b>ipsum dolor sit amet,</b> consectetur adipisicing elit.</p> 
-              <span class="purple montserrat">- Mohammed</span>
-          </div>
-        <div class="col-md-5 float">
-         <%= image_tag("mo.jpg", height: "250", width: "250") %>
-        </div>  
-       
-        </div>
-      </div>
-
-      <div class="col-md-12">
-        <div class="col-md-8 pull-right">
-        <p class="medium">Learning about web development was <b>really fun!</b></p> 
-        <span class="purple montserrat">- Gowshik</span>
-        </div>
-        <div class="col-md-4">
-         <%= image_tag("raj.jpg", height: "250", width: "250") %>
-        </div>
-      </div>
-
-
-  </div> <!-- #container-testimonial -->
-</div> <!-- .row -->
+<%= render 'testimonial' %>
 
 <%= render 'layouts/footer' %>
 

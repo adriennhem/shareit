@@ -1,13 +1,29 @@
-<div class="row bg-elephant">
-  <footer>
-    <div class="container">
-    <ul>
-      <li><%= link_to 'About', pages_about_path %></li>
-      <li><%= link_to "Terms of Service" %></li>
-       <li><%= link_to "Contact Us", contacts_path %></li>
-    </ul>
-    <span class="copyright">&copy;2015 Workshopr. LTD.</span>
-    <div class="clear"></div>
-    </div>
-  </footer>
+<div class="row bg-footer">
+  <div class="container footer">
+    <ul class="footer-main-list">
+      <ul class="inset footer-list-1">
+        <li><h1 class="shamrock">Workshopr&copy;</h1></li>
+        <li><%= link_to 'About', pages_about_path %></li>
+        <li><%= link_to 'Events', pages_upcoming_path %></li>
+        <li><%= link_to 'Blog', pages_blog_path %></li>
+        <li><%= link_to "Contact Us", contacts_path %></li>
+        <li><%= link_to "Terms of Service" %></li>
+        <li><%= link_to "Privacy Policy" %></li>
+      </ul>
+
+      <ul class="inset footer-list-2">
+        <li><h1 class="shamrock">Social</h1></li>
+        <li><%= link_to 'Facebook', 'https://www.facebook.com/workshopr', target: '_blank' %></li>
+        <li><%= link_to 'Twitter', 'https://twitter.com/workshopr', target: '_blank' %></li>
+        <li><%= link_to 'Instagram', 'https://instagram.com/Workshopr', target: '_blank' %></li>
+      </ul>
+
+      <ul class="inset footer-list-3">
+       <li><h1 class="shamrock">Newsletter</h1></li>
+       <li><span>Want to get exclusive offers? Join our email newsletter</span></li>
+       <li><%= render 'newsletter'%></li>
+      </ul>
+     
+    </ul> 
+  </div>
 </div>
