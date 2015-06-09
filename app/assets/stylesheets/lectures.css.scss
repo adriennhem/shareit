@@ -1,3 +1,4 @@
+
 // Place all the styles related to the lectures controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
@@ -5,7 +6,6 @@
 // --------------------------------------------------------------
 // FONTS 
 // --------------------------------------------------------------
-
 
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(http://fonts.googleapis.com/css?family=Hind:400,700,600,500,300);
@@ -75,7 +75,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	color:#333333;
- 	font-family:$font-title;
+ 	font-family: $font-body;
  	font-weight:700;
  	/*font-variant: small-caps;*/
  	text-transform: uppercase;
@@ -484,95 +484,31 @@ a.btn-two-colors:hover {
 
 
 // --------------------------------------------------------------
-// LOGIN
+// SIGNUP
 // --------------------------------------------------------------
 
+#signup {padding:40px 40px; margin:0 auto;}
 
-body.login {
-  position: initial;
-  background: #f5f5f5;
-  padding-top: 0;
-}
+#signup h1 {margin-bottom:30px;}
 
-body.login #content {
-  max-width: 400px;
-  margin: 50px auto;
-}
+#signup-form {margin-left:70px;}
 
-body.login #content .panel-default {
-	box-shadow:1px 2px 2px 1px #eeeeee;
-}
+#signup-form label {font-weight:300;}
 
-body.login #content h2 {
-	font-size:32px;
-	margin: 50px auto;
-	text-align:center;
-}
+#signup-form input {width:370px !important; margin-bottom:10px}
 
-.panel-lock {
-	width:300px;
-	margin:0 auto;
-}
+#signup-form input.btn-primary-big {margin-top:20px; padding:20px 150px;}
 
-.panel-lock .field {
-	margin:50px 0;
-}
-
-.panel-lock label {
-	margin:15 auto;
-	font-size:16px;
-}
+#signup-form a {color:#44CB9B; font-size:14px;}
 
 
-body.login #content .form-control {
-  display: block;
-  width: 100%;
-  height: 36px;
-  padding: 8px 12px;
-  font-size: 13px;
-  line-height: 1.42857143;
-  color: #333333;
-  background-color: #f7f7f7;
-  background-image: none;
-  border-radius:0px;
-  border: none; 
-  border-bottom:3px solid #64b5f6;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  transition: all border-color ease-in-out .15s, box-shadow ease-in-out .15s ease-out;
-}
+// --------------------------------------------------------------
+// RESET PASSWORD
+// --------------------------------------------------------------
 
-body.login #content .form-control:focus {
-	border-radius:0px;
-	border-bottom:10px solid #64b5f6;
-  outline: 0;
-  transition: border-bottom 0.1s ease-in;
-  box-shadow:none;
-}
-body.login #content .form-control::-moz-placeholder {
-  color: #cccccc;
-  opacity: 1;
-}
+.reset_password {margin:0 auto;}
 
-body.login #content .actions {
-	text-align:center;
-}
-
-body.login #content .actions button {
-	text-align:center;
-	background:#2196f3;
-	color:#fff;
-	width:200px;
-	height:40px;
-	font-size:20px;
-	border:none;
-}
-
-body.login #content .devise-shared {
-	text-align:center;
-	margin-top:10px;
-	margin:20px 0;
-}
+#reset_password form {margin: 0 auto}
 
 // --------------------------------------------------------------
 //  ABOUT
