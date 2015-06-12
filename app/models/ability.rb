@@ -5,7 +5,7 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
       user ||= User.new 
-        can :manage, User
+        can :manage, User, :user_id => user.id
         cannot :manage, Lecture
         cannot :manage, Lesson
         can :read, :all

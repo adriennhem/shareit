@@ -25,6 +25,8 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
+  resources :profiles
+
   
   # root 'pages#home'
 

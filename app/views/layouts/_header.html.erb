@@ -28,7 +28,7 @@
         <li><%= link_to 'Events', pages_upcoming_path %></li>
          <li><%= link_to 'Blog', pages_blog_path %></li>
           <% if user_signed_in? %>
-        <li><%= link_to current_user.first_name,  edit_user_registration_path  %></li>
+        <li><%= link_to current_user.email, profile_path(current_user)  %></li>
         <li><p class="navbar-btn"> <%= link_to 'Sign Out',  destroy_user_session_path, method: :delete, class: "btn btn-primary" %></p></li>
         <% else %>
 
