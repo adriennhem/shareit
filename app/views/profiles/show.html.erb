@@ -1,6 +1,18 @@
-<% if @user %>
+<div class="container">
+	<h1><%= @user.email %></h1>
+	<%= link_to 'My Account', edit_user_registration_path %>
+	<%= link_to 'Workshops', lectures_path %>
 
-<%= @user.email %>
 
-<% end %>
+	<h1 class="page-header">My Courses</h1>
+		<% @user.lectures.each do |lecture| %>
+			<div class="col-md-4 margin-s mb-60">
+	          <div class="lecture-box">
+	            <%= image_tag lecture.picture.url(:medium) %>
+	            <p class="pad5"><%= truncate(lecture.description, length: 80) %> </p>
+	           <%= link_to 'Take the Lecture', lecture_path %>
+	          </div> <!-- .lecture-box -->
+	        </div> <!-- .col-md-4 -->
+		<% end %>
 
+</div>

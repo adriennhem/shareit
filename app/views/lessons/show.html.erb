@@ -2,6 +2,12 @@
 
     <div class="container width960">
          <%= link_to 'Back', @lecture %>
+         <% if @previous %>
+            <%= link_to "Previous", [@lecture, @previous] %>
+         <% end %>
+          <% if @next %>
+            <%= link_to "Next", [@lecture, @next] %>
+         <% end %>
 	<div class="center">
 		<%= @lesson.vid.html_safe %>
 	</div>

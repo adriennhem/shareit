@@ -9,7 +9,11 @@
           <div class="lecture-box">
             <%= image_tag lecture.picture.url(:medium) %>
             <p class="pad5"><%= truncate(lecture.description, length: 80) %> </p>
-             <%= link_to "Start Now", lecture, class: "btn btn-default bg-fountain" %>
+
+            <p> 
+           
+            </p>
+            <%= link_to 'Enroll Now', enrollments_path(@enrollment, enrollment: {user_id: 'current_user.id', lecture_id: lecture.id}), :method => :post %>
           </div> <!-- .lecture-box -->
         </div> <!-- .col-md-4 -->
       <% end %>

@@ -13,6 +13,8 @@ class LessonsController < ApplicationController
   def show
     @lecture = Lecture.find(params[:lecture_id])
     @lesson = @lecture.lessons.find(params[:id])
+    @previous = @lecture.lessons.where("id < ?", params[:id]).order(:id).first   
+    @next = @lecture.lessons.where("id > ?", params[:id]).order(:id).first 
   end
 
   # GET /lessons/new

@@ -8,4 +8,11 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
   validates :email, uniqueness: true
   validates_format_of :email, with: /\@grenoble-em\.com/, message: 'You should have an email from grenoble-em.com'
+
+
+  # User / lecture relationship
+  has_many :enrollments
+  has_many :lectures, through: :enrollments
+
+  accepts_nested_attributes_for :enrollments
 end
