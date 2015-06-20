@@ -13,7 +13,7 @@
             <p> 
            
             </p>
-            <%= link_to 'Enroll Now', enrollments_path(@enrollment, enrollment: {user_id: 'current_user.id', lecture_id: lecture.id}), :method => :post %>
+            <%= link_to 'Enroll Now', enrollments_path(@enrollment, enrollment: {user_id: 'current_user.id', lecture_id: lecture.id}), :method => :post, data: {confirm: 'are you sure?'} %>
           </div> <!-- .lecture-box -->
         </div> <!-- .col-md-4 -->
       <% end %>
