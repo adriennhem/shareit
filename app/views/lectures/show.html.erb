@@ -14,11 +14,16 @@
 <% @lecture.chapters.each do |chapter| %>
 	<table>
 		<tr>
-			<th><h2><%= chapter.title %></h2></th>
+			<th><h2><%= chapter.title %></h2> <span class="chapter-duration"><%= chapter.total_duration %></span></th>
 		</tr>
 		<% chapter.lessons.each do |lesson| %>
-			<tr>
-				<td><%= lesson.title %>	<%= link_to "Start lesson",  [@lecture, lesson] %> </td>
+			<tr class="lesson-row">
+				<td>
+					<span class="lesson-title"><%= lesson.title %></span>
+					<span class="lesson-description"><%= lesson.video_duration %></span>
+					<%= lesson.short_description %>
+					<span class="lesson-link"><%= link_to "Start lesson",  [@lecture, lesson] %></span>
+				</td>
 			</tr>
 		<% end %> 
 	</table>

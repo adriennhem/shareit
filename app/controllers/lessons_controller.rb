@@ -34,7 +34,7 @@ class LessonsController < ApplicationController
   # POST /lessons.json
   def create
     @chapter = Chapter.find(params[:chapter_id])
-    @lesson = @chapter.lessons.build(params[:lesson].permit(:title, :description, :vid, :etape, :chapter_id))
+    @lesson = @chapter.lessons.build(params[:lesson].permit(:title, :description, :vid, :etape, :chapter_id,  :short_description, :video_duration))
     if @lesson.save
     redirect_to lecture_path(@lecture)
   else 
@@ -74,7 +74,7 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:title, :description, :vid, :etape)
+      params.require(:lesson).permit(:title, :description, :vid, :etape, :short_description, :video_duration)
     end
 end
 end

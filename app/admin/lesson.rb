@@ -1,5 +1,5 @@
 ActiveAdmin.register Lesson do
-  permit_params :title, :descriptions, :vid, :etape
+  permit_params :title, :descriptions, :vid, :etape, :short_description, :video_duration
   
   belongs_to :chapter
 

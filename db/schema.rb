@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150824112610) do
+ActiveRecord::Schema.define(version: 20150825180804) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -55,10 +55,11 @@ ActiveRecord::Schema.define(version: 20150824112610) do
   create_table "chapters", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.integer  "number"
     t.integer  "lecture_id"
+    t.string   "total_duration"
   end
 
   add_index "chapters", ["lecture_id"], name: "index_chapters_on_lecture_id"
@@ -111,12 +112,14 @@ ActiveRecord::Schema.define(version: 20150824112610) do
   create_table "lessons", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.integer  "lecture_id"
     t.text     "vid"
     t.integer  "etape"
     t.integer  "chapter_id"
+    t.string   "short_description"
+    t.string   "video_duration"
   end
 
   create_table "posts", force: :cascade do |t|

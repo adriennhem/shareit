@@ -346,7 +346,7 @@ nav.navbar.shrink {
 
 
 #main-homepage {
-	background:url(bw-room.JPG) no-repeat center center fixed;
+	background:url('<%= asset_path("bw-room.JPG") %>') no-repeat center center fixed;
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -356,7 +356,7 @@ nav.navbar.shrink {
 }
 
 #bg-section-home-1 {
-	background:url(bg-section-home-1.png) no-repeat center center;
+	background:url('<%= asset_path("bg-section-home-1.png") %>') no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -664,7 +664,13 @@ a.lesson.btn-primary {
 //  Lecture SHOW
 // --------------------------------------------------------------
 
+th h2 {
+	display: inline-block;
+}
 
+th span {
+	margin-left: 10px;
+}
 
 td {
 	border: 1px solid #D4D4D4;
@@ -674,4 +680,12 @@ td {
 td:hover {
 	background:#E8EBF0;
 	box-shadow: 5px 5px 5px solid #D4D4D4;
+}
+
+span.lesson-title {
+	color:red;
+}
+
+span.lesson-link {
+	float: right;
 }

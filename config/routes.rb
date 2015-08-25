@@ -14,10 +14,12 @@ Rails.application.routes.draw do
 
   get 'pages/blog'
 
+  get 'pages/signout'
+
   match '/contacts',     to: 'contacts#new',             via: 'get'
   resources "contacts", only: [:new, :create]
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => :registrations }
   
   resources :lectures do 
       # get 'outline'

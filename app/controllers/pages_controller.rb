@@ -12,6 +12,8 @@ class PagesController < ApplicationController
   def upcoming
   end
 
+  def signout
+  end
 
   def blog
   	@posts = Post.all
