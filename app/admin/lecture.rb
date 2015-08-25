@@ -3,7 +3,7 @@ ActiveAdmin.register Lecture do
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   permit_params :title, :description, :created_at, :updated_at, :category_id, :name, :picture_file_name, :teacher_id, :video,
   :picture, :picture_content_type, :picture_file_size, :picture_updated_at, 
-  lessons_attributes: [:id, :title, :description, :vid, :etape]
+  chapters_attributes: [:id, :title, :description, :number, lessons_attributes: [:id, :title, :description, :vid, :etape]]
 
   # or
   #
@@ -22,14 +22,20 @@ ActiveAdmin.register Lecture do
     f.input :description
     f.input :picture, :required => false, :as => :file
   end
-  f.inputs "Lessons" do
-      f.has_many :lessons do |d|
+  f.inputs "Chapters" do
+    f.has_many :chapters do |c|
+      c.input :title
+      c.input :description
+      c.input :number
+      c.has_many :lessons do |d|
         d.input :etape
         d.input :title
         d.input :vid
         d.input :description, :as => :ckeditor
       end
     end
+  end
+
   f.actions
 end
 

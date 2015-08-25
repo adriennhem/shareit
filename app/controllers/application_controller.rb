@@ -10,8 +10,11 @@ class ApplicationController < ActionController::Base
 
 
   def after_sign_in_path_for(resource)
+    # redirect to lecture/admin for admins
     profile_path(current_user)
   end
+
+ 
   
     
 end

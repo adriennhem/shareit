@@ -20,7 +20,8 @@ Rails.application.routes.draw do
   devise_for :users
   
   resources :lectures do 
-    resources :lessons
+      # get 'outline'
+      resources :lessons
   end
 
   root 'pages#home'
@@ -28,6 +29,8 @@ Rails.application.routes.draw do
   resources :profiles
 
   resources :enrollments
+
+  resources :user_lessons
 
   
   # root 'pages#home'

@@ -1,31 +1,32 @@
+
+
 <div class="row bg-blackhaze">
 	<div class="container mb-60 width960">
 			<h1><%= @lecture.title %></h1>
-	</div>
-</div>
+			<p><%= @lecture.video.html_safe %></p>
 
-<div class="row bg-blackhaze">
-	<div class="container width960">
-		<%= @lecture.video.html_safe %>
+
+<% if current_user.enrollments %>
+
+
+<% end %>
+
+<% @lecture.chapters.each do |chapter| %>
+	<table>
+		<tr>
+			<th><h2><%= chapter.title %></h2></th>
+		</tr>
+		<% chapter.lessons.each do |lesson| %>
+			<tr>
+				<td><%= lesson.title %>	<%= link_to "Start lesson",  [@lecture, lesson] %> </td>
+			</tr>
+		<% end %> 
+	</table>
+<% end %>
+
+
 	</div>
 </div>
-	
-<div class="row bg-blackhaze">
-	<div class="container width960">
-	<p class="margin-s"><%= @lecture.description %></p>
-		<h1 class="margin-s">List of lessons</h1>
-		<div class="panel panel-default margin-s">
-		 <% @lessons.each do |lesson| %>
-				<div class="lesson-panel-body">
-					<span class="medium"><%= lesson.etape %>.</span>
-					<span class="medium"><%= lesson.title %></span>
-				 	<%= link_to [lesson.lecture, lesson], class: "float-right medium" do %>
-					<i class="fa fa-play-circle-o"></i>
-					<% end %>
-				</div>
-		<% end %>
-	</div> <!-- .container -->
-</div> <!-- .row -->
 
 
 

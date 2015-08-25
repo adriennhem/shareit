@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150612163335) do
+ActiveRecord::Schema.define(version: 20150824112610) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -57,7 +57,11 @@ ActiveRecord::Schema.define(version: 20150612163335) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "number"
+    t.integer  "lecture_id"
   end
+
+  add_index "chapters", ["lecture_id"], name: "index_chapters_on_lecture_id"
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -132,6 +136,14 @@ ActiveRecord::Schema.define(version: 20150612163335) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+  end
+
+  create_table "user_lessons", force: :cascade do |t|
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "user_id"
+    t.integer  "lesson_id"
+    t.boolean  "completed",  default: true
   end
 
   create_table "users", force: :cascade do |t|

@@ -4,7 +4,7 @@ ActiveAdmin.register Chapter do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :id
+  permit_params :id, :title, :description, :number, lessons_attributes: [:id, :title, :description, :vid, :etape]
   #
   # or
   #

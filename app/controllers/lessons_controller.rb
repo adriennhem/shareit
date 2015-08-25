@@ -13,8 +13,8 @@ class LessonsController < ApplicationController
   def show
     @lecture = Lecture.find(params[:lecture_id])
     @lesson = @lecture.lessons.find(params[:id])
-    @previous = @lecture.lessons.where("id < ?", params[:id]).order(:id).first   
-    @next = @lecture.lessons.where("id > ?", params[:id]).order(:id).first 
+    # @previous = @lecture.lessons.where("id < ?", params[:id]).order(:id).first   
+    # @next = @lecture.lessons.where("id > ?", params[:id]).order(:id).first 
   end
 
   # GET /lessons/new
@@ -33,10 +33,12 @@ class LessonsController < ApplicationController
   # POST /lessons
   # POST /lessons.json
   def create
-    @lecture = Lecture.find(params[:lecture_id])
-    @lesson = @lecture.lessons.create(params[:lesson].permit(:title, :description, :vid, :etape))
-
+    @chapter = Chapter.find(params[:chapter_id])
+    @lesson = @chapter.lessons.build(params[:lesson].permit(:title, :description, :vid, :etape, :chapter_id))
+    if @lesson.save
     redirect_to lecture_path(@lecture)
+  else 
+    redirect_to new_lecture_path
   end
 
   # PATCH/PUT /lessons/1
@@ -74,4 +76,5 @@ class LessonsController < ApplicationController
     def lesson_params
       params.require(:lesson).permit(:title, :description, :vid, :etape)
     end
+end
 end

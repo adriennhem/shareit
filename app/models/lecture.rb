@@ -4,13 +4,14 @@ class Lecture < ActiveRecord::Base
 	
 
 	belongs_to :category
-	has_many :lessons, dependent: :destroy 
+	has_many :lessons, through: :chapters, dependent: :destroy 
+	has_many :chapters
 	belongs_to :teacher
 
 	# For course user relationship 
 	has_many :enrollments 
 	has_many :users, through: :enrollments
 
-	accepts_nested_attributes_for :lessons
-	 accepts_nested_attributes_for :enrollments
+	accepts_nested_attributes_for :enrollments
+	accepts_nested_attributes_for :chapters
 end

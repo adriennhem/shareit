@@ -1,4 +1,4 @@
 class Lesson < ActiveRecord::Base
-	belongs_to :lecture
-
+	has_one :lecture, through: :chapter
+	belongs_to :chapter 
 end

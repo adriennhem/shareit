@@ -17,9 +17,13 @@ class LecturesController < ApplicationController
   # GET /lectures/1.json
   def show
     @teacher = Teacher.all
-    @lessons = Lesson.where(lecture_id: @lecture.id).order(:etape)
   end
 
+
+  def outline 
+  end
+
+  
   # GET /lectures/new
   def new
     @lecture = Lecture.new
@@ -80,6 +84,6 @@ class LecturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lecture_params
-      params.require(:lecture).permit(:title, :description, :category_id, :picture, :teacher_id, :video, :enrollment_id, :category_name)
+      params.require(:lecture).permit(:title, :description, :category_id, :picture, :teacher_id, :video, :enrollment_id)
     end
 end

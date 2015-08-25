@@ -2,7 +2,9 @@
 
 <div class="row bg-blackhaze border-top">
   <div class="container mb-150">
+     <h1 class="margin-s">Courses Library</h1>
     <div class="container-left col-md-8">
+     
       <div class="col-md-12">
        <% @lectures.each do |lecture| %>
         <div class="col-md-6 lecture margin-s">
@@ -14,6 +16,11 @@
            
             </p>
             <%= link_to 'Enroll Now', enrollments_path(@enrollment, enrollment: {user_id: 'current_user.id', lecture_id: lecture.id}), :method => :post, data: {confirm: 'are you sure?'} %>
+
+         
+
+
+
           </div> <!-- .lecture-box -->
         </div> <!-- .col-md-4 -->
       <% end %>
