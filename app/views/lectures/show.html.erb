@@ -1,4 +1,9 @@
-
+<script>
+  (function() {var s=document.createElement('script');
+    s.type='text/javascript';s.async=true;
+    s.src=('https:'==document.location.protocol?'https':'http') +
+    '://workshoprs.groovehq.com/widgets/18dffb65-bf2b-4767-907a-79ab573d2848/ticket.js'; var q = document.getElementsByTagName('script')[0];q.parentNode.insertBefore(s, q);})();
+</script>
 
 <div class="row bg-blackhaze">
 	<div class="container mb-60 width960">
@@ -8,20 +13,41 @@
 
 
 <% @lecture.chapters.each do |chapter| %>
+
+<h2><i class="fa fa-graduation-cap"></i> <%= chapter.title %></h2> <span class="chapter-duration"><%= chapter.total_duration %></span>
+
 	<table>
-		<tr>
-			<th><h2><%= chapter.title %></h2> <span class="chapter-duration"><%= chapter.total_duration %></span></th>
-		</tr>
+		
+			
+		
 		<% chapter.lessons.each do |lesson| %>
+			
 			<tr class="lesson-row">
-				<td>					
-					<span class="lesson-title"><%= lesson.title %></span>
-					<span class="lesson-description"><%= lesson.video_duration %></span>
-					<%= lesson.short_description %>
-					<span class="lesson-link"><%= link_to "Start lesson",  [@lecture, lesson] %></span>
+				
 					<% lesson.user_lessons.where(user_id: @user.id).each do |f|  %>
-					<span><% if f.completed %>ok <% end %></span>
+						
+							<% if f.completed %>
+							<td class="completed">
+								<i class="fa fa-check"></i>
+							</td>
+							<% else %>
+							<td class="not-completed">
+								<i class="fa fa-check"></i>
+							</td>
+							<% end %>
+							
 					<% end %>
+				
+				<td>
+					<%= link_to [@lecture, lesson] do %>
+						<%= lesson.title %>
+					<% end %>
+					<span class="lesson-title"></span>
+					
+					<%= lesson.short_description %>
+				</td>
+				<td class="video-duration">
+					<span class="lesson-description"><%= lesson.video_duration %></span>
 				</td>
 			</tr>
 			
