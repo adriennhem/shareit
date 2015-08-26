@@ -16,6 +16,7 @@ class LecturesController < ApplicationController
   # GET /lectures/1
   # GET /lectures/1.json
   def show
+    @user = current_user
     @teacher = Teacher.all
   end
 

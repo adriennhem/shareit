@@ -6,10 +6,6 @@
 			<p><%= @lecture.video.html_safe %></p>
 
 
-<% if current_user.enrollments %>
-
-
-<% end %>
 
 <% @lecture.chapters.each do |chapter| %>
 	<table>
@@ -18,13 +14,17 @@
 		</tr>
 		<% chapter.lessons.each do |lesson| %>
 			<tr class="lesson-row">
-				<td>
+				<td>					
 					<span class="lesson-title"><%= lesson.title %></span>
 					<span class="lesson-description"><%= lesson.video_duration %></span>
 					<%= lesson.short_description %>
 					<span class="lesson-link"><%= link_to "Start lesson",  [@lecture, lesson] %></span>
+					<% lesson.user_lessons.where(user_id: @user.id).each do |f|  %>
+					<span><% if f.completed %>ok <% end %></span>
+					<% end %>
 				</td>
 			</tr>
+			
 		<% end %> 
 	</table>
 <% end %>

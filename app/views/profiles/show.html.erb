@@ -10,10 +10,12 @@
 	          <div class="lecture-box">
 	           
 	            <%= image_tag lecture.picture.url(:medium) %>
-
-
-	          
 	            <%= lecture.lessons.count %>
+
+	            <% lecture.lessons.each do |lesson| %>
+	            <%= lesson.user_lessons.where(user_id: @user_id).total %>
+
+	            <% end %>
 
 	            
 
