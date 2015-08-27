@@ -16,16 +16,13 @@
 		<% @user.lectures.each do |lecture| %>
 			<div class="col-md-4 margin-s mb-60">
 	          <div class="lecture-box">
-	           
 	            <%= image_tag lecture.picture.url(:medium) %>
-	            <%= lecture.lessons.count %>
 
-	            <% lecture.lessons.each do |lesson| %>
-	            <%= lesson.user_lessons.where(user_id: @user_id).total %>
+	            <p>You have completed <%= lecture.lessons.select{ |l| l.users.include? current_user }.count %> out of  <%= lecture.lessons.size %> lessons</p>
+	           
+	           <progress max="<%= lecture.lessons.size %>" value="<%= lecture.lessons.select{ |l| l.users.include? current_user }.count %>"></progress>
 
-	            <% end %>
-
-	  
+	           
 	            <p class="pad5"><%= truncate(lecture.description, length: 80) %> </p>
 	          <%= link_to "Start Now", lecture, class: "btn btn-primary" %>
 	          </div> <!-- .lecture-box -->
