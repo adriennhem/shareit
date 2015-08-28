@@ -19,6 +19,7 @@
 $navbar-default-bg:#333333;
 $navbar-border-radius:0px;
 $navbar-default-border:none;
+$page-header-border-color:#D4D4D4;
 
 // --------------------------------------------------------------
 // SASS COLORS
@@ -179,6 +180,8 @@ a.mirage {color:#8D999F}
 .mb-60 {margin-bottom:60px;}
 
 .mb-150 {margin-bottom:150px}
+
+.mt-negative-15 {margin-top:-15px; }
 
 .margin-top-negative {margin-top:-70px;}
 
@@ -454,16 +457,33 @@ a.btn-two-colors:hover {
 
 .lecture-box {
 		background:#fff;
-		height:350px;
-		width:303px;
+		height:300px;
+		width:550px;
 		border:$default-border-color;
+		padding: 10px 10px;
 }	
+
+.lecture-index {
+	width:700px !important;
+}
+
+.lecture-box h1 {
+	font-size:36px;
+}
+
+.lecture-box p.mt-negative-15 {
+	color:#c6c6c6;
+}
 
 .lecture-box:hover {
 	transition: all 0.1s ease-in;
 	box-shadow: inset 0 1px #fff, 0 1px 3px #EBEBEB;
 	-moz-box-shadow: inset 0 1px #fff, 0 1px 3px #EBEBEB;
 	-webkit-box-shadow: inset 0 1px #fff, 0 1px 3px #EBEBEB;
+}
+
+p.enrolled-users {
+	font-weight:400;
 }	
 
 // --------------------------------------------------------------
@@ -713,4 +733,42 @@ span.lesson-link {
 // --------------------------------------------------------------
 
 
+
+// --------------------------------------------------------------
+//  Profile
+// --------------------------------------------------------------
+
+.bg-grey {
+	background: #E8EBF0;
+}
+
+progress[value] {
+   -webkit-appearance: none;
+   appearance: none;
+	height:25px;
+	width:100%;
+
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #eeeeee;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25) inset;
+}
+
+progress[value]::-webkit-progress-value {
+  background:#48CC9D;
+  background-image:
+	   -webkit-linear-gradient(-45deg, 
+	                           transparent 40%, rgba(0, 0, 0, .1) 33%, 
+	                           rgba(0,0, 0, .1) 66%, transparent 66%);
+
+    border-radius: 2px; 
+    background-size: 45px 25px, 100% 100%, 100% 100%;
+}
+
+
+span.by-teacher {
+	color:#48CC9D;
+}
 

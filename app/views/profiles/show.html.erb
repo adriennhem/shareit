@@ -5,29 +5,41 @@
     '://workshoprs.groovehq.com/widgets/18dffb65-bf2b-4767-907a-79ab573d2848/ticket.js'; var q = document.getElementsByTagName('script')[0];q.parentNode.insertBefore(s, q);})();
 </script>
 
+<div class="row bg-grey">
+	<div class="container">
 
-<div class="container">
-	<h1><%= @user.email %></h1>
-	<%= link_to 'My Account', edit_user_registration_path %>
-	<%= link_to 'Workshops', lectures_path %>
+
 
 
 	<h1 class="page-header">My Courses</h1>
 		<% @user.lectures.each do |lecture| %>
-			<div class="col-md-4 margin-s mb-60">
+			<div class="col-md-6 margin-s mb-150">
 	          <div class="lecture-box">
-	            <%= image_tag lecture.picture.url(:medium) %>
 
-	            <p>You have completed <%= lecture.lessons.select{ |l| l.users.include? current_user }.count %> out of  <%= lecture.lessons.size %> lessons</p>
+	          <%= link_to lecture do %>	
+	           <h1><%= lecture.title %></h1> 
+	           <% end %>
+
+	            <p><%= truncate(lecture.description, length: 150) %> <span class="by-teacher">by <%= lecture.teacher.name %></span> </p>
+	            
+	         
+
+
+	           <progress max="<%= lecture.lessons.size %>" value="<%= lecture.lessons.select{ |l| l.users.include? current_user }.count  %>"></progress>
+
+
+	            <h2><%= number_to_percentage( lecture.lessons.select{ |l| l.users.include? current_user }.count.to_f / lecture.lessons.size.to_f * 100, precision: 0) %> Complete</h2>
+
+	            <p class="mt-negative-15"><%= lecture.lessons.select{ |l| l.users.include? current_user }.count %> out of  <%= lecture.lessons.size %> lessons completed</p>
 	           
-	           <progress max="<%= lecture.lessons.size %>" value="<%= lecture.lessons.select{ |l| l.users.include? current_user }.count %>"></progress>
 
 	           
-	            <p class="pad5"><%= truncate(lecture.description, length: 80) %> </p>
-	          <%= link_to "Start Now", lecture, class: "btn btn-primary" %>
+	          
 	          </div> <!-- .lecture-box -->
 	        </div> <!-- .col-md-4 -->
 		<% end %>
 
+	</div>
 </div>
+
 

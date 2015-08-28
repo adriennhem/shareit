@@ -1,24 +1,26 @@
 
 
-<div class="row bg-blackhaze border-top">
+<div class="row bg-grey border-top">
   <div class="container mb-150">
      <h1 class="margin-s">Courses Library</h1>
     <div class="container-left col-md-8">
      
       <div class="col-md-12">
        <% @lectures.each do |lecture| %>
-        <div class="col-md-6 lecture margin-s">
-          <div class="lecture-box">
-            <%= image_tag lecture.picture.url(:medium) %>
-            <p class="pad5"><%= truncate(lecture.description, length: 80) %> </p>
+        <div class="col-md-7 lecture margin-s">
+          <div class="lecture-box lecture-index">
+           <h1><%= lecture.title %></h1> 
 
-            <p> 
+           <p class="enrolled-users">
+           <%= lecture.enrollments.count %> <i class="fa fa-user"></i> <span>Enrolled</span>
+           </p>
+
+            <p class="pad5"><%= truncate(lecture.description, length: 200) %> </p>
+
+            
            
             </p>
-            <%= link_to 'Enroll Now', enrollments_path(@enrollment, enrollment: {user_id: 'current_user.id', lecture_id: lecture.id}), :method => :post, data: {confirm: 'are you sure?'} %>
-
-         
-
+            <%= link_to 'Enroll Now', enrollments_path(@enrollment, enrollment: {user_id: 'current_user.id', lecture_id: lecture.id}), :method => :post, data: {confirm: 'are you sure?'}, class: "btn btn-primary" %>
 
 
           </div> <!-- .lecture-box -->
@@ -27,7 +29,7 @@
       </div> <!-- .col-md-12 -->
     </div> <!-- .container-left -->
   
-   <div class="container-right col-md-4 margin-s">
+   <div class="container-right col-md-3 margin-s">
       <% Category.all.each do |category| %>
       <div class="list-category bg-white center">
         <%= link_to category.name, lectures_path(category: category.name), class: "mirage" %>
