@@ -1,4 +1,5 @@
 class LecturesController < ApplicationController
+  before_action :authenticate_user!, :except => [:index]
   before_action :set_lecture, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
 
@@ -7,9 +8,9 @@ class LecturesController < ApplicationController
   def index
     if params[:category]
       @category_id = Category.find_by(name: params[:category]).id
-      @lectures = Lecture.where(category_id: @category_id).order("created_at DESC")
+      @lectures = Lecture.where(category_id: @category_id).order("created_at DESC").paginate(:page => params[:page], per_page: 5)
     else
-      @lectures = Lecture.all
+      @lectures = Lecture.paginate(:page => params[:page], per_page: 5)
     end
   end
 

@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'simple_form'
 gem 'mail_form'
+gem 'will_paginate', '~> 3.0.6'
 # Email sender
 gem 'mandrill-api'
 
