@@ -104,6 +104,10 @@ h2 {font-size:$font-xl-size;}
 
 .hidden { display: none; }
 
+a:hover {
+ cursor:pointer;
+}
+
 // --------------------------------------------------------------
 // COLORS
 // --------------------------------------------------------------
@@ -255,7 +259,7 @@ a.btn-primary:hover {
 
 a.btn {font-family:$font-body;}
 
-input.btn-primary-big {
+button.btn-primary-big, input.btn-primary-big {
 	padding:15px 50px;
 	text-decoration:none;
 	color:#fff !important;
@@ -266,10 +270,82 @@ input.btn-primary-big {
 	text-transform:uppercase;
 }
 
-input.btn-primary-big:hover {
+
+button.btn-primary-big, input.btn-primary-big:hover {
 	transition:all 0.1s ease-in;
 	background:#44CB9B !important;
 	border-color:#44CB9B !important;
+}
+
+a.btn-two-colors {
+	padding:15px 50px;
+	text-decoration:none;
+	color:#fff !important;
+	background:#333333;
+	border-color:#333333;
+	font-size:14px;
+	border-radius:0;
+	text-transform:uppercase;
+}
+
+a.btn-two-colors:hover {
+	transition:all 0.1s ease-in;
+	background:#44CB9B !important;
+	border-color:#44CB9B !important;
+}
+
+
+.btn-default {
+		color:#fff;
+		position:absolute;
+		bottom:10px;
+		font-size:18px;
+		margin:10px 70px;
+		padding:12px;
+		height:50px;
+		width:150px;
+		text-transform:uppercase;
+	}
+
+
+input.button, input.btn-primary {
+	text-shadow:1px #44CB9B !important;
+	margin-top:15px !important;
+	color:#fff !important;
+	background:#44CB9B !important;
+	border-color:#44CB9B !important;
+	font-weight:400 !important;
+	font-size:13px !important;
+	border-radius:0 !important;
+	text-transform:uppercase !important;
+}
+
+input.button:hover, input.btn-primary:hover {
+	background:#54DEAC !important;
+	border-color:#54DEAC !important;
+	transition:background 0.2s ease-in;
+}
+
+a.btn-primary-big {
+	padding:15px 20px;
+	text-decoration:none;
+	color:#fff !important;
+	background:#333333 !important;
+	border-color:#333333 !important;
+	font-size:14px;
+	border-radius:0 !important;
+	text-transform:uppercase;
+}
+
+a.btn-primary-big:hover {
+	transition:all 0.1s ease-in;
+	background:#44CB9B !important;
+	border-color:#44CB9B !important;
+}
+
+a.lesson.btn-primary {
+	padding: 15px 20px;
+	font-size: 14px;
 }
 
 
@@ -349,7 +425,7 @@ nav.navbar.shrink {
 
 
 #main-homepage {
-	background:url('<%= asset_path("bw-room.JPG") %>') no-repeat center center fixed;
+	background:url('<%= asset_path("bw-room.jpg") %>') no-repeat center center fixed;
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -359,7 +435,7 @@ nav.navbar.shrink {
 }
 
 #bg-section-home-1 {
-	background:url('<%= asset_path("bg-section-home-1.png") %>') no-repeat center center;
+	background:url('<%= asset_path("bg-section-home-1.jpg") %>') no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -379,22 +455,6 @@ nav.navbar.shrink {
 
 #content-section-home-1 a {margin-top:30px}
 
-a.btn-two-colors {
-	padding:15px 50px;
-	text-decoration:none;
-	color:#fff !important;
-	background:#333333;
-	border-color:#333333;
-	font-size:14px;
-	border-radius:0;
-	text-transform:uppercase;
-}
-
-a.btn-two-colors:hover {
-	transition:all 0.1s ease-in;
-	background:#44CB9B !important;
-	border-color:#44CB9B !important;
-}
 
 
 
@@ -420,60 +480,61 @@ a.btn-two-colors:hover {
 .portrait p {text-align:left; max-width:320px;}
 
 // --------------------------------------------------------------
-// LECTURES BOX
+// INDEX LECTURE
 // --------------------------------------------------------------
 
-#lectures-list, #main-library {
-	border-top:$default-border-color;
-
-	h1 {
-		text-align: center;
-		margin:100px auto;
-	}
-	
-	.col-md-4 {
-		margin:-20px auto 100px auto;
-	}
-
-	p {
-		padding:5px 10px;
-	}
-
+.container-index h1.margin-s {
+	margin-left: 30px;
 }
-
-.btn-default {
-		color:#fff;
-		position:absolute;
-		bottom:10px;
-		font-size:18px;
-		margin:10px 70px;
-		padding:12px;
-		height:50px;
-		width:150px;
-		text-transform:uppercase;
-	}
-
 
 
 .lecture-box {
 		background:#fff;
-		height:300px;
 		width:550px;
 		border:$default-border-color;
 		padding: 10px 10px;
+}
+
+
+.lecture-index-box iframe {
+	width:480px;
+	height:270px;
 }	
 
-.lecture-index {
-	width:700px !important;
+.lecture-index-box {
+	width:960px !important;
+	min-height:300px !important;
 }
 
-.lecture-box h1 {
-	font-size:36px;
+.lecture-index-description {
+	height: 270px;
+	padding-left: 35px;
+	margin-top: 20px;
 }
+
+.lecture-index-description h1 {
+	position: relative;
+	top: -45px;
+}
+
+p.enrolled-users {
+	margin-top: -50px !important;
+}
+
+p.lecture-description {
+	margin-top: 35px;
+	margin-bottom: 33px;
+}
+
 
 .lecture-box p.mt-negative-15 {
 	color:#c6c6c6;
 }
+
+.lecture-index-details {
+	margin-left:15px;
+}
+
 
 .lecture-box:hover {
 	transition: all 0.1s ease-in;
@@ -486,37 +547,10 @@ p.enrolled-users {
 	font-weight:400;
 }	
 
-// --------------------------------------------------------------
-// LIBRARY
-// --------------------------------------------------------------
-
-
-
-
-
-
-.list-category {border:$default-border-color; width:200px; padding:10px 10px;}
-
-// --------------------------------------------------------------
-// SHOW LECTURE  
-// --------------------------------------------------------------
-
-#lesson-band {border-bottom:$default-border-color; height:100px;}
-
-#lesson-description-container {}
-
-#lesson-container {background:#F6F9FA;}
-
-.lesson-panel-body {border:$default-border-color}
-
-.lesson-panel-body span {padding:10px 20px;}
-
-
-// --------------------------------------------------------------
-// CONTACT 
-// --------------------------------------------------------------
-
-
+.category-list {
+	margin-top: 20px;
+	margin-left: -20px;
+}
 
 // --------------------------------------------------------------
 // SIGNUP
@@ -587,23 +621,7 @@ span.copyright {margin-left:150px;}
 
 input.email {width:330px !important; height:32px !important; border-radius:0 !important}
 
-input.button, input.btn-primary {
-	text-shadow:1px #44CB9B !important;
-	margin-top:15px !important;
-	color:#fff !important;
-	background:#44CB9B !important;
-	border-color:#44CB9B !important;
-	font-weight:400 !important;
-	font-size:13px !important;
-	border-radius:0 !important;
-	text-transform:uppercase !important;
-}
 
-input.button:hover, input.btn-primary:hover {
-	background:#54DEAC !important;
-	border-color:#54DEAC !important;
-	transition:background 0.2s ease-in;
-}
 
 
 // --------------------------------------------------------------
@@ -645,32 +663,6 @@ span.help-inline {margin-left: 10px; color:red;}
 
 #contact-form input {width:418px !important; margin-bottom:10px}
 
-
-// --------------------------------------------------------------
-//  Button 
-// --------------------------------------------------------------
-
-a.btn-primary-big {
-	padding:15px 20px;
-	text-decoration:none;
-	color:#fff !important;
-	background:#333333 !important;
-	border-color:#333333 !important;
-	font-size:14px;
-	border-radius:0 !important;
-	text-transform:uppercase;
-}
-
-a.btn-primary-big:hover {
-	transition:all 0.1s ease-in;
-	background:#44CB9B !important;
-	border-color:#44CB9B !important;
-}
-
-a.lesson.btn-primary {
-	padding: 15px 20px;
-	font-size: 14px;
-}
 
 // --------------------------------------------------------------
 //  Edit Settings 
@@ -727,10 +719,6 @@ span.lesson-title {
 span.lesson-link {
 	float: right;
 }
-
-// --------------------------------------------------------------
-//  Signout
-// --------------------------------------------------------------
 
 
 

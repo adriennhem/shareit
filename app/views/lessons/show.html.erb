@@ -15,7 +15,11 @@
 
             <%= link_to 'Back', @lecture, class: "btn lesson btn-primary" %>
 
-          <%= link_to 'Mark as completed', user_lessons_path(@user_lesson, user_lesson: {user_id: current_user.id, lesson_id: @lesson.id}), :method => :post, class: 'btn btn-primary-big' %>
+            
+
+
+
+          <%= link_to 'Mark as complete', user_lessons_path(@user_lesson, user_lesson: {user_id: current_user.id, lesson_id: @lesson.id}), :method => :post, class: 'btn btn-primary-big', data: {disable_with: "Mark as complete <i class='fa fa-spinner fa-spin'></i>"} %>
 
 	<div class="center margin-s">
 		<%= @lesson.vid.html_safe %>

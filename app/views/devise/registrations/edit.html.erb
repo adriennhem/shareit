@@ -1,3 +1,4 @@
+<div class="row bg-grey">
 <div class="margin-s margin-l-l">
 
 <%= link_to "Back", :back, class: "btn-primary-big" %>
@@ -5,7 +6,7 @@
 </div>
 
 
-<div class="width550 bg-white margin-s mb-60">
+<div class="width550  margin-s mb-60">
 
 <h1 class="">Edit your information </h1>
 
@@ -27,7 +28,7 @@
    <%= f.input :password_confirmation, input_html: { class: 'form-control', autocomplete: "off" } %>
    <%= f.input :current_password, input_html: { class: 'form-control', label: "(we need your current password to confirm your changes)", autocomplete: "off" } %>
 
- <%= f.button :submit, "Update", class: "btn-primary-big" %>
+ <%= f.button :button, "Update", class: "btn-primary-big", data: {disable_with: "Update <i class='fa fa-spinner fa-spin'></i>"} %>
 <% end %>
 
 
@@ -35,6 +36,8 @@
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p> -->
 
 
+
+</div>
 
 </div>
 

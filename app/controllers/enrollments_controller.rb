@@ -9,7 +9,8 @@ class EnrollmentsController < ApplicationController
 			flash[:success] = "You have successfully enrolled."
 			redirect_to profile_path(current_user)
 		else 
-			redirect_to profile_path(current_user)
+			flash[:success] = "You are already enrolled."
+			redirect_to(:back)
 		end
 	end
 
