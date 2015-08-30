@@ -34,6 +34,10 @@ $secondary-color:#FF5543;
 $font-body-color:#666666;
 $background-color:#F6F9FA;
 
+$shamrock:#48CC9D;
+$lightGrey:#eeeeee;
+
+
 
 // --------------------------------------------------------------
 // SASS COLORS
@@ -65,26 +69,33 @@ html {text-rendering:optimizeLegibility;}
 
 html a {text-decoration:none !important;}
 
+a:hover {
+ cursor:pointer;
+}
+
+.container-application {
+	margin-top: -20px;
+}
+
 body {
 	font-family: 'Halant', serif;
 	font-weight:300;
 	padding-top:60px;
 	font-size:18px;
-	color:$font-body-color;
+	color:#666666;
 	line-height:32px;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	color:#333333;
- 	font-family: $font-body;
+ 	font-family:'Hind', sans-serif;
  	font-weight:700;
- 	/*font-variant: small-caps;*/
  	text-transform: uppercase;
  	}
 
 h1 {font-size:32px; color:#384046;}
 
-h2 {font-size:$font-xl-size;}
+h2 {font-size:28px;}
 
 .alert {
 	border-radius:0;
@@ -99,28 +110,18 @@ h2 {font-size:$font-xl-size;}
 	text-align: center; 
 	font-size: 14px; 
 	text-transform: uppercase;
-	font-family: $font-title;
+	font-family:'Montserrat', sans-serif;
 }
 
-.container-application {
-	margin-top: -20px;
-}
+span.help-inline {margin-left: 10px; color:red;}
 
 .hidden { display: none; }
 
-a:hover {
- cursor:pointer;
-}
+
 
 // --------------------------------------------------------------
 // COLORS
 // --------------------------------------------------------------
-
-a.bg-fountain:hover {background:#53BBB4}
-
-a.btn-default {color:#fff; border:none}
-
-a.btn-default:hover {color:#fff; border:none}
 
 a.mirage {color:#8D999F}
 
@@ -132,12 +133,11 @@ a.mirage {color:#8D999F}
 
   // ----- BACKGROUNDS ---- //
 
+  .bg-grey {
+	background: #E8EBF0;
+}
 
 .bg-concrete {background:#F4F4F4;}
-
-.bg-white {background:#fff !important}
-
-.bg-steel {background: #666666}
 
 .bg-footer {background:#333333;}
 
@@ -667,7 +667,7 @@ input.email {width:330px !important; height:32px !important; border-radius:0 !im
 	border-color:#333333 !important;
 }
 
-span.help-inline {margin-left: 10px; color:red;}
+
 
 #contact-form input {width:418px !important; margin-bottom:10px}
 
@@ -731,40 +731,40 @@ span.lesson-link {
 
 
 // --------------------------------------------------------------
-//  Profile
+//  PROFILE SETTINGS
 // --------------------------------------------------------------
 
-.bg-grey {
-	background: #E8EBF0;
+/* General properties */
+
+span.by-teacher {
+	color:$shamrock;
 }
+
+/*Progress bar show profile */
 
 progress[value] {
    -webkit-appearance: none;
    appearance: none;
 	height:25px;
 	width:100%;
-
 }
 
 progress[value]::-webkit-progress-bar {
-  background-color: #eeeeee;
+  background-color:$lightGrey;
   border-radius: 2px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25) inset;
 }
 
 progress[value]::-webkit-progress-value {
-  background:#48CC9D;
+  background:$shamrock;
   background-image:
 	   -webkit-linear-gradient(-45deg, 
 	                           transparent 40%, rgba(0, 0, 0, .1) 33%, 
 	                           rgba(0,0, 0, .1) 66%, transparent 66%);
 
-    border-radius: 2px; 
-    background-size: 45px 25px, 100% 100%, 100% 100%;
+  border-radius: 2px; 
+  background-size: 45px 25px, 100% 100%, 100% 100%;
 }
 
-
-span.by-teacher {
-	color:#48CC9D;
-}
+ 
 
