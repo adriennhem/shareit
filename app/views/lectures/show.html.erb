@@ -6,15 +6,24 @@
 </script>
 
 <div class="row bg-grey">
+
+	<div class="index-header center">
+       <h1><%= @lecture.title %></h1>
+       <h2>by <%= @lecture.teacher.name %></h2>
+    </div>
+
 	<div class="container mb-60 width960">
-			<h1><%= @lecture.title %></h1>
 			<p><%= @lecture.video.html_safe %></p>
 
 
 
 <% @lecture.chapters.each do |chapter| %>
 
-<h2><i class="fa fa-graduation-cap"></i> <%= chapter.title %></h2> <span class="chapter-duration"><%= chapter.total_duration %></span>
+<div class="chapter">
+<h2><%= chapter.title %> </h2> 
+<span class="chapter-duration">Total Duration: <%= chapter.total_duration %></span>
+</div>
+
 
 	<table>
 		
@@ -42,8 +51,8 @@
 					<%= link_to [@lecture, lesson] do %>
 						<%= lesson.title %>
 					<% end %>
-					<span class="lesson-title"></span>
 					
+					<br>
 					<%= lesson.short_description %>
 				</td>
 				<td class="video-duration">

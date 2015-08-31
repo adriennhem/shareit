@@ -6,12 +6,15 @@
 </script>
 
 <div class="row bg-grey">
-	<div class="container">
 
+	 <div class="index-header center">
+       <h1>Dashboard</h1>
+       <h2><%= current_user.email %></h2>
+     </div>
 
+	<div class="container profile">
 
-
-	<h1 class="page-header">My Courses</h1>
+	<h1 class="page-header">Enrolled Courses</h1>
 		<% @user.lectures.each do |lecture| %>
 			<div class="col-md-6 margin-s mb-150">
 	          <div class="lecture-box">

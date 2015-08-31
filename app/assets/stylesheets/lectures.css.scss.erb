@@ -459,9 +459,10 @@ nav.navbar.shrink {
 }
 
 .lecture-box {
-		background:#fff;
+		background:#F8F8F8;
 		border:$border-lilyWhite;
 		padding: 10px 10px;
+		border-radius: 10px;
 }
 
 
@@ -474,7 +475,6 @@ nav.navbar.shrink {
 .lecture-index-box {
 	width:960px !important;
 	min-height:290px !important;
-	background:#F8F8F8 ;
 }
 
 .lecture-index-description {
@@ -532,6 +532,7 @@ p.enrolled-users {
 	width:200px;
 	background:#F8F8F8;
 	min-height:100px;
+	border-radius: 10px;
 }
 
 .category-list a {
@@ -610,7 +611,7 @@ ul.footer-list-3 li:last-child {margin-top:15px}
 
 span.copyright {margin-left:150px;}
 
-input.email {width:330px !important; height:32px !important; border-radius:0 !important}
+.footer input.email {width:330px !important; height:32px !important; border-radius:0 !important}
 
 
 
@@ -633,6 +634,8 @@ input.email {width:330px !important; height:32px !important; border-radius:0 !im
 // --------------------------------------------------------------
 //  Contact
 // --------------------------------------------------------------
+
+.contact h1 {font-size: 48px;}
 
 .container-contact {margin: 70px auto;}
 
@@ -659,6 +662,18 @@ input.email {width:330px !important; height:32px !important; border-radius:0 !im
 //  Edit Settings 
 // --------------------------------------------------------------
 
+.settings a {
+	font-size: 22px;
+	margin-left: -60px;
+	color:$steel;
+}
+
+#edit-settings {
+	margin-left: 80px;
+}
+
+
+
 #edit-settings input {width:418px !important; margin-bottom:10px}
 
 #edit-settings input.btn-primary-big {padding:15px 0 !important;}
@@ -667,26 +682,44 @@ input.email {width:330px !important; height:32px !important; border-radius:0 !im
 //  Lecture SHOW
 // --------------------------------------------------------------
 
+table {
+	width:960px;
+}
+
+tr.lesson-row {
+	background:#ffffff;
+}
+
 td.completed {
-	width:5%;
+	width:10%;
+	padding: 20px 10px;
+	font-size: 48px;
 	background:#48CC9D;
 	color:#ffffff;
 	text-align: center;
 }
 
 td.not-completed {
-	width:5%;
+	width:10%;
 	background:#D4D4D4;
 	color:#ffffff;
+	font-size: 48px;
 }
 
 
 td.video-duration {
-	width:5%;
+	width:10%;
+}
+
+td a {
+	color:$steel;
+	font-size:28px;
+	font-family:proxima-nova;
+	font-weight:800;
 }
 
 th h2 {
-	display: inline-block;
+	display: inline;
 }
 
 th span {
@@ -696,26 +729,43 @@ th span {
 td {
 	border: 1px solid #D4D4D4;
 	padding: 10px 10px;
+	font-size: 20px;
 }
 
-td:hover {
-	background:#E8EBF0;
+tr.lesson-row:hover {
+	background:#F8F8F8;
 	box-shadow: 5px 5px 5px solid #D4D4D4;
 }
 
-span.lesson-title {
-	color:red;
+
+.chapter h2 {
+	display: inline;
 }
 
-span.lesson-link {
+.chapter span {
 	float: right;
+	font-size: 22px;
 }
-
 
 
 // --------------------------------------------------------------
 //  PROFILE SETTINGS
 // --------------------------------------------------------------
+
+
+.profile h1.page-header {
+	font-size: 48px;
+}
+
+.profile .lecture-box {
+	border-radius: 10px;
+	padding:10px 10px;
+}
+
+.profile .lecture-box h1 {
+	font-size: 48px;
+	margin-top: -5px;
+}
 
 /* General properties */
 
