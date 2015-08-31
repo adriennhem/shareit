@@ -35,15 +35,13 @@
   <p class="center margin-top-negative mb-60">We just got started, try our HTML workshop and build your first website.</p>
   <div class="container">
     <div class="col-md-12 margin-s">
-        <% @lectures.each do |lecture| %>
         <div class="col-md-4 lecture">
             <div class="lecture-box">
-              <%= image_tag lecture.picture.url(:medium) %>
-              <p><%= truncate(lecture.description, length: 80) %> </p>
-              <%= link_to "Enroll Now", lecture, class: "btn btn-primary" %>
+              <%= image_tag @lecture.picture.url(:medium) %>
+              <p><%= truncate(@lecture.description, length: 80) %> </p>
+              <%= link_to "Enroll Now", @lecture, class: "btn btn-primary" %>
             </div> <!-- .lecture-box -->
           </div> <!-- .col-md-4 -->
-        <% end %>
     </div> <!-- .col-md-12 -->
   </div> <!-- .container -->
 </div> <!-- .row -->

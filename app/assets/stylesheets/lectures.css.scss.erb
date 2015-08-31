@@ -12,13 +12,15 @@
 
 /* FONTS */
 
-$hind:'Hind', sans-serif;
+$hind: "proxima-nova";
 
 $montserrat:'Montserrat', sans-serif;
 
 /* COLORS */
 
 $steel:#666666;
+
+$mine-shaft:#333333;
 
 $shamrock:#48CC9D;
 
@@ -58,19 +60,18 @@ a:hover {cursor:pointer;}
 
 /* WHY DO WE HAVE THIS HALANT? */
 body {
-	font-family: 'Halant', serif;
-	font-weight:300;
+	font-family:$hind;
+	font-weight:400;
 	padding-top:60px;
-	font-size:18px;
-	color:$steel;
+	font-size:16px;
+	color:#555555;
 	line-height:32px;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	color:#333333;
  	font-family:$hind;
- 	font-weight:700;
- 	text-transform: uppercase;
+ 	font-weight:800;
  	}
 
 h1 {font-size:32px; color:#384046;}
@@ -205,7 +206,7 @@ a.btn-primary {
 	border-color:#44CB9B !important;
 	font-size:18px;
 	border-radius:0;
-	text-transform:uppercase;
+	/*text-transform:uppercase;*/
 }
 
 a.btn-primary:hover {
@@ -224,7 +225,7 @@ button.btn-primary-big, input.btn-primary-big {
 	border-color:#333333 !important;
 	font-size:14px;
 	border-radius:0 !important;
-	text-transform:uppercase;
+	/*text-transform:uppercase;*/
 }
 
 
@@ -242,7 +243,7 @@ a.btn-two-colors {
 	border-color:#333333;
 	font-size:14px;
 	border-radius:0;
-	text-transform:uppercase;
+	/*text-transform:uppercase;*/
 }
 
 a.btn-two-colors:hover {
@@ -261,7 +262,7 @@ a.btn-two-colors:hover {
 		padding:12px;
 		height:50px;
 		width:150px;
-		text-transform:uppercase;
+		/*text-transform:uppercase;*/
 	}
 
 
@@ -274,7 +275,7 @@ input.button, input.btn-primary {
 	font-weight:400 !important;
 	font-size:13px !important;
 	border-radius:0 !important;
-	text-transform:uppercase !important;
+	/*text-transform:uppercase !important;*/
 }
 
 input.button:hover, input.btn-primary:hover {
@@ -291,7 +292,7 @@ a.btn-primary-big {
 	border-color:#333333 !important;
 	font-size:14px;
 	border-radius:0 !important;
-	text-transform:uppercase;
+	/*text-transform:uppercase;*/
 }
 
 a.btn-primary-big:hover {
@@ -325,22 +326,23 @@ nav.navbar.shrink {
 
 .navbar-nav > li > a {
   font-family: $hind;
-  font-weight:400;
+  font-weight:100;
   padding-top:20px !important;
   color:#fff !important;
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: none;
-  text-transform:uppercase !important;
+  /*text-transform:uppercase !important;*/
 }
 
 
-.navbar-left li a {text-transform: none !important}
 
 .navbar-right li a:hover {color:#4BCA9C !important; transition: all 0.1s ease-in;}
 
 .navbar-left > li > a {
 	padding-top:0 !important;
 }
+
+
 
 .navbar-right a.btn-primary {
 	margin-top:5px !important;
@@ -441,14 +443,23 @@ nav.navbar.shrink {
 // INDEX LECTURE
 // --------------------------------------------------------------
 
-.container-index h1.margin-s {
-	margin-left: 30px;
+.index-header {margin-left: 30px;}
+
+.index-header h1 {
+	margin-top: 80px;
+	font-size: 48px;
 }
 
+.index-header h2 {
+	margin-top:-10px;
+	margin-bottom:30px;
+	font-size:22px;
+	color:#c6c6c6;
+	font-weight: 500;
+}
 
 .lecture-box {
 		background:#fff;
-		width:550px;
 		border:$border-lilyWhite;
 		padding: 10px 10px;
 }
@@ -457,11 +468,13 @@ nav.navbar.shrink {
 .lecture-index-box iframe {
 	width:480px;
 	height:270px;
+	margin-left:-10px;
 }	
 
 .lecture-index-box {
 	width:960px !important;
-	min-height:300px !important;
+	min-height:290px !important;
+	background:#F8F8F8 ;
 }
 
 .lecture-index-description {
@@ -474,6 +487,19 @@ nav.navbar.shrink {
 	position: relative;
 	top: -45px;
 }
+
+.lecture-index-description a {
+	color:#c6c6c6;
+	font-weight:500;
+	padding-left: 10px;
+}
+
+.lecture-index-description a.btn {
+	color:#333333;
+	font-weight:800;
+	font-size: 18px;
+}
+
 
 p.enrolled-users {
 	margin-top: -50px !important;
@@ -493,7 +519,7 @@ p.enrolled-users {
 	transition: all 0.1s ease-in;
 	box-shadow: inset 0 1px #fff, 0 1px 3px #EBEBEB;
 	-moz-box-shadow: inset 0 1px #fff, 0 1px 3px #EBEBEB;
-	-webkit-box-shadow: inset 0 1px #fff, 0 1px 3px #EBEBEB;
+	-webkit-box-shadow: inset 0 1px #fff, 0 1px 3px #c6c6c6;
 }
 
 p.enrolled-users {
@@ -501,8 +527,16 @@ p.enrolled-users {
 }	
 
 .category-list {
-	margin-top: 20px;
-	margin-left: -20px;
+	margin-top: 40px;
+	margin-left: 20px;
+	width:200px;
+	background:#F8F8F8;
+	min-height:100px;
+}
+
+.category-list a {
+	font-size:18px;
+	color:#c6c6c6;
 }
 
 

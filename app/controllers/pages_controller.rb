@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-  	@lectures = Lecture.all
+  	@lecture = Lecture.last
   end
 
   def about

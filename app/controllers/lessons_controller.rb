@@ -11,21 +11,6 @@ class LessonsController < ApplicationController
     # @next = @lecture.lessons.where("id > ?", params[:id]).order(:id).first 
   end
 
-  # GET /lessons/new
-  def new
-    @lecture = Lecture.find(params[:lecture_id])
-    @lesson = Lesson.new
-
-  end
-
-  # GET /lessons/1/edit
-  def edit
-    @lecture = Lecture.find(params[:lecture_id])
-    @lesson = @lecture.lessons.find(params[:id])
-    authorize @lesson
-  end
-
-  # POST /lessons
   # POST /lessons.json
   def create
     @chapter = Chapter.find(params[:chapter_id])
@@ -39,26 +24,13 @@ class LessonsController < ApplicationController
   # PATCH/PUT /lessons/1
   # PATCH/PUT /lessons/1.json
   def update
-
     respond_to do |format|
       if @lesson.update(lesson_params)
         format.html { redirect_to @lesson, notice: 'Lesson was successfully updated.' }
-        format.json { render :show, status: :ok, location: @lesson }
       else
         format.html { render :edit }
-        format.json { render json: @lesson.errors, status: :unprocessable_entity }
       end
     end
-  end
-
-  # DELETE /lessons/1
-  # DELETE /lessons/1.json
-  def destroy
-    @lecture = Lecture.find(params[:lecture_id])
-    @lesson = @lecture.lessons.find(params[:id])
-    @lesson.destroy
-
-    redirect_to lecture_path(@lecture)
   end
 
   private

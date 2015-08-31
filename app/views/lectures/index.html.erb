@@ -4,9 +4,19 @@
 
 <div class="row bg-grey border-top">
   <div class="container-fluid mb-150 container-index">
+      <div class="index-header">
+       <h1>Library</h1>
+       <h2>Browse our courses</h2>
+     </div>
 
-     <h1 class="margin-s">Courses Library</h1>
-
+       <div class="col-md-2 category-list">
+            <h2>Filter by:</h2>
+              <% Category.all.each do |category| %>
+                <div class="list-category bg-white center">
+                  <%= link_to category.name, lectures_path(category: category.name) %>
+                </div>
+              <% end %>
+            </div>
 
 
         <div class="col-md-10">
@@ -66,14 +76,7 @@
 
         </div> <!-- .container-left -->
   
-           <div class="col-md-2 category-list">
-            <h2>Filter by:</h2>
-              <% Category.all.each do |category| %>
-                <div class="list-category bg-white center">
-                  <%= link_to category.name, lectures_path(category: category.name), class: "mirage" %>
-                </div>
-              <% end %>
-            </div>
+          
          
            
 

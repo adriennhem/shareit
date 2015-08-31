@@ -1,8 +1,5 @@
 class UserLessonsController < ApplicationController
 
-  def show
-  end 
-
   def create
     @user_lesson = UserLesson.create(user_lesson_params)
     if @user_lesson.save
