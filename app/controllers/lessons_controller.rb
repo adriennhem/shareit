@@ -1,18 +1,12 @@
-class LessonsController < ApplicationController
-  load_and_authorize_resource 
+class LessonsController < ApplicationController 
   before_action :authenticate_user!, only: :show  
-
-  # GET /lessons
-  # GET /lessons.json
-  def index
-    @lessons = Lesson.all
-  end
-
+  
   # GET /lessons/1
   # GET /lessons/1.json
   def show
     @lecture = Lecture.find(params[:lecture_id])
     @lesson = @lecture.lessons.find(params[:id])
+    authorize @lecture
     # @previous = @lecture.lessons.where("id < ?", params[:id]).order(:id).first   
     # @next = @lecture.lessons.where("id > ?", params[:id]).order(:id).first 
   end
@@ -28,6 +22,7 @@ class LessonsController < ApplicationController
   def edit
     @lecture = Lecture.find(params[:lecture_id])
     @lesson = @lecture.lessons.find(params[:id])
+    authorize @lesson
   end
 
   # POST /lessons

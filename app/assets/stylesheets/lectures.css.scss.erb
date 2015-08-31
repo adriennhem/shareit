@@ -4,61 +4,42 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // --------------------------------------------------------------
-// FONTS 
+// SASS VARIABLES 
 // --------------------------------------------------------------
 
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(http://fonts.googleapis.com/css?family=Hind:400,700,600,500,300);
-@import url(http://fonts.googleapis.com/css?family=Merriweather:400,300);
-@import url(http://fonts.googleapis.com/css?family=Halant:300,400);
 
-// --------------------------------------------------------------
-// BOOTSTRAP CHANGES
-// --------------------------------------------------------------
+/* FONTS */
 
-$navbar-default-bg:#333333;
-$navbar-border-radius:0px;
-$navbar-default-border:none;
-$page-header-border-color:#D4D4D4;
+$hind:'Hind', sans-serif;
 
-// --------------------------------------------------------------
-// SASS COLORS
-// --------------------------------------------------------------
+$montserrat:'Montserrat', sans-serif;
 
-$primary-color:#1AAFD7;
-$color-3:#F65A5B;
-$color-4:#1abc9c;
-$color-5:#3498db;
-$color-jaune:#f1c40f;
-$secondary-color:#FF5543;
-$font-body-color:#666666;
-$background-color:#F6F9FA;
+/* COLORS */
+
+$steel:#666666;
 
 $shamrock:#48CC9D;
+
 $lightGrey:#eeeeee;
 
+$border-lilyWhite:1px solid #ebebeb;
 
+/* BOOTSRAP MODIFICATIONS */
 
-// --------------------------------------------------------------
-// SASS COLORS
-// --------------------------------------------------------------
+$navbar-default-bg:#333333;
 
-$font-body:'Hind', sans-serif;
-$font-title:'Montserrat', sans-serif;
+$navbar-border-radius:0px;
 
-$font-default-size:16px;
-$font-m-size:18px;
-$font-l-size:20px;
-$font-xl-size:28px;
-$font-xxl-size:32px;
-$default-border-color:1px solid #ebebeb;
+$navbar-default-border:none;
 
+$page-header-border-color:#D4D4D4;
 
-// --------------------------------------------------------------
-// IMPORT 
-// --------------------------------------------------------------
+/* LOAD BOOTSRAP SETTINGS */
 
 @import "bootstrap-sprockets";
+
 @import "bootstrap";
 
 // --------------------------------------------------------------
@@ -69,26 +50,25 @@ html {text-rendering:optimizeLegibility;}
 
 html a {text-decoration:none !important;}
 
-a:hover {
- cursor:pointer;
-}
+a:hover {cursor:pointer;}
 
-.container-application {
-	margin-top: -20px;
-}
+/* CREATE WHITE BG WHEN NOTIFICATION */
+.container-application {margin-top: -20px;}
 
+
+/* WHY DO WE HAVE THIS HALANT? */
 body {
 	font-family: 'Halant', serif;
 	font-weight:300;
 	padding-top:60px;
 	font-size:18px;
-	color:#666666;
+	color:$steel;
 	line-height:32px;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	color:#333333;
- 	font-family:'Hind', sans-serif;
+ 	font-family:$hind;
  	font-weight:700;
  	text-transform: uppercase;
  	}
@@ -97,6 +77,8 @@ h1 {font-size:32px; color:#384046;}
 
 h2 {font-size:28px;}
 
+
+/* FLASH MESSAGES */
 .alert {
 	border-radius:0;
 	background:rgba(0,255,255,0.7);
@@ -110,12 +92,13 @@ h2 {font-size:28px;}
 	text-align: center; 
 	font-size: 14px; 
 	text-transform: uppercase;
-	font-family:'Montserrat', sans-serif;
+	font-family:$montserrat
 }
 
+/* FLASH MESSAGES IN FORMS */
 span.help-inline {margin-left: 10px; color:red;}
 
-.hidden { display: none; }
+
 
 
 
@@ -133,9 +116,7 @@ a.mirage {color:#8D999F}
 
   // ----- BACKGROUNDS ---- //
 
-  .bg-grey {
-	background: #E8EBF0;
-}
+.bg-grey {background: #E8EBF0;}
 
 .bg-concrete {background:#F4F4F4;}
 
@@ -209,37 +190,9 @@ a.mirage {color:#8D999F}
 
 .clear {clear:both;}
 
-.centerd {margin:0 auto}
-
-// --------------------------------------------------------------
-// FONTS
-// --------------------------------------------------------------
 
 
-// ----- FAMILY ----- // 
 
-.montserrat {font-family:$font-title}
-
-
-// ----- FONT SIZE ----- // 
-
-.size12 {font-size:14px}
-
-.s-size {font-size:$font-default-size;}
-
-.l-size {font-size:$font-l-size;}
-
-.medium {font-size:24px;}
-
-.thin {font-weight:400; font-family:$font-body}
-
-.large {font-size:56px;}
-
-.big {font-size:150px !important;}
-
-// ----- FONT TRANSFORMATIONS ----- // 
-
-.small-caps {font-variant: small-caps;}
 
 // --------------------------------------------------------------
 // BUTTONS
@@ -261,7 +214,7 @@ a.btn-primary:hover {
 	transition:background 0.2s ease-in;
 }
 
-a.btn {font-family:$font-body;}
+a.btn {font-family:$hind;}
 
 button.btn-primary-big, input.btn-primary-big {
 	padding:15px 50px;
@@ -354,23 +307,7 @@ a.lesson.btn-primary {
 
 
 
-// --------------------------------------------------------------
-// MODAL
-// --------------------------------------------------------------
 
-.modal-content {padding:40px 40px;}
-
-.modal-content h1 {margin-bottom:30px;}
-
-.modal-form {margin-left:70px;}
-
-.modal-form label {font-weight:300;}
-
-.modal-form input.email, .modal-form input.password {width:370px !important; margin-bottom:10px}
-
-.modal-content input.btn-primary-big {margin-top:20px; padding:20px 150px;}
-
-.modal-content a {color:#44CB9B; font-size:14px;}
 
 // --------------------------------------------------------------
 // NAVBAR
@@ -387,7 +324,7 @@ nav.navbar.shrink {
 
 
 .navbar-nav > li > a {
-  font-family: $font-body;
+  font-family: $hind;
   font-weight:400;
   padding-top:20px !important;
   color:#fff !important;
@@ -422,6 +359,23 @@ nav.navbar.shrink {
 	border-color:#54DEAC !important;
 	transition:background 0.2s ease-in;
 }
+
+
+/* SIGNIN MODAL */
+.modal-content {padding:40px 40px;}
+
+.modal-content h1 {margin-bottom:30px;}
+
+.modal-form {margin-left:70px;}
+
+.modal-form label {font-weight:300;}
+
+.modal-form input.email, .modal-form input.password {width:370px !important; margin-bottom:10px}
+
+.modal-content input.btn-primary-big {margin-top:20px; padding:20px 150px;}
+
+.modal-content a {color:#44CB9B; font-size:14px;}
+
 
 // --------------------------------------------------------------
 // HOMEPAGE
@@ -467,7 +421,7 @@ nav.navbar.shrink {
 // TESTIMONIAL
 // --------------------------------------------------------------
 
-#container-testimonial {border-top:$default-border-color; margin-bottom:100px;}
+#container-testimonial {border-top:$border-lilyWhite; margin-bottom:100px;}
 
 #container-testimonial h1 {text-align:center; margin:70px 0;}
 
@@ -495,7 +449,7 @@ nav.navbar.shrink {
 .lecture-box {
 		background:#fff;
 		width:550px;
-		border:$default-border-color;
+		border:$border-lilyWhite;
 		padding: 10px 10px;
 }
 
@@ -513,7 +467,7 @@ nav.navbar.shrink {
 .lecture-index-description {
 	height: 270px;
 	padding-left: 35px;
-	margin-top: 20px;
+	margin-top: 35px;
 }
 
 .lecture-index-description h1 {
@@ -523,11 +477,6 @@ nav.navbar.shrink {
 
 p.enrolled-users {
 	margin-top: -50px !important;
-}
-
-p.lecture-description {
-	margin-top: 35px;
-	margin-bottom: 33px;
 }
 
 
@@ -611,7 +560,7 @@ p.enrolled-users {
 
 .footer {min-height:85px; padding:25px; font-size:13px; font-family: 'Merriweather', serif;}
 
-ul.inset {text-shadow: 1px #666666;}
+ul.inset {text-shadow: 1px $steel;}
 
 ul.footer-main-list ul {float:left; margin-left:100px;}
 
@@ -740,7 +689,7 @@ span.by-teacher {
 	color:$shamrock;
 }
 
-/*Progress bar show profile */
+/* PROGRESS BAR */
 
 progress[value] {
    -webkit-appearance: none;

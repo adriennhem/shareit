@@ -1,42 +1,25 @@
 class LecturesController < ApplicationController
   before_action :authenticate_user!, :except => [:index]
-  before_action :set_lecture, only: [:show, :edit, :update, :destroy]
-  load_and_authorize_resource
+  before_action :set_lecture, only: [:show]
+  after_action :verify_authorized
 
   # GET /lectures
   # GET /lectures.json
   def index
     if params[:category]
       @category_id = Category.find_by(name: params[:category]).id
-      @lectures = Lecture.where(category_id: @category_id).order("created_at DESC").paginate(:page => params[:page], per_page: 5)
+      @lectures = Lecture.where(category_id: @category_id).order("created_at DESC")
     else
-      @lectures = Lecture.paginate(:page => params[:page], per_page: 5)
+      @lectures = Lecture.all
     end
+    authorize @lectures
   end
 
   # GET /lectures/1
   # GET /lectures/1.json
   def show
-    @user = current_user
     @teacher = Teacher.all
-  end
-
-
-  def outline 
-  end
-
-  
-  # GET /lectures/new
-  def new
-    @lecture = Lecture.new
-    @categories = Category.all.map{|c| [ c.name, c.id ] }
-    @teachers - Teacher.all.map{|d| [ d.name, d.id ] }
-  end
-
-  # GET /lectures/1/edit
-  def edit
-    @categories = Category.all.map{|c| [ c.name, c.id ] }
-    @teachers - Teacher.all.map{|d| [ d.name, d.id ] }
+    authorize @lecture
   end
 
   # POST /lectures
@@ -45,6 +28,7 @@ class LecturesController < ApplicationController
     @lecture = Lectures.new(lecture_params)
     @lecture.teacher_id = params[:teacher_id]
     @lecture.category_id = params[:category_id]
+    authorize @lecture
     if @lecture.save
       redirect_to @lecture, notice: 'Lecture was successfully created.'
     else
@@ -57,24 +41,13 @@ class LecturesController < ApplicationController
   def update
     @lecture.category_id = params[:category_id]
     @lecture.teacher_id = params[:teacher_id]
+    authorize @lecture
     respond_to do |format|
       if @lecture.update(lecture_params)
         format.html { redirect_to @lecture, notice: 'Lecture was successfully updated.' }
-        format.json { render :show, status: :ok, location: @lecture }
       else
         format.html { render :edit }
-        format.json { render json: @lecture.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /lectures/1
-  # DELETE /lectures/1.json
-  def destroy
-    @lecture.destroy
-    respond_to do |format|
-      format.html { redirect_to lectures_url, notice: 'Lecture was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 

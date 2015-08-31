@@ -11,7 +11,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'simple_form'
 gem 'mail_form'
-gem 'will_paginate', '~> 3.0.6'
 # Email sender
 gem 'mandrill-api'
 
@@ -22,8 +21,8 @@ gem 'activeadmin', '~> 1.0.0.pre1'
 # WYSIWYG
 gem 'ckeditor'
 
-# authorization
-gem "cancan"
+# authorization updated 
+gem "pundit"
 
 # local variables
 gem "figaro"

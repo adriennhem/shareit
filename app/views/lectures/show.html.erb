@@ -24,7 +24,7 @@
 			
 			<tr class="lesson-row">
 				
-					<% lesson.user_lessons.where(user_id: @user.id).each do |f|  %>
+					<% lesson.user_lessons.where(user_id: current_user.id).each do |f|  %>
 						
 							<% if f.completed %>
 							<td class="completed">

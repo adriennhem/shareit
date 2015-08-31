@@ -16,4 +16,6 @@ class User < ActiveRecord::Base
   has_many :lectures, through: :enrollments
 
   accepts_nested_attributes_for :enrollments
+
+
 end
