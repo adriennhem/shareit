@@ -15,44 +15,11 @@
 
 <%= render 'section1' %>
 
+<%= render 'section2' %>
 
-<div class="row height610 border-top bg-concrete">
-  <div class="container  width700 vertical center">
-    <h1>Learn at your own pace</h1>
-    <p class="margin-s">Because everyone is tired after a long day of work, our videos won't last more than 20 minutes!</p>
-    <i class="fa fa-calendar margin-s shamrock big"></i>
+<%= render 'section3' %>
 
-  </div>
-</div>
-
-
- <div class="row height610 border-top">
-  <div class="container width700 vertical center">
-    <h1>Build your own projects</h1>
-    <p class="margin-s">Reading some stuffs about some stuffs is interesting but how cool it is to build your own project?</p>
-    <i class="fa fa-laptop margin-s shamrock big"></i>
-  </div>
-</div>
-
-
-<div class="row bg-concrete" id="lectures-list">
-  <h1>Jump in!</h1>
-  <p class="center margin-top-negative mb-60">We just got started, try our HTML workshop and build your first website.</p>
-  <div class="container">
-    <div class="col-md-12 margin-s">
-        <div class="col-md-4 lecture">
-            <div class="lecture-box">
-              <%= image_tag @lecture.picture.url(:medium) %>
-              <p><%= truncate(@lecture.description, length: 80) %> </p>
-              <%= link_to "Enroll Now", @lecture, class: "btn btn-primary" %>
-            </div> <!-- .lecture-box -->
-          </div> <!-- .col-md-4 -->
-    </div> <!-- .col-md-12 -->
-  </div> <!-- .container -->
-</div> <!-- .row -->
-
-
-<%= render 'testimonial' %>
+<%= render 'section4' %>
 
 
 

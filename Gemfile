@@ -33,6 +33,7 @@ gem 'momentjs-rails'
 
 # For image uploading
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'aws-sdk', '< 2.0'
 
 # For authentification
 gem 'devise'

@@ -21,13 +21,13 @@
    <%= f.input :first_name %>
    <%= f.input :last_name %>
    <%= f.input :email %>
-   <%= f.input :picture %>
+   <%= f.input :picture, as: :file %>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
   
-   <%= f.input :password, label: "(leave blank if you don't want to change it)" %>
+   <%= f.input :password, label: "(leave blank if you don't want to change it)", input_html: {  autocomplete: "off" } %>
    <%= f.input :password_confirmation, input_html: {  autocomplete: "off" } %>
    <%= f.input :current_password, input_html: { label: "(we need your current password to confirm your changes)", autocomplete: "off" } %>
 

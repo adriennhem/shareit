@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_filter :configure_permitted_parameters, if: :devise_controller?
 	include Pundit
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -18,6 +19,10 @@ class ApplicationController < ActionController::Base
 
   def after_update_path_for(resource)
       profile_path(current_user)
+  end
+
+   def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:account_update) << :picture
   end
  
   

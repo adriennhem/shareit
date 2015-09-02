@@ -22,7 +22,16 @@ $steel:#666666;
 
 $mine-shaft:#333333;
 
-$shamrock:#48CC9D;
+
+/* Green shamrock color */
+$color1:#44CB9B; 
+
+/* Grey color used in subtitles */
+$color2:#C6C6C6;
+
+
+/* Background in */
+$color4:#202121;
 
 $lightGrey:#eeeeee;
 
@@ -122,6 +131,8 @@ a.mirage {color:#8D999F}
 .bg-concrete {background:#F4F4F4;}
 
 .bg-footer {background:#333333;}
+
+.bg-white {background: #ffffff;}
 
 
 // --------------------------------------------------------------
@@ -385,7 +396,7 @@ nav.navbar.shrink {
 
 
 #main-homepage {
-	background:url('<%= asset_path("bw-room.jpg") %>') no-repeat center center fixed;
+	background:url('<%= asset_path("bg-light.jpeg") %>') no-repeat center center fixed;
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -415,9 +426,51 @@ nav.navbar.shrink {
 
 #content-section-home-1 a {margin-top:30px}
 
+.container-main-homepage h1 {
+	font-size: 72px;
+	font-weight:800;
+	font-variant:small-caps;
+}
 
 
+.home-heading h1 {font-size:72px;}
 
+.home-heading h2 {
+	font-size:18px;
+	color:$color2;
+	font-weight:400;
+}
+
+#content-section-home-1 h1 {
+	font-size:64px;
+}
+
+h1.home-heading-testimonial {
+	font-size: 48px;
+} 
+
+#section2 {
+	height:600px;
+	text-align: center;
+}
+
+
+.rectangle {
+	width:220px;
+	height:150px;
+	background:$color1;
+	color:#ffffff;
+	padding:40px 40px;
+	font-size: 72px;
+	margin: 0 auto;
+
+}
+
+.rectangle:hover {
+	font-size: 96px;
+	transition: all 0.5 ease-out;
+	padding:25px 10px;
+}
 
 // --------------------------------------------------------------
 // TESTIMONIAL
@@ -433,11 +486,13 @@ nav.navbar.shrink {
 	border-radius: 150px;
 	-webkit-border-radius: 150px;
 	-moz-border-radius: 150px;
-	-webkit-filter: grayscale(70%); 
-  	filter: grayscale(70%);
+	-webkit-filter: grayscale(60%); 
+  	filter: grayscale(60%);
 }
 
-.portrait p {text-align:left; max-width:320px;}
+blockquote {
+	border-left:3px solid $color1;
+}
 
 // --------------------------------------------------------------
 // INDEX LECTURE
@@ -454,7 +509,7 @@ nav.navbar.shrink {
 	margin-top:-10px;
 	margin-bottom:30px;
 	font-size:22px;
-	color:#c6c6c6;
+	color:$color2;
 	font-weight: 500;
 }
 
@@ -489,7 +544,7 @@ nav.navbar.shrink {
 }
 
 .lecture-index-description a {
-	color:#c6c6c6;
+	color:$color2;
 	font-weight:500;
 	padding-left: 10px;
 }
@@ -507,7 +562,7 @@ p.enrolled-users {
 
 
 .lecture-box p.mt-negative-15, p.enrolled-users {
-	color:#c6c6c6;
+	color:$color2;
 }
 
 .lecture-index-details {
@@ -519,7 +574,7 @@ p.enrolled-users {
 	transition: all 0.1s ease-in;
 	box-shadow: inset 0 1px #fff, 0 1px 3px #EBEBEB;
 	-moz-box-shadow: inset 0 1px #fff, 0 1px 3px #EBEBEB;
-	-webkit-box-shadow: inset 0 1px #fff, 0 1px 3px #c6c6c6;
+	-webkit-box-shadow: inset 0 1px #fff, 0 1px 3px $color2;
 }
 
 p.enrolled-users {
@@ -537,7 +592,7 @@ p.enrolled-users {
 
 .category-list a {
 	font-size:18px;
-	color:#c6c6c6;
+	color:$color2;
 }
 
 
@@ -593,7 +648,7 @@ p.enrolled-users {
 // --------------------------------------------------------------
 
 
-.footer {min-height:85px; padding:25px; font-size:13px; font-family: 'Merriweather', serif;}
+.footer {min-height:85px; padding:25px; font-size:13px; font-family: proxima-nova;}
 
 ul.inset {text-shadow: 1px $steel;}
 
@@ -694,7 +749,7 @@ td.completed {
 	width:10%;
 	padding: 20px 10px;
 	font-size: 48px;
-	background:#48CC9D;
+	background:$color1;
 	color:#ffffff;
 	text-align: center;
 }
@@ -770,7 +825,7 @@ tr.lesson-row:hover {
 /* General properties */
 
 span.by-teacher {
-	color:$shamrock;
+	color:$color1;
 }
 
 /* PROGRESS BAR */
@@ -789,7 +844,7 @@ progress[value]::-webkit-progress-bar {
 }
 
 progress[value]::-webkit-progress-value {
-  background:$shamrock;
+  background:$color1;
   background-image:
 	   -webkit-linear-gradient(-45deg, 
 	                           transparent 40%, rgba(0, 0, 0, .1) 33%, 

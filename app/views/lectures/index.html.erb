@@ -4,7 +4,7 @@
 
 
 
-<div class="row bg-grey border-top">
+<div class="row bg-white border-top">
   <div class="container-fluid mb-150 container-index">
       <div class="index-header center">
        <h1>All Courses</h1>
@@ -14,7 +14,7 @@
        <div class="col-md-2 category-list">
             <h2>Filter by:</h2>
               <% Category.all.each do |category| %>
-                <div class="list-category bg-white center">
+                <div class="list-category center">
                   <%= link_to category.name, lectures_path(category: category.name) %>
                 </div>
               <% end %>

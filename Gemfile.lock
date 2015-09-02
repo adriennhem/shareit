@@ -66,6 +66,11 @@ GEM
     autoprefixer-rails (5.2.0)
       execjs
       json
+    aws-sdk (1.65.0)
+      aws-sdk-v1 (= 1.65.0)
+    aws-sdk-v1 (1.65.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -267,6 +272,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin (~> 1.0.0.pre1)
+  aws-sdk (< 2.0)
   bootstrap-sass (~> 3.3.4)
   byebug
   ckeditor

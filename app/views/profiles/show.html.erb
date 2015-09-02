@@ -5,11 +5,15 @@
     '://workshoprs.groovehq.com/widgets/18dffb65-bf2b-4767-907a-79ab573d2848/ticket.js'; var q = document.getElementsByTagName('script')[0];q.parentNode.insertBefore(s, q);})();
 </script>
 
+
+
 <div class="row bg-grey">
 
 	 <div class="index-header center">
+
        <h1>Dashboard</h1>
        <h2><%= current_user.email %></h2>
+       <%= image_tag @user.picture.url(:medium) %> 
      </div>
 
 	<div class="container profile">
@@ -22,6 +26,8 @@
 	          <%= link_to lecture do %>	
 	           <h1><%= lecture.title %></h1> 
 	           <% end %>
+
+
 
 	            <p><%= truncate(lecture.description, length: 150) %> <span class="by-teacher">by <%= lecture.teacher.name %></span> </p>
 	            

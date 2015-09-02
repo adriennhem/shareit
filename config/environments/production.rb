@@ -85,5 +85,15 @@ Rails.application.configure do
   
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
+
+  # Added for paperclip 
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => 'ENV['workshopr']',
+    :access_key_id => ENV["AWS_ACCESS_KEY_ID"],
+    :secret_access_key => ENV["AWS_SECRET_ACCESS_KEY"]
+  }
+}
 end
 
