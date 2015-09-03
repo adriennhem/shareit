@@ -598,7 +598,6 @@ p.enrolled-users {
 
 
 
-
 // --------------------------------------------------------------
 // SIGNUP
 // --------------------------------------------------------------
@@ -822,6 +821,45 @@ tr.lesson-row:hover {
 	margin-top: -5px;
 }
 
+
+.lecture-box-profile {
+	background:#FFFFFF;
+	padding:10px 20px;
+	border-radius: 10px;
+}
+
+.lecture-box-profile h1 {
+
+}
+
+.borderLeft {
+  border-bottom: 3px solid #333333;
+  width:10%;
+}
+
+p.lecture-box-profile-description {
+	margin-top:10px;
+}
+
+.lecture-box-profile p {
+	color:#A0A1A3;
+}
+
+.lecture-box-profile h2 {
+	color:#f39c12;
+	font-weight:500;
+}
+
+.lecture-box-profile h2 span {
+	color:#A0A1A3;
+	font-weight:400;
+	font-size:20px;
+}
+
+p.completed-lessons {
+	margin-top: 10px;
+}
+
 /* General properties */
 
 span.by-teacher {
@@ -833,24 +871,24 @@ span.by-teacher {
 progress[value] {
    -webkit-appearance: none;
    appearance: none;
-	height:25px;
+	height:15px;
 	width:100%;
 }
 
 progress[value]::-webkit-progress-bar {
-  background-color:$lightGrey;
-  border-radius: 2px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25) inset;
+  background-color:#E2E5E9;
+  border-radius: 10px;
 }
 
 progress[value]::-webkit-progress-value {
-  background:$color1;
+  background:#e67e22;
   background-image:
 	   -webkit-linear-gradient(-45deg, 
-	                           transparent 40%, rgba(0, 0, 0, .1) 33%, 
-	                           rgba(0,0, 0, .1) 66%, transparent 66%);
+	                           transparent 40%,  
+	                            transparent 66%),
+	   -webkit-linear-gradient(left, #3BCC9A 33%, #f1c40f, #f39c12, #d35400);
 
-  border-radius: 2px; 
+  border-radius: 10px; 
   background-size: 45px 25px, 100% 100%, 100% 100%;
 }
 

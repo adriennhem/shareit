@@ -20,16 +20,18 @@
 
 	<h1 class="page-header">Enrolled Courses</h1>
 		<% @user.lectures.each do |lecture| %>
+
 			<div class="col-md-6 margin-s mb-150">
-	          <div class="lecture-box">
 
-	          <%= link_to lecture do %>	
-	           <h1><%= lecture.title %></h1> 
-	           <% end %>
+	          <div class="lecture-box-profile">
+	          	<div class="borderLeft">
+		          <%= link_to lecture do %>	
+		           <h1><%= lecture.title %></h1> 
+		           <% end %>
+		         </div>
 
 
-
-	            <p><%= truncate(lecture.description, length: 150) %> <span class="by-teacher">by <%= lecture.teacher.name %></span> </p>
+	            <p class="lecture-box-profile-description"><%= truncate(lecture.description, length: 150) %> <span class="by-teacher">by <%= lecture.teacher.name %></span> </p>
 	            
 	         
 
@@ -37,9 +39,9 @@
 	           <progress max="<%= lecture.lessons.size %>" value="<%= lecture.lessons.select{ |l| l.users.include? current_user }.count  %>"></progress>
 
 
-	            <h2><%= number_to_percentage( lecture.lessons.select{ |l| l.users.include? current_user }.count.to_f / lecture.lessons.size.to_f * 100, precision: 0) %> Complete</h2>
+	            <h2><%= number_to_percentage( lecture.lessons.select{ |l| l.users.include? current_user }.count.to_f / lecture.lessons.size.to_f * 100, precision: 0) %> <span>Complete</span></h2>
 
-	            <p class="mt-negative-15"><%= lecture.lessons.select{ |l| l.users.include? current_user }.count %> out of  <%= lecture.lessons.size %> lessons completed</p>
+	            <p class="completed-lessons"><%= lecture.lessons.select{ |l| l.users.include? current_user }.count %> out of  <%= lecture.lessons.size %> lessons completed</p>
 	           
 	           
 
