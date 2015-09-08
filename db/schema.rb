@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150825180804) do
+ActiveRecord::Schema.define(version: 20150906162230) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -122,6 +122,13 @@ ActiveRecord::Schema.define(version: 20150825180804) do
     t.string   "video_duration"
   end
 
+  create_table "outlines", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "lecture_id"
+    t.text     "body"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -139,6 +146,15 @@ ActiveRecord::Schema.define(version: 20150825180804) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+  end
+
+  create_table "tutorials", force: :cascade do |t|
+    t.string   "title"
+    t.string   "author"
+    t.string   "video"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text     "body"
   end
 
   create_table "user_lessons", force: :cascade do |t|

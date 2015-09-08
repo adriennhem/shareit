@@ -7,50 +7,8 @@
 // SASS VARIABLES 
 // --------------------------------------------------------------
 
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-@import url(http://fonts.googleapis.com/css?family=Hind:400,700,600,500,300);
-
-/* FONTS */
-
-$hind: "proxima-nova";
-
-$montserrat:'Montserrat', sans-serif;
-
-/* COLORS */
-
-$steel:#666666;
-
-$mine-shaft:#333333;
-
-
-/* Green shamrock color */
-$color1:#44CB9B; 
-
-/* Grey color used in subtitles */
-$color2:#C6C6C6;
-
-
-/* Background in */
-$color4:#202121;
-
-$lightGrey:#eeeeee;
-
-$border-lilyWhite:1px solid #ebebeb;
-
-/* BOOTSRAP MODIFICATIONS */
-
-$navbar-default-bg:#333333;
-
-$navbar-border-radius:0px;
-
-$navbar-default-border:none;
-
-$page-header-border-color:#D4D4D4;
-
-/* LOAD BOOTSRAP SETTINGS */
-
+@import 'config';
 @import "bootstrap-sprockets";
-
 @import "bootstrap";
 
 // --------------------------------------------------------------
@@ -69,21 +27,21 @@ a:hover {cursor:pointer;}
 
 /* WHY DO WE HAVE THIS HALANT? */
 body {
-	font-family:$hind;
+	font-family:$proxima-nova;
 	font-weight:400;
 	padding-top:60px;
 	font-size:16px;
-	color:#555555;
+	color:$steel;
 	line-height:32px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	color:#333333;
- 	font-family:$hind;
+	color:$mine-shaft;
+ 	font-family:$proxima-nova;
  	font-weight:800;
  	}
 
-h1 {font-size:32px; color:#384046;}
+h1 {font-size:32px; color:$mine-shaft;}
 
 h2 {font-size:28px;}
 
@@ -102,27 +60,18 @@ h2 {font-size:28px;}
 	text-align: center; 
 	font-size: 14px; 
 	text-transform: uppercase;
-	font-family:$montserrat
+	font-family:$proxima-nova;
 }
 
 /* FLASH MESSAGES IN FORMS */
 span.help-inline {margin-left: 10px; color:red;}
 
 
-
-
-
-// --------------------------------------------------------------
-// COLORS
-// --------------------------------------------------------------
-
-a.mirage {color:#8D999F}
-
  // ----- COLORS ---- //
 
-.white {color:white;}
+.shamrock {color:$shamrock;}
 
-.shamrock {color:#44CB9B}
+.white {color:white;}
 
   // ----- BACKGROUNDS ---- //
 
@@ -130,9 +79,9 @@ a.mirage {color:#8D999F}
 
 .bg-concrete {background:#F4F4F4;}
 
-.bg-footer {background:#333333;}
+.bg-footer {background:$mine-shaft;}
 
-.bg-white {background: #ffffff;}
+.bg-white {background: $white;}
 
 
 // --------------------------------------------------------------
@@ -221,19 +170,19 @@ a.btn-primary {
 }
 
 a.btn-primary:hover {
-	background:#54DEAC !important;
-	border-color:#54DEAC !important;
+	background:$flamingo !important;
+	border-color:$flamingo !important;
 	transition:background 0.2s ease-in;
 }
 
-a.btn {font-family:$hind;}
+a.btn {font-family:$proxima-nova;}
 
 button.btn-primary-big, input.btn-primary-big {
 	padding:15px 50px;
 	text-decoration:none;
 	color:#fff !important;
-	background:#333333 !important;
-	border-color:#333333 !important;
+	background:$mine-shaft !important;
+	border-color:$mine-shaft !important;
 	font-size:14px;
 	border-radius:0 !important;
 	/*text-transform:uppercase;*/
@@ -242,16 +191,16 @@ button.btn-primary-big, input.btn-primary-big {
 
 button.btn-primary-big, input.btn-primary-big:hover {
 	transition:all 0.1s ease-in;
-	background:#44CB9B !important;
-	border-color:#44CB9B !important;
+	background:$shamrock !important;
+	border-color:$shamrock !important;
 }
 
 a.btn-two-colors {
 	padding:15px 50px;
 	text-decoration:none;
 	color:#fff !important;
-	background:#333333;
-	border-color:#333333;
+	background:$mine-shaft;
+	border-color:$mine-shaft;
 	font-size:14px;
 	border-radius:0;
 	/*text-transform:uppercase;*/
@@ -259,8 +208,8 @@ a.btn-two-colors {
 
 a.btn-two-colors:hover {
 	transition:all 0.1s ease-in;
-	background:#44CB9B !important;
-	border-color:#44CB9B !important;
+	background:$shamrock !important;
+	border-color:$shamrock !important;
 }
 
 
@@ -278,11 +227,11 @@ a.btn-two-colors:hover {
 
 
 input.button, input.btn-primary {
-	text-shadow:1px #44CB9B !important;
+	text-shadow:1px $shamrock !important;
 	margin-top:15px !important;
 	color:#fff !important;
-	background:#44CB9B !important;
-	border-color:#44CB9B !important;
+	background:$shamrock !important;
+	border-color:$shamrock !important;
 	font-weight:400 !important;
 	font-size:13px !important;
 	border-radius:0 !important;
@@ -290,8 +239,8 @@ input.button, input.btn-primary {
 }
 
 input.button:hover, input.btn-primary:hover {
-	background:#54DEAC !important;
-	border-color:#54DEAC !important;
+	background:$mine-shaft !important;
+	border-color:$mine-shaft !important;
 	transition:background 0.2s ease-in;
 }
 
@@ -299,8 +248,8 @@ a.btn-primary-big {
 	padding:15px 20px;
 	text-decoration:none;
 	color:#fff !important;
-	background:#333333 !important;
-	border-color:#333333 !important;
+	background:$mine-shaft !important;
+	border-color:$mine-shaft !important;
 	font-size:14px;
 	border-radius:0 !important;
 	/*text-transform:uppercase;*/
@@ -308,8 +257,8 @@ a.btn-primary-big {
 
 a.btn-primary-big:hover {
 	transition:all 0.1s ease-in;
-	background:#44CB9B !important;
-	border-color:#44CB9B !important;
+	background:$shamrock !important;
+	border-color:$shamrock !important;
 }
 
 a.lesson.btn-primary {
@@ -336,7 +285,7 @@ nav.navbar.shrink {
 
 
 .navbar-nav > li > a {
-  font-family: $hind;
+  font-family: $proxima-nova;
   font-weight:100;
   padding-top:20px !important;
   color:#fff !important;
@@ -359,8 +308,8 @@ nav.navbar.shrink {
 	margin-top:5px !important;
 	text-decoration:none;
 	color:#fff !important;
-	background:#44CB9B !important;
-	border-color:#44CB9B !important;
+	background:$shamrock !important;
+	border-color:$shamrock !important;
 	font-size:12px;
 	border-radius:0;
 	text-transform:uppercase !important;
@@ -387,7 +336,7 @@ nav.navbar.shrink {
 
 .modal-content input.btn-primary-big {margin-top:20px; padding:20px 150px;}
 
-.modal-content a {color:#44CB9B; font-size:14px;}
+.modal-content a {color:$shamrock; font-size:14px;}
 
 
 // --------------------------------------------------------------
@@ -437,7 +386,7 @@ nav.navbar.shrink {
 
 .home-heading h2 {
 	font-size:18px;
-	color:$color2;
+	color:$mine-shaft;
 	font-weight:400;
 }
 
@@ -458,8 +407,8 @@ h1.home-heading-testimonial {
 .rectangle {
 	width:220px;
 	height:150px;
-	background:$color1;
-	color:#ffffff;
+	background:$shamrock;
+	color:$white;
 	padding:40px 40px;
 	font-size: 72px;
 	margin: 0 auto;
@@ -476,7 +425,7 @@ h1.home-heading-testimonial {
 // TESTIMONIAL
 // --------------------------------------------------------------
 
-#container-testimonial {border-top:$border-lilyWhite; margin-bottom:100px;}
+#container-testimonial {border-top:$border-lily-white; margin-bottom:100px;}
 
 #container-testimonial h1 {text-align:center; margin:70px 0;}
 
@@ -491,7 +440,7 @@ h1.home-heading-testimonial {
 }
 
 blockquote {
-	border-left:3px solid $color1;
+	border-left:3px solid $shamrock;
 }
 
 // --------------------------------------------------------------
@@ -509,13 +458,13 @@ blockquote {
 	margin-top:-10px;
 	margin-bottom:30px;
 	font-size:22px;
-	color:$color2;
+	color:$grey-chateau;
 	font-weight: 500;
 }
 
 .lecture-box {
 		background:#F8F8F8;
-		border:$border-lilyWhite;
+		border:$border-lily-white;
 		padding: 10px 10px;
 		border-radius: 10px;
 }
@@ -544,15 +493,15 @@ blockquote {
 }
 
 .lecture-index-description a {
-	color:$color2;
+	color:$mine-shaft;
 	font-weight:500;
 	padding-left: 10px;
 }
 
 .lecture-index-description a.btn {
-	color:#333333;
+	color:$grey-chateau;
 	font-weight:800;
-	font-size: 18px;
+	font-size: 16px;
 }
 
 
@@ -562,20 +511,13 @@ p.enrolled-users {
 
 
 .lecture-box p.mt-negative-15, p.enrolled-users {
-	color:$color2;
+	color:$mine-shaft;
 }
 
 .lecture-index-details {
 	margin-left:15px;
 }
 
-
-.lecture-box:hover {
-	transition: all 0.1s ease-in;
-	box-shadow: inset 0 1px #fff, 0 1px 3px #EBEBEB;
-	-moz-box-shadow: inset 0 1px #fff, 0 1px 3px #EBEBEB;
-	-webkit-box-shadow: inset 0 1px #fff, 0 1px 3px $color2;
-}
 
 p.enrolled-users {
 	font-weight:400;
@@ -584,7 +526,7 @@ p.enrolled-users {
 .category-list {
 	margin-top: 40px;
 	margin-left: 20px;
-	width:200px;
+	width:180px;
 	background:#F8F8F8;
 	min-height:100px;
 	border-radius: 10px;
@@ -592,10 +534,8 @@ p.enrolled-users {
 
 .category-list a {
 	font-size:18px;
-	color:$color2;
+	color:$mine-shaft;
 }
-
-
 
 
 // --------------------------------------------------------------
@@ -614,7 +554,7 @@ p.enrolled-users {
 
 #signup-form input.btn-primary-big {margin-top:20px; padding:20px 150px;}
 
-#signup-form a {color:#44CB9B; font-size:14px;}
+#signup-form a {color:$shamrock; font-size:14px;}
 
 
 // --------------------------------------------------------------
@@ -696,15 +636,15 @@ span.copyright {margin-left:150px;}
 .container-contact p {margin-bottom: 20px;}
 
 .container-contact input.btn-primary-big {
-	background:#44CB9B !important;
-	border-color:#44CB9B !important;
+	background:$shamrock !important;
+	border-color:$shamrock !important;
 	padding: 15px 30px;
 }
 
 .container-contact input.btn-primary-big:hover {
 	color:#fff !important;
-	background:#333333 !important;
-	border-color:#333333 !important;
+	background:$mine-shaft !important;
+	border-color:$mine-shaft !important;
 }
 
 
@@ -747,7 +687,7 @@ span.copyright {margin-left:150px;}
 }
 
 .chapter h2 span {
-	color:#A0A1A3;
+	color:$grey-chateau;
 	font-weight:500;
 	font-size: 20px;
 	margin-left:20px;
@@ -763,12 +703,12 @@ span.copyright {margin-left:150px;}
 }
 
 .lesson-list.col-md-12:hover {
-	background: #A0A1A3;
+	background: $grey-chateau;
 }
 
 .lesson-list.col-md-12 h3 {
 	display: inline;
-	color:#333333;
+	color:$mine-shaft;
 	font-size: 22px;
 	font-weight:800;
 }
@@ -809,7 +749,7 @@ span.copyright {margin-left:150px;}
 
 
 .lecture-box-profile {
-	background:#FFFFFF;
+	background:$white;
 	padding:10px 20px;
 	border-radius: 10px;
 }
@@ -819,7 +759,7 @@ span.copyright {margin-left:150px;}
 }
 
 .borderLeft {
-  border-bottom: 3px solid #A0A1A3;
+  border-bottom: 3px solid $grey-chateau;
   width:10%;
 }
 
@@ -828,7 +768,7 @@ p.lecture-box-profile-description {
 }
 
 .lecture-box-profile p {
-	color:#A0A1A3;
+	color:$grey-chateau;
 }
 
 .lecture-box-profile h2 {
@@ -837,7 +777,7 @@ p.lecture-box-profile-description {
 }
 
 .lecture-box-profile h2 span {
-	color:#A0A1A3;
+	color:$grey-chateau;
 	font-weight:400;
 	font-size:20px;
 }
@@ -849,7 +789,7 @@ p.completed-lessons {
 /* General properties */
 
 span.by-teacher {
-	color:$color1;
+	color:$shamrock;
 }
 
 /* PROGRESS BAR */
@@ -879,4 +819,12 @@ progress[value]::-webkit-progress-value {
 }
 
  
+// --------------------------------------------------------------
+//  TUTORIALS
+// --------------------------------------------------------------
+
+.box-tutorial {
+	background:$white;
+	margin-bottom:30px;
+}
 

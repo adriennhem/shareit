@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'tutorials/show'
+
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -26,6 +28,8 @@ Rails.application.routes.draw do
   end
 
   root 'pages#home'
+
+  resources :tutorials
 
   resources :profiles
 
