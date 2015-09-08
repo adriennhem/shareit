@@ -9,7 +9,7 @@
 
             <%= f.input :email %>
             <%= f.input :password, autocomplete: "off" %>
-            <%= f.button :button, "Sign In", class: "btn-primary-big", data: {disable_with: "Sign In <i class='fa fa-spinner fa-spin'></i>"} %>
+            <%= f.button :button, "Sign In", class: "btn-form", data: {disable_with: "Sign In <i class='fa fa-spinner fa-spin'></i>"} %>
           <% end %>
           <%= link_to 'Forget your password?', new_user_password_path %>
         </div>

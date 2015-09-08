@@ -36,7 +36,7 @@
                           <%= truncate(@lecture.description, length: 210) %> 
                         </p>
 
-                        <%= link_to 'Enroll Now', enrollments_path(@enrollment, enrollment: {user_id: 'current_user.id', lecture_id: @lecture.id}), :method => :post, data: {confirm: 'are you sure?', disable_with: "Enroll Now <i class='fa fa-spinner fa-spin'></i>"}, class: "btn btn-primary" %>
+                        <%= link_to 'Enroll Now', enrollments_path(@enrollment, enrollment: {user_id: 'current_user.id', lecture_id: @lecture.id}), :method => :post, data: {confirm: 'are you sure?', disable_with: "Enroll Now <i class='fa fa-spinner fa-spin'></i>"}, class: "btn btn-orange" %>
 
                         <a  class="<%= @lecture.id %>" name="answer" value="Show Div" onclick="showDiv()">More details <i class="fa fa-chevron-down"></i></a>
 

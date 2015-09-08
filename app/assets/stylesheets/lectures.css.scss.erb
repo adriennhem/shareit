@@ -159,93 +159,50 @@ span.help-inline {margin-left: 10px; color:red;}
 // BUTTONS
 // --------------------------------------------------------------
 
-a.btn-primary {
-	text-decoration:none;
+
+a.btn, button.btn, input.btn {font-family:$proxima-nova; font-weight: 700; font-family: $proxima-nova; text-transform: uppercase; text-shadow:none; box-shadow: none;}
+
+a.btn-orange {
 	color:#fff !important;
-	background:#EE6646 !important;
-	border-color:#EE6646 !important;
+	background:$orange-peel !important;
+	border-color:$orange-peel !important;
 	font-size:18px;
 	border-radius:0;
-	/*text-transform:uppercase;*/
 }
 
-a.btn-primary:hover {
-	background:$flamingo !important;
-	border-color:$flamingo !important;
+a.btn-orange:hover {
+	background:$orange-peel !important;
+	border-color:$orange-peel !important;
 	transition:background 0.2s ease-in;
 }
 
-a.btn {font-family:$proxima-nova;}
 
-button.btn-primary-big, input.btn-primary-big {
-	padding:15px 50px;
-	text-decoration:none;
+button.btn-orange, input.btn-orange {
+	color:#fff !important;
+	background:$orange-peel !important;
+	border-color:$orange-peel !important;
+	font-size:18px;
+	border-radius:0 !important;
+}
+
+button.btn-orange:hover, input.btn-orange:hover {
+	background:$orange-peel !important;
+	border-color:$orange-peel !important;
+	transition:background 0.2s ease-in;
+}
+
+a.btn-shaft {
 	color:#fff !important;
 	background:$mine-shaft !important;
 	border-color:$mine-shaft !important;
-	font-size:14px;
-	border-radius:0 !important;
-	/*text-transform:uppercase;*/
-}
-
-
-button.btn-primary-big, input.btn-primary-big:hover {
-	transition:all 0.1s ease-in;
-	background:$shamrock !important;
-	border-color:$shamrock !important;
-}
-
-a.btn-two-colors {
-	padding:15px 50px;
-	text-decoration:none;
-	color:#fff !important;
-	background:$mine-shaft;
-	border-color:$mine-shaft;
-	font-size:14px;
+	font-size:16px;
 	border-radius:0;
-	/*text-transform:uppercase;*/
-}
-
-a.btn-two-colors:hover {
-	transition:all 0.1s ease-in;
-	background:$shamrock !important;
-	border-color:$shamrock !important;
+	padding:16px 30px;
 }
 
 
-.btn-default {
-		color:#fff;
-		position:absolute;
-		bottom:10px;
-		font-size:18px;
-		margin:10px 70px;
-		padding:12px;
-		height:50px;
-		width:150px;
-		/*text-transform:uppercase;*/
-	}
-
-
-input.button, input.btn-primary {
-	text-shadow:1px $shamrock !important;
-	margin-top:15px !important;
-	color:#fff !important;
-	background:$shamrock !important;
-	border-color:$shamrock !important;
-	font-weight:400 !important;
-	font-size:13px !important;
-	border-radius:0 !important;
-	/*text-transform:uppercase !important;*/
-}
-
-input.button:hover, input.btn-primary:hover {
-	background:$mine-shaft !important;
-	border-color:$mine-shaft !important;
-	transition:background 0.2s ease-in;
-}
-
-a.btn-primary-big {
-	padding:15px 20px;
+button.btn-form, input.btn-form {
+	padding:15px 50px;
 	text-decoration:none;
 	color:#fff !important;
 	background:$mine-shaft !important;
@@ -255,13 +212,13 @@ a.btn-primary-big {
 	/*text-transform:uppercase;*/
 }
 
-a.btn-primary-big:hover {
+button.btn-form:hover, input.btn-form:hover {
 	transition:all 0.1s ease-in;
 	background:$shamrock !important;
 	border-color:$shamrock !important;
 }
 
-a.lesson.btn-primary {
+a.lesson.btn-orange {
 	padding: 15px 20px;
 	font-size: 14px;
 }
@@ -334,7 +291,7 @@ nav.navbar.shrink {
 
 .modal-form input.email, .modal-form input.password {width:370px !important; margin-bottom:10px}
 
-.modal-content input.btn-primary-big {margin-top:20px; padding:20px 150px;}
+.modal-content input.btn-orange {margin-top:20px; padding:20px 150px;}
 
 .modal-content a {color:$shamrock; font-size:14px;}
 
@@ -552,9 +509,9 @@ p.enrolled-users {
 
 #signup-form input {width:370px !important; margin-bottom:10px}
 
-#signup-form input.btn-primary-big {margin-top:20px; padding:20px 150px;}
+#signup-form input.btn-orange {margin-top:20px; padding:20px 150px; text-shadow:none;}
 
-#signup-form a {color:$shamrock; font-size:14px;}
+#signup-form a {color:$steel; font-size:14px;}
 
 
 // --------------------------------------------------------------
@@ -607,6 +564,7 @@ span.copyright {margin-left:150px;}
 
 .footer input.email {width:330px !important; height:32px !important; border-radius:0 !important}
 
+.footer input.btn-orange {margin-top: 5px; font-weight: 700; font-family: $proxima-nova; text-transform: uppercase; text-shadow:none;}
 
 
 
@@ -670,7 +628,7 @@ span.copyright {margin-left:150px;}
 
 #edit-settings input {width:418px !important; margin-bottom:10px}
 
-#edit-settings input.btn-primary-big {padding:15px 0 !important;}
+#edit-settings button.btn-orange {padding:10px 70px; }
 
 // --------------------------------------------------------------
 //  Lecture SHOW
