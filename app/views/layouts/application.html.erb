@@ -24,8 +24,12 @@ mixpanel.init("0efcf03757a7792f069573d96e8b82d6");</script><!-- end Mixpanel -->
 </script>
 
 <body id="main">
+<% if content_for?(:navbar) %>
+    <%= yield(:navbar) %>
+<% else %>
+   <%= render 'layouts/header' %>
+<% end %>
 
-<%= render 'layouts/header' %>
 <%= render 'pages/signin' %>
 <%= render 'layouts/messages'  %>
 <div class="container-fluid container-application bg-grey">

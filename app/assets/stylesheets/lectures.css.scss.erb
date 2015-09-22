@@ -36,7 +36,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	color:$mine-shaft;
+	color:$black-pearl;
  	font-family:$proxima-nova;
  	font-weight:800;
  	}
@@ -75,11 +75,11 @@ span.help-inline {margin-left: 10px; color:red;}
 
   // ----- BACKGROUNDS ---- //
 
-.bg-grey {background: #E8EBF0;}
+.bg-grey {background: #F9F9FB;}
 
 .bg-concrete {background:#F4F4F4;}
 
-.bg-footer {background:$mine-shaft;}
+.bg-footer {background:#323A45;}
 
 .bg-white {background: $white;}
 
@@ -159,6 +159,32 @@ span.help-inline {margin-left: 10px; color:red;}
 // BUTTONS
 // --------------------------------------------------------------
 
+input.btn-bezier, a.btn-bezier {
+	color:#fff !important;
+	background:$bezier !important;
+	border-color:$bezier !important;
+	font-size:16px;
+	border-radius:0;
+}
+
+a.btn-bezier-inverse {
+	color:$bezier !important;
+	border-color:$bezier !important;
+	font-size:16px;
+	border-radius:0;
+}
+
+a.btn-bezier-inverse:hover {
+	color:#ffffff !important;
+	background:$bezier !important;
+	border-color:$bezier !important;
+	font-size:16px;
+	border-radius:0;
+	transition:all 0.2s ease-in;
+}
+
+
+
 
 a.btn, button.btn, input.btn {font-family:$proxima-nova; font-weight: 700; font-family: $proxima-nova; text-transform: uppercase; text-shadow:none; box-shadow: none;}
 
@@ -225,7 +251,64 @@ a.lesson.btn-orange {
 
 
 
+// --------------------------------------------------------------
+// NAVBAR HOME
+// --------------------------------------------------------------
 
+
+nav.navbar-home {
+	background: none;
+	margin-top: -70px;
+	padding-top: 20px;
+	text-transform: uppercase;
+
+}
+
+nav.navbar-home a {
+	font-size: 13px !important;
+	font-weight:500 !important;
+	padding:5px 25px;
+}
+
+nav.navbar-home.shrink-home a:hover {
+	color:$bezier !important;
+}
+
+	
+
+nav.navbar-home.shrink-home {
+	background: white !important;
+	margin-top:0px;
+	padding-top: 0px;
+	-moz-box-shadow: inset 0 -10px 1px -10px #8A959E;
+    -webkit-box-shadow: inset 0 -10px 1px -10px #8A959E;
+    box-shadow: inset 0 -10px 1px -10px #8A959E;
+}
+
+nav.navbar-home.shrink-home a {
+	color: #8A959E !important;
+}
+
+nav.navbar-home.shrink-home a.btn {
+	color:#ffffff !important;
+	background:$bezier;
+	border:1px solid $bezier !important;
+
+}
+
+.shrink-home {
+	background: white !important;
+	margin-top: -60px;
+}
+
+nav.navbar-home.navbar-initial {
+	margin-top: -70px;
+
+}
+
+.navbar-fixed-top {
+	transition: all 0.2s ease-in;
+}
 
 // --------------------------------------------------------------
 // NAVBAR
@@ -272,6 +355,16 @@ nav.navbar.shrink {
 	text-transform:uppercase !important;
 }
 
+.navbar-right a.btn-shamrock-inverse {
+	margin-top:5px !important;
+	text-decoration:none;
+	color:$shamrock !important;
+	border-color:$shamrock !important;
+	font-size:12px;
+	border-radius:0;
+	text-transform:uppercase !important;
+}
+
 .navbar-right a.btn-primary:hover {
 	color:#fff !important;
 	background:#54DEAC !important;
@@ -307,8 +400,8 @@ nav.navbar.shrink {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height:710px;
-    margin:-20px 0 0 0;
+    height:500px;
+    margin:-50px 0 0 0;
 }
 
 #bg-section-home-1 {
@@ -330,14 +423,34 @@ nav.navbar.shrink {
 	padding:100px 30px;
 }
 
-#content-section-home-1 a {margin-top:30px}
-
-.container-main-homepage h1 {
-	font-size: 72px;
-	font-weight:800;
-	font-variant:small-caps;
+a.btn-bezier.home {
+	padding: 10px 40px !important;
+	font-weight:500;
+	font-size:14px;
 }
 
+a.btn-bezier-inverse.home {
+	padding: 10px 40px !important;
+	font-weight:500;
+	font-size:14px;
+	margin-left: 15px;
+}
+
+
+.container-main-homepage h1 {
+	margin-top: 50px;
+	font-size: 48px;
+	font-weight:400;
+	text-transform: uppercase;
+	clear: both;
+}
+
+.container-main-homepage h2 {
+	font-weight:100; 
+	font-style: italic;
+	text-transform: italic;
+	margin-bottom: 50px;
+} 
 
 .home-heading h1 {font-size:72px;}
 
@@ -364,7 +477,7 @@ h1.home-heading-testimonial {
 .rectangle {
 	width:220px;
 	height:150px;
-	background:$shamrock;
+	background:$orange-peel;
 	color:$white;
 	padding:40px 40px;
 	font-size: 72px;
@@ -404,11 +517,24 @@ blockquote {
 // INDEX LECTURE
 // --------------------------------------------------------------
 
+#index-lecture {
+	background:url('<%= asset_path("work.jpeg") %>') no-repeat center center fixed;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:400px;
+    margin:-50px 0 0 0;
+
+}
+
+
 .index-header {margin-left: 30px;}
 
 .index-header h1 {
 	margin-top: 80px;
-	font-size: 72px;
+	font-size: 56px;
+	font-weight:300;
 }
 
 .index-header h2 {
@@ -416,18 +542,20 @@ blockquote {
 	margin-bottom:30px;
 	font-size:22px;
 	color:$grey-chateau;
-	font-weight: 500;
+	font-weight: 300;
 }
 
+
 .lecture-box {
-		background:#F8F8F8;
+		background:#FFFFFF;
 		border:$border-lily-white;
 		padding: 10px 10px;
-		border-radius: 10px;
+		box-shadow: 1px 1px #cccccc;
 }
 
 
 .lecture-index-box iframe {
+	opacity:0.8;
 	width:480px;
 	height:270px;
 	margin-left:-10px;
@@ -447,18 +575,23 @@ blockquote {
 .lecture-index-description h1 {
 	position: relative;
 	top: -45px;
+	font-weight:400;
 }
 
 .lecture-index-description a {
-	color:$mine-shaft;
-	font-weight:500;
+	color:#6D7285;
+	font-weight:300;
 	padding-left: 10px;
+}
+
+.lecture-index-description p {
+	font-weight: 300;
 }
 
 .lecture-index-description a.btn {
 	color:$grey-chateau;
-	font-weight:800;
-	font-size: 16px;
+	font-weight:300;
+	font-size: 14px;
 }
 
 
@@ -487,6 +620,10 @@ p.enrolled-users {
 	background:#F8F8F8;
 	min-height:100px;
 	border-radius: 10px;
+}
+
+.category-list h2 {
+	font-weight: 400;
 }
 
 .category-list a {
@@ -550,7 +687,7 @@ ul.inset {text-shadow: 1px $steel;}
 
 ul.footer-main-list ul {float:left; margin-left:100px;}
 
-ul.footer-main-list ul li h1 {text-transform: uppercase; font-weight:400; font-size:13px;}
+ul.footer-main-list ul li h1 {color:$bezier !important; text-transform: uppercase; font-weight:400; font-size:13px;}
 
 ul.footer-list-3 li:last-child {margin-top:15px}
 
@@ -558,7 +695,7 @@ ul.footer-list-3 li:last-child {margin-top:15px}
 
 .footer ul li a {color:#fff !important; font-size: 14px}
 
-.footer ul li a:hover {color:#34C792 !important;}
+.footer ul li a:hover {color: $bezier !important;}
 
 span.copyright {margin-left:150px;}
 
@@ -634,24 +771,44 @@ span.copyright {margin-left:150px;}
 //  Lecture SHOW
 // --------------------------------------------------------------
 
-.chapter  {
+
+
+h2.title-chapter {
+	margin: 20px 0;
+	/*background: red;*/
+}
+
+
+ul.list-lesson {
+	background: white;
+}
+
+.section-lesson {
+	background: white;
+	width:100%;
+	margin-bottom: 10px;
+	padding: 10px 0;
+}
+
+
+.chapter-section  {
 	margin-top: 30px;
-	margin-bottom:30px;
+	margin-bottom:10px;
 }
 
-.chapter h2 {
+.chapter-section h2 {
 	font-size:32px;
-	margin-bottom: 50px;
+	margin-bottom: 40px;
 }
 
-.chapter h2 span {
+.chapter-section h2 span {
 	color:$grey-chateau;
 	font-weight:500;
 	font-size: 20px;
 	margin-left:20px;
 }
 
-.lesson-list.col-md-12 {
+.lesson-section.col-md-12 {
 
 	margin-bottom:5px;
 	/*background:#E2E5E9;*/
@@ -660,11 +817,11 @@ span.copyright {margin-left:150px;}
 
 }
 
-.lesson-list.col-md-12:hover {
+.lesson-section.col-md-12:hover {
 	background: $grey-chateau;
 }
 
-.lesson-list.col-md-12 h3 {
+.lesson-section.col-md-12 h3 {
 	display: inline;
 	color:$mine-shaft;
 	font-size: 22px;
@@ -674,7 +831,6 @@ span.copyright {margin-left:150px;}
 .lesson-list:last-child {
 	margin-bottom: 30px;
 }
-
 
 
 .lesson-list i {

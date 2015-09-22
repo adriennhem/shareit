@@ -1,14 +1,29 @@
+// var ready;
+// ready = function() {
+
+// $(window).scroll(function() {
+//   if ($(document).scrollTop() > 50) {
+//     $('nav').addClass('shrink');
+//   } else {
+//     $('nav').removeClass('shrink');
+//   }
+// }); 
+
+
 var ready;
 ready = function() {
 
 $(window).scroll(function() {
-  if ($(document).scrollTop() > 50) {
-    $('nav').addClass('shrink');
+  if ($(document).scrollTop() > 200) {
+    $('nav.navbar-home').addClass('shrink-home');
+    $('nav.navbar-home').addClass('navbar-fixed-top');
+    $('nav.navbar-home').removeClass('navbar-initial');
   } else {
-    $('nav').removeClass('shrink');
+    $('nav.navbar-home').removeClass('shrink-home');
+    $('nav.navbar-home').removeClass('navbar-fixed-top');
+    $('nav.navbar-home').addClass('navbar-initial');
   }
 }); 
-
 
 
 

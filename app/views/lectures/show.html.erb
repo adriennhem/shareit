@@ -6,51 +6,54 @@
 </script>
 
 <div class="row bg-grey">
+
 	<div class="index-header center">
        <h1><%= @lecture.title %></h1>
        <h2>by <%= @lecture.teacher.name %></h2>
     </div>
-	<div class="container mb-60 width960">
-	   <progress max="<%= @lecture.lessons.size %>" value="<%= @lecture.lessons.select{ |l| l.users.include? current_user }.count  %>"></progress>			
+
+	<div class="lecture mb-60 width960">
+
+	   <progress max="<%= @lecture.lessons.size %>" value="<%= @lecture.lessons.select{ |l| l.users.include? current_user }.count  %>"></progress>
+
+	   <% @lecture.chapters.each do |chapter| %>
+	   <div class="chapter-section">
+			<h2 class="title-chapter">
+				<%= chapter.title %><span class="chapter-duration"><%= chapter.total_duration %></span>
+			</h2> 
+			</div>
+			<div class="row">
+				<ul class="list-lesson">
+					<% chapter.lessons.each do |lesson| %>
+						<div class="section-lesson col-md-12">
+							<%= link_to [@lecture, lesson] do %>
+								<div class="section-left-lesson col-md-10">
+									<h3><%= lesson.title %></h3>
+									<p><%= truncate(lesson.short_description, length: 70 ) %></p>
+								</div>
+								<div class="section-right-lesson col-md-2">
+									<% lesson.user_lessons.where(user_id: current_user.id).each do |f|  %>
+										<% if f.completed %>
+											<i class="fa fa-check"></i> 
+										<% else %>
+											<i class="fa fa-check"></i>
+										<% end %>
+									<% end %>
+									<% end %>
+								</div>			
+						</div>
+					<% end %>
+				</ul>
+			</div>
 
 
+	   		
+	
+			
+		<% end %> <!-- END OF CHAPTER LOOP -->
 
-		<% @lecture.chapters.each do |chapter| %>
-
-
-				<div class="chapter">
-					<h2><%= chapter.title %><span class="chapter-duration"><%= chapter.total_duration %></span> </h2> 	
-				</div>
-
-
-			<div class="lessons">
+			
 				
-				<% chapter.lessons.each do |lesson| %>
-					<%= link_to [@lecture, lesson] do %>
-				<div class="lesson-list col-md-12">
-					
-								
-						
-						<h3><%= lesson.title %></h3>
-					
-						
-						<% lesson.user_lessons.where(user_id: current_user.id).each do |f|  %>
-							<% if f.completed %>
-								<i class="fa fa-check"></i> 
-							<% else %>
-								<i class="fa fa-check"></i>
-							<% end %>
-						<% end %>
-					
-						<p><%= truncate(lesson.short_description, length: 70 ) %></p>
-						
-				</div>	
-					<% end %>	
-				<% end %> 
-
-				</div>
-
-		<% end %>
 
 
 	</div>

@@ -1,13 +1,21 @@
+ <% content_for :navbar do %>
+      <%= render 'header_home' %>
+ <% end %>
+
 <script type="text/javascript">
     mixpanel.track("Visit Homepage")
 </script>
 
 
+
+
 <div class="row">
   <div id="main-homepage">
     <div class="container-main-homepage container center vertical">
-      <h1 class="white large small-caps"> What if you could learn things that matter?</h1>
-      <%= link_to "View Workshops", lectures_path, class: "btn btn-orange" %>
+      <h1 class="white">Learn. Practice. You're ready</h1>
+      <h2 class="white">The education that does not only teach you...</h2>
+      <%= link_to "Start Learning", lectures_path, class: "btn btn-bezier home" %>
+       <%= link_to "Publish a Project", lectures_path, class: "btn btn-bezier-inverse home" %>
     </div>
   </div>
 </div> <!-- .row #main-homepage -->
