@@ -250,11 +250,23 @@ a.lesson.btn-orange {
 }
 
 
-
 // --------------------------------------------------------------
-// NAVBAR HOME
+// NAVBAR
 // --------------------------------------------------------------
 
+
+/* navbar */
+
+nav {height:60px;}
+
+.navbar-nav > li > a {
+  font-family: $proxima-nova;
+  font-weight:100;
+  padding-top:20px !important;
+  color:#fff !important;
+  font-size: 16px;
+  text-decoration: none;
+}
 
 nav.navbar-home {
 	background: none;
@@ -274,26 +286,12 @@ nav.navbar-home.shrink-home a:hover {
 	color:$bezier !important;
 }
 
-	
 
 nav.navbar-home.shrink-home {
 	background: white !important;
 	margin-top:0px;
 	padding-top: 0px;
-	-moz-box-shadow: inset 0 -10px 1px -10px #8A959E;
-    -webkit-box-shadow: inset 0 -10px 1px -10px #8A959E;
-    box-shadow: inset 0 -10px 1px -10px #8A959E;
-}
-
-nav.navbar-home.shrink-home a {
-	color: #8A959E !important;
-}
-
-nav.navbar-home.shrink-home a.btn {
-	color:#ffffff !important;
-	background:$bezier;
-	border:1px solid $bezier !important;
-
+	border-bottom:1px solid $mercury;
 }
 
 .shrink-home {
@@ -307,70 +305,81 @@ nav.navbar-home.navbar-initial {
 }
 
 .navbar-fixed-top {
-	transition: all 0.2s ease-in;
-}
-
-// --------------------------------------------------------------
-// NAVBAR
-// --------------------------------------------------------------
-nav {height:60px;}
-
-nav.navbar.shrink {
-	opacity:0.98;
-	transition:opacity 0.1s ease-in;
+	transition: all 0.5s ease;
 }
 
 
-.navbar-nav > li > a:hover {color:#384046;}
+/* navbar left */
 
+.navbar-left li a {
+	padding-top:10px !important;
+	font-size:18px !important;
+	font-weight:700 !important;
+}
 
-.navbar-nav > li > a {
-  font-family: $proxima-nova;
-  font-weight:100;
-  padding-top:20px !important;
-  color:#fff !important;
-  font-size: 16px;
-  text-decoration: none;
-  /*text-transform:uppercase !important;*/
+/* navbar left hover */
+
+.navbar-left li a:hover {
+	color:$bezier !important;
+}
+
+/* navbar left shrinked */
+
+nav.shrink-home .navbar-left li a {
+	color:$bezier !important;
+	padding-top:20px !important;
+	font-weight:700 !important;
+	font-size:24px !important;
+	transition:font-size 0.1s ease;
+}
+
+/* navbar left shrinked hover */
+
+nav.shrink-home .navbar-left li a:hover {
+	opacity:0.9 !important;
 }
 
 
+/* navbar right */
 
-.navbar-right li a:hover {color:#4BCA9C !important; transition: all 0.1s ease-in;}
-
-.navbar-left > li > a {
-	padding-top:0 !important;
+.navbar-right li {
+	padding:0 10px;
 }
 
-
-
-.navbar-right a.btn-primary {
-	margin-top:5px !important;
-	text-decoration:none;
-	color:#fff !important;
-	background:$shamrock !important;
-	border-color:$shamrock !important;
-	font-size:12px;
-	border-radius:0;
-	text-transform:uppercase !important;
+p.navbar-btn {
+	padding-top:5px;
 }
 
-.navbar-right a.btn-shamrock-inverse {
-	margin-top:5px !important;
-	text-decoration:none;
-	color:$shamrock !important;
-	border-color:$shamrock !important;
-	font-size:12px;
-	border-radius:0;
-	text-transform:uppercase !important;
+/* navbar right hover */
+
+.navbar-right li a:hover {
+	color:$bezier !important;
+	 transition: all 0.3s ease-in;
 }
 
-.navbar-right a.btn-primary:hover {
-	color:#fff !important;
-	background:#54DEAC !important;
-	border-color:#54DEAC !important;
+p.navbar-btn a:hover {
+	color:#ffffff !important;
 	transition:background 0.2s ease-in;
 }
+
+/* navbar right shrinked  */
+
+nav.navbar-home.shrink-home a {
+	color: #8A959E !important;
+}
+
+nav.navbar-home.shrink-home a.btn {
+	color:#ffffff !important;
+	background:$bezier;
+	border:1px solid $bezier !important;
+}
+
+/* navbar right shrinked hover */
+
+nav.navbar-home.shrink-home a.btn:hover {
+	opacity:0.8;
+}
+
 
 
 /* SIGNIN MODAL */
@@ -701,7 +710,14 @@ span.copyright {margin-left:150px;}
 
 .footer input.email {width:330px !important; height:32px !important; border-radius:0 !important}
 
-.footer input.btn-orange {margin-top: 5px; font-weight: 700; font-family: $proxima-nova; text-transform: uppercase; text-shadow:none;}
+.footer input.btn-bezier {
+	margin-top: 5px;
+	 font-weight: 700; 
+	 font-family: $proxima-nova; 
+	 text-transform: uppercase; 
+	 text-shadow:none;
+	 border-radius:0;
+}
 
 
 
