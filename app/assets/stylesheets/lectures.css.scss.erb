@@ -599,6 +599,16 @@ h1.home-heading-testimonial {
 	color:$grey-chateau;
 }
 
+#section2 p a {
+	color:$bezier;
+	font-size:14px;
+	text-decoration: underline !important;
+}
+
+#section2 p a:hover {
+	opacity: 0.9;
+}
+
 /* section 3 col left */
 
 #section-home-3 {
@@ -786,6 +796,89 @@ p.enrolled-users {
 	font-size:18px;
 	color:$mine-shaft;
 }
+
+// --------------------------------------------------------------
+// Devise Layout 
+// --------------------------------------------------------------
+
+body#devise {
+    margin-top:-60px;
+    min-height:100%;
+    	background:url('<%= asset_path("signin.jpg") %>') no-repeat center center;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#devise-signup {
+    margin:-60px 0 0 0;
+    width:100%;
+}
+
+.panel-devise {
+	width:500px;
+	margin: 0 auto;
+}
+
+#devise a {
+	display: inline-block !important;
+	float: left !important;
+	color:$bezier;
+	font-weight:100;
+	font-size: 12px;
+	margin-top:-10px;
+}
+
+.panel {
+	margin-top: 20px;
+	border: none;
+	width:500px;
+	border-radius:10px !important;
+}
+
+.panel-heading {
+	background: $tuna !important;
+	color:$hint-red !important;
+	height:100px;
+	border-radius:10px 10px 0 0  !important;
+}
+
+h3.panel-title {
+		font-size:36px !important;
+		text-align: center;
+		margin-top:25px;
+		font-weight:400;
+}
+
+.panel-body p  {
+	text-align: center;
+	margin-top:10px;
+	font-size: 18px;
+	font-weight:300;
+}
+
+.panel-body input {
+	width:460px !important;
+	margin:10px 0;
+	font-weight: 300;
+}
+
+.panel-body input.btn-bezier {
+	border-radius: 0px;
+	padding: 25px 0;
+	text-shadow:none;
+}
+
+.panel-body input.btn-bezier:hover {
+	opacity:0.8;
+}
+
+.panel-body p.center {
+	font-size: 12px;
+	font-weight: 100;
+}
+
 
 
 // --------------------------------------------------------------

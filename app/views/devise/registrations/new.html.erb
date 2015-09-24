@@ -1,21 +1,31 @@
-<div class="row bg-grey">
-<div class="container" id="signup">  
-    <h1>Register</h1>
-    <div id="signup-form">
+
+<div class="container-fluid"> 
+  <div class="panel-devise">
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Workshopr.</h3>
+  </div>
+  <div class="panel-body">
+    <p>Get Started!</p>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
-      
-       <%= f.input :first_name %>
-       <%= f.input :last_name %>
-       <%= f.input :email %>
-       <%= f.input :password %>
-       <%= f.input :password_confirmation %>
-       <%= f.button :submit, 'Register', class: "btn-orange btn" %>
+       <%= f.input :email, label: false, placeholder: 'EMAIL' %>
+       <%= f.input :password, label: false, placeholder: 'PASSWORD' %>
+       <%= f.input :password_confirmation, label: false, placeholder: 'PASSWORD CONFIRMATION' %>
+       <%= f.button :submit, 'Register', class: "btn-bezier btn" %>
     <% end %>
+    <p class="center">By clicking 'Register' I agree Workshopr's Terms of Service </p>
+  </div>
+</div> 
+  
+      <%= render "devise/shared/links" %>
+
+   </div>
     
-    <%= render "devise/shared/links" %>
+    
+
 
     </div>  <!-- end .panel-lock -->
 </div> <!-- end #content -->
 
-</div>
