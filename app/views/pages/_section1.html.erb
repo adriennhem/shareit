@@ -1,13 +1,37 @@
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
 <div class="row height610 bg-white" id="section-home-1">
   <div class="container-fluid">
     <div class="col-md-12">
-      <div class="col-md-5" id="bg-section-home-1">
+      <div class="col-md-4" id="bg-section-home-1">
+        <div class="bg-section1-content center">
+        <h1>I am a student</h1>
+        <%= link_to 'View our courses', lectures_path, class: "btn-bezier-inverse btn" %>
+        </div>
       </div>
-      <div class="col-md-6" id="content-section-home-1">
-         <div class="center">
-         <h1>Skyrocket your career</h1>
-          <p class="margin-s">No need to be a genius to understand that today's job market is getting increasingly complex. Companies are looking for people with double competences. In educational institutions you learn models and theories but not how to apply them in real life. We work hard to bridge this gap between education and real life.</p>
-           <%= link_to "More about what we do", pages_about_path , class: "btn btn-two-colors" %>
+      <div class="col-md-7" id="content-section-home-1">
+         <div>
+        
+
+         <h2>1. Edutain Yourself</h2>
+          <p>Start a course, you'll never get overwhelmed. Learn at your own pace and <strong>gain skills that are complementary to your educational background in a fun way.</strong></p>
+      <!--     <%= link_to 'What is edutainment?', '#',  data: { toggle: 'tooltip', placement: 'bottom', original_title: 'The art of learning while having fun' }, class: "tooltips btn btn-bezier" %> -->
+
+          <h2>2. Work on real life project</h2>
+          <p>Once you've completed a course, related <strong>projects provided by companies will appear</strong> in your dashboard. You'll get the opportunity to work on hands on project and <strong>enhance your professional experience</strong></p>
+       
+
+           <h2>3. Get Hired</h2>
+          <p><strong>Pretty self explanatory, isn’t? </strong>
+          How can’t you find a job with such a strong CV now?
+          And who knows? if you gave everything, <strong>you might get an internship from our partners.</strong>
+          </p>
+                 
+
         </div>
       </div>
     </div>
