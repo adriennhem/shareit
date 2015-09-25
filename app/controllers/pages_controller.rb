@@ -13,6 +13,7 @@ class PagesController < ApplicationController
   end
 
   def signout
+    render layout: 'devise_layout'
   end
 
   def blog
