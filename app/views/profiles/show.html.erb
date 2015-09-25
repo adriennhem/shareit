@@ -8,54 +8,16 @@
 
 
 <div class="row bg-grey">
+	<% if @user.student? %>
+		 <%= render 'profiles/student' %>
+	 <% end %>
 
-	 <div class="index-header center">
+ 	 <% if @user.company? %>
+		 <%= render 'profiles/company' %>
+	 <% end %>
 
-       <h1>Dashboard</h1>
-       <h2><%= current_user.email %></h2>
-       <%= image_tag @user.picture.url(:medium) %> 
-     </div>
-
-	<div class="container profile">
-
-	<h1 class="page-header">Enrolled Courses</h1>
-		<% @user.lectures.each do |lecture| %>
-
-			<div class="col-md-6 margin-s mb-150">
-
-	          <div class="lecture-box-profile">
-	          	<div class="borderLeft">
-		          <%= link_to lecture do %>	
-		           <h1><%= lecture.title %></h1> 
-		           <% end %>
-		         </div>
-
-
-	            <p class="lecture-box-profile-description"><%= truncate(lecture.description, length: 150) %> <span class="by-teacher">by <%= lecture.teacher.name %></span> </p>
-	            
-	         
-
-
-	           <progress max="<%= lecture.lessons.size %>" value="<%= lecture.lessons.select{ |l| l.users.include? current_user }.count  %>"></progress>
-
-
-	            <h2><%= number_to_percentage( lecture.lessons.select{ |l| l.users.include? current_user }.count.to_f / lecture.lessons.size.to_f * 100, precision: 0) %> <span>Complete</span></h2>
-
-	            <p class="completed-lessons"><%= lecture.lessons.select{ |l| l.users.include? current_user }.count %> out of  <%= lecture.lessons.size %> lessons completed</p>
-	           
-	           
-
-	           
-	          
-	          </div> <!-- .lecture-box -->
-	        </div> <!-- .col-md-4 -->
-		<% end %>
-
-	</div>
 </div>
 
 
-<% if current_user.student? %>
-	<h1>hello</h1>
-<% end %>
+
 
