@@ -12,7 +12,11 @@
       <%= devise_error_messages! %>
        <%= f.input :email, label: false, placeholder: 'EMAIL' %>
        <%= f.input :password, label: false, placeholder: 'PASSWORD' %>
+
        <%= f.input :password_confirmation, label: false, placeholder: 'PASSWORD CONFIRMATION' %>
+
+        <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
+
        <%= f.button :submit, 'Register', class: "btn-bezier btn" %>
     <% end %>
     <p class="center">By clicking 'Register' I agree Workshopr's Terms of Service </p>
