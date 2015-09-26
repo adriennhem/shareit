@@ -5,9 +5,14 @@
     '://workshoprs.groovehq.com/widgets/18dffb65-bf2b-4767-907a-79ab573d2848/ticket.js'; var q = document.getElementsByTagName('script')[0];q.parentNode.insertBefore(s, q);})();
 </script>
 
+<script>
+	$(window).load(function(){
+    $('#cover').fadeOut(1000);
+});
+</script>
 
-<div class="col-md-10">
 
+<div class="col-md-10" id="cover">
 <div class="bg-grey page-content-wrapper" id="dashboard">
 	<% if @user.student? %>
 		 <%= render 'profiles/student' %>

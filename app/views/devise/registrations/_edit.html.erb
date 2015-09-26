@@ -1,0 +1,47 @@
+<div class="row bg-grey">
+  <div class="index-header center">
+       <h1>Update your info</h1>
+       <h2>Change your settings</h2>
+     </div>
+
+
+<div class="width550 settings margin-s mb-60">
+
+    <%= link_to :back do %>
+  <i class="fa fa-arrow-left"></i> Back
+<% end %>
+
+<div id="edit-settings">
+
+
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+  
+   <%= f.input :first_name %>
+   <%= f.input :last_name %>
+   <%= f.input :email %>
+   <%= f.input :picture, as: :file %>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+  
+   <%= f.input :password, label: "(leave blank if you don't want to change it)", input_html: {  autocomplete: "off" } %>
+   <%= f.input :password_confirmation, input_html: {  autocomplete: "off" } %>
+   <%= f.input :current_password, input_html: { label: "(we need your current password to confirm your changes)", autocomplete: "off" } %>
+
+ <%= f.button :button, "Update", class: "btn-orange", data: {disable_with: "Update <i class='fa fa-spinner fa-spin'></i>"} %>
+<% end %>
+
+
+<!-- 
+<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p> -->
+
+
+
+</div>
+
+</div>
+
+</div>

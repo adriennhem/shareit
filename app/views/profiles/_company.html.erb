@@ -1,1 +1,21 @@
-<h1>Company</h1>
+
+
+
+    
+
+        <% content_for :navbar do %>
+      <%= render 'layouts/sidebar_student' %>
+		 <% end %>
+
+
+   
+	
+    <!-- /#wrapper -->
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>

@@ -1,9 +1,9 @@
- <div class="index-header center">
+     
 
-       <h1>Dashboard</h1>
-       <h2><%= current_user.email %></h2>
-       <%= image_tag @user.picture.url(:medium) %> 
-     </div>
+<% content_for :navbar do %>
+	<%= render 'layouts/sidebar_student' %>
+<% end %>
+
 
 	<div class="container profile">
 
@@ -21,9 +21,7 @@
 
 
 	            <p class="lecture-box-profile-description"><%= truncate(lecture.description, length: 150) %> <span class="by-teacher">by <%= lecture.teacher.name %></span> </p>
-	            
-	         
-
+	             
 
 	           <progress max="<%= lecture.lessons.size %>" value="<%= lecture.lessons.select{ |l| l.users.include? current_user }.count  %>"></progress>
 

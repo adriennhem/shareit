@@ -12,6 +12,10 @@ class LecturesController < ApplicationController
     else
       @lectures = Lecture.all
     end
+    respond_to do |format|
+      format.html # renders show.html.erb
+      format.js   # renders show.js.erb
+    end
     authorize @lectures
   end
 

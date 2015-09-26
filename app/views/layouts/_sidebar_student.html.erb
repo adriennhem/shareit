@@ -1,0 +1,36 @@
+ <!-- Sidebar --> <div class="col-md-2">
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <%= link_to "W.", root_path %>
+                </li>
+    
+               
+                <li>
+                    <%= link_to profile_path(current_user), remote: true, data: {disable_with: "<i class='fa fa-tachometer'></i> <span>Dashboard</span> <i class='fa fa-spinner fa-spin'></i>"}  do %>
+                    <i class="fa fa-tachometer"></i> <span>Dashboard</span>
+                    <% end %>
+                </li>
+                <li>
+                   <%= link_to lectures_path, remote: true, data: {disable_with: "<i class='fa fa-book'></i> Courses <i class='fa fa-spinner fa-spin'></i>"} do %>
+                    <i class="fa fa-book"></i></i> <span>Courses</span>
+                    <% end %>
+                </li>
+                <li>
+                    <%= link_to edit_user_registration_path, remote: true, data: {disable_with: "<i class='fa fa-cog'></i> <span>Settings</span> <i class='fa fa-spinner fa-spin'></i>"} do %>
+                    <i class="fa fa-cog"></i> <span>Settings</span>
+                    <% end %>
+                </li>
+                
+               
+                <li>
+                    <%= link_to destroy_user_session_path, method: :delete do %>
+                     <i class="fa fa-sign-out"></i> <span>Sign Out</span>
+                     <% end %>
+                   
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        </div>

@@ -1,0 +1,115 @@
+<script type="text/javascript">
+    mixpanel.track("Visit Index")
+</script>
+
+
+
+ <div class="col-md-2 category-list">
+            <h2>Filter by:</h2>
+              <% Category.all.each do |category| %>
+                <div class="list-category center">
+                  <%= link_to category.name, lectures_path(category: category.name) %>
+                </div>
+              <% end %>
+            </div>
+
+
+
+<div class="row bg-grey border-top">
+  <div class="container container-index">
+      
+       
+     </div>
+
+      
+
+
+        <div class="col-md-10">
+         
+          <div class="col-md-12">
+
+           <% @lectures.each do |lecture| %>
+
+              <div class="margin-s">
+
+                  <div class="lecture-box lecture-index-box">
+
+                    <div class="col-md-6 lecture-index-video">
+
+                        <%= lecture.video.html_safe %>
+
+                    </div>  
+
+                    <div class="col-md-6 lecture-index-description">
+
+                        <h1><%= lecture.title %></h1> 
+
+                        
+
+                         <p class="enrolled-users">
+                         <%= lecture.enrollments.count %> <i class="fa fa-user"></i> <span>Enrolled</span>
+                         </p>
+
+                        <p class="lecture-description">
+                          <%= truncate(lecture.description, length: 210) %> 
+                        </p>
+
+                        <%= link_to 'Enroll Now', enrollments_path(@enrollment, enrollment: {user_id: 'current_user.id', lecture_id: lecture.id}), :method => :post, data: {confirm: 'are you sure?', disable_with: "Enroll Now <i class='fa fa-spinner fa-spin'></i>"}, class: "btn btn-bezier index-lecture" %>
+
+                        <a  class="<%= lecture.id %>" name="answer" value="Show Div" onclick="showDiv()">More details <i class="fa fa-chevron-down"></i></a>
+
+                      <script>
+                      $(document).ready(function(){
+                          $(".<%= lecture.id %>").click(function(){
+                              $("#<%= lecture.id %>").toggle(220);
+                          });
+                      });
+                      </script>
+
+                    </div>
+                     
+                     <div id="<%= lecture.id %>" class="lecture-index-details"  style="display:none;" class="answer_list" > 
+                        <!-- Here goes details -->
+                        WELCOME
+                     </div>  
+
+                  </div> <!-- .lecture-box -->
+
+              </div> <!-- .col-md-4 -->
+
+          <% end %>
+
+          </div> <!-- .col-md-12 -->
+
+        </div> <!-- .container-left -->
+  
+          
+         
+           
+
+
+
+  </div> <!-- .container -->
+
+
+
+</div> <!-- row -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

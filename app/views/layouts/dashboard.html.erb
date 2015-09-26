@@ -24,20 +24,27 @@ mixpanel.init("0efcf03757a7792f069573d96e8b82d6");</script><!-- end Mixpanel -->
 </script>
 
 <body id="main">
+  <div class="col-md-2">
 <% if content_for?(:navbar) %>
     <%= yield(:navbar) %>
 <% else %>
    <%= render 'layouts/header' %>
 <% end %>
-
-<%= render 'pages/signin' %>
-<%= render 'layouts/messages'  %>
-<div class="container-fluid container-application bg-grey">
-
-<%= yield %>
-
-<%= render 'layouts/footer' unless @disable_footer %>
 </div>
+
+<%= render 'layouts/messages'  %>
+    <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                      <%= yield %>
+                      <%= render 'layouts/footer' unless @disable_footer %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
 
 </body>
 </html>
