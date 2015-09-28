@@ -1,38 +1,16 @@
 <script type="text/javascript">
-    mixpanel.track("Visit Index")
+    mixpanel.track("Dashboard Index")
 </script>
 
 
+          <h1 class="dashboard-course">All Courses</h1>
 
- <div class="col-md-2 category-list">
-            <h2>Filter by:</h2>
-              <% Category.all.each do |category| %>
-                <div class="list-category center">
-                  <%= link_to category.name, lectures_path(category: category.name) %>
-                </div>
-              <% end %>
-            </div>
-
-
-
-<div class="row bg-grey border-top">
-  <div class="container container-index">
-      
-       
-     </div>
-
-      
-
-
-        <div class="col-md-10">
-         
-          <div class="col-md-12">
-
+    
            <% @lectures.each do |lecture| %>
 
-              <div class="margin-s">
+   
 
-                  <div class="lecture-box lecture-index-box">
+                  <div class="lecture-box lecture-index-box col-lg-12 col-md-12">
 
                     <div class="col-md-6 lecture-index-video">
 
@@ -75,13 +53,10 @@
 
                   </div> <!-- .lecture-box -->
 
-              </div> <!-- .col-md-4 -->
 
           <% end %>
 
-          </div> <!-- .col-md-12 -->
 
-        </div> <!-- .container-left -->
   
           
          
@@ -89,11 +64,7 @@
 
 
 
-  </div> <!-- .container -->
-
-
-
-</div> <!-- row -->
+  
 
 
 

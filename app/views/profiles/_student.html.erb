@@ -5,16 +5,14 @@
 <% end %>
 
 
-	<div class="container profile">
-
-	<h1 class="page-header">Enrolled Courses</h1>
+	<h1 id="dasboard-student-title">Enrolled Courses</h1>
 		<% @user.lectures.each do |lecture| %>
 
 			<div class="col-md-6 margin-s mb-150">
 
-	          <div class="lecture-box-profile">
+	          <div class="lecture-box-profile" id="dashboard-student-box">
 	          	<div class="borderLeft">
-		          <%= link_to lecture do %>	
+		          <%= link_to lecture, remote: true do %>	
 		           <h1><%= lecture.title %></h1> 
 		           <% end %>
 		         </div>
@@ -38,4 +36,3 @@
 	        </div> <!-- .col-md-4 -->
 		<% end %>
 
-	</div>

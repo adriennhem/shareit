@@ -6,6 +6,10 @@ class LessonsController < ApplicationController
   def show
     @lecture = Lecture.find(params[:lecture_id])
     @lesson = @lecture.lessons.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js
+    end
     authorize @lecture
     # @previous = @lecture.lessons.where("id < ?", params[:id]).order(:id).first   
     # @next = @lecture.lessons.where("id > ?", params[:id]).order(:id).first 

@@ -49,8 +49,8 @@ h2 {font-size:28px;}
 /* FLASH MESSAGES */
 .alert {
 	border-radius:0;
-	background:rgba(0,255,255,0.7);
-	 color: rgba(51, 51, 51, 1);
+	background:$electric-blue;
+	 color:#ffffff;
 	 height:40px;
 	}
 
@@ -721,7 +721,6 @@ blockquote {
 		background:#FFFFFF;
 		border:$border-lily-white;
 		padding: 10px 10px;
-		box-shadow: 1px 1px #cccccc;
 }
 
 
@@ -802,12 +801,51 @@ p.enrolled-users {
 	color:$mine-shaft;
 }
 
+
+
+/* Lectures index box */
+
+.lectures-container {
+	margin:10px 150px;
+}
+
+
+.lectures-box {
+	border: 1px solid $zircon;
+	width:400px;
+	margin-left:50px;
+	margin-top:50px;
+
+}
+
+#lecture-row {
+	background:#ffffff;
+}
+
+#index-lecture {
+}
+
+.heading {
+	padding: 100px 400px;
+	width: 100%;
+
+}
+
+.heading h1, .heading h2 {
+	font-weight: 100;
+	color: $bezier;
+}
+
+.heading h1 {
+	font-size: 48px;
+}
+
 // --------------------------------------------------------------
 // Devise Layout 
 // --------------------------------------------------------------
 
 body#devise {
-    margin-top:-60px;
+    margin-top:10px;
     min-height:100%;
     	background:url('<%= asset_path("signin.jpg") %>') no-repeat center center;
 	-webkit-background-size: cover;
@@ -1168,11 +1206,7 @@ p.completed-lessons {
 	margin-top: 10px;
 }
 
-/* General properties */
 
-span.by-teacher {
-	color:$shamrock;
-}
 
 /* PROGRESS BAR */
 
@@ -1194,7 +1228,7 @@ progress[value]::-webkit-progress-value {
 	   -webkit-linear-gradient(-45deg, 
 	                           transparent 40%,  
 	                            transparent 66%),
-	   -webkit-linear-gradient(left, #3BCC9A 33%, #f1c40f, #f39c12, #d35400);
+	   -webkit-linear-gradient(left, $electric-green 33%, $electric-green, $electric-green, $electric-green);
 
   border-radius: 10px; 
   background-size: 45px 25px, 100% 100%, 100% 100%;
@@ -1209,9 +1243,6 @@ progress[value]::-webkit-progress-value {
 	background:$white;
 	margin-bottom:30px;
 }
-
-
-
 
 
 #wrapper {
@@ -1250,10 +1281,7 @@ progress[value]::-webkit-progress-value {
     position: absolute;
 }
 
-#wrapper.toggled #page-content-wrapper {
-    position: absolute;
-    margin-right: 150px;
-}
+
 
 /* Sidebar Styles */
 
@@ -1312,9 +1340,9 @@ progress[value]::-webkit-progress-value {
 }
 
 @media(min-width:768px) {
-    #wrapper {
+/*    #wrapper {
         padding-left: 150px;
-    }
+    }*/
 
     #wrapper.toggled {
         padding-left: 0;
@@ -1339,7 +1367,155 @@ progress[value]::-webkit-progress-value {
     }
 }
 
+
+
+/* dashboard */
+
+
 #dashboard {
-	
+	background:none;
 	max-width: 100%;
+}
+
+/* dashboard course */
+
+h1.dashboard-course {
+	margin-top:30px;
+	font-weight:100;
+}
+
+#dashboard .lecture-box {
+	margin-top:20px;	
+}
+
+#dashboard .lecture-box:last-child {
+	margin-bottom:50px;
+}
+
+
+/* dashboard-edit */
+
+h1#dashboard-edit {
+	font-weight:100;
+	margin:60px 250px;
+
+}
+
+#dashboard-edit-form {
+	margin:0 250px;
+}
+
+#dashboard-edit-form input {
+	border:none;
+	border-bottom:1px solid $casper; 
+	margin: 30px 0;
+	font-weight:100;
+	border-radius:0;
+	width:400px;
+}
+
+#dashboard-edit-form input:focus {
+	border-color:$electric-blue;
+	box-shadow:none;
+	font-size:16px;
+	color:$electric-blue;
+}
+
+#dashboard-edit-form ::-webkit-input-placeholder {
+   font-size:14px; 
+   height:50px;
+}
+
+#dashboard-edit-form input:focus::-webkit-input-placeholder {
+	position:relative;
+	padding-top:20px;
+	font-size:10px;
+	transition: all 0.2s ease-in;
+}
+
+#dashboard-edit-form input:focus:-moz-placeholder {
+	position:relative;
+	padding-top:20px;
+	font-size:10px;
+	transition: all 0.2s ease-in;
+}
+
+#dashboard-edit-form input:focus:-ms-input-placeholder {
+	position:relative;
+	padding-top:20px;
+	font-size:10px;
+	transition: all 0.2s ease-in;
+}
+
+#dashboard-edit-form :-moz-placeholder { /* Firefox 18- */ 
+   font-size:16px; 
+}
+
+#dashboard-edit-form ::-moz-placeholder {  /* Firefox 19+ */
+   font-size:16px;  
+}
+
+#dashboard-edit-form :-ms-input-placeholder {  
+   font-size:16px;  
+}
+
+#dashboard-edit-form input[type='file'] {
+	border:none;
+}
+
+#dashboard-edit-form button.btn-bezier {
+	background:$bezier;
+	border-radius:0px;
+	text-shadow:none;
+	font-weight: 400;
+	width:400px;
+	height:60px;
+}
+
+#dashboard-edit-form button.btn-bezier:hover {
+	opacity:0.9;
+	color:#ffffff;
+}
+
+#dashboard-edit-form {
+	margin-bottom:30px;
+}
+
+/* dasboard enrolled courses */
+
+.col-md-6.margin-s.mb-150 {
+}
+
+#dashboard-student-box {
+	border:1px solid $zircon;
+	border-radius:0;
+	border-top:3px solid $electric-green;
+	width:400px;
+	padding-left:30px;
+}
+
+span.by-teacher {
+	color:$electric-green;
+}
+
+#dashboard-student-box h1 {
+	padding-top:20px;
+	font-weight:300;
+	color:$tuna;
+
+}
+
+#dashboard-student-box p {
+	font-weight:300;
+	color:$tuna;
+}
+
+#dashboard-student-box h2 {
+	color:$electric-green;
+}
+
+h1#dasboard-student-title {
+	margin-top: 50px;
+	font-weight:300;
+	color:$tuna;
 }

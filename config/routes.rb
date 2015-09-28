@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'tutorials/show'
+  # get 'tutorials/show'
 
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get 'pages/contact'
 
-  get 'pages/upcoming'
+  # get 'pages/upcoming'
 
   get 'pages/blog'
 
@@ -29,7 +29,7 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
-  resources :tutorials
+  # resources :tutorials
 
   resources :profiles
 

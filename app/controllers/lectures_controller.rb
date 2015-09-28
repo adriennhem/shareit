@@ -23,6 +23,10 @@ class LecturesController < ApplicationController
   # GET /lectures/1.json
   def show
     @teacher = Teacher.all
+    respond_to do |format|
+      format.html # renders show.html.erb
+      format.js   # renders show.js.erb
+    end
     authorize @lecture
   end
 

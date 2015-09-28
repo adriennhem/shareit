@@ -1,0 +1,58 @@
+<script>
+  (function() {var s=document.createElement('script');
+    s.type='text/javascript';s.async=true;
+    s.src=('https:'==document.location.protocol?'https':'http') +
+    '://workshoprs.groovehq.com/widgets/18dffb65-bf2b-4767-907a-79ab573d2848/ticket.js'; var q = document.getElementsByTagName('script')[0];q.parentNode.insertBefore(s, q);})();
+</script>
+
+
+<div class="row bg-grey">
+
+    <div class="container width960 margin-s">
+
+
+          <h1><%= @lesson.title %></h1>
+
+            <%= link_to 'Back', @lecture, class: "btn lesson btn-orange", remote: true %>
+
+            
+
+
+
+          <%= link_to 'Mark as complete', user_lessons_path(@user_lesson, user_lesson: {user_id: current_user.id, lesson_id: @lesson.id}), :method => :post, class: 'btn-shaft', data: {disable_with: "Mark as complete <i class='fa fa-spinner fa-spin'></i>"} %>
+
+	<div class="center margin-s">
+		<%= @lesson.vid.html_safe %>
+	</div>
+
+
+    <h1 class="margin-s">Step by Step</h1>
+    <p class="margin-s"><%=  @lesson.description.html_safe %></p>
+    
+    <h1 class="margin-s">Leave a comment</h1>
+    <div class="margin-s" id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES * * */
+            var disqus_shortname = 'workshopr';
+            
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+     
+</div>
+
+
+
+
+
+ 
+
+
+
+
