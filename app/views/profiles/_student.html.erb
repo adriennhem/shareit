@@ -24,7 +24,7 @@
 	           <progress max="<%= lecture.lessons.size %>" value="<%= lecture.lessons.select{ |l| l.users.include? current_user }.count  %>"></progress>
 
 
-	            <h2><%= number_to_percentage( lecture.lessons.select{ |l| l.users.include? current_user }.count.to_f / lecture.lessons.size.to_f * 100, precision: 0) %> <span>Complete</span></h2>
+	        <!--  -->
 
 	            <p class="completed-lessons"><%= lecture.lessons.select{ |l| l.users.include? current_user }.count %> out of  <%= lecture.lessons.size %> lessons completed</p>
 	           

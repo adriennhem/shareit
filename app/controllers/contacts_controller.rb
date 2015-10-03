@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  layout "devise_layout", only: :create
   def new
     @contact = Contact.new
   end

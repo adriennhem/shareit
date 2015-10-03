@@ -6,10 +6,15 @@
       <%= render 'pages/header_home' %>
  <% end %>
 
- <div class="index-header center contact">
-       <h1>You want to get in touch with us?</h1>
-       <h2>... Then drop us a message :)</h2>
-     </div>
+<div class="row">
+  <div id="index-lecture">
+    <div class="heading">
+       <h1 class="contact">You want to get in touch with us?</h1>
+       <h2 class="contact-sub">... Then drop us a message :)</h2>
+    </div>
+  </div>
+</div>
+
 
 <div class="container-contact width550">
 
@@ -24,7 +29,7 @@
     </div>
     <div>
       </br>
-      <%= f.button :submit, 'Send message', :class=> "btn-form" %>
+      <%= f.button :submit, 'Send message', :class=> "btn-bezier" %>
     </div>
   <% end %>
 </div>

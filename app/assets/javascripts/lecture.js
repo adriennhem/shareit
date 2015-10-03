@@ -17,7 +17,7 @@ var ready;
 ready = function() {
 
 $(window).scroll(function() {
-  if ($(document).scrollTop() > 200) {
+  if ($(document).scrollTop() > 150) {
     $('nav.navbar-home').addClass('shrink-home');
     $('nav.navbar-home').addClass('navbar-fixed-top');
     $('nav.navbar-home').removeClass('navbar-initial');

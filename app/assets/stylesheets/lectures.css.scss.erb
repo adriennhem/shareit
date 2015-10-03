@@ -1030,7 +1030,10 @@ span.copyright {margin-left:150px;}
 //  Contact
 // --------------------------------------------------------------
 
-.contact h1 {font-size: 48px;}
+h1.contact, h2.contact-sub  {
+	font-size: 36px;
+	font-weight:100;
+}
 
 .container-contact {margin: 70px auto;}
 
@@ -1052,6 +1055,17 @@ span.copyright {margin-left:150px;}
 
 #contact-form input {width:418px !important; margin-bottom:10px}
 
+#contact-form input[type="submit"] {
+	height:50px;
+	border-radius:0;
+	text-shadow:none;
+	box-shadow:none;
+	
+}
+
+#contact-form input[type="submit"]:hover {
+	opacity:0.9;
+}
 
 // --------------------------------------------------------------
 //  Edit Settings 
@@ -1228,7 +1242,7 @@ progress[value]::-webkit-progress-value {
 	   -webkit-linear-gradient(-45deg, 
 	                           transparent 40%,  
 	                            transparent 66%),
-	   -webkit-linear-gradient(left, $electric-green 33%, $electric-green, $electric-green, $electric-green);
+	   -webkit-linear-gradient(left, $bezier 33%, $bezier, $bezier, $bezier);
 
   border-radius: 10px; 
   background-size: 45px 25px, 100% 100%, 100% 100%;
@@ -1489,7 +1503,7 @@ h1#dashboard-edit {
 #dashboard-student-box {
 	border:1px solid $zircon;
 	border-radius:0;
-	border-top:3px solid $electric-green;
+	border-top:3px solid $casper;
 	width:400px;
 	padding-left:30px;
 }
@@ -1518,4 +1532,75 @@ h1#dasboard-student-title {
 	margin-top: 50px;
 	font-weight:300;
 	color:$tuna;
+}
+
+/* Show lectures */
+
+#dasboard-show-lecture {
+	background:#F8F8F8;
+	margin-left:-100px;
+	height:140px;
+}
+
+#dasboard-show-lecture h1 {
+	margin-top:30px;
+	font-weight:600;
+	color:$cloud-burst;
+}
+
+#dasboard-show-lecture a {
+	position:absolute; 
+	left:50px;
+	top:50px;
+	font-size:20px;
+	color:$cloud-burst;
+}
+
+.lecture {
+	margin-top:50px;
+}
+
+
+.chapter-section {
+	margin-left: -30px;
+}
+
+h2.title-chapter {
+	font-weight:600;
+	font-size:28px;
+	color:$cloud-burst;
+}
+
+h2.title-chapter span {
+	font-weight:400;
+	font-size:20px;
+	color:$casper;
+}
+
+.section-lesson {
+	border:1px solid #E8E8E8 ;
+	margin-left:-35px;
+	border-radius:5px;
+}
+
+.section-lesson:hover {
+	background:#F8F8F8 ;
+}
+
+.section-left-lesson h3 {
+	font-weight:400;
+	font-size: 20px; 
+	color:$blue-charcoal;
+}
+
+.section-left-lesson p {
+	font-weight:100;
+	font-size:18px;
+	color:$tuna;
+}
+
+.fa-check {
+	font-size:32px !important;
+	color:$bezier;
+	padding-top:30px;
 }

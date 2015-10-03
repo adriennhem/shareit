@@ -9,6 +9,7 @@
        <%= f.input :email, label: false, autocomplete: false, placeholder: 'EMAIL' %>
        <%= f.input :password, label: false, autocomplete: false, placeholder: 'PASSWORD'   %>
        <%= f.input :password_confirmation, label: false, autocomplete: false, placeholder: 'PASSWORD CONFIRMATION'   %>
+       <%= hidden_field_tag :role, :company %>
        <%= f.button :submit, "Sign up! It's free", class: "btn-bezier" %>
     <% end %>
     </div>
