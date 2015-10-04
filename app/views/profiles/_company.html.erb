@@ -1,21 +1,13 @@
+<!-- Menu Toggle Script -->
+<script>
+$("#menu-toggle").click(function(e) {
+e.preventDefault();
+$("#wrapper").toggleClass("toggled");
+});
+</script>
 
+<% content_for :navbar do %>
+    <%= render 'layouts/sidebar_company' %>
+<% end %>
 
-
-    
-
-        <% content_for :navbar do %>
-      <%= render 'layouts/sidebar_student' %>
-		 <% end %>
-
-
-   
-	
-    <!-- /#wrapper -->
-
-    <!-- Menu Toggle Script -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
+ 
