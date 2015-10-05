@@ -17,6 +17,9 @@ class User < ActiveRecord::Base
   has_many :user_lessons
   has_many :lectures, through: :enrollments
 
+  # Iteration projects
+  has_many :projects
+
   accepts_nested_attributes_for :enrollments
 
 

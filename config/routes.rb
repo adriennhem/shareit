@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :projects
+
   # get 'tutorials/show'
 
   mount Ckeditor::Engine => '/ckeditor'

@@ -10,4 +10,30 @@ $("#wrapper").toggleClass("toggled");
     <%= render 'layouts/sidebar_company' %>
 <% end %>
 
+ <%= link_to 'new project', new_project_path, remote: true %>
+
+
+<h1>My Projects</h1>
+	<% if @projects.count == 0 %>
+		<% flash[:success] = "You did not publish any projects yet" %>
+	<% end %>
+
+
+
+<div class="row" id="row-projects">
+	<% @projects.each do |project| %>
+	<div class="col-md-6">
+		<div class="box-project">
+		<h2><%= project.title %></h2>
+		<h3><%= project.created_at %></h3>
+		<p><%= project.body %></p>
+		<%= link_to 'Details', project, remote: true %> 
+
+		</div>
+	</div>
+
+ <% end %> 
+</div>
  
+
+
