@@ -32,16 +32,19 @@ class ProjectsController < InheritedResources::Base
       format.html
       format.js
     end
+    authorize @project
   end 
 
   def update
+    @project = Project.find(params[:id])
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
+        format.js { render json: @project.to_json }
       else
         format.html { render :edit }
       end
     end
+    authorize @project
   end
 
 def create 
@@ -55,11 +58,15 @@ def create
   authorize @project 
 end	
 
-def destroy
-    @project.destroy(params[:id])
-    redirect_to profile_path(current_user)
-end
-
+  def destroy
+    @project = Project.find(params[:id])
+    @project.destroy
+    respond_to do |format|
+      format.html { redirect_to profile_path(current_user), notice: 'Contact was successfully destroyed.' }
+      format.js { head :no_content }
+    end
+    authorize @project
+  end
 
   private
 

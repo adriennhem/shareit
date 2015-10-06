@@ -8,10 +8,19 @@ class ProjectPolicy < ApplicationPolicy
 	end
 
 	def update?
-		false
+		true
+	end
+
+	def edit?
+		true
 	end
 
 	def show?
 		@user.company?
 	end
+
+	def destroy?
+		true
+	end
+
 end

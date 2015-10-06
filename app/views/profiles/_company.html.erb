@@ -27,7 +27,10 @@ $("#wrapper").toggleClass("toggled");
 		<h2><%= project.title %></h2>
 		<h3><%= project.created_at %></h3>
 		<p><%= project.body %></p>
-		<%= link_to 'Details', project, remote: true %> 
+		<%= link_to 'Details', project, remote: true %>
+		<%= link_to 'Edit', edit_project_path(project), remote: true %>
+		<%= link_to 'Delete', { :controller => 'projects', :action => 'destroy', :id => project.id }, 
+                      { :confirm => 'Are you sure?', :method => :delete} %> 
 
 		</div>
 	</div>
