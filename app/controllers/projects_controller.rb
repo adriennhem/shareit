@@ -5,6 +5,11 @@ class ProjectsController < InheritedResources::Base
 
   def index
     @projects = Project.all
+    respond_to do |format|
+      format.html
+      format.js
+    end
+    authorize @projects
   end
 
 

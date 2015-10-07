@@ -1,4 +1,8 @@
 class ProjectPolicy < ApplicationPolicy
+	def index?
+		true
+	end
+
 	def new?
 		@user.company?
 	end

@@ -18,6 +18,11 @@
                     <i class="fa fa-book"></i></i> <span>Courses</span>
                     <% end %>
                 </li>
+                 <li>
+                    <%= link_to projects_path, remote: true, data: {disable_with: "<i class='fa fa-sticky-note'></i> <span>Projects</span> <i class='fa fa-spinner fa-spin'></i>"} do %>
+                    <i class="fa fa-sticky-note"></i> <span>Projects</span>
+                    <% end %>
+                </li>
                 <li>
                     <%= link_to edit_user_registration_path, remote: true, data: {disable_with: "<i class='fa fa-cog'></i> <span>Settings</span> <i class='fa fa-spinner fa-spin'></i>"} do %>
                     <i class="fa fa-cog"></i> <span>Settings</span>
