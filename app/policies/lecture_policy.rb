@@ -7,6 +7,10 @@ class LecturePolicy < ApplicationPolicy
 		false
 	end
 
+	def show?
+		true
+	end
+
 	def update?
 		false
 	end

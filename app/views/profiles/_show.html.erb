@@ -1,14 +1,5 @@
 
-
-<script>
-	$(window).load(function(){
-    $('#cover').fadeOut(1000);
-});
-</script>
-
-
-<div class="col-md-10" id="cover">
-<div class="bg-grey" id="dashboard">
+<div class="bg-grey">
 	<% if @user.student? %>
 		 <%= render 'profiles/student' %>
 	 <% end %>
@@ -20,5 +11,5 @@
 </div>
 
 
-</div>
+
 

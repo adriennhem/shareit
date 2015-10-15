@@ -719,7 +719,6 @@ blockquote {
 
 .lecture-box {
 		background:#FFFFFF;
-		border:$border-lily-white;
 		padding: 10px 10px;
 }
 
@@ -729,11 +728,13 @@ blockquote {
 	width:480px;
 	height:270px;
 	margin-left:-10px;
+
 }	
 
 .lecture-index-box {
 	width:960px !important;
 	min-height:290px !important;
+	box-shadow: 1px 1px 1px 1px #CECECE;
 }
 
 .lecture-index-description {
@@ -1101,6 +1102,7 @@ h2.title-chapter {
 
 ul.list-lesson {
 	background: white;
+
 }
 
 .section-lesson {
@@ -1108,6 +1110,7 @@ ul.list-lesson {
 	width:100%;
 	margin-bottom: 10px;
 	padding: 10px 0;
+	/*box-shadow:1px 1px 1px 1px #CECECE;*/
 }
 
 
@@ -1133,7 +1136,7 @@ ul.list-lesson {
 	margin-bottom:5px;
 	/*background:#E2E5E9;*/
 	background: #f8f8f8;
-	border-radius: 10px;
+	/*border-radiuss: 10px;*/
 
 }
 
@@ -1181,43 +1184,12 @@ ul.list-lesson {
 	margin-top: -5px;
 }
 
-
-.lecture-box-profile {
-	background:$white;
-	padding:10px 20px;
-	border-radius: 10px;
-}
-
-.lecture-box-profile h1 {
-
-}
-
-.borderLeft {
-  border-bottom: 3px solid $grey-chateau;
-  width:10%;
-}
-
-p.lecture-box-profile-description {
-	margin-top:10px;
-}
-
-.lecture-box-profile p {
-	color:$grey-chateau;
-}
-
-.lecture-box-profile h2 {
-	color:#f39c12;
-	font-weight:500;
-}
-
-.lecture-box-profile h2 span {
-	color:$grey-chateau;
-	font-weight:400;
-	font-size:20px;
-}
-
 p.completed-lessons {
 	margin-top: 10px;
+	font-weight:300;
+	font-family:$proxima-nova;
+	font-size:14px;
+
 }
 
 
@@ -1331,11 +1303,11 @@ progress[value]::-webkit-progress-value {
 }
 
 .sidebar-nav > .sidebar-brand {
-    height: 100px;
+    height: 50px;
     font-size: 18px;
-    line-height: 130px;
+    line-height: 69px;
     /*padding-top:50px;*/
-    margin-bottom:60px;
+    margin-bottom:50px;
     text-align: center;
 
 }
@@ -1345,7 +1317,6 @@ progress[value]::-webkit-progress-value {
     background:$bezier;
     display: block;
     font-size:36px;
-    padding-top:10px;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
@@ -1497,41 +1468,55 @@ h1#dashboard-edit {
 
 /* dasboard enrolled courses */
 
-.col-md-6.margin-s.mb-150 {
-}
 
-#dashboard-student-box {
-	border:1px solid $zircon;
+.dashboard-student-box {
 	border-radius:0;
-	border-top:3px solid $casper;
 	width:400px;
-	padding-left:30px;
+	background:$white;
+	box-shadow: 1px 1px 1px 1px #CECECE;
+
 }
 
 span.by-teacher {
-	color:$electric-green;
+	color:$blue-charcoal;
+	font-weight:400;
 }
 
-#dashboard-student-box h1 {
+.dashboard-student-box h1 {
 	padding-top:20px;
-	font-weight:300;
+	margin-left:15px;
+	font-weight:600;
+	font-size:24px;
 	color:$tuna;
 
 }
 
-#dashboard-student-box p {
+.dashboard-student-box p {
 	font-weight:300;
-	color:$tuna;
+	font-family:$proxima-nova;
+	font-size:16px;
+	line-height:1.5em;
 }
 
-#dashboard-student-box h2 {
+.dashboard-student-box h2 {
 	color:$electric-green;
 }
 
-h1#dasboard-student-title {
-	margin-top: 50px;
-	font-weight:300;
-	color:$tuna;
+h1.dashboard-student-title {
+	margin-top: 25px;
+	padding-left:55px;
+	font-weight:400;
+	color:#576072;
+	font-size:20px;
+}
+
+.progress {
+	background:#F2F2F2;
+	height:100px;
+	width:100%;
+	padding: 40px 10px;
+	border-radius:0;
+	box-shadow:none;
 }
 
 /* Show lectures */
@@ -1578,9 +1563,9 @@ h2.title-chapter span {
 }
 
 .section-lesson {
-	border:1px solid #E8E8E8 ;
+	;
 	margin-left:-35px;
-	border-radius:5px;
+	box-shadow: 1px 1px 1px 1px #CECECE;
 }
 
 .section-lesson:hover {
@@ -1588,15 +1573,17 @@ h2.title-chapter span {
 }
 
 .section-left-lesson h3 {
-	font-weight:400;
-	font-size: 20px; 
+	font-family:$proxima-nova !important;
+	font-weight:100;
+	font-size: 18px; 
 	color:$blue-charcoal;
 }
 
 .section-left-lesson p {
-	font-weight:100;
-	font-size:18px;
-	color:$tuna;
+	font-family:$proxima-nova !important;
+	font-weight:100 !important;
+	font-size:16px;
+	color:#576072;
 }
 
 .fa-check {
@@ -1620,13 +1607,17 @@ h2.title-chapter span {
 
 /* Dashboard company */
 
-#row-projects {
+.row-projects {
 	margin-top:50px;
 	
 }
 
+.row-projects .col-md-5 {
+	margin-left:20px;
+}
+
 .box-project {
-	width:500px;
+	width:400px;
 	height:320px;
 	border: 1px solid $zircon;
 	border-radius:5px;	
@@ -1642,4 +1633,17 @@ h2.title-chapter span {
 	font-size:28px;
 }
 
+/* dashboard id main */
+
+#main {
+	background:$mercury;
+
+}
+
+.enrolled {
+	background:#ffffff;
+	margin-left:-80px;
+	height:70px;
+	margin-top:-2px;
+}
 

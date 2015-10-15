@@ -8,7 +8,7 @@ def show
 	@disable_footer = true
 	respond_to do |format|
       format.html # renders show.html.erb
-      format.js   # renders show.js.erb
+      format.js   {render layout: false}
     
     end
   

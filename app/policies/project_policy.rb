@@ -1,6 +1,6 @@
 class ProjectPolicy < ApplicationPolicy
 	def index?
-		true
+		false
 	end
 
 	def new?
@@ -12,19 +12,19 @@ class ProjectPolicy < ApplicationPolicy
 	end
 
 	def update?
-		true
+		record.user_id == user.id
 	end
 
 	def edit?
-		true
+		record.user_id == user.id
 	end
 
 	def show?
-		@user.company?
+	  true
 	end
 
 	def destroy?
-		true
+		record.user_id == user.id
 	end
 
 end

@@ -20,9 +20,9 @@ $("#wrapper").toggleClass("toggled");
 
 
 
-<div class="row" id="row-projects">
+<div class="row row-projects">
 	<% @projects.each do |project| %>
-	<div class="col-md-6">
+	<div class="col-md-5">
 		<div class="box-project">
 		<h2><%= project.title %></h2>
 		<h3><%= project.created_at %></h3>

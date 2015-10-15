@@ -15,18 +15,13 @@ mixpanel.init("0efcf03757a7792f069573d96e8b82d6");</script><!-- end Mixpanel -->
 
 
 
+
 </head>
 
 
 
 
 <body id="main">
-  <script type="text/javascript">
-    mixpanel.track_links(".footer a", "click footer link", {
-        "referrer": document.referrer
-    });
-</script>
-
 
 <% if content_for?(:navbar) %>
     <%= yield(:navbar) %>
@@ -36,18 +31,8 @@ mixpanel.init("0efcf03757a7792f069573d96e8b82d6");</script><!-- end Mixpanel -->
 
 
 <%= render 'layouts/messages'  %>
-    <!-- Page Content -->
-<!--         <div id="page-content-wrapper"> -->
-            <!-- <div class="container"> -->
-                <!-- <div class="row"> -->
-                    <!-- <div class="col-lg-12"> -->
+
                       <%= yield %>
                       <%= render 'layouts/footer' unless @disable_footer %>
-                    <!-- </div> -->
-                <!-- </div> -->
-            <!-- </div> -->
-        <!-- </div> -->
-        <!-- /#page-content-wrapper -->
-
 </body>
 </html>

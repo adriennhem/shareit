@@ -1,43 +1,46 @@
-<script>
-  (function() {var s=document.createElement('script');
-    s.type='text/javascript';s.async=true;
-    s.src=('https:'==document.location.protocol?'https':'http') +
-    '://workshoprs.groovehq.com/widgets/18dffb65-bf2b-4767-907a-79ab573d2848/ticket.js'; var q = document.getElementsByTagName('script')[0];q.parentNode.insertBefore(s, q);})();
-</script>     
 
 <% content_for :navbar do %>
 	<%= render 'layouts/sidebar_student' %>
 <% end %>
 
-
-	<h1 id="dasboard-student-title">Enrolled Courses</h1>
+<div class="row enrolled">
+	<h1 class="dashboard-student-title">Enrolled Courses</h1>
 		<% @user.lectures.each do |lecture| %>
+</div>
 
 			<div class="col-md-6 margin-s mb-150">
 
-	          <div class="lecture-box-profile" id="dashboard-student-box">
-	          	<div class="borderLeft">
+	          <div class="dashboard-student-box">
+	          	
 		          <%= link_to lecture, remote: true do %>	
 		           <h1><%= lecture.title %></h1> 
 		           <% end %>
-		         </div>
+		         
 
 
 	            <p class="lecture-box-profile-description"><%= truncate(lecture.description, length: 150) %> <span class="by-teacher">by <%= lecture.teacher.name %></span> </p>
 	             
 
-	           <progress max="<%= lecture.lessons.size %>" value="<%= lecture.lessons.select{ |l| l.users.include? current_user }.count  %>"></progress>
+
+				<div class="progress">
+	           <progress max="<%= lecture.lessons.size %>" value="<%= lecture.lessons.select{ |l| l.users.include? current_user }.count  %>">
+	           </progress>
+
+	            <p class="completed-lessons"><%= lecture.lessons.select{ |l| l.users.include? current_user }.count %> out of  <%= lecture.lessons.size %> lessons completed</p>
+
+	           </div>
+
 
 
 	        <!--  -->
 
-	            <p class="completed-lessons"><%= lecture.lessons.select{ |l| l.users.include? current_user }.count %> out of  <%= lecture.lessons.size %> lessons completed</p>
 	           
 	           
 
 	           
 	          
 	          </div> <!-- .lecture-box -->
-	        </div> <!-- .col-md-4 -->
-		<% end %>
+	          <% end %>
 
+	        </div> <!-- .col-md-4 -->
+		

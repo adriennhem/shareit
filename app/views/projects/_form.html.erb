@@ -3,6 +3,7 @@
 
   <div class="form-inputs">
   	<%= f.input :title %>
+    <%= f.select(:lecture_id, options_for_select(@lecture_options)) %>
     <%= f.input :company_name %>
     <%= f.input :phone_number %>
     <%= f.input :body %>

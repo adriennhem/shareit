@@ -11,6 +11,7 @@
 	# For course user relationship 
 	has_many :enrollments 
 	has_many :users, through: :enrollments
+	has_many :projects
 
 	accepts_nested_attributes_for :enrollments
 	accepts_nested_attributes_for :chapters

@@ -14,7 +14,7 @@ class LecturesController < ApplicationController
     end
     respond_to do |format|
       format.html # renders show.html.erb
-      format.js   # renders show.js.erb
+      format.js   {render layout: false}
     end
     authorize @lectures
   end
@@ -22,6 +22,7 @@ class LecturesController < ApplicationController
   # GET /lectures/1
   # GET /lectures/1.json
   def show
+    @projects = Project.where(lecture_id: @lecture.id)
     @teacher = Teacher.all
     respond_to do |format|
       format.html # renders show.html.erb

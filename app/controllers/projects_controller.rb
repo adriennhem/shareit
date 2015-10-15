@@ -15,14 +15,16 @@ class ProjectsController < InheritedResources::Base
 
   def show
     @project = Project.find(params[:id])
+    
   	respond_to do |format|
   		format.html
   		format.js
-  	end
-    authorize @project
+  	end 
+    authorize @project 
   end
 
   def new
+    @lecture_options = Lecture.all.map{|u| [u.title, u.id]}
   	@project = Project.new
   	respond_to do |format|
   		format.html
@@ -53,6 +55,7 @@ class ProjectsController < InheritedResources::Base
   end
 
 def create 
+  @lecture_options = Lecture.all.map{|u| [u.title, u.id]}
 	@project = current_user.projects.build(project_params)
 	if @project.save 
 		flash[:success] = "You have successfully created a project."
@@ -76,7 +79,7 @@ end
   private
 
     def project_params
-      params.require(:project).permit(:company_name, :phone_number, :body, :user_id, :title)
+      params.require(:project).permit(:company_name, :phone_number, :body, :user_id, :title, :lecture_id)
     end
 end
 
