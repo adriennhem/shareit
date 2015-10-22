@@ -1,3 +1,7 @@
+<script>
+	$('progress').popover('show');
+</script>
+
 
 <% content_for :navbar do %>
 	<%= render 'layouts/sidebar_student' %>
@@ -12,13 +16,14 @@
 
 	          <div class="dashboard-student-box">
 	          	
-		          <%= link_to lecture, remote: true do %>	
-		           <h1><%= lecture.title %></h1> 
-		           <% end %>
+		          
 		         
+				<%= image_tag(lecture.picture.url) %>
 
-
-	            <p class="lecture-box-profile-description"><%= truncate(lecture.description, length: 150) %> <span class="by-teacher">by <%= lecture.teacher.name %></span> </p>
+				<%= link_to lecture, remote: true do %>	
+		           <h1 class="center"><%= lecture.title %></h1> 
+		           <% end %>  <p class="center by-teacher">by <%= lecture.teacher.name %></p>
+	           
 	             
 
 

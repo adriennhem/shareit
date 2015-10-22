@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'simple_form'
 gem 'mail_form'
+gem 'jquery-turbolinks'
 # Email sender
 gem 'mandrill-api'
 

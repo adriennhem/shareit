@@ -1,8 +1,4 @@
  class Lecture < ActiveRecord::Base
-	has_attached_file :picture, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
-  	validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
-	
-
 	belongs_to :category
 	has_many :lessons, through: :chapters, dependent: :destroy 
 	has_many :chapters
@@ -15,6 +11,9 @@
 
 	accepts_nested_attributes_for :enrollments
 	accepts_nested_attributes_for :chapters
+
+	has_attached_file :picture, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  	validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 
 	
 end
