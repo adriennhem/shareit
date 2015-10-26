@@ -3,6 +3,7 @@
 	has_many :lessons, through: :chapters, dependent: :destroy 
 	has_many :chapters
 	belongs_to :teacher
+	has_many :outlines
 
 	# For course user relationship 
 	has_many :enrollments 
