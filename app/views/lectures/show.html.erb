@@ -1,18 +1,21 @@
-<script>
-  (function() {var s=document.createElement('script');
-    s.type='text/javascript';s.async=true;
-    s.src=('https:'==document.location.protocol?'https':'http') +
-    '://workshoprs.groovehq.com/widgets/18dffb65-bf2b-4767-907a-79ab573d2848/ticket.js'; var q = document.getElementsByTagName('script')[0];q.parentNode.insertBefore(s, q);})();
-</script>
+<% content_for :navbar do %>
+  <%= render 'layouts/sidebar_student' %>
+<% end %>
+	
 
-<div class="row bg-grey">
-
+	<div class="index-header center">
        <h1><%= @lecture.title %></h1>
        <h2>by <%= @lecture.teacher.name %></h2>
+       <%= link_to :back, remote: true do %>
+       <i class="fa fa-arrow-left"></i> Back
+       <% end %>
+    </div>
+
+
+    
 
 	<div class="lecture mb-60 width960">
 
-	   <progress max="<%= @lecture.lessons.size %>" value="<%= @lecture.lessons.select{ |l| l.users.include? current_user }.count  %>"></progress>
 
 	   <% @lecture.chapters.each do |chapter| %>
 	   <div class="chapter-section">
@@ -27,14 +30,12 @@
 							<%= link_to [@lecture, lesson] do %>
 								<div class="section-left-lesson col-md-10">
 									<h3><%= lesson.title %></h3>
-									<p><%= truncate(lesson.short_description, length: 70 ) %></p>
+									<p class="hello"><%= truncate(lesson.short_description, length: 70 ) %></p>
 								</div>
 								<div class="section-right-lesson col-md-2">
 									<% lesson.user_lessons.where(user_id: current_user.id).each do |f|  %>
 										<% if f.completed %>
 											<i class="fa fa-check"></i> 
-										<% else %>
-											<i class="fa fa-check"></i>
 										<% end %>
 									<% end %>
 									<% end %>
@@ -51,13 +52,16 @@
 		<% end %> <!-- END OF CHAPTER LOOP -->
 
 			
-				
+<% if @lecture.lessons.size == @lecture.lessons.select{ |l| l.users.include? current_user }.count %>
+		<% @projects.each do |project| %> 
+			<%= project.title %>
+			<%= link_to 'project', project, remote: true %>
+		<% end %>
+<% end %>
+			
 
 
 	</div>
-</div>
-
-
 
 
 

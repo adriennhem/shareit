@@ -7,6 +7,11 @@
        <% end %>
 
     <%= link_to 'Mark as complete', user_lessons_path(@user_lesson, user_lesson: {user_id: current_user.id, lesson_id: @lesson.id}), :method => :post, class: 'btn-shaft', data: {disable_with: "Mark as complete <i class='fa fa-spinner fa-spin'></i>"} %>
+
+
+
+
+
     </div>
 </div>
 

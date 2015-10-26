@@ -17,9 +17,14 @@
 
 html {text-rendering:optimizeLegibility;}
 
+html.turbolinks-progress-bar::before {
+  background-color: $bezier !important;
+  height: 2px !important;
+}
+
 html a {text-decoration:none !important;}
 
-a:hover {cursor:pointer;}
+a:hover {cursor:pointer; background: none;}
 
 /* CREATE WHITE BG WHEN NOTIFICATION */
 .container-application {margin-top: -20px;}
@@ -186,7 +191,7 @@ a.btn-bezier-inverse:hover {
 
 
 
-a.btn, button.btn, input.btn {font-family:$proxima-nova; font-weight: 700; font-family: $proxima-nova; text-transform: uppercase; text-shadow:none; box-shadow: none;}
+a.btn, button.btn, input.btn {font-weight: 700; font-family: $proxima-nova; text-transform: uppercase; text-shadow:none; box-shadow: none;}
 
 a.btn-orange {
 	color:#fff !important;
@@ -409,6 +414,13 @@ nav.navbar-home.shrink-home a.btn:hover {
 // HOMEPAGE
 // --------------------------------------------------------------
 
+.first-course {
+	padding:50px 150px;
+}
+
+.first-course .lecture-box {
+	margin-bottom:50px;
+}
 
 #main-homepage {
 	background:url('<%= asset_path("bg-light.jpeg") %>') no-repeat center center fixed;
@@ -506,6 +518,7 @@ h1.home-heading-testimonial {
 	font-weight: 300;
 	color:$tuna;
 }
+
 
 /* section 1 left */
 
@@ -1645,5 +1658,10 @@ h2.title-chapter span {
 	margin-left:-80px;
 	height:70px;
 	margin-top:-2px;
+}
+
+
+html {
+	font-family:$proxima-nova !important;
 }
 

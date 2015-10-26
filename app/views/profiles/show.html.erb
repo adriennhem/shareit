@@ -1,8 +1,5 @@
 
 
-<div class="col-md-10 col-md-offset-2">
-
-<div id="dashboard">
 	<% if @user.student? %>
 		 <%= render 'profiles/student' %>
 	 <% end %>
@@ -10,9 +7,3 @@
  	 <% if @user.company? %>
 		 <%= render 'profiles/company' %>
 	 <% end %>
-
-</div>
-
-
-</div>
-

@@ -9,22 +9,22 @@
     
                
                 <li>
-                    <%= link_to profile_path(current_user), remote: true, data: {disable_with: "<i class='fa fa-tachometer'></i> <span>Dashboard</span> <i class='fa fa-spinner fa-spin'></i>"}  do %>
+                    <%= link_to profile_path(current_user) do %>
                     <i class="fa fa-tachometer"></i> <span>Dashboard</span>
                     <% end %>
                 </li>
                 <li>
-                   <%= link_to lectures_path, remote: true, data: {disable_with: "<i class='fa fa-book'></i> Courses <i class='fa fa-spinner fa-spin'></i>"} do %>
+                   <%= link_to lectures_path do %>
                     <i class="fa fa-book"></i></i> <span>Courses</span>
                     <% end %>
                 </li>
                  <li>
-                    <%= link_to projects_path, remote: true, data: {disable_with: "<i class='fa fa-sticky-note'></i> <span>Projects</span> <i class='fa fa-spinner fa-spin'></i>"} do %>
+                    <%= link_to projects_path do %>
                     <i class="fa fa-sticky-note"></i> <span>Projects</span>
                     <% end %>
                 </li>
                 <li>
-                    <%= link_to edit_user_registration_path, remote: true, data: {disable_with: "<i class='fa fa-cog'></i> <span>Settings</span> <i class='fa fa-spinner fa-spin'></i>"} do %>
+                    <%= link_to edit_user_registration_path, remote: true do %>
                     <i class="fa fa-cog"></i> <span>Settings</span>
                     <% end %>
                 </li>

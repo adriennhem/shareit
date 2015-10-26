@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_attached_file :picture, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
   validates :email, uniqueness: true
-  validates_format_of :email, with: /\@grenoble-em\.com/, message: 'You should have an email from grenoble-em.com', if: ->(user) { user.role == 'student' }
+  validates_format_of :email, with: /\@grenoble-em\.com/, message: "You should have an email from grenoble-em.com", if: ->(user) { user.role == 'student' }
   validates :role, presence: true
 
   # User / lecture relationship

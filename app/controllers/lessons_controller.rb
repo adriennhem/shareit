@@ -1,16 +1,15 @@
 class LessonsController < ApplicationController 
   before_action :authenticate_user!, only: :show  
+  layout 'dashboard'
   
   # GET /lessons/1
   # GET /lessons/1.json
   def show
     @lecture = Lecture.find(params[:lecture_id])
     @lesson = @lecture.lessons.find(params[:id])
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    @disable_footer = true
     authorize @lecture
+    
     # @previous = @lecture.lessons.where("id < ?", params[:id]).order(:id).first   
     # @next = @lecture.lessons.where("id > ?", params[:id]).order(:id).first 
   end

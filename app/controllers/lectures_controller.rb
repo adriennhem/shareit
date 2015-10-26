@@ -2,21 +2,20 @@ class LecturesController < ApplicationController
   before_action :authenticate_user!, :except => [:index]
   before_action :set_lecture, only: [:show]
   after_action :verify_authorized
+  layout 'dashboard'
 
   # GET /lectures
   # GET /lectures.json
   def index
+
     if params[:category]
       @category_id = Category.find_by(name: params[:category]).id
       @lectures = Lecture.where(category_id: @category_id).order("created_at DESC")
     else
       @lectures = Lecture.all
     end
-    respond_to do |format|
-      format.html # renders show.html.erb
-      format.js   {render layout: false}
-    end
     authorize @lectures
+    @disable_footer = true
   end
 
   # GET /lectures/1
@@ -24,11 +23,8 @@ class LecturesController < ApplicationController
   def show
     @projects = Project.where(lecture_id: @lecture.id)
     @teacher = Teacher.all
-    respond_to do |format|
-      format.html # renders show.html.erb
-      format.js   # renders show.js.erb
-    end
     authorize @lecture
+    @disable_footer = true
   end
 
   # POST /lectures

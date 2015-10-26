@@ -22,6 +22,17 @@ RSpec.describe User, :type => :model do
   	expect(user).to be_valid
   end 
 
+  it "is invalid if student's email is not .grenoble-em.com" do
+    user = User.new(
+      first_name: 'Adrien',
+      last_name: 'Nhem',
+      email: 'adrien.nhem@gmail.com',
+      password: 'adriennhem',
+      role: 'student')
+    user.valid?
+    expect(user.errors[:email]).to include("You should have an email from grenoble-em.com")
+  end
+
    it "student" do
     user = User.new(
       first_name: nil,

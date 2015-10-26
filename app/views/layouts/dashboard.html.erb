@@ -18,26 +18,12 @@ mixpanel.init("0efcf03757a7792f069573d96e8b82d6");</script><!-- end Mixpanel -->
 
 </head>
 
-<script>
-  $(function() {
-  $("a").live("click", function() {
-    $.setFragment({ "page" : $.queryString(this.href).page })
-    return false;
-  });
-  
-  $.fragmentChange(true);
-  $(document).bind("fragmentChange.page", function() {
-    $.getScript($.queryString(document.location.href, { "page" : $.fragment().page }));
-  });
-  
-  if ($.fragment().page) {
-    $(document).trigger("fragmentChange.page");
-  }
-});
-</script>
+
 
 
 <body id="main">
+
+
 
 <% if content_for?(:navbar) %>
     <%= yield(:navbar) %>
@@ -48,7 +34,11 @@ mixpanel.init("0efcf03757a7792f069573d96e8b82d6");</script><!-- end Mixpanel -->
 
 <%= render 'layouts/messages'  %>
 
-                      <%= yield %>
+<div class="col-md-10 col-md-offset-2">
+  <div id="dashboard">
+    <%= yield %>
+  </div>
+</div>                      
                       <%= render 'layouts/footer' unless @disable_footer %>
 </body>
 </html>
