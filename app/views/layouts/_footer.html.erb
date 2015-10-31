@@ -4,7 +4,7 @@
       <ul class="inset footer-list-1">
         <li><h1 class="shamrock">Workshopr&copy;</h1></li>
         <li><%= link_to 'About', pages_about_path %></li>
-        <li><%= link_to 'Blog', pages_blog_path %></li>
+<!--         <li><%= link_to 'Blog', pages_blog_path %></li> -->
         <li><%= link_to "Contact Us", contacts_path %></li>
         <li><%= link_to "Terms of Service" %></li>
         <li><%= link_to "Privacy Policy" %></li>
@@ -21,6 +21,19 @@
        <li><h1 class="shamrock">Newsletter</h1></li>
        <li><span>Want to get exclusive offers? Join our email newsletter</span></li>
        <li><%= render 'pages/newsletter'%></li>
+      </ul>
+
+      <ul>
+      <div class="dropup">
+        <button class="btn-bezier dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <%= t('menu.languages.lang') %>
+          <span class="caret"></span>
+        </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+             <li><%= link_to t('menu.languages.en'), change_locale_path(:en) %></li>
+             <li><%= link_to t('menu.languages.fr'), change_locale_path(:fr) %></li>
+          </ul>
+      </div>
       </ul>
      
     </ul> 

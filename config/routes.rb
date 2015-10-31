@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get 'pages/contact'
 
+  get '/change_locale/:locale', to: 'settings#change_locale', as: :change_locale
+
   # get 'pages/upcoming'
 
   get 'pages/blog'

@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_locale 
   layout :layout_by_resource
 	include Pundit
   # Prevent CSRF attacks by raising an exception.
@@ -35,6 +36,18 @@ class ApplicationController < ActionController::Base
       "application"
     end
   end
+
+
+
+def set_locale
+  if cookies[:workshopr_locale] && I18n.available_locales.include?(cookies[:workshopr_locale].to_sym)
+    l = cookies[:workshopr_locale].to_sym
+  else
+    l = I18n.default_locale
+    cookies.permanent[:workshopr_locale] = l
+  end
+  I18n.locale = l
+end
 
  
   

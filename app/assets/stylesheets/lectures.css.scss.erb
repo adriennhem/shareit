@@ -188,6 +188,22 @@ a.btn-bezier-inverse:hover {
 	transition:all 0.2s ease-in;
 }
 
+button.btn-bezier {
+	font-size:14px;
+	font-weight:300;
+	text-shadow: none;
+	color:$bezier;
+	background:none;
+	border:none;
+	box-shadow: none;
+}
+
+button.btn-bezier:hover {
+	color:$bezier;
+	background:none;
+	border:none;
+	box-shadow:none;
+}
 
 
 
@@ -423,7 +439,7 @@ nav.navbar-home.shrink-home a.btn:hover {
 }
 
 #main-homepage {
-	background:url('<%= asset_path("bg-light.jpeg") %>') no-repeat center center fixed;
+	background:url('<%= asset_path("bg-home-2.jpg") %>') no-repeat center center fixed;
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -977,16 +993,22 @@ h3.panel-title {
 // --------------------------------------------------------------
 
 
-#about {
-	-webkit-filter: grayscale(100%); 
-	filter: grayscale(100%);
-	background:url(bg.JPG) no-repeat center center;
+#index-about {
+	background:url('<%= asset_path("bg-home-2.jpeg") %>') no-repeat center center fixed;
 	-webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-  	background-size: cover;
-  	height:300px;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:110px;
+    margin:-70px 0 0 0;
+
 }
+
+img.profile {
+	border-radius:150px;
+}
+
+
 
 
 // --------------------------------------------------------------
@@ -1044,9 +1066,22 @@ span.copyright {margin-left:150px;}
 //  Contact
 // --------------------------------------------------------------
 
+
+#index-contact {
+	background:url('<%= asset_path("bg-contact.jpeg") %>') no-repeat center center fixed;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:300px;
+    margin:-70px 0 0 0;
+
+}
+
 h1.contact, h2.contact-sub  {
 	font-size: 36px;
 	font-weight:100;
+	color:#ffffff;
 }
 
 .container-contact {margin: 70px auto;}
