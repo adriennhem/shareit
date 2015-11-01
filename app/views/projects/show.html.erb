@@ -1,0 +1,58 @@
+<% content_for :navbar do %>
+    <%= render 'layouts/sidebar_company' %>
+<% end %>
+
+
+<div data-no-turbolink>
+<%= link_to edit_project_path(@project), class: "btn btn-bezier margin-s edit-button" do %> 
+<i class="fa fa-pencil-square-o"></i> Edit
+<% end %> 
+</div>
+
+<div class="panel-project margin-s">
+	<div class="panel-project-left col-md-4">
+		<div class="panel-section">
+		  <div class="panel-section-title">
+			<h2>Title</h2>
+		  </div>
+		  <div class="panel-section-body">
+		  	<p><%= @project.title %></p>
+		  </div>
+		</div>
+		<div class="panel-section">
+		  <div class="panel-section-title">
+			<h2>Starting date</h2>
+		  </div>
+		  <div class="panel-section-body">
+		  	<p><%= @project.created_at %></p>
+		  </div>
+		</div>
+		<div class="panel-section">
+		  <div class="panel-section-title">
+			<h2>Company details</h2>
+		  </div>
+		  <div class="panel-section-body">
+		  	<p><%= @project.company_name %></p>
+		  	<p>Email: <%= @project.company_name %></p>
+		  	<p>Address: <%= @project.company_name %></p>
+		  </div>
+		</div>
+		
+	</div>
+	<div class="panel-project-right col-md-8">
+		<div class="panel-section">
+		  <div class="panel-section-title">
+			<h2>Project Description</h2>
+		  </div>
+		  <div class="panel-section-body">
+		  	<%= @project.body.html_safe %>
+		  </div>
+		</div>	
+	</div>
+
+	</div>	
+
+
+
+
+

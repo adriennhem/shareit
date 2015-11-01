@@ -10,30 +10,38 @@ $("#wrapper").toggleClass("toggled");
     <%= render 'layouts/sidebar_company' %>
 <% end %>
 
- <%= link_to 'new project', new_project_path, remote: true %>
+ <%= link_to new_project_path, class: "btn btn-bezier margin-s" do %>
+	<i class="fa fa-plus"></i> New Project
+<% end %> 
 
 
 <h1>My Projects</h1>
-	<% if @projects.count == 0 %>
-		<% flash[:success] = "You did not publish any projects yet" %>
-	<% end %>
+
 
 
 
 <div class="row row-projects">
 	<% @projects.each do |project| %>
-	<div class="col-md-5">
-		<div class="box-project">
-		<h2><%= project.title %></h2>
-		<h3><%= project.created_at %></h3>
-		<p><%= project.body %></p>
-		<%= link_to 'Details', project, remote: true %>
-		<%= link_to 'Edit', edit_project_path(project), remote: true %>
+	<div class="panel-project-company col-md-5">
+		<div class="panel-section">
+		  <div class="panel-section-title">
+			<h2><%= project.title %></h2>
+		  </div>
+		  <div class="panel-section-body" data-no-turbolink>
+		  	<h3><%= project.created_at %></h3>
+		  	<%= link_to 'Details', project %> |
+		<%= link_to 'Edit', edit_project_path(project) %> |
 		<%= link_to 'Delete', { :controller => 'projects', :action => 'destroy', :id => project.id }, 
                       { :confirm => 'Are you sure?', :method => :delete} %> 
+		  </div>
+		</div>	
+
+
+
+		
 
 		</div>
-	</div>
+
 
  <% end %> 
 </div>

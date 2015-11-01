@@ -1,0 +1,10 @@
+<% content_for :navbar do %>
+    <%= render 'layouts/sidebar_company' %>
+<% end %>
+
+
+<h1>New Project</h1>
+
+<%= render 'projects/form.html.erb' %>
+
+<%= link_to 'Back', profile_path(current_user) %>

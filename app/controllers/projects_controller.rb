@@ -1,53 +1,47 @@
 class ProjectsController < InheritedResources::Base
   before_action :authenticate_user!
   after_action :verify_authorized
+  layout 'dashboard'
 
 
   def index
     @projects = Project.all
     authorize @projects
+    @disable_footer = true
   end
 
 
   def show
     @project = Project.find(params[:id])
-    
-  	respond_to do |format|
-  		format.html
-  		format.js
-  	end 
     authorize @project 
+    @disable_footer = true
   end
 
   def new
     @lecture_options = Lecture.all.map{|u| [u.title, u.id]}
   	@project = Project.new
-  	respond_to do |format|
-  		format.html
-  		format.js
-  	end
     authorize @project
+    @disable_footer = true
   end 
 
   def edit 
+    @lecture_options = Lecture.all.map{|u| [u.title, u.id]}
     @project = Project.find(params[:id])
-    respond_to do |format|
-      format.html
-      format.js
-    end
     authorize @project
+    @disable_footer = true
   end 
 
   def update
     @project = Project.find(params[:id])
     respond_to do |format|
       if @project.update(project_params)
-        format.js { render json: @project.to_json }
+        format.html { redirect_to @project, notice: 'Project was successfully updated.'  }
       else
         format.html { render :edit }
       end
     end
     authorize @project
+    @disable_footer = true
   end
 
 def create 
@@ -60,13 +54,14 @@ def create
 		render action: 'new'
 	end
   authorize @project 
+  
 end	
 
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
     respond_to do |format|
-      format.html { redirect_to profile_path(current_user), notice: 'Contact was successfully destroyed.' }
+      format.html { redirect_to profile_path(current_user), notice: 'Project was successfully destroyed.' }
       format.js { head :no_content }
     end
     authorize @project

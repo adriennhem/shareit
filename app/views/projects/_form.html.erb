@@ -6,11 +6,12 @@
     <%= f.select(:lecture_id, options_for_select(@lecture_options)) %>
     <%= f.input :company_name %>
     <%= f.input :phone_number %>
-    <%= f.input :body %>
-  </div>
+    <label for="body">Description</label>
+     <%= f.text_area :body, :class => 'ckeditor' %>
+  </div>	
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+
+    <%= f.button :submit, class: "btn btn-bezier" %>
+
 <% end %>
 

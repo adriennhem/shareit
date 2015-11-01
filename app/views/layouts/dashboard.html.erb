@@ -34,11 +34,13 @@ mixpanel.init("0efcf03757a7792f069573d96e8b82d6");</script><!-- end Mixpanel -->
 
 <%= render 'layouts/messages'  %>
 
+
 <div class="col-md-10 col-md-offset-2">
   <div id="dashboard">
     <%= yield %>
   </div>
-</div>                      
+</div>  
+                  
                       <%= render 'layouts/footer' unless @disable_footer %>
 </body>
 </html>
