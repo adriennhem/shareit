@@ -1,18 +1,11 @@
 <% content_for :navbar do %>
-  <%= render 'layouts/sidebar_student' %>
+  <%= render 'layouts/sidebar' %>
 <% end %>
-	
 
-	<div class="index-header center">
-       <h1><%= @lecture.title %></h1>
-       <h2>by <%= @lecture.teacher.name %></h2>
-       <%= link_to :back, remote: true do %>
-       <i class="fa fa-arrow-left"></i> Back
-       <% end %>
-    </div>
+<div class="index-header">
+   <h1 class="center"><%= @lecture.title %></h1>
+</div>
 
-
-    
 
 	<div class="lecture mb-60 width960">
 
@@ -20,7 +13,7 @@
 	   <% @lecture.chapters.each do |chapter| %>
 	   <div class="chapter-section">
 			<h2 class="title-chapter">
-				<%= chapter.title %><span class="chapter-duration"><%= chapter.total_duration %></span>
+				<%= chapter.title %><span class="chapter-duration"><%= chapter.total_duration %> minutes</span>
 			</h2> 
 			</div>
 			<div class="row">
@@ -29,7 +22,7 @@
 						<div class="section-lesson col-md-12">
 							<%= link_to [@lecture, lesson] do %>
 								<div class="section-left-lesson col-md-10">
-									<h3><%= lesson.title %></h3>
+									<h3><%= lesson.title %> <span><%= lesson.video_duration %></span></h3>
 									<p class="hello"><%= truncate(lesson.short_description, length: 70 ) %></p>
 								</div>
 								<div class="section-right-lesson col-md-2">
@@ -53,13 +46,26 @@
 
 			
 <% if @lecture.lessons.size == @lecture.lessons.select{ |l| l.users.include? current_user }.count %>
+<div class="unlocked margin-s">
+<h1>You've unlocked projects!</h1>
+
 		<% @projects.each do |project| %> 
-			<%= project.title %>
-			<%= link_to 'project', project, remote: true %>
+			<%= link_to project do %>
+			<div class="panel-project-lecture col-md-3 margin-s mb-60">
+				<h2><%= project.title %></h2>
+				  <div data-no-turbolink>
+				  	<p>by <%= project.company_name %></p>
+				  	<p class="project-paragraph">Created on <%= project.created_at.strftime("%b %d, %Y") %></p>
+				  </div>
+			</div>	
 		<% end %>
+		<% end %>
+		</div>
 <% end %>
 			
-
+<% if @lecture.lessons.size != @lecture.lessons.select{ |l| l.users.include? current_user }.count %>
+	<h1 class="locked center margin-s"><i class="fa fa-lock"></i> Complete this course to unlock projects</h1>
+<% end %>
 
 	</div>
 

@@ -1,23 +1,14 @@
 <% content_for :navbar do %>
-  <%= render 'layouts/sidebar_student' %>
+  <%= render 'layouts/sidebar' %>
 <% end %>
 
-
-<div class="row" id="dasboard-show-lesson">
-    <div class="show-lesson">
+<div class="show-lesson">
     <h1><%= @lesson.title %></h1>
 
-     <%= link_to @lecture do %>
-       <i class="fa fa-arrow-left"></i> Back
-       <% end %>
-
-    <%= link_to 'Mark as complete', user_lessons_path(@user_lesson, user_lesson: {user_id: current_user.id, lesson_id: @lesson.id}), :method => :post, class: 'btn-shaft', data: {disable_with: "Mark as complete <i class='fa fa-spinner fa-spin'></i>"} %>
 
 
+    <%= link_to 'Mark as complete', user_lessons_path(@user_lesson, user_lesson: {user_id: current_user.id, lesson_id: @lesson.id}), :method => :post, class: 'btn btn-bezier pull-right', data: {disable_with: "Mark as complete <i class='fa fa-spinner fa-spin'></i>"} %>
 
-
-
-    </div>
 </div>
 
 
@@ -27,7 +18,9 @@
 
 
     <h1 class="margin-s">Step by Step</h1>
-    <p class="margin-s"><%=  @lesson.description.html_safe %></p>
+    <div class="margin-s show-lesson-description mb-60"><%=  @lesson.description.html_safe %>
+
+    </div>
     
 
 

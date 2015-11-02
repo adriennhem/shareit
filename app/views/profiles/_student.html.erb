@@ -1,46 +1,31 @@
 <% content_for :navbar do %>
-	<%= render 'layouts/sidebar_student' %>
+	<%= render 'layouts/sidebar' %>
 <% end %>
 
-<div class="row enrolled">
+
 	<h1 class="dashboard-student-title">Enrolled Courses</h1>
+	
 		<% @user.lectures.each do |lecture| %>
-</div>
-
-			<div class="col-md-6 margin-s mb-150">
-
-	          <div class="dashboard-student-box">
-	          	
-		          
-		         
+		  <div class="col-md-6 margin-s mb-150">
+	         <div class="dashboard-student-box">
 				<%= image_tag(lecture.picture.url) %>
-
 				<%= link_to lecture do %>	
 		           <h1 class="center"><%= lecture.title %></h1> 
-		           <% end %>  <p class="center by-teacher">by <%= lecture.teacher.name %></p>
+		        <% end %> 
+		        <p class="center by-teacher">by <%= lecture.teacher.name %></p>
 	           
-	
-
-
 				<div class="progress">
-	           <progress max="<%= lecture.lessons.size %>" value="<%= lecture.lessons.select{ |l| l.users.include? current_user }.count  %>">
-	           </progress>
+		           <progress max="<%= lecture.lessons.size %>" value="<%= lecture.lessons.select{ |l| l.users.include? current_user }.count  %>">
+		           </progress>
+		            <p class="completed-lessons">
+		            <%= lecture.lessons.select{ |l| l.users.include? current_user }.count %> /  <%= lecture.lessons.size %> lessons completed
+		            </p>
+		        </div>   
 
-	            <p class="completed-lessons"><%= lecture.lessons.select{ |l| l.users.include? current_user }.count %> out of  <%= lecture.lessons.size %> lessons completed</p>
+	        </div>
+	      </div> <!-- .lecture-box -->
+        <% end %>
 
-	           </div>
-
-
-
-	           
-	           
-
-	           
-	          
-	          </div> <!-- .lecture-box -->
-	          <% end %>
-
-	        </div> <!-- .col-md-4 -->
 
 		
 

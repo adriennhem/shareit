@@ -1,9 +1,7 @@
+<% if @user.student? %>
+	 <%= render 'profiles/student' %>
+<% end %>
 
-
-	<% if @user.student? %>
-		 <%= render 'profiles/student' %>
-	 <% end %>
-
- 	 <% if @user.company? %>
-		 <%= render 'profiles/company' %>
-	 <% end %>
+<% if @user.company? %>
+	 <%= render 'profiles/company' %>
+<% end %>

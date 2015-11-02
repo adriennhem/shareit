@@ -729,12 +729,11 @@ blockquote {
 }
 
 
-.index-header {margin-left: 30px;}
-
 .index-header h1 {
-	margin-top: 80px;
+	/*margin-top: 40px;*/
 	font-size: 56px;
-	font-weight:300;
+	font-weight:600;
+	color:#212121;
 }
 
 .index-header h2 {
@@ -775,21 +774,22 @@ blockquote {
 .lecture-index-description h1 {
 	position: relative;
 	top: -45px;
-	font-weight:400;
+	font-weight:600;
 }
 
 .lecture-index-description a {
-	color:#6D7285;
+	color:$aluminium;
 	font-weight:300;
 	padding-left: 10px;
 }
 
 .lecture-index-description p {
 	font-weight: 300;
+	color:$aluminium;
 }
 
 .lecture-index-description a.btn {
-	color:$grey-chateau;
+	color:$aluminium;
 	font-weight:300;
 	font-size: 14px;
 }
@@ -801,7 +801,7 @@ p.enrolled-users {
 
 
 .lecture-box p.mt-negative-15, p.enrolled-users {
-	color:$mine-shaft;
+	color:#212121;
 }
 
 .lecture-index-details {
@@ -810,7 +810,7 @@ p.enrolled-users {
 
 
 p.enrolled-users {
-	font-weight:400;
+	font-weight:600;
 }	
 
 .category-list {
@@ -1144,6 +1144,7 @@ h1.contact, h2.contact-sub  {
 
 h2.title-chapter {
 	margin: 20px 0;
+	color:#212121;
 	/*background: red;*/
 }
 
@@ -1157,8 +1158,7 @@ ul.list-lesson {
 	background: white;
 	width:100%;
 	margin-bottom: 10px;
-	padding: 10px 0;
-	/*box-shadow:1px 1px 1px 1px #CECECE;*/
+	/*padding: 10px 0;*/
 }
 
 
@@ -1173,31 +1173,21 @@ ul.list-lesson {
 }
 
 .chapter-section h2 span {
-	color:$grey-chateau;
+	color:#212121;
 	font-weight:500;
 	font-size: 20px;
 	margin-left:20px;
 }
 
 .lesson-section.col-md-12 {
-
-	margin-bottom:5px;
-	/*background:#E2E5E9;*/
 	background: #f8f8f8;
-	/*border-radiuss: 10px;*/
-
 }
 
 .lesson-section.col-md-12:hover {
-	background: $grey-chateau;
+	background: $wild-sand;
 }
 
-.lesson-section.col-md-12 h3 {
-	display: inline;
-	color:$mine-shaft;
-	font-size: 22px;
-	font-weight:800;
-}
+
 
 .lesson-list:last-child {
 	margin-bottom: 30px;
@@ -1233,7 +1223,7 @@ ul.list-lesson {
 }
 
 p.completed-lessons {
-	margin-top: 10px;
+	margin-top: 2px;
 	font-weight:300;
 	font-family:$proxima-nova;
 	font-size:14px;
@@ -1413,8 +1403,7 @@ progress[value]::-webkit-progress-value {
 /* dashboard course */
 
 h1.dashboard-course {
-	margin-top:30px;
-	font-weight:100;
+	margin-top:40px;
 }
 
 #dashboard .lecture-box {
@@ -1425,33 +1414,39 @@ h1.dashboard-course {
 	margin-bottom:50px;
 }
 
+h1.dashboard-student-title {
+	color:#212121;
+}
+
 
 /* dashboard-edit */
 
 h1#dashboard-edit {
-	font-weight:100;
+	font-weight:600;
 	margin:60px 250px;
 
 }
 
 #dashboard-edit-form {
 	margin:0 250px;
+	color:#212121;
 }
 
 #dashboard-edit-form input {
 	border:none;
 	border-bottom:1px solid $casper; 
+	background:$mercury;
 	margin: 30px 0;
-	font-weight:100;
+	font-weight:400;
 	border-radius:0;
 	width:400px;
 }
 
 #dashboard-edit-form input:focus {
-	border-color:$electric-blue;
+	border-color:$bezier;
 	box-shadow:none;
 	font-size:16px;
-	color:$electric-blue;
+	color:$bezier;
 }
 
 #dashboard-edit-form ::-webkit-input-placeholder {
@@ -1498,6 +1493,7 @@ h1#dashboard-edit {
 
 #dashboard-edit-form button.btn-bezier {
 	background:$bezier;
+	color:#ffffff;
 	border-radius:0px;
 	text-shadow:none;
 	font-weight: 400;
@@ -1526,7 +1522,7 @@ h1#dashboard-edit {
 }
 
 span.by-teacher {
-	color:$blue-charcoal;
+	color:$aluminium;
 	font-weight:400;
 }
 
@@ -1535,7 +1531,7 @@ span.by-teacher {
 	margin-left:15px;
 	font-weight:600;
 	font-size:24px;
-	color:$tuna;
+	color:#212121;
 
 }
 
@@ -1546,16 +1542,14 @@ span.by-teacher {
 	line-height:1.5em;
 }
 
-.dashboard-student-box h2 {
-	color:$electric-green;
-}
+
 
 h1.dashboard-student-title {
-	margin-top: 25px;
-	padding-left:55px;
-	font-weight:400;
-	color:#576072;
-	font-size:20px;
+	margin-top: 40px;
+	/*padding-left:95px;*/
+	font-weight:600;
+	color:#212121;
+	/*font-size:20px;*/
 }
 
 .progress {
@@ -1567,27 +1561,7 @@ h1.dashboard-student-title {
 	box-shadow:none;
 }
 
-/* Show lectures */
 
-#dasboard-show-lecture {
-	background:rgb(249,249,249) ;
-	margin-left:-100px;
-	height:140px;
-}
-
-#dasboard-show-lecture h1 {
-	margin-top:30px;
-	font-weight:600;
-	color:$cloud-burst;
-}
-
-#dasboard-show-lecture a {
-	position:absolute; 
-	left:50px;
-	top:50px;
-	font-size:20px;
-	color:$cloud-burst;
-}
 
 .lecture {
 	margin-top:50px;
@@ -1598,16 +1572,12 @@ h1.dashboard-student-title {
 	margin-left: -30px;
 }
 
-h2.title-chapter {
-	font-weight:600;
-	font-size:28px;
-	color:$cloud-burst;
-}
+
 
 h2.title-chapter span {
 	font-weight:400;
 	font-size:20px;
-	color:$casper;
+	color:$aluminium;
 }
 
 .section-lesson {
@@ -1622,22 +1592,43 @@ h2.title-chapter span {
 
 .section-left-lesson h3 {
 	font-family:$proxima-nova !important;
-	font-weight:100;
-	font-size: 18px; 
-	color:$blue-charcoal;
+	font-weight:600;
+	font-size: 20px; 
+	color:#212121;
+}
+
+.section-left-lesson h3 span {
+	color:$aluminium;
+	font-weight:600;
+	font-size:16px;
+	margin-left:5px;
 }
 
 .section-left-lesson p {
 	font-family:$proxima-nova !important;
-	font-weight:100 !important;
+	font-weight:400 !important;
 	font-size:16px;
-	color:#576072;
+	color:$aluminium;
 }
 
+.section-right-lesson {
+	margin:25px 50px 10px 50px;	
+	width:50px;
+	}
+
 .fa-check {
-	font-size:32px !important;
+	font-size:20px !important;
 	color:$bezier;
-	padding-top:30px;
+	/*padding-top:30px;*/
+	padding:10px 0px;
+}
+
+h1.locked {
+	color:$aluminium;
+	opacity:0.4;
+	background:#cecece;
+	margin-right:80px;
+	padding:30px 0px 30px 0px;
 }
 
 
@@ -1649,9 +1640,26 @@ h2.title-chapter span {
 	height:140px;
 }
 
-.show-lesson {
-	margin-left:100px;
+
+.show-lesson h1 {
+	padding-top:20px;
 }
+
+.show-lesson a {
+	margin-top:-40px;
+	margin-bottom:30px;
+	margin-right:80px;
+}
+
+.show-lesson-description {
+	width:960px;
+}
+
+.show-lesson-description p {
+	font-size:20px;
+}
+
+
 
 /* Dashboard company */
 
@@ -1685,11 +1693,11 @@ h2.title-chapter span {
 
 #main {
 	background:$mercury;
-
 }
 
 .enrolled {
-	background:#ffffff;
+	background:$wild-sand;
+	border-bottom:1px solid $athens-gray;
 	margin-left:-80px;
 	height:70px;
 	margin-top:-2px;
@@ -1767,4 +1775,40 @@ a.edit-button {
 input.cked {
 	margin-top:10px;
 }
+
+.unlocked {
+	margin-left:-30px;
+}
+
+.panel-project-lecture {
+	background:#ffffff;
+	margin-left:40px;
+	height:200px;
+	box-shadow: 1px 1px 1px 1px #CECECE;
+}
+
+.panel-project-lecture h2 {
+	font-size:22px;
+	font-weight:500;
+	color:#212121;
+}
+
+.panel-project-lecture p {
+	color:$aluminium;
+	font-weight:300;
+	font-size: 16px;
+}
+
+.panel-project-lecture h3 {
+	font-size:18px;
+}
+
+p.project-paragraph {
+	margin-top:70px;
+}
+
+
+
+
+
 
