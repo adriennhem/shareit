@@ -1,4 +1,10 @@
 ActiveAdmin.register Teacher do
+  menu parent: "Products", priority: 3
+
+  index do
+    column :name
+    actions
+  end
 
 
   # See permitted parameters documentation:

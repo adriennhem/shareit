@@ -1,4 +1,5 @@
 ActiveAdmin.register Post do
+  menu parent: "Blog", priority: 1
 
 
   # See permitted parameters documentation:

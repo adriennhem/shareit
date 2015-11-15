@@ -2,19 +2,29 @@
 	<%= render 'layouts/sidebar' %>
 <% end %>
 
+<div class="row" id="dashboard-header" data-no-turbolink>
+	<h1 class="dashboard-title">enrolled courses</h1>
+	<% if @user.lectures.exists? %>
+		<%= link_to lectures_path, class: "btn btn-bezier-round" do %>
+				Join a course!
+		<% end %> 
+	<% end %>	
+</div>
 
-	<h1 class="dashboard-student-title">Enrolled Courses</h1>
-	
+
+<div class="row" id="enrolled-courses">
+
+
 		<% @user.lectures.each do |lecture| %>
-		  <div class="col-md-6 margin-s mb-150">
+		  <div class="col-md-6">
 	         <div class="dashboard-student-box">
 				<%= image_tag(lecture.picture.url) %>
 				<%= link_to lecture do %>	
-		           <h1 class="center"><%= lecture.title %></h1> 
+		           <h2 class="center"><%= lecture.title %></h2> 
 		        <% end %> 
 		        <p class="center by-teacher">by <%= lecture.teacher.name %></p>
 	           
-				<div class="progress">
+				<div class="section-box-bottom">
 		           <progress max="<%= lecture.lessons.size %>" value="<%= lecture.lessons.select{ |l| l.users.include? current_user }.count  %>">
 		           </progress>
 		            <p class="completed-lessons">
@@ -27,5 +37,5 @@
         <% end %>
 
 
-		
+</div>	
 

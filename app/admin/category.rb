@@ -1,4 +1,5 @@
 ActiveAdmin.register Category do
+  menu parent: "Products", priority: 1
 
 
   # See permitted parameters documentation:

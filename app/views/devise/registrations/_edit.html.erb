@@ -1,11 +1,18 @@
 
 
-<h1 id="dashboard-edit">Update your info</h1>
+
+
+<div class="row" id="dashboard-header" data-no-turbolink>
+<h1 class="dashboard-title">Settings</h1>
+</div>
+
+
+<div class="edit-user-settings">
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { id: "dashboard-edit-form", method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-    <%= f.input :picture, as: :file, label: false %>
+
   
    <%= f.input :first_name, label: false, placeholder: "First Name" %>
    <%= f.input :last_name, label: false, placeholder: "Last Name" %>
@@ -24,6 +31,7 @@
  <%= f.button :button, "Save Changes", class: "btn-bezier btn", data: {disable_with: "Update <i class='fa fa-spinner fa-spin'></i>"} %>
 <% end %>
 
+</div>
 
 <!-- 
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p> -->

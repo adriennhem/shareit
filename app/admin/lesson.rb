@@ -11,11 +11,18 @@ ActiveAdmin.register Lesson do
   #
   # or
   #
-  # permit_params do
-  #   permitted = [:permitted, :attributes]
-  #   permitted << :other if resource.something?
-  #   permitted
-  # end
+  form :html => { :enctype => "multipart/form-data" } do |f|
+  f.inputs "Lesson", :multipart => true do
+        f.input :etape
+        f.input :title
+        f.input :short_description
+        f.input :vid
+        f.input :video_duration
+        f.input :description, :as => :ckeditor
+  end
+
+  f.actions
+end
 
 
 end

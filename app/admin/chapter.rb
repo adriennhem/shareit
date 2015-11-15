@@ -8,11 +8,15 @@ ActiveAdmin.register Chapter do
   #
   # or
   #
-  # permit_params do
-  #   permitted = [:permitted, :attributes]
-  #   permitted << :other if resource.something?
-  #   permitted
-  # end
+  form :html => { :enctype => "multipart/form-data" } do |f|
+  f.inputs "Chapter", :multipart => true do
+      f.input :title
+      f.input :description
+      f.input :number
+      f.input :total_duration
+    end
+  f.actions
+end
 
 
 end

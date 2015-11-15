@@ -1,49 +1,60 @@
-<!-- Menu Toggle Script -->
-<script>
-$("#menu-toggle").click(function(e) {
-e.preventDefault();
-$("#wrapper").toggleClass("toggled");
-});
-</script>
+
 
 <% content_for :navbar do %>
     <%= render 'layouts/sidebar' %>
 <% end %>
 
- <%= link_to new_project_path, class: "btn btn-bezier margin-s" do %>
-	<i class="fa fa-plus"></i> New Project
-<% end %> 
 
 
-<h1>My Projects</h1>
+<div class="row" id="dashboard-header" data-no-turbolink>
+<h1 class="dashboard-title">My Projects</h1>
+<% if @projects.exists? %>
+	<%= link_to new_project_path, class: "btn btn-bezier-round" do %>
+			<i class="fa fa-plus"></i> Project
+		<% end %> 
+<% end %>	
+
+</div>
 
 
 
 
 <div class="row row-projects">
+
+<% if @projects.exists?  %>
+
 	<% @projects.each do |project| %>
-	<div class="panel-project-company col-md-5">
-		<div class="panel-section">
-		  <div class="panel-section-title">
-			<h2><%= project.title %></h2>
-		  </div>
-		  <div class="panel-section-body" data-no-turbolink>
-		  	<h3><%= project.created_at %></h3>
-		  	<%= link_to 'Details', project %> |
-		<%= link_to 'Edit', edit_project_path(project) %> |
-		<%= link_to 'Delete', { :controller => 'projects', :action => 'destroy', :id => project.id }, 
-                      { :confirm => 'Are you sure?', :method => :delete} %> 
-		  </div>
-		</div>	
-
-
-
+	
+	<div class="col-md-5">
+		<div class="panel-home-project">
+		<div data-no-turbolink>
+			<%= link_to project_path(project), method: :delete  do %> <i class="fa fa-trash-o"></i><% end %> 
+			<%= link_to edit_project_path(project) do %><i class="fa fa-pencil-square-o"></i><% end %> 
 		
-
+		  </div>
+		  <%= link_to project do %>
+		  <h2><%= project.title %></h2>
+		  <% end %>
+		  <h3>Published <%= project.created_at.strftime("%b %d, %Y") %></h3>
+		  
+		</div>	
 		</div>
 
 
- <% end %> 
+
+ <% end %>
+<% elsif @projects.empty? %>
+
+<div class="center margin-s" id="projects-empty" data-no-turbolink>
+	<h2>Create your first project!</h2>
+	<%= link_to new_project_path, class: "btn btn-bezier-first" do %>
+			 Get started!
+	<% end %> 
+
+</div>
+
+
+<% end %>
 </div>
  
 

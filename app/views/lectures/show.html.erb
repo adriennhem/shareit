@@ -2,9 +2,12 @@
   <%= render 'layouts/sidebar' %>
 <% end %>
 
-<div class="index-header">
-   <h1 class="center"><%= @lecture.title %></h1>
+<div class="row" id="dashboard-header" data-no-turbolink>
+	<h1 class="dashboard-title"><%= @lecture.title %></h1>
 </div>
+
+
+<div class="row" id="show-lecture">
 
 
 	<div class="lecture mb-60 width960">
@@ -39,20 +42,19 @@
 			</div>
 
 
-	   		
-	
-			
 		<% end %> <!-- END OF CHAPTER LOOP -->
+</div> 
+<!-- end row#show-lecture -->
 
 			
 <% if @lecture.lessons.size == @lecture.lessons.select{ |l| l.users.include? current_user }.count %>
 <div class="unlocked margin-s">
-<h1>You've unlocked projects!</h1>
+<h2>Unlocked projects!</h2>
 
 		<% @projects.each do |project| %> 
 			<%= link_to project do %>
 			<div class="panel-project-lecture col-md-3 margin-s mb-60">
-				<h2><%= project.title %></h2>
+				<h3><%= project.title %></h3>
 				  <div data-no-turbolink>
 				  	<p>by <%= project.company_name %></p>
 				  	<p class="project-paragraph">Created on <%= project.created_at.strftime("%b %d, %Y") %></p>
@@ -64,7 +66,7 @@
 <% end %>
 			
 <% if @lecture.lessons.size != @lecture.lessons.select{ |l| l.users.include? current_user }.count %>
-	<h1 class="locked center margin-s"><i class="fa fa-lock"></i> Complete this course to unlock projects</h1>
+	<h2 class="locked center margin-s"><i class="fa fa-lock"></i> Complete this course to unlock projects</h2>
 <% end %>
 
 	</div>

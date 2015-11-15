@@ -2,12 +2,15 @@
     <%= render 'layouts/sidebar' %>
 <% end %>
 
-
-<div data-no-turbolink>
-<%= link_to edit_project_path(@project), class: "btn btn-bezier margin-s edit-button" do %> 
-<i class="fa fa-pencil-square-o"></i> Edit
-<% end %> 
+<div class="row" id="dashboard-header" data-no-turbolink>
+	<h1 class="dashboard-title"><%= @project.title %></h1>
+	<% if policy(@project).update? %>
+		<%= link_to edit_project_path(@project), class: "btn btn-bezier-round" do %> 
+			<i class="fa fa-pencil-square-o"></i> Edit
+		<% end %> 
+	<% end %>
 </div>
+
 
 <div class="panel-project margin-s">
 	<div class="panel-project-left col-md-4">

@@ -1,17 +1,64 @@
+
+<div class="mb-60 new-project">
+
+
+
 <%= simple_form_for(@project) do |f| %>
   <%= f.error_notification %>
+    
+    <h2>Project description</h2>
+    <div class="new-project-section col-md-12">
+      <div class="new-project-section-title col-md-3">
+        <h3>Title</h3>
+      </div>
+      <div class="new-project-section-body col-md-9">
+        <%= f.input :title, label: false %>
+        <p>Make your title catchy, to attract more students!</p>
+      </div>
+    </div>
 
-  <div class="form-inputs">
-  	<%= f.input :title %>
-    <%= f.select(:lecture_id, options_for_select(@lecture_options)) %>
-    <%= f.input :company_name %>
-    <%= f.input :phone_number %>
-    <label for="body">Description</label>
-     <%= f.text_area :body, :class => 'ckeditor' %>
-  </div>	
+     <div class="new-project-section col-md-12">
+      <div class="new-project-section-title col-md-3">
+        <h3>Related Course</h3>
+      </div>
+      <div class="new-project-section-body col-md-9">
+        <%= f.select(:lecture_id, options_for_select(@lecture_options)) %>
+        <p>Find out which course is it related to <%= link_to 'Here', root_path %></p>
+      </div>
+    </div>
 
+      <div class="new-project-section col-md-12">
+      <div class="new-project-section-title col-md-3">
+        <h3>Detailed Description</h3>
+      </div>
+      <div class="new-project-section-body col-md-9">
+       <%= f.text_area :body, :class => 'ckeditor' %>
+        <p>Detail as much as possible to enable students to better understand</p>
+      </div>
+    </div>
 
-    <%= f.button :submit, class: "btn btn-bezier" %>
+    <h2>About You</h2>
+
+      <div class="new-project-section col-md-12">
+      <div class="new-project-section-title col-md-3">
+        <h3>Company name</h3>
+      </div>
+      <div class="new-project-section-body col-md-9">
+        <%= f.input :company_name, label: false %>
+      </div>
+    </div>
+
+      <div class="new-project-section col-md-12">
+      <div class="new-project-section-title col-md-3">
+        <h3>Phone number</h3>
+      </div>
+      <div class="new-project-section-body col-md-9">
+       <%= f.input :phone_number, label: false %>
+      </div>
+    </div>
+
+    <%= f.button :submit, "Launch your project!", class: "btn btn-bezier btn-project" %>
 
 <% end %>
 
+</div>

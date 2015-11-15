@@ -1,4 +1,32 @@
 ActiveAdmin.register Lecture do
+  menu label: "Lectures", parent: "Products", priority: 2
+  filter :category
+
+  index do
+    column :title, sortable: true
+    actions
+  end
+
+  show sortable: :number do
+    panel "Lecture Curriculum" do
+      lecture.chapters.each do |chapter|
+        panel chapter.title, sortable: true do
+            h3 chapter.title
+            h5 link_to "Edit", "/admin/lectures/#{lecture.id}/chapters/#{chapter.id}/edit"
+            chapter.lessons.each do |lesson|
+              panel lesson.title, sortable: true do
+              h4 lesson.title
+               h5 link_to "Edit", "/admin/chapters/#{chapter.id}/lessons/#{lesson.id}/edit"
+             end
+            end
+          end
+ 
+      end
+    end
+  end
+
+  
+ 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   permit_params :title, :description, :created_at, :updated_at, :category_id, :name, :picture_file_name, :teacher_id, :video,
@@ -23,7 +51,7 @@ ActiveAdmin.register Lecture do
     f.input :picture, :required => false, :as => :file
   end
   f.inputs "Chapters" do
-    f.has_many :chapters do |c|
+    f.has_many :chapters, sortable: :number do |c|
       c.input :title
       c.input :description
       c.input :number

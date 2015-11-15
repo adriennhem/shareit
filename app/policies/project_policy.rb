@@ -27,4 +27,11 @@ class ProjectPolicy < ApplicationPolicy
 		record.user_id == user.id
 	end
 
+	class Scope < Scope
+	    def resolve
+	        scope.where(record.user_id == user.id)
+	    end
+	  end
+
+
 end

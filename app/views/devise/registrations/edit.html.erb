@@ -1,9 +1,13 @@
-<div class="row bg-grey">
-  <div class="index-header center">
-       <h1>Update your info</h1>
-       <h2>Change your settings</h2>
-     </div>
 
+ 
+
+<div class="row" id="dashboard-header" data-no-turbolink>
+<h1 class="dashboard-title">Settings</h1>
+<% if @projects.exists? %>
+  <%= link_to new_project_path, class: "btn btn-bezier-round" do %>
+      <i class="fa fa-plus"></i> Project
+    <% end %> 
+<% end %>
 
 <div class="width550 settings margin-s mb-60">
 
@@ -44,4 +48,4 @@
 
 </div>
 
-</div>
+

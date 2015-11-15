@@ -3,8 +3,11 @@
 <% end %>
 
 
-<h1>New Project</h1>
+<div class="row" id="dashboard-header" data-no-turbolink>
+	<h1 class="dashboard-title">Start your new project!</h1>
+</div>
 
-<%= render 'projects/form.html.erb' %>
 
-<%= link_to 'Back', profile_path(current_user) %>
+	<%= render 'projects/form.html.erb' %>
+
+

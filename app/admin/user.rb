@@ -1,4 +1,12 @@
 ActiveAdmin.register User do
+  menu parent: "Users", label: "Users", priority: 1
+
+  filter :enrollments
+
+  index do
+    column :email
+    actions
+  end
 
 
   # See permitted parameters documentation:
