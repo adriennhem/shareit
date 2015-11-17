@@ -430,6 +430,21 @@ nav.navbar-home.shrink-home a.btn:hover {
 }
 
 // --------------------------------------------------------------
+// Rules
+// --------------------------------------------------------------
+
+#rules {
+	background:url('<%= asset_path("bg-light.jpeg") %>') no-repeat center center fixed;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:300px;
+    margin:-50px 0 0 0;
+}
+
+
+// --------------------------------------------------------------
 // HOMEPAGE
 // --------------------------------------------------------------
 
@@ -1862,6 +1877,55 @@ a.btn-bezier-first:hover {
 
 input.cked {
 	margin-top:10px;
+}
+
+
+/* Project Show Box */
+
+
+
+.container-project {
+	position:relative;
+	top:100px;
+	border:$border;
+	margin:0 auto; 
+	width:1096px;
+	background:#fff;
+	padding-top:30px;
+}
+
+.container-project h2 {
+	margin-top:20px;
+	font-size: 20px;
+	margin-bottom:40px;
+
+}
+
+.container-project h3 {
+	font-size:16px;
+	color:#8D8F91;
+	font-weight:400;
+}
+
+.container-project p {
+	font-size: 14px;
+	font-weight: 400;
+	color:$raven;
+}
+
+.container-project-left {
+	padding-right:50px;
+}
+
+.project-info-description p {
+	font-size:16px;
+}
+
+.project-info-box {
+	margin-bottom:10px;
+	background:#FaFAFA;
+	padding:5px 20px;
+	border-radius:5px;
 }
 
 

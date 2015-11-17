@@ -20,4 +20,7 @@ class PagesController < ApplicationController
   	@posts = Post.all
   end
 
+  def rules
+  end
+
 end

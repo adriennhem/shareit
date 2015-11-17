@@ -7,12 +7,16 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
+  root 'pages#home'
   
-  get 'pages/home'
+  get '/about' => 'pages#contact'
 
-  get 'pages/about'
+  get '/contact' => 'pages#contact'
 
-  get 'pages/contact'
+  get '/helpme/rules' => 'pages#rules'
+
+  get '/helpme' => 'pages#helpme'
 
   get '/change_locale/:locale', to: 'settings#change_locale', as: :change_locale
 
@@ -31,7 +35,7 @@ Rails.application.routes.draw do
       resources :lessons
   end
 
-  root 'pages#home'
+ 
 
   # resources :tutorials
 
