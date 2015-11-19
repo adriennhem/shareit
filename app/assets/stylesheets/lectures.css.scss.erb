@@ -57,6 +57,11 @@ h2 {font-size:28px;}
 	background:$electric-blue;
 	 color:#ffffff;
 	 height:40px;
+	 overflow:hidden;
+	 position:relative;
+	 top:70px;
+	 width:100%;
+	 z-index:99999999999;
 	}
 
 .alert ul li {
@@ -311,7 +316,7 @@ nav.navbar-home.shrink-home a:hover {
 }
 
 
-nav.navbar-home.shrink-home {
+nav.navbar-home.shrink-home, nav.navbar-home.final {
 	background: white !important;
 	margin-top:0px;
 	padding-top: 0px;
@@ -319,7 +324,7 @@ nav.navbar-home.shrink-home {
 	height:60px;
 }
 
-.shrink-home {
+.shrink-home, .final {
 	background: white !important;
 	/*margin-top: -60px;*/
 }
@@ -350,7 +355,7 @@ nav.navbar-home.navbar-initial {
 
 /* navbar left shrinked */
 
-nav.shrink-home .navbar-left li a {
+nav.shrink-home .navbar-left li a,  nav.final .navbar-left li a {
 	color:$bezier !important;
 	padding-top:20px !important;
 	font-weight:700 !important;
@@ -360,7 +365,7 @@ nav.shrink-home .navbar-left li a {
 
 /* navbar left shrinked hover */
 
-nav.shrink-home .navbar-left li a:hover {
+nav.shrink-home .navbar-left li a:hover, nav.final .navbar-left li a:hover  {
 	opacity:0.9 !important;
 }
 
@@ -388,11 +393,21 @@ p.navbar-btn a:hover {
 
 /* navbar right shrinked  */
 
-nav.navbar-home.shrink-home a {
+nav.navbar-home.shrink-home a, nav.navbar-home.final a {
 	color: #8A959E !important;
 }
 
-nav.navbar-home.shrink-home a.btn {
+nav.navbar-home.shrink-home a.btn, nav.navbar-home.final a.btn {
+	color:#ffffff !important;
+	background:$bezier;
+	border:1px solid $bezier !important;
+}
+
+nav.navbar-home.final a {
+	color: #8A959E !important;
+}
+
+nav.navbar-home.final a.btn {
 	color:#ffffff !important;
 	background:$bezier;
 	border:1px solid $bezier !important;
@@ -403,6 +418,11 @@ nav.navbar-home.shrink-home a.btn {
 nav.navbar-home.shrink-home a.btn:hover {
 	opacity:0.8;
 }
+
+nav.navbar-home.final a.btn:hover {
+	opacity:0.8;
+}
+
 
 
 
@@ -558,13 +578,9 @@ h1.home-heading-testimonial {
 
 #section-home-1 {
 	text-align:center;
-	background:url('<%= asset_path("section1.jpeg") %>') no-repeat center center;
-	-webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height:400px;
-    padding: 90px 0;
+	background:#242B33;
+    height:520px;
+    padding: 150px 0;
 }
 
 
@@ -589,18 +605,18 @@ h1.home-heading-testimonial {
 
 /* Section course */
 
-#section_course .lecture-box {
-	margin-top: 50px;
-	margin-bottom:50px;
-	margin-left: 150px;
+#section_course .center {
+	padding-left:70px;
 }
+
 
 #section_course h2 {
 	text-align: center;
 	font-size:36px;
 	font-weight:300;
 	margin-top:50px;
-	color:$bezier;
+	margin-bottom:50px;
+	color:#242B33;
 }
 
 

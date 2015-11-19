@@ -1,52 +1,48 @@
 Rails.application.routes.draw do
 
-  resources :projects
-
-  # get 'tutorials/show'
-
   mount Ckeditor::Engine => '/ckeditor'
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
 
   root 'pages#home'
   
-  get '/about' => 'pages#contact'
+  get '/about' => 'pages#about'
 
   get '/contact' => 'pages#contact'
 
-  get '/helpme/rules' => 'pages#rules'
+  match '/contacts', to: 'contacts#new', via: 'get'
+  resources "contacts", only: [:new, :create]
 
-  get '/helpme' => 'pages#helpme'
+  get '/help-center/rules' => 'pages#rules'
 
-  get '/change_locale/:locale', to: 'settings#change_locale', as: :change_locale
+  get '/help-center/project-guidelines' => 'pages#helpme'
 
-  # get 'pages/upcoming'
+  get '/help-center' => 'pages#help_center'
 
   get 'pages/blog'
 
   get 'pages/signout'
 
-  match '/contacts',     to: 'contacts#new',             via: 'get'
-  resources "contacts", only: [:new, :create]
-
-  devise_for :users, :controllers => { :registrations => :registrations }
-  
-  resources :lectures do 
-      resources :lessons
-  end
-
+  get '/change_locale/:locale', to: 'settings#change_locale', as: :change_locale
  
-
   # resources :tutorials
 
   resources :profiles
 
+  resources :projects
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
+  devise_for :users, :controllers => { :registrations => :registrations }
+
   resources :enrollments
+
+  resources :lectures do 
+    resources :lessons
+  end
 
   resources :user_lessons
 
-  
-  # root 'pages#home'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

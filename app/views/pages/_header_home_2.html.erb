@@ -1,0 +1,60 @@
+<nav class="navbar navbar-home navbar-default final">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+ 
+      
+      <ul class="nav navbar-nav navbar-left">
+        <li><%= link_to "Workshopr.", root_path, class: 'navbar-brand' %></li>
+      </ul>
+       
+      
+      <ul class="nav navbar-nav navbar-right">
+         
+
+
+          <% if user_signed_in? %>
+
+        <li> <%= link_to profile_path(current_user) do %>
+             <i class="fa fa-tachometer"></i> <span>My Dashboard</span>
+             <% end %>
+        </li>
+
+
+
+        <li><p class="navbar-btn"> <%= link_to 'Sign Out',  destroy_user_session_path, method: :delete, class: "btn btn-bezier-inverse" %></p></li>
+
+
+        <% else %>
+
+   
+
+         <li> <%= link_to new_user_registration_path do %>
+             <i class="fa fa-user-plus"></i> <span>Register</span>
+             <% end %>
+        </li>
+
+
+        
+       
+
+        <li><p class="navbar-btn"> <%= link_to 'Sign In', new_user_session_path, class: "btn btn-bezier-inverse" %></p></li>
+        <% end %>
+
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
