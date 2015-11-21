@@ -20,18 +20,13 @@ class ProjectPolicy < ApplicationPolicy
 	end
 
 	def show?
-	  true
+	  record.user_id == user.id || !scope.includes(:offers).exists? || scope.includes(:offers).where(offers: {user_id: user.id})
 	end
 
 	def destroy?
 		record.user_id == user.id
 	end
 
-	class Scope < Scope
-	    def resolve
-	        scope.where(record.user_id == user.id)
-	    end
-	  end
 
 
 end

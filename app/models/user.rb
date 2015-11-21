@@ -17,8 +17,14 @@ class User < ActiveRecord::Base
   has_many :user_lessons
   has_many :lectures, through: :enrollments
 
-  # Iteration projects
-  has_many :projects
+  has_many :project_selling, class_name: 'Project'
+  has_many :offers_received, class_name: 'Offer',
+         through: :projects_selling, source: :offers
+
+  has_many :offers_made, class_name: 'Offer'
+  has_many :project_buying, class_name: 'Project',
+         through: :offers_made, source: :project
+
 
   accepts_nested_attributes_for :enrollments
 

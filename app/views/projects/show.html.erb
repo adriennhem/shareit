@@ -9,6 +9,14 @@
 			<i class="fa fa-pencil-square-o"></i> Edit
 		<% end %> 
 	<% end %>
+	<% if policy(@project).show? %>
+		<%= simple_form_for([@project, @project.offers.build]) do |f| %>
+  <%= f.error_notification %>
+  	  <%= f.hidden_field :user_id, { value: "@user.id" } %>
+  	  <%= f.hidden_field :project_id, { value: "@project.id" } %>
+	<%= f.button :submit, "Accept Project", class: "btn btn-bezier-round" %>
+  <% end %>
+	<% end %>
 </div>
 
 
@@ -21,8 +29,6 @@
 		<div class="project-info-description">
 			<%= @project.body.html_safe %> 
 		</div>
-
-
 
 
 	</div>

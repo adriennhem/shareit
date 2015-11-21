@@ -1840,7 +1840,7 @@ h1.dashboard-title {
 	z-index:99999;
 }
 
-#dashboard-header a {
+#dashboard-header a, input[type="submit"].btn-bezier-round {
 	float:right;
 	margin-top:-35px;
 	margin-right:20px;
@@ -1852,19 +1852,27 @@ h1.dashboard-title {
 	padding-left:165px;
 }
 
-a.btn-bezier-round, a.btn-bezier-first {
+input[type="submit"].btn-bezier-round {
+	box-shadow:none;
+	text-shadow:none;
+	border:1px solid rgba(0,0,0,0);
+	font-weight:400;
+
+}
+
+a.btn-bezier-round, a.btn-bezier-first, input[type="submit"].btn-bezier-round  {
 	border-radius:100px;
 	background:$bezier;
 	color:#fff;
 	font-size:14px;
 	font-weight:400;
 	text-transform: none;
+	top:55px;
 }
 
 
-
-a.btn-bezier-round:hover {
-	background:#fff;
+a.btn-bezier-round:hover, input[type="submit"].btn-bezier-round:hover  {
+	background:#fff !important;
 	color:$bezier;
 	border:1px solid $bezier;
 	transition: all 0.2s ease-in;

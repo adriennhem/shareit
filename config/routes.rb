@@ -27,7 +27,14 @@ Rails.application.routes.draw do
 
   resources :profiles
 
-  resources :projects
+  resources :projects do
+   resources :offers do
+     member do
+       post :accept
+       post :reject
+     end
+   end
+  end
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

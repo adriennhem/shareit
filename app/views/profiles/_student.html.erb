@@ -4,7 +4,7 @@
 
 <div class="row" id="dashboard-header" data-no-turbolink>
 	<h1 class="dashboard-title">enrolled courses</h1>
-	<% if @user.lectures.exists? %>
+	<% if !@user.lectures.exists? %>
 		<%= link_to lectures_path, class: "btn btn-bezier-round" do %>
 				Join a course!
 		<% end %> 
