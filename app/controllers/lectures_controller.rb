@@ -1,8 +1,8 @@
 class LecturesController < ApplicationController
-  before_action :authenticate_user!, :except => [:index]
+  before_action :authenticate_user!, :except => [:index, :lecture_description]
   before_action :set_lecture, only: [:show, :lecture_description]
   after_action :verify_authorized
-  layout 'dashboard'
+  layout 'dashboard', except: [:lecture_description]
 
   # GET /lectures
   # GET /lectures.json

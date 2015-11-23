@@ -2,6 +2,41 @@
       <%= render 'pages/header_home_2' %>
  <% end %>
 
+<div class="row" id="top-band">
+	<div class="container-fluid center">
+	<h1><%= @lecture.title %></h1>
+	<%= link_to 'Enroll Now', enrollments_path(@enrollment, enrollment: {user_id: 'current_user.id', lecture_id: @lecture.id}), :method => :post, data: {confirm: 'are you sure?', disable_with: "Enroll Now <i class='fa fa-spinner fa-spin'></i>"}, class: "btn btn-bezier big margin-s" %>
+	</div>
+</div>
 
-<p><%= @lecture.title %></p>
-<p><%= @lecture.description %></p>
+<div class="row" id="teacher-band">
+	<div class="container-fluid">
+		<div class="col-md-12 center">
+			<div class="col-md-4"><%= image_tag @lecture.teacher.picture.url(:medium) %></div>
+			<div class="col-md-5">In just one month, I'll teach you how to keep your projects on time, on spec, and under budget <br> Alex Bisker, You Project Management Instructor</div>
+		</div>
+	</div>
+</div>
+
+<div class="row" id="course-description-detail">
+	<div class="container">
+		<div class="col-md-12 lecture-description-video">
+			<%= @lecture.video.html_safe %>
+		</div>
+		<div class="col-md-12 course-description-body">
+			<h2>About this course</h2>
+			<%= @lecture.description %>
+		</div>
+	</div>
+</div>
+
+<div class="row" id="enroll-band">
+	<div class="container-fluid">
+		<div class="col-md-12">
+			<div class="col-md-7"><h2>ENROLL TODAY FOR JUST $49!</h2></div>
+			<div class="col-md-5"><%= link_to 'Enroll Now', enrollments_path(@enrollment, enrollment: {user_id: 'current_user.id', lecture_id: @lecture.id}), :method => :post, data: {confirm: 'are you sure?', disable_with: "Enroll Now <i class='fa fa-spinner fa-spin'></i>"}, class: "btn btn-bezier big margin-s" %></div>
+		</div>
+	</div>
+</div>
+
+
