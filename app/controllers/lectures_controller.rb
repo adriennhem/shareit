@@ -1,6 +1,6 @@
 class LecturesController < ApplicationController
   before_action :authenticate_user!, :except => [:index]
-  before_action :set_lecture, only: [:show]
+  before_action :set_lecture, only: [:show, :lecture_description]
   after_action :verify_authorized
   layout 'dashboard'
 
@@ -25,6 +25,10 @@ class LecturesController < ApplicationController
     @teacher = Teacher.all
     authorize @lecture
     @disable_footer = true
+  end
+
+  def lecture_description 
+    skip_authorization
   end
 
   # POST /lectures

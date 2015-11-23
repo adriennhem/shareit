@@ -22,6 +22,28 @@ RSpec.describe User, :type => :model do
   	expect(user).to be_valid
   end 
 
+  it "is valid without a last_name" do
+    user = User.new(
+      first_name: 'Adrien',
+      last_name: nil,
+      email: 'adrien.nhem@grenoble-em.com',
+      password: 'adriennhem',
+      role: 'student')
+    user.valid?
+    expect(user).to be_valid
+  end
+
+  it "is valid with .grenoble-em" do
+      user = User.new(
+      first_name: 'Adrien',
+      last_name: 'Nhem',
+      email: 'adrien.nhem@grenoble-em.com',
+      password: 'adriennhem',
+      role: 'student')
+    expect(user).to be_valid
+  end
+
+
   it "is invalid if student's email is not .grenoble-em.com" do
     user = User.new(
       first_name: 'Adrien',
@@ -44,15 +66,8 @@ RSpec.describe User, :type => :model do
     expect(user).to be_valid
   end
 
-  it "is valid without a last_name" do
-  	user = User.new(
-      first_name: 'Adrien',
-      last_name: nil,
-      email: 'adrien.nhem@grenoble-em.com',
-      password: 'adriennhem')
-  	user.valid?
-  	expect(user).to be_valid
-  end
+
+
   
 
 end

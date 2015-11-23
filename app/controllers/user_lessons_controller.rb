@@ -4,7 +4,7 @@ class UserLessonsController < ApplicationController
     @user_lesson = UserLesson.create(user_lesson_params)
     if @user_lesson.save
       flash[:success] = "You rock! Keep up ;)"
-   		redirect_to @lecture
+   		redirect_to(:back)
     else
       flash[:success] = "You have already completed this lesson"
       redirect_to(:back)

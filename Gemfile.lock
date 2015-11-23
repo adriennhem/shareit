@@ -84,6 +84,8 @@ GEM
     bootstrap-sass (3.3.5.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.3.0)
+    bootstrap-wysihtml5-rails (0.3.3.7)
+      railties (>= 3.0)
     bourbon (4.2.5)
       sass (~> 3.4)
       thor (~> 0.19)
@@ -283,6 +285,7 @@ DEPENDENCIES
   activeadmin (~> 1.0.0.pre1)
   aws-sdk (< 2.0)
   bootstrap-sass (~> 3.3.4)
+  bootstrap-wysihtml5-rails
   byebug
   ckeditor
   coffee-rails (~> 4.1.0)

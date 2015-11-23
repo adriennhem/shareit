@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   get 'pages/signout'
 
+
+
   get '/change_locale/:locale', to: 'settings#change_locale', as: :change_locale
  
   # resources :tutorials
@@ -28,12 +30,7 @@ Rails.application.routes.draw do
   resources :profiles
 
   resources :projects do
-   resources :offers do
-     member do
-       post :accept
-       post :reject
-     end
-   end
+   resources :offers, only: [:create, :destroy]
   end
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -42,6 +39,8 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :registrations => :registrations }
 
   resources :enrollments
+
+  get 'description/:id', to: 'lectures#lecture_description', as: :lecture_description
 
   resources :lectures do 
     resources :lessons

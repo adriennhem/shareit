@@ -11,6 +11,10 @@ class LecturePolicy < ApplicationPolicy
 		true
 	end
 
+	def lecture_description
+		true
+	end
+
 	def update?
 		false
 	end

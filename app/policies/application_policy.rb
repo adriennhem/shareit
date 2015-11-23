@@ -34,6 +34,18 @@ class ApplicationPolicy
     false
   end
 
+  def is_student?
+    user.student?
+  end
+
+  def is_company?
+    user.company?
+  end
+
+  def is_owner?
+    record.user_id == user.id
+  end
+
   def scope
     Pundit.policy_scope!(user, record.class)
   end

@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'turbolinks', github: 'rails/turbolinks'
 gem 'simple_form'
 gem 'mail_form'
+gem 'bootstrap-wysihtml5-rails'
 gem 'jquery-turbolinks'
 # Email sender
 gem 'mandrill-api'

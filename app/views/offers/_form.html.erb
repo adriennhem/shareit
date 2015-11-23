@@ -1,0 +1,6 @@
+<%= simple_form_for([@project, @project.offers.build]) do |f| %>
+  <%= f.error_notification %>
+  	  <%= f.hidden_field :user_id, { value: "@user.id" } %>
+  	  <%= f.hidden_field :project_id, { value: "@project.id" } %>
+	<%= f.button :submit, "Accept Project", class: "btn btn-bezier-round" %>
+  <% end %>

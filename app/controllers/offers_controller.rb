@@ -22,6 +22,13 @@ def reject
     offer.reject
 end
 
+def destroy
+    @project = Project.find(params[:project_id])
+    @offer = @project.offers.where(project_id: @project.id)
+    @offer.destroy_all
+    redirect_to @project, :notice => "Offer Deleted"
+end
+
 private
 
 def offer_params

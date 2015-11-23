@@ -13,6 +13,7 @@ class ProjectsController < InheritedResources::Base
 
   def show
     @project = Project.find(params[:id])
+    @offer = @project.offers.all
     authorize @project 
     @disable_footer = true
   end

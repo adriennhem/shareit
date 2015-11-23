@@ -29,6 +29,21 @@
 		<div class="project-info-description">
 			<%= @project.body.html_safe %> 
 		</div>
+		
+
+		<% if @project.offers.exists? && current_user.student? %>
+		<% current_user.offers_made.where(project_id: @project.id).each do |offer| %>
+		<%= link_to 'Delete', project_offer_path(@project, @offer), method: :delete %> 
+		<% end %>
+		<% end %>
+
+		
+		<% if @project.offers.exists? && current_user.company? %>
+
+		<%= link_to 'Delete', project_offer_path(@project, @offer), method: :delete %> 
+
+		<% end %>
+
 
 
 	</div>

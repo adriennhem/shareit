@@ -4,27 +4,27 @@ class ProjectPolicy < ApplicationPolicy
 	end
 
 	def new?
-		@user.company?
+		is_company?
 	end
 
 	def create?
-		@user.company?
+		is_company?
 	end
 
 	def update?
-		record.user_id == user.id
+		is_owner?
 	end
 
 	def edit?
-		record.user_id == user.id
+		is_owner?
 	end
 
 	def show?
-	  record.user_id == user.id || !scope.includes(:offers).exists? || scope.includes(:offers).where(offers: {user_id: user.id})
+	  is_owner? || !scope.includes(:offers).exists? || scope.includes(:offers).where(offers: {user_id: user.id})
 	end
 
 	def destroy?
-		record.user_id == user.id
+		is_owner?
 	end
 
 

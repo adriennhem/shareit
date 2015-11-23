@@ -10,7 +10,7 @@ RSpec.describe PagesController, :type => :controller do
 
 	describe "routes for about" do
 		it 'routes /about to the pages controller' do
-			expect(get: "/pages/about").to route_to(controller: "pages", action: "about")
+			expect(get: "/about").to route_to(controller: "pages", action: "about")
 		end
 	end
 end
