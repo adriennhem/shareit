@@ -5,5 +5,5 @@ class Project < ActiveRecord::Base
 	has_many :offers
 	has_many :buyers, class_name: 'User', through: :offers
 
-	# scope :no_offer, ->  { !includes(:offers).exists? }
+	scope :no_offer, ->  { includes(:offers).where( :offers => { :project_id => nil } ) }
 end

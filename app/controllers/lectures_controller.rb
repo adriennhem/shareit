@@ -1,6 +1,6 @@
 class LecturesController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :lecture_description]
-  before_action :set_lecture, only: [:show, :lecture_description]
+  before_action :set_lecture, only: [:show]
   after_action :verify_authorized
   layout 'dashboard', except: [:lecture_description]
 
@@ -21,13 +21,14 @@ class LecturesController < ApplicationController
   # GET /lectures/1
   # GET /lectures/1.json
   def show
-    @projects = Project.where(lecture_id: @lecture.id)
+    @projects = Project.where(lecture_id: @lecture.id).no_offer 
     @teacher = Teacher.all
     authorize @lecture
     @disable_footer = true
   end
 
-  def lecture_description 
+  def lecture_description
+    @lecture = Lecture.friendly.find(params[:id]) 
     skip_authorization
   end
 
@@ -68,6 +69,6 @@ class LecturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lecture_params
-      params.require(:lecture).permit(:title, :description, :category_id, :picture, :teacher_id, :video, :enrollment_id, :learning_outcomes)
+      params.require(:lecture).permit(:title, :description, :category_id, :picture, :teacher_id, :video, :enrollment_id, :learning_outcomes, :long_description, :teacher_description, :background_image, :permalink)
     end
 end

@@ -3,7 +3,7 @@ class ChaptersController < ApplicationController
 
 	
 	def create 
-		@lecture = Lecture.find(params[:lecture_id])
+		@lecture = Lecture.friendly.find(params[:lecture_id])
 		@chapter = @lecture.chapters.create(chapter_params)
 			if @chapter.save
 				redirect_to chapter_path(@chapter)

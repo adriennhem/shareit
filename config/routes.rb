@@ -26,8 +26,9 @@ Rails.application.routes.draw do
   get '/change_locale/:locale', to: 'settings#change_locale', as: :change_locale
  
   # resources :tutorials
-
   resources :profiles
+
+
 
   resources :projects do
    resources :offers, only: [:create, :destroy]
@@ -40,7 +41,7 @@ Rails.application.routes.draw do
 
   resources :enrollments
 
-  get 'description/:id', to: 'lectures#lecture_description', as: :lecture_description
+  get 'courses/:id', to: 'lectures#lecture_description', as: :lecture_description
 
   resources :lectures do 
     resources :lessons

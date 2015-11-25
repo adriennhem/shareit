@@ -29,8 +29,8 @@ ActiveAdmin.register Lecture do
  
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  permit_params :title, :description, :created_at, :updated_at, :category_id, :name, :picture_file_name, :teacher_id, :video,
-  :picture, :picture_content_type, :picture_file_size, :picture_updated_at, :learning_outcomes, 
+  permit_params :title, :description, :created_at, :updated_at, :category_id, :name, :picture_file_name, :teacher_id, :video, :permalink, 
+  :picture, :picture_content_type, :picture_file_size, :picture_updated_at, :learning_outcomes, :long_description, :teacher_description, :background_image,
   chapters_attributes: [:id, :title, :description, :number, :total_duration, lessons_attributes: [:id, :title, :description, :vid, :etape, :short_description, :video_duration]]
 
   # or
@@ -41,23 +41,27 @@ ActiveAdmin.register Lecture do
   #   permitted
   # end
 
-  form :html => { :enctype => "multipart/form-data" } do |f|
-  f.inputs "Lectures", :multipart => true do
+  form :html => { :enctype => "multipart/form-data", :class => 'expandable in' } do |f|
+  f.inputs "Lectures", :multipart => true, :class => 'expandable in' do
     f.input :category_id
     f.input :teacher_id
     f.input :title
+    f.input :permalink
     f.input :video 
+    f.input :background_image
+    f.input :teacher_description, as: :ckeditor
     f.input :description
+    f.input :long_description, as: :ckeditor
     f.input :learning_outcomes, as: :ckeditor
     f.input :picture, :required => false, :as => :file
   end
-  f.inputs "Chapters" do
+  f.inputs "Chapters", :class => 'inputs expandable in' do
     f.has_many :chapters, sortable: :number do |c|
       c.input :title
       c.input :description
       c.input :number
       c.input :total_duration
-      c.has_many :lessons do |d|
+      c.has_many :lessons, :class => 'inputs expandable in' do |d|
         d.input :etape
         d.input :title
         d.input :short_description

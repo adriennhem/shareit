@@ -9,7 +9,7 @@
 			<i class="fa fa-pencil-square-o"></i> Edit
 		<% end %> 
 	<% end %>
-	<% if policy(@project).show? %>
+	<% if policy(@project).is_student? %>
 		<%= simple_form_for([@project, @project.offers.build]) do |f| %>
   <%= f.error_notification %>
   	  <%= f.hidden_field :user_id, { value: "@user.id" } %>
@@ -17,6 +17,17 @@
 	<%= f.button :submit, "Accept Project", class: "btn btn-bezier-round" %>
   <% end %>
 	<% end %>
+
+	<% if policy(@project).is_owner? && !@project.offers.empty? %>
+				
+		<% if @project.offers.exists? && current_user.company? %>
+
+		<%= link_to 'Republish', project_offer_path(@project, @offer), class: "btn-bezier-round republish", method: :delete %> 
+
+		<% end %>
+
+
+	<% end %> 
 </div>
 
 
@@ -31,19 +42,7 @@
 		</div>
 		
 
-		<% if @project.offers.exists? && current_user.student? %>
-		<% current_user.offers_made.where(project_id: @project.id).each do |offer| %>
-		<%= link_to 'Delete', project_offer_path(@project, @offer), method: :delete %> 
-		<% end %>
-		<% end %>
-
-		
-		<% if @project.offers.exists? && current_user.company? %>
-
-		<%= link_to 'Delete', project_offer_path(@project, @offer), method: :delete %> 
-
-		<% end %>
-
+	
 
 
 	</div>

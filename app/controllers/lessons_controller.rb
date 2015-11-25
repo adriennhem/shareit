@@ -5,7 +5,7 @@ class LessonsController < ApplicationController
   # GET /lessons/1
   # GET /lessons/1.json
   def show
-    @lecture = Lecture.find(params[:lecture_id])
+    @lecture = Lecture.friendly.find(params[:lecture_id])
     @lesson = @lecture.lessons.find(params[:id])
     @disable_footer = true
     authorize @lecture

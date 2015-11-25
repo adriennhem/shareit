@@ -18,4 +18,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-wysihtml5
+//= require activeadmin-expandable
 //= require_tree .

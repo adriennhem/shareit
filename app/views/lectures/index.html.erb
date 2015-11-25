@@ -43,22 +43,10 @@
 
                         <%= link_to 'Enroll Now', enrollments_path(@enrollment, enrollment: {user_id: 'current_user.id', lecture_id: lecture.id}), :method => :post, data: {confirm: 'are you sure?', disable_with: "Enroll Now <i class='fa fa-spinner fa-spin'></i>"}, class: "btn btn-bezier index-lecture" %>
 
-                        <a  class="<%= lecture.id %>" name="answer" value="Show Div" onclick="showDiv()">More details <i class="fa fa-chevron-down"></i></a>
+                        <%= link_to 'More Details', lecture_description_path(lecture) %>
 
-                      <script>
-                      $(document).ready(function(){
-                          $(".<%= lecture.id %>").click(function(){
-                              $("#<%= lecture.id %>").toggle(220);
-                          });
-                      });
-                      </script>
 
-                    </div>
-                     
-                     <div id="<%= lecture.id %>" class="lecture-index-details"  style="display:none;" class="answer_list" > 
-                        <!-- Here goes details -->
-                        WELCOME
-                     </div>  
+                     </div>
 
                   </div> <!-- .lecture-box -->
 

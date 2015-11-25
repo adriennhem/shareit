@@ -1,5 +1,7 @@
  class Lecture < ActiveRecord::Base
- 	
+   extend FriendlyId
+   friendly_id :permalink, use: :finders
+
 	belongs_to :category
 	belongs_to :teacher
 

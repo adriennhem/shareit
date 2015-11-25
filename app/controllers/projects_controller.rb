@@ -62,7 +62,7 @@ end
     @project = Project.find(params[:id])
     @project.destroy
     respond_to do |format|
-      format.html { redirect_to profile_path(current_user), notice: 'Project was successfully destroyed.' }
+      format.html { redirect_to profile_path(current_user), notice: 'Project was successfully republished.' }
       format.js { head :no_content }
     end
     authorize @project

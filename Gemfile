@@ -20,6 +20,8 @@ gem 'mandrill-api'
 # ActiveAdmin
 gem "font-awesome-rails"
 gem 'activeadmin', '~> 1.0.0.pre1'
+gem 'active_admin_theme'
+gem 'activeadmin_expandable_inputs'
 
 # WYSIWYG
 gem 'ckeditor'
@@ -29,6 +31,8 @@ gem "pundit"
 
 # local variables
 gem "figaro"
+
+gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 
 # calendar gem
 gem 'fullcalendar-rails'
