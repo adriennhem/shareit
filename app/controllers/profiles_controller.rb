@@ -3,8 +3,8 @@ before_action :authenticate_user!
 layout "dashboard"
 
 def show
-	@projects = current_user.project_selling.all
 	@user = current_user
+	@projects = @user.project_selling.all
 	@disable_footer = true
 end
 

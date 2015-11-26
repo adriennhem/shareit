@@ -47,7 +47,7 @@ class ProjectsController < InheritedResources::Base
 
 def create 
   @lecture_options = Lecture.all.map{|u| [u.title, u.id]}
-	@project = current_user.projects.build(project_params)
+	@project = current_user.project_selling.build(project_params)
 	if @project.save 
 		flash[:success] = "You have successfully created a project."
 		redirect_to profile_path(current_user)
