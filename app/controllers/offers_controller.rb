@@ -5,9 +5,10 @@ class OffersController < ApplicationController
     @seller = User.find_by(id: @project.user_id)
     @offer = @project.offers.create(offer_params)
     @offer.user_id = current_user.id
+    @buyer = current_user
     authorize @offer
     if @offer.save
-        AcceptMailer.accept(@seller, @project).deliver
+        AcceptMailer.accept(@seller, @project, @buyer).deliver
         redirect_to @project, notice: 'Project accepted!'
     else
         redirect_to :back, notice: 'Only one student per project'

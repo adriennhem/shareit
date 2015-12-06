@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  *= require font-awesome
- *= require fullcalendar
  *= require activeadmin-expandable
  *= require bootstrap-wysihtml5
  */

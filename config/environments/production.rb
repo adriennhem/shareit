@@ -81,7 +81,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'secure-tor-9037.herokuapp.com' }
 
   # Rails.application.routes.default_url_options[:host] = 'evening-ravine-8683.herokuapp.com'
-
+  
   
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false

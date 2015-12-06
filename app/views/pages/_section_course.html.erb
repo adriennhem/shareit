@@ -1,21 +1,8 @@
-<div class="row" id="section_course">
-	<div class="container-fluid">
-		
-		
-		<h2><%= @lecture.title %></h2>
-		
-
-<div class="center mb-60">
-                    
-                        <%= @lecture.video.html_safe %>
-
-                         <%= link_to 'show course', lecture_description_path(@lecture) %>
-
-                        <%= link_to 'Enroll Now', enrollments_path(@enrollment, enrollment: {user_id: 'current_user.id', lecture_id: @lecture.id}), :method => :post, data: {confirm: 'are you sure?', disable_with: "Enroll Now <i class='fa fa-spinner fa-spin'></i>"}, class: "btn btn-bezier index-lecture" %>
-</div>
-
-                       
-
-
+<div class="row section-course">
+	<div class="center">
+		<h2><%= link_to @lecture.title, lecture_description_path(@lecture) %></h2>
+		<div class="mb-150">
+	    	<%= @lecture.video.html_safe %>
+		</div>
 	</div>
 </div>

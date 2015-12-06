@@ -1,11 +1,9 @@
 <div class="row" id="section2">
-	<div class="container-fluid mb-60">
-		<h1 class="center">You're a <strong>company</strong> and you <strong>need help?</strong> Publish your projects  <strong>for free</strong> on our platform</h1>
-<div class="container">
+	<div class="center mb-60">
+		<h1>You're a <strong>company</strong> and you <strong>need help?</strong> Publish your projects  <strong>for free</strong> on our platform</h1>
+    <div class="container">
 		 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
-      
-      
        <%= f.input :email, label: false, autocomplete: false, placeholder: 'EMAIL' %>
        <%= f.input :password, label: false, autocomplete: false, placeholder: 'PASSWORD'   %>
        <%= f.input :password_confirmation, label: false, autocomplete: false, placeholder: 'PASSWORD CONFIRMATION'   %>
@@ -13,10 +11,7 @@
        <%= f.button :submit, "Sign up! It's free", class: "btn-bezier" %>
     <% end %>
     </div>
-  <p>Or <%= link_to 'Sign In', new_user_session_path %></p>
-	<p>By clicking "Register!" I agree to Workshopr's Terms of Service.</p>
-
-
+    <p>Or <%= link_to 'Sign In', new_user_session_path %></p>
+  	<p>By clicking "Register!" I agree to Workshopr's Terms of Service.</p>
 	</div>	
-
 </div>
