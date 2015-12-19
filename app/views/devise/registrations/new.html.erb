@@ -15,7 +15,7 @@
 
        <%= f.input :password_confirmation, label: false, placeholder: 'PASSWORD CONFIRMATION' %>
 
-        <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
+        <%= f.select(:role, User.roles.keys.reject {|role| role == "author"}.map {|role| [role.titleize,role]}) %>
 
        <%= f.button :submit, 'Register', class: "btn-bezier btn" %>
     <% end %>

@@ -12,7 +12,7 @@ ActiveAdmin.register User do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :first_name, :last_name, :picture, :email
+  permit_params :first_name, :last_name, :picture, :email, :role, :password, :password_confirmation
   # or
   #
   # permit_params do
@@ -20,14 +20,24 @@ ActiveAdmin.register User do
   #   permitted << :other if resource.something?
   #   permitted
   # end
+  filter :email
+  filter :current_sign_in_at
+  filter :sign_in_count
+  filter :created_at
+
+  
   form :html => { :enctype => "multipart/form-data" } do |f|
-      f.inputs "User", :multipart => true do
-    f.input :first_name
-    f.input :last_name
-    f.input :email
-    f.input :picture, :required => false, :as => :file
+    f.inputs "User", :multipart => true do
+      f.input :role, as: :select, collection: User.roles.keys.to_a
+      f.input :first_name
+      f.input :last_name
+      f.input :email
+      f.input :password
+      f.input :password_confirmation
+      # f.input :role
+      f.input :picture, :required => false, :as => :file
+    end
+    f.actions
   end
-  f.actions
-end
 
 end
