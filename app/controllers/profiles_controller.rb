@@ -4,7 +4,7 @@ layout "dashboard"
 
 def show
 	@user = current_user
-	@projects = @user.project_selling.all
+	@projects = Project.all
 	@disable_footer = true
 end
 

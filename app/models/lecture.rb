@@ -22,5 +22,9 @@
 	has_attached_file :picture, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   	validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 
-	
+	def percent_completed_by(user)
+      uncompleted_lessons_in_course = self.lessons - user.user_lessons
+      100 * ( uncompleted_lessons_in_course.count.to_f / self.lessons.count.to_f)
+    end
+    
 end

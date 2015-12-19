@@ -12,48 +12,39 @@
 </div>
 
 
-          <h1 class="dashboard-course">All Courses</h1>
 
-    
-           <% @lectures.each do |lecture| %>
+<div class="container-index-lecture">    
+  <% @lectures.each do |lecture| %>
+    <div class="lecture-index-box col-lg-12 col-md-12">
 
-   
+      <div class="col-md-6 lecture-index-video">
+        <%= lecture.video.html_safe %>
+      </div>  
 
-                  <div class="lecture-box lecture-index-box col-lg-12 col-md-12">
+      <div class="col-md-6 lecture-index-description">
 
-                    <div class="col-md-6 lecture-index-video">
+        <h2><%= lecture.title %></h2> 
 
-                        <%= lecture.video.html_safe %>
+        <p class="enrolled-users">
+        <%= lecture.users.count %> <i class="fa fa-user"></i> <span>Enrolled</span>
+        </p>
 
-                    </div>  
+        <p class="lecture-author">
+        by <%= lecture.teacher.name %>  
+        </p>
 
-                    <div class="col-md-6 lecture-index-description">
+        <p class="lecture-description">
+        <%= truncate(lecture.description, length: 210) %>  <%= link_to 'Learn More', lecture_description_path(lecture) %>
+        </p>
 
-                        <h2><%= lecture.title %></h2> 
+        <%= link_to 'Enroll Now', enrollments_path(@enrollment, enrollment: {user_id: 'current_user.id', lecture_id: lecture.id}), :method => :post, data: {confirm: 'are you sure?'}, class: "btn btn-bezier btn-small" %>
 
-                        
+       
+      </div>
 
-                         <p class="enrolled-users">
-                         <%= lecture.enrollments.count %> <i class="fa fa-user"></i> <span>Enrolled</span>
-                         </p>
-
-                        <p class="lecture-description">
-                          <%= truncate(lecture.description, length: 210) %> 
-                        </p>
-
-                        <%= link_to 'Enroll Now', enrollments_path(@enrollment, enrollment: {user_id: 'current_user.id', lecture_id: lecture.id}), :method => :post, data: {confirm: 'are you sure?', disable_with: "Enroll Now <i class='fa fa-spinner fa-spin'></i>"}, class: "btn btn-bezier btn-small" %>
-
-                        <%= link_to 'More Details', lecture_description_path(lecture) %>
-
-
-                     </div>
-
-                  </div> <!-- .lecture-box -->
-
-
-          <% end %>
-
-
+    </div> 
+  <% end %>
+</div>
   
           
          

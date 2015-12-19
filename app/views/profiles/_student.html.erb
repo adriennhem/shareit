@@ -12,6 +12,10 @@
 </div>
 
 
+
+
+
+
 <div class="row" id="enrolled-courses">
 
 
@@ -30,6 +34,7 @@
 		            <p class="completed-lessons">
 		            <%= lecture.lessons.select{ |l| l.users.include? current_user }.count %> /  <%= lecture.lessons.size %> lessons completed
 		            </p>
+		            <p><%= lecture.percent_completed_by(current_user) %></p>
 		        </div>   
 
 	        </div>

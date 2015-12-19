@@ -28,4 +28,8 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :enrollments
 
+  def made_offer?(project)
+    self.offers_made.include?(project)
+  end
+
 end

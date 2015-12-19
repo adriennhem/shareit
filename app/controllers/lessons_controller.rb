@@ -11,7 +11,7 @@ class LessonsController < ApplicationController
     authorize @lecture
     
     # @previous = @lecture.lessons.where("id < ?", params[:id]).order(:id).first   
-    # @next = @lecture.lessons.where("id > ?", params[:id]).order(:id).first 
+    # @next = @lecture.lessons.where("etape > ?", params[:etape]).order(:etape).first 
   end
 
   # POST /lessons.json

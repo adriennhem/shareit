@@ -6,17 +6,19 @@
 
 	<h1 class="dashboard-title"><%= @lecture.title %></h1>
 
-	<% if @lecture.lessons.size != @lecture.lessons.select{ |l| l.users.include? current_user }.count %>
+	<% if @lecture.percent_completed_by(current_user) != 100 %>
 
-	<p><%= @lecture.lessons.select{ |l| l.users.include? current_user }.count %> /  <%= @lecture.lessons.size %> lessons completed</p>
+	<p><%= @lecture.percent_completed_by(current_user) %> completed </p>
 	<% end %>
 	
-	<% if @lecture.lessons.size == @lecture.lessons.select{ |l| l.users.include? current_user }.count %>
+	<% if @lecture.percent_completed_by(current_user) != 100 %>
 	
 	<div><a href="https://www.linkedin.com/profile/add?_ed=0_f2VAhHdqDGIA-puPkRkYUmBLRCv-L0sdMCuq6U7ZwQWOM8FDA1Vj-EuTt18hX-wbJiNSRLB8ZhH_KsovcMlm-d0Vcu6wbkDnSWUQ0tL_yrU&degree=Social%20Media%20certificate%20&trk=onsite_html" rel="nofollow" target="_blank"><img src="https://download.linkedin.com/desktop/add2profile/buttons/en_US.png" alt="LinkedIn Add to Profile button"></a></div>
 	<% end %>
 
 </div>
+
+
 
 
 <div class="row" id="show-lecture">
@@ -59,7 +61,7 @@
 <!-- end row#show-lecture -->
 
 			
-<% if @lecture.lessons.size == @lecture.lessons.select{ |l| l.users.include? current_user }.count %>
+<% if @lecture.percent_completed_by(current_user) == 100 %>
 <div class="unlocked margin-s">
 <h2>Unlocked projects!</h2>
 
@@ -77,7 +79,7 @@
 		</div>
 <% end %>
 			
-<% if @lecture.lessons.size != @lecture.lessons.select{ |l| l.users.include? current_user }.count %>
+<% if @lecture.percent_completed_by(current_user) != 100 %>
 	<h2 class="locked center margin-s"><i class="fa fa-lock"></i> Complete this course to unlock projects</h2>
 <% end %>
 
