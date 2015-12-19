@@ -3,6 +3,7 @@
  <% end %>
 
  <% @posts.each do |post| %>
+ 	<h4><%= post.blog_category.title %></h4>
 	<h2><%= post.title %></h2>
 	<p><%= post.content %></p>
  <% end %>
