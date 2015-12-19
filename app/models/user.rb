@@ -12,6 +12,9 @@ class User < ActiveRecord::Base
   validates_format_of :email, with: /\@grenoble-em\.com/, message: "You should have an email from grenoble-em.com", if: ->(user) { user.role == 'student' }
   validates :role, presence: true
 
+  # Relationship Posts
+  has_many :posts 
+
   # User / lecture relationship
   has_many :enrollments
   has_many :user_lessons

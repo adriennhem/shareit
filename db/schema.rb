@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151219093332) do
+ActiveRecord::Schema.define(version: 20151219145722) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -170,6 +170,7 @@ ActiveRecord::Schema.define(version: 20151219093332) do
     t.text     "content"
     t.integer  "blog_category_id"
     t.boolean  "published",        default: false
+    t.integer  "user_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -234,6 +235,10 @@ ActiveRecord::Schema.define(version: 20151219093332) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.integer  "role"
+    t.string   "facebook_url"
+    t.string   "twitter_url"
+    t.string   "linkedin_url"
+    t.text     "biography"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

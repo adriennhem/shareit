@@ -31,6 +31,10 @@ ActiveAdmin.register User do
       f.input :role, as: :select, collection: User.roles.keys.to_a
       f.input :first_name
       f.input :last_name
+      f.input :biography 
+      f.input :facebook_url
+      f.input :twitter_url
+      f.input :linkedin_url 
       f.input :email
       f.input :password
       f.input :password_confirmation
