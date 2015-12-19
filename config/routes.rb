@@ -49,6 +49,8 @@ Rails.application.routes.draw do
 
   resources :user_lessons
 
+  resources :posts
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

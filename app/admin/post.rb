@@ -5,7 +5,7 @@ ActiveAdmin.register Post do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :title, :author, :content
+  permit_params :title, :content
   #
   # or
   #
@@ -17,7 +17,6 @@ ActiveAdmin.register Post do
   form :html => { :enctype => "multipart/form-data" } do |f|
   f.inputs "Blog Posts", :multipart => true do
     f.input :title
-    f.input :author
     f.input :content
   end
   f.actions
