@@ -42,6 +42,7 @@ class ApplicationPolicy
     user.company?
   end
 
+
   def is_owner?
     record.user_id == user.id
   end

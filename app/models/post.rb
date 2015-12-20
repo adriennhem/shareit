@@ -1,4 +1,8 @@
 class Post < ActiveRecord::Base
+    extend FriendlyId
+    friendly_id :permalink, use: :finders
+    
+	acts_as_taggable_on :tags
 	# basic assossiations 
 	belongs_to :blog_category
 	belongs_to :user 

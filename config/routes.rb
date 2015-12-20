@@ -23,6 +23,9 @@ Rails.application.routes.draw do
 
 
 
+
+
+
   get '/change_locale/:locale', to: 'settings#change_locale', as: :change_locale
  
   # resources :tutorials
@@ -49,7 +52,9 @@ Rails.application.routes.draw do
 
   resources :user_lessons
 
+  # Blog
   resources :posts
+  get 'tags/:tag', to: 'posts#index', as: :tag
 
 
 
