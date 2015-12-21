@@ -6,16 +6,22 @@
 // SASS VARIABLES 
 // --------------------------------------------------------------
 
+$navbar-default-toggle-icon-bar-bg: #fff;
+$navbar-default-toggle-border-color: #fff;
+
 @import 'config';
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
 
 /* -----------------------------------*/
 /* ---------->>> GLOBAL <<<-----------*/
 /* -----------------------------------*/
 
 html {
-	font-size: 62.5%
+	font-size: 62.5%;
+    -webkit-font-smoothing: antialiased;
 }
 
 html.turbolinks-progress-bar::before {
@@ -155,6 +161,14 @@ span.help-inline {
     margin-bottom: 150px;
 }
 
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
 .mt-negative-15 {
     margin-top: -15px;
 }
@@ -191,10 +205,21 @@ span.help-inline {
     clear: both;
 }
 
+.uppercase {
+    text-transform: uppercase;
+}
 
+.raven {
+    color: $raven;
+}
 
+.heading-blog {
+    color: rgba(0,0,0,0.8);
+}
 
-
+.text-blog {
+    color: rgba(0,0,0,0.44);
+}
 
 
 //--------------------------------------------------------------
@@ -770,30 +795,8 @@ img.profile {
 
 
 .footer {
-    min-height: 85px;
-    padding: 25px;
-    font-size: 13px;
-    font-family: proxima-nova;
-}
-
-ul.inset {
-    text-shadow: 1px $steel;
-}
-
-ul.footer-main-list ul {
-    float: left;
-    margin-left: 100px;
-}
-
-ul.footer-main-list ul li h1 {
-    color: $bezier !important;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: 13px;
-}
-
-ul.footer-list-3 li:last-child {
-    margin-top: 15px;
+    font-size: 14px;
+    font-family: $proxima-nova;
 }
 
 .footer ul li {
@@ -801,29 +804,30 @@ ul.footer-list-3 li:last-child {
 }
 
 .footer ul li a {
-    color: $grey-chateau !important;
-    font-size: 14px;
-    font-weight: 300;
+    color: $raven;
+}
+
+#mc_embed_signup, .footer span  {
+    color: $raven;
 }
 
 .footer ul li a:hover {
     color: $bezier !important;
 }
 
-span.copyright {
-    margin-left: 150px;
-}
-
 .footer input.email {
-    width: 330px !important;
+    width: 250px !important;
     height: 32px !important;
     border-radius: 0 !important;
 }
 
-input#mc-embedded-subscribe {
-    margin-top: 5px;
+.footer input {
+    margin-top: 10px;
 }
 
+.bezier, a.bezier {
+    color: $bezier;
+}
 
 
 //--------------------------------------------------------------

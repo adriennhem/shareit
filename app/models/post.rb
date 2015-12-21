@@ -7,8 +7,12 @@ class Post < ActiveRecord::Base
 	belongs_to :blog_category
 	belongs_to :user 
 
+	# paperclip 
+	has_attached_file :picture, :styles => { :medium => "400x400>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+	validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 	# validations 
 	validates :blog_category_id, presence: true 
+	validates :permalink, uniqueness: true
 	validates :user_id, presence: true
 	validates :title, presence: true
 	validates :content, presence: true

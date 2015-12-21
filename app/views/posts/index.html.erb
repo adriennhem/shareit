@@ -1,13 +1,52 @@
  <% content_for :navbar do %>
-      <%= render 'pages/header_home_2' %>
+      <%= render 'layouts/navbar_blog' %>
  <% end %>
 
- <% @posts.each do |post| %>
+<div class="row row-search">
+	<div class="container-fluid vertical center">
+		<h1 class="tk-jaf-bernina-sans uppercase white">Blog</h1>
+	</div>
+</div>
 
- 	<h4><%= post.blog_category.title %></h4>
-	<h2><%= post.title %></h2>
-	<h3><%= post.user.email %></h3>
-	<p><%= post.content %></p>
-	<p>Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(' ') %></p>
-	<%= link_to "read more", post %>
- <% end %>
+
+<div class="row row-blog blog">
+	<div class="container-fluid">
+	<% @posts.each do |post| %>
+ 		<div data-no-turbolink class="col-xs-12 col-sm-6 col-md-4 mb-60">
+ 			<%= link_to post do %>
+				<%= image_tag post.picture.url(:medium) %>
+			<% end %>		
+	 			<h3 class="tk-jaf-bernina-sans uppercase bezier"><%= post.blog_category.title %></h4>
+	 		<%= link_to post do %>	
+				<h2 class="tk-jaf-bernina-sans heading-blog"><%= post.title %></h2>
+			<% end %>	
+				<p class="tk-freight-text-pro text-blog weight400"><%= truncate(post.content, length: 120) %></p>
+				<p>Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(' ') %></p>
+		</div>
+ 	<% end %>
+   </div>
+</div>
+
+<div class="row row-promotion">
+	<div class="text-promotion col-xs-12 center vertical">
+	<h2 class="white tk-jaf-bernina-sans">We Only Send Useful Information</h2>
+	<!-- Begin MailChimp Signup Form -->
+	<div class="col-md-12">
+	<form action="//workshopr.us12.list-manage.com/subscribe/post?u=b52b01d51f7042b6b9db08e1c&amp;id=9e45a0652d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate blog-newsletter" target="_blank" novalidate>
+	<div id="mce-responses" class="clear">
+			<div class="response" id="mce-error-response" style="display:none"></div>
+			<div class="response" id="mce-success-response" style="display:none"></div>
+		</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+		
+	    <div class="col-md-4 col-xs-12 col-sm-4 col-md-offset-3 col-sm-offset-2">	
+				<input type="email" value="Email Address" name="EMAIL" class="required email float-right opt-in-email margin-xs" id="mce-EMAIL">
+		</div>
+		<div class="col-md-1 col-xs-12 col-sm-1">		
+				<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-bezier btn-large margin-xs">
+		</div>
+	</form>
+	</div>
+	<!--End mc_embed_signup-->
+	</div>
+</div>
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<%= favicon_link_tag 'favicon2.ico' %>    
+  <title> Workshopr - Blog </title>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="https://use.typekit.net/vif1vvl.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <script src="//load.sumome.com/" data-sumo-site-id="d2b85df999ee758739cdd9614bff1f2fd7d4d0cc6b9aa19253d8d2760def2970" async="async"></script>
+  <%= csrf_meta_tags %>
+  <!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+mixpanel.init("0efcf03757a7792f069573d96e8b82d6");</script><!-- end Mixpanel -->
+<script type="text/javascript">
+!function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+analytics.load("boaJZKKhMXHRT1QwH1FHCxG2lO6cQkLh");
+analytics.page()
+}}();
+</script>
+
+
+
+</head>
+
+<script type="text/javascript">
+    mixpanel.track_links(".footer a", "click footer link", {
+        "referrer": document.referrer
+    });
+</script>
+
+<body id="main">
+<% if content_for?(:navbar) %>
+    <%= yield(:navbar) %>
+<% else %>
+   <%= render 'layouts/header' %>
+<% end %>
+
+<%= render 'layouts/messages'  %>
+<div class="container-fluid">
+
+
+<%= yield %>
+
+<%= render 'layouts/footer' unless @disable_footer %>
+</div>
+
+</body>
+</html>

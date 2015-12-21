@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 	before_action :set_post, only: [:show]
+	layout 'blog'
 	
 	def index
 	 if params[:tag]

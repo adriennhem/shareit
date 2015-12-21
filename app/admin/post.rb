@@ -5,7 +5,7 @@ ActiveAdmin.register Post do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :title, :content, :blog_category_id, :user_id, :published, :tag_list, :permalink
+  permit_params :title, :content, :blog_category_id, :user_id, :published, :tag_list, :permalink, :picture
   #
   # or
   #
@@ -22,7 +22,8 @@ ActiveAdmin.register Post do
     f.input :user_id, label: 'Author', as: :select, collection: User.where(role: 3).map {|u| [u.email, u.id]}.to_a
     f.input :title
     f.input :permalink
-    f.input :content
+    f.input :picture, :required => false, :as => :file
+    f.input :content, as: :ckeditor
   end
   f.actions
 end

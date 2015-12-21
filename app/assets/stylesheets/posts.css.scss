@@ -1,0 +1,228 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'config';
+
+.white {
+	color: #fff !important;
+}
+
+.margin-xs {
+	margin-top: 10px;
+}
+
+
+/* NAVBAR BLOG */
+
+.navbar-blog {
+	z-index: 999;
+	background: none;
+}
+
+.navbar-blog a.navbar-brand {
+	font-weight: 800;
+	text-transform: uppercase;
+	margin-left: 10px;
+}
+
+.navbar-blog-right > li > a {
+	color: $bezier !important;
+	text-transform: uppercase;
+	font-size: 14px;
+}
+
+.navbar-toggle.collapsed {
+	background: $bezier;
+}
+
+div[aria-expanded="true"] {
+	background: #FFFFFF;
+	
+}
+
+div[aria-expanded="true"] a {
+	color: $bezier !important;
+	font-weight: 400;
+}
+
+div[aria-expanded="true"] a.btn-bezier {
+	margin-left: 15px;
+	color: #fff !important;
+}
+
+/* ROW SEARCH */
+
+.row-search {
+	background: rgba(0,0,0,0.8);
+	height: 110px;
+}
+
+.row-search h1 {
+	/*color: $aluminium;*/
+}
+
+/* BLOG ROW */
+
+.row-blog {
+	position: relative;
+	top: 70px;
+}
+
+.row-blog img {
+	max-width: 100%;
+	height: auto;
+	width: auto\9; /* Iie8 */
+}
+
+.row-blog .col-xs-12 {
+	height: 410px;
+}
+
+.row-blog h3 {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 19px;
+	margin-bottom: -15px;
+}
+
+.row-blog h2 {
+	font-weight: 800;
+	font-size: 21px;
+	line-height: 26px;
+}
+
+.row-blog p {
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 26px;
+}
+
+.row-promotion {
+	height: 300px;
+	background: rgba(0,0,0,0.8);
+}
+
+.row-promotion p {
+	font-size: 30px;
+}
+
+.row-promotion p.uppercase {
+	font-weight: 800;
+}
+
+input.opt-in-email {
+	width: 90%;
+	height: 53px;
+	float: right;
+}
+
+/* SHOW POST */
+
+.row-post {
+	width: 100%;
+}
+
+.container-content {
+	margin: 0 auto;
+	max-width:63%;
+}
+
+
+.row-post-content img {
+	max-width: 100%;
+	height: auto;
+	width: auto\9; /* Iie8 */
+}
+
+/* SHOW POST HEADING */
+
+.row-post-content h2 {
+	color: rgba(0,0,0,0.8);
+	font-family: "jaf-bernina-sans",sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 52px;
+	line-height: 54px;
+}
+
+.row-post-content h3 {
+	color: rgba(0,0,0,0.8);
+	font-family: "jaf-bernina-sans",sans-serif;
+	font-weight: 600;
+	font-size: 36px;
+	line-height: 41px; 
+}
+
+.row-post-content h4 {
+	color:rgba(0,0,0,0.44);
+	font-family: "jaf-bernina-sans",sans-serif;
+	font-weight: 400;
+	font-size: 28px;
+	line-height: 34px;
+}
+
+/* SHOW POST TEXT ELEMENTS */
+
+.row-post-content p, .row-post-content strong, .row-post-content blockquote, .row-post-content ul li, .row-post-content ol li   {
+	font-size: 21px;
+	line-height: 33px;
+	font-family: "freight-text-pro", serif;
+	font-style: normal;
+	font-weight: 400;
+	color: rgba(0,0,0,0.8);
+}
+
+.row-post-content a {
+	color: $bezier;
+	font-size: 21px; 
+}
+
+
+@media (max-width: 768px) {
+
+.container-content {
+		max-width: 95%;
+	} 
+
+.row-post h1 {
+	font-size: 34px;
+	line-height: 38px;
+}
+	
+.row-post-content h2 {
+	font-size: 28px;
+	line-height: 31px;
+}
+
+.row-post-content h3 {
+	font-size: 24px;
+	line-height: 28px; 
+}
+
+.row-post-content h4 {
+	font-size: 21px;
+	line-height: 25px;
+}
+
+.row-post-content p, .row-post-content strong, .row-post-content blockquote, .row-post-content ul li, .row-post-content ol li, .row-post-content a {
+		font-size: 18px;
+		line-height: 27px;
+}
+}
+
+
+@media (min-width: 768px) and (max-width: 992px) {
+	.container-content {
+		max-width: 85%;
+	} 
+}
+
+
+.row-post-content h2, .row-post-content h3, .row-post-content h4, .row-post-content p, .row-post-content strong, .row-post-content blockquote, .row-post-content ul li, .row-post-content ol li, .row-post-content a {
+	margin-top: 1.2em;
+}
+
+/* DISCOVER */
+
+
