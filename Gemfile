@@ -20,7 +20,7 @@ gem 'mandrill-api'
 
 # ActiveAdmin
 gem "font-awesome-rails"
-gem 'activeadmin', '~> 1.0.0.pre1'
+gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'active_admin_theme'
 gem 'activeadmin_expandable_inputs'
 
