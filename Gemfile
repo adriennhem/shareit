@@ -24,7 +24,7 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 
 
 # WYSIWYG
-gem 'ckeditor'
+gem 'ckeditor', github: 'galetahub/ckeditor'
 
 # authorization updated 
 gem "pundit"
