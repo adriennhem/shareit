@@ -23,7 +23,7 @@ ActiveAdmin.register Post do
     f.input :title
     f.input :permalink
     f.input :picture, :required => false, :as => :file
-    f.input :content, as: :ckeditor
+    f.input :content, :as => :ckeditor
   end
   f.actions
 end

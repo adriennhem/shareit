@@ -56,8 +56,6 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.1)
-    active_admin_theme (1.0.3)
-    activeadmin_expandable_inputs (0.0.4)
     activejob (4.2.0)
       activesupport (= 4.2.0)
       globalid (>= 0.3.0)
@@ -135,9 +133,6 @@ GEM
     formtastic_i18n (0.4.1)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
-    fullcalendar-rails (2.3.1.0)
-      jquery-rails (>= 3.1.1, < 5.0.0)
-      momentjs-rails (~> 2.8, >= 2.8.4)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     has_scope (0.6.0)
@@ -179,8 +174,6 @@ GEM
     mimemagic (0.3.0)
     mini_portile (0.6.2)
     minitest (5.8.1)
-    momentjs-rails (2.10.3)
-      railties (>= 3.1)
     multi_json (1.11.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
@@ -293,9 +286,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_admin_theme
   activeadmin!
-  activeadmin_expandable_inputs
   acts-as-taggable-on (~> 3.4)
   aws-sdk (< 2.0)
   bootstrap-sass (~> 3.3.4)
@@ -307,13 +298,11 @@ DEPENDENCIES
   figaro
   font-awesome-rails
   friendly_id (~> 5.1.0)
-  fullcalendar-rails
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
   mail_form
   mandrill-api
-  momentjs-rails
   paperclip!
   pg
   pundit

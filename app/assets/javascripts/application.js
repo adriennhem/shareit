@@ -12,11 +12,8 @@
 //
 //= require jquery
 //= require ckeditor/init
-//= require moment
-//= require fullcalendar
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-wysihtml5
-//= require activeadmin-expandable
 //= require_tree .

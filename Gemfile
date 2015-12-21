@@ -21,8 +21,7 @@ gem 'mandrill-api'
 # ActiveAdmin
 gem "font-awesome-rails"
 gem 'activeadmin', github: 'gregbell/active_admin'
-gem 'active_admin_theme'
-gem 'activeadmin_expandable_inputs'
+
 
 # WYSIWYG
 gem 'ckeditor'
@@ -34,10 +33,6 @@ gem "pundit"
 gem "figaro"
 
 gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
-
-# calendar gem
-gem 'fullcalendar-rails'
-gem 'momentjs-rails'
 
 # For image uploading
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
