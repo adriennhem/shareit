@@ -3,14 +3,15 @@ class PostsController < ApplicationController
 	layout 'blog'
 	
 	def index
+	 @blog_category_options = BlogCategory.all.map{|u| [u.title, u.id]}
+	 @posts = policy_scope(Post) 
 	 if params[:tag]
-    	@posts = Post.tagged_with(params[:tag]).order(created_at: :desc)
+    	@posts = Post.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 3)
   	  elsif params[:blog_category] 
-  	  	@posts = Post.where(blog_category: params[:blog_category]).order(created_at: DESC)
+  	  	@posts = Post.where(blog_category: params[:blog_category]).paginate(:page => params[:page], :per_page => 3)
 	  else 
-    	@posts = Post.order(created_at: :desc)
+    	@posts = Post.where(published: true).paginate(:page => params[:page], :per_page => 3)
 	  end 
-	  @posts = policy_scope(Post) 
     end
 
 	def show
