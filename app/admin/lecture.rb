@@ -4,10 +4,18 @@ ActiveAdmin.register Lecture do
 
   index do
     column :title, sortable: true
+    column :category, sortable: true
+    column :teacher, sortable: true
     actions
   end
 
   show sortable: :number do
+
+    attributes_table do
+     row :picture do 
+        image_tag(lecture.picture.url(:thumb), :height => '100')
+      end
+    end
     panel "Lecture Curriculum" do
       lecture.chapters.each do |chapter|
         panel chapter.title, sortable: true do
@@ -20,10 +28,11 @@ ActiveAdmin.register Lecture do
              end
             end
           end
- 
       end
     end
   end
+
+
 
   
  
@@ -44,6 +53,7 @@ ActiveAdmin.register Lecture do
   form :html => { :enctype => "multipart/form-data", :class => 'expandable in' } do |f|
   f.inputs "Lectures", :multipart => true, :class => 'expandable in' do
     f.input :category_id
+    f.input :teacher_id, label: 'Teacher', as: :select, collection: Teacher.all.map {|t| [t.name, t.id]}
     f.input :teacher_id
     f.input :title
     f.input :permalink
@@ -53,7 +63,7 @@ ActiveAdmin.register Lecture do
     f.input :description
     f.input :long_description, as: :ckeditor
     f.input :learning_outcomes, as: :ckeditor
-    f.input :picture, :required => false, :as => :file
+    f.input :picture, :as => :file, :hint => f.image_tag(f.lecture.picture.url(:medium)) 
   end
   f.inputs "Chapters", :class => 'inputs expandable in' do
     f.has_many :chapters, sortable: :number do |c|

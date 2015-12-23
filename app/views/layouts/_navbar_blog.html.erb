@@ -19,6 +19,12 @@
              <i class="fa fa-tachometer"></i> <span>My Dashboard</span>
              <% end %>
         </li>
+        <% if current_user.try(:admin?) %>
+        <li> <%= link_to admin_root_path, class: "link-navbar-blog" do %>
+             <i class="fa fa-user"></i> <span>Admin Dashboard</span>
+             <% end %>
+        </li>
+        <% end %>
         <li>
           <p class="navbar-btn"> <%= link_to 'Sign Out',  destroy_user_session_path, method: :delete, class: "btn btn-bezier btn-small" %></p>
         </li>

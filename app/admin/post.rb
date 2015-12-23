@@ -1,11 +1,17 @@
 ActiveAdmin.register Post do
   menu parent: "Blog", priority: 2
 
-
+  index do
+    column :published, sortable: true
+    column :title, sortable: true
+    column :blog_category, sortable: true
+    column :permalink, sortable: true
+    actions
+  end
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :title, :content, :blog_category_id, :user_id, :published, :tag_list, :permalink, :picture
+  permit_params :title, :content, :blog_category_id, :user_id, :published, :tag_list, :permalink, :picture, :summary
   #
   # or
   #
@@ -23,6 +29,7 @@ ActiveAdmin.register Post do
     f.input :title
     f.input :permalink
     f.input :picture, :required => false, :as => :file
+    f.input :summary
     f.input :content, :as => :ckeditor
   end
   f.actions

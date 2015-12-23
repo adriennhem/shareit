@@ -4,15 +4,17 @@ class PostsController < ApplicationController
 	
 	def index
 	 if params[:tag]
-    	@posts = Post.tagged_with(params[:tag])
+    	@posts = Post.tagged_with(params[:tag]).order(created_at: :desc)
   	  elsif params[:blog_category] 
-  	  	@posts = Post.where(blog_category: params[:blog_category]).order("created_at DESC")
+  	  	@posts = Post.where(blog_category: params[:blog_category]).order(created_at: DESC)
 	  else 
     	@posts = Post.order(created_at: :desc)
-	  end  
+	  end 
+	  @posts = policy_scope(Post) 
     end
 
 	def show
+		authorize @post
 	end
 
 

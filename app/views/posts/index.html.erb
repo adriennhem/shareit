@@ -10,7 +10,7 @@
 </div>
 
 
-<div class="row row-blog blog">
+<div class="row row-blog blog mb-60">
 	<div class="container-fluid">
 	<% @posts.each do |post| %>
  		<div data-no-turbolink class="col-xs-12 col-sm-6 col-md-4 mb-60">
@@ -23,7 +23,10 @@
 	 		<%= link_to post do %>	
 				<h2 class="tk-jaf-bernina-sans heading-blog"><%= post.title %></h2>
 			<% end %>	
-				<p class="tk-freight-text-pro text-blog weight400"><%= truncate(post.content, length: 120) %></p>
+				<p class="tk-freight-text-pro text-blog weight400"><%= truncate(post.summary, length: 120) %></p>
+				<% if current_user.try(:admin?) %>
+				<p class="bezier weight400">Published: <%= post.published %> </p>
+				<% end %>
 				
 		</div>
  	<% end %>
