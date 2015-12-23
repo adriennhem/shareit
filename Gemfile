@@ -45,6 +45,13 @@ gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# CRON Jobs
+gem 'whenever', :require => false
+
+# SEO
+gem 'sitemap_generator'
+gem 'meta-tags'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -58,6 +65,7 @@ gem 'sqlite3', group: :development
 group :production do 
 	gem 'rails_12factor'
 	gem 'pg'
+  
 end
 
 

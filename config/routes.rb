@@ -53,8 +53,11 @@ Rails.application.routes.draw do
   resources :user_lessons
 
   # Blog
-  resources :posts
+  get '/blog' => 'posts#index'
+  get 'blog/:id', to: 'posts#show', as: :post
+
   get 'tags/:tag', to: 'posts#index', as: :tag
+  get 'blog_category/:blog_category', to: 'posts#index', as: :blog_category
 
 
 

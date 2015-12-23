@@ -2,6 +2,7 @@ ActiveAdmin.register User do
   menu parent: "Users", label: "Users", priority: 1
 
   filter :enrollments
+  filter :role
 
   index do
     column :email
@@ -12,7 +13,7 @@ ActiveAdmin.register User do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :first_name, :last_name, :picture, :email, :role, :password, :password_confirmation, :biography
+  permit_params :first_name, :last_name, :picture, :email, :role, :password, :password_confirmation, :biography, :twitter_url, :linkedin_url
   # or
   #
   # permit_params do
@@ -31,8 +32,7 @@ ActiveAdmin.register User do
       f.input :role, as: :select, collection: User.roles.keys.to_a
       f.input :first_name
       f.input :last_name
-      f.input :biography 
-      f.input :facebook_url
+      f.input :biography, as: :ckeditor 
       f.input :twitter_url
       f.input :linkedin_url 
       f.input :email

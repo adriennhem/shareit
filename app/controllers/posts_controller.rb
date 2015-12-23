@@ -5,11 +5,12 @@ class PostsController < ApplicationController
 	def index
 	 if params[:tag]
     	@posts = Post.tagged_with(params[:tag])
-  	  else
+  	  elsif params[:blog_category] 
+  	  	@posts = Post.where(blog_category: params[:blog_category]).order("created_at DESC")
+	  else 
     	@posts = Post.order(created_at: :desc)
 	  end  
     end
-
 
 	def show
 	end

@@ -1,3 +1,5 @@
+<% content_for :title, "Workshopr | #{@post.title}" %>
+
  <% content_for :navbar do %>
       <%= render 'layouts/navbar_blog' %>
  <% end %>
@@ -15,19 +17,35 @@
  <div class="row row-post-content">
  	<div class="container-content container-fluid center-content">
  		<%= @post.content.html_safe %>
+ 		<p class="margin-s">Tags: <%= raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(' ') %></p>
  	</div>
  </div>
 
 
-<div class="row row-author margin-s">
+<div class="row row-author margin-s mb-60">
 	<div class="container-content">
 		<div class="media">
 		  <div class="media-left">
 		  	<%= image_tag("#{@post.user.picture}", class: "media-object") %>
 		  </div>
 		  <div class="media-body">
-		    <h4 class="media-heading"><%= @post.user.email %></h4>
-		    <p><%= @post.user.biography %></p>
+		  	<h4 class="weight400 media-heading bezier">Author</h3>
+		    <h5 class="media-heading weight800"><%= @post.user.email %></h4>
+		    <p><%= @post.user.biography.html_safe %></p>
+		    <p>Follow me:
+		     <% if @post.user.attribute_present?(:twitter_url) %>
+		    	<%= link_to "https://#{@post.user.twitter_url}", target: "_blank", class: "author-social-icons"  do %>
+		    	 <i class="fa fa-twitter social-icon"></i>
+		    	<% end %>
+		    <% end %>
+		     <% if @post.user.attribute_present?(:linkedin_url) %>
+		    	<%= link_to "https://#{@post.user.linkedin_url}", target: "_blank", class: "author-social-icons"  do %>
+		    	<i class="fa fa-linkedin social-icon"></i>
+		    	<% end %>
+		    <% end %>  
+
+
+		     </p>
 		  </div>
 		</div>
 	</div>
