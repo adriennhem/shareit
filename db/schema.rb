@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151223173249) do
+ActiveRecord::Schema.define(version: 20151224120145) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -209,6 +209,15 @@ ActiveRecord::Schema.define(version: 20151223173249) do
     t.integer  "lecture_id"
   end
 
+  create_table "seos", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "keywords"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "post_id"
+  end
+
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
@@ -285,6 +294,7 @@ ActiveRecord::Schema.define(version: 20151223173249) do
     t.string   "linkedin_url"
     t.text     "biography"
     t.boolean  "admin"
+    t.string   "google_plus"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

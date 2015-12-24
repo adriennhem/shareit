@@ -1,4 +1,8 @@
-<% content_for :title, "Workshopr | #{@post.title}" %>
+	<!-- SEO -->
+	<% set_meta_tags site: "Workshopr", title: "#{@post.seo.try(:title)}" %> 
+	<% set_meta_tags description: "#{@post.seo.try(:description)}" %>
+
+
 
  <% content_for :navbar do %>
       <%= render 'layouts/navbar_blog' %>
@@ -43,6 +47,11 @@
 		    	<i class="fa fa-linkedin social-icon"></i>
 		    	<% end %>
 		    <% end %>  
+		       <% if @post.user.attribute_present?(:google_plus) %>
+		    	<%= link_to "https://#{@post.user.google_plus}", target: "_blank", class: "author-social-icons"  do %>
+		    	<i class="fa fa-google-plus social-icon"></i>
+		    	<% end %>
+		    <% end %> 
 
 
 		     </p>

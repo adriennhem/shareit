@@ -6,6 +6,8 @@ class Post < ActiveRecord::Base
 	# basic assossiations 
 	belongs_to :blog_category
 	belongs_to :user 
+	has_one :seo, dependent: :destroy
+	accepts_nested_attributes_for :seo, allow_destroy: true
 
 	# paperclip 
 	has_attached_file :picture, :styles => { :medium => "400x400>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
