@@ -1,6 +1,22 @@
 	<!-- SEO -->
-	<% set_meta_tags site: "Workshopr", title: "#{@post.seo.try(:title)}" %> 
-	<% set_meta_tags description: "#{@post.seo.try(:description)}" %>
+<% set_meta_tags site: "Workshopr", title: "#{@post.seo.try(:title)}" %> 
+<% set_meta_tags description: "#{@post.seo.try(:description)}" %>
+<% set_meta_tags author: "#{@post.user.google_plus}" %>
+
+
+<% set_meta_tags og: {	
+  title:    "#{@post.title}",
+  type:     "text",
+  url:      "www.workshopr.me/blog/#{@post.permalink}",
+  image:    "#{raw @post.picture.url}",
+} %>
+
+<% set_meta_tags twitter: {
+  card: "#{@post.summary}",
+  site: "@workshopr"
+} %>
+<!-- end SEO -->
+
 
 
 

@@ -229,93 +229,41 @@ span.help-inline {
 
 /* navbar */
 
-nav {
+.navbar-default {
     height: 50px;
-}
-
-.navbar-nav > li > a {
-    font-family: $proxima-nova;
-    font-weight: 100;
-    padding-top: 20px !important;
-    color: #fff !important;
-    font-size: 16px;
-    text-decoration: none;
-}
-
-nav.navbar-home {
+    z-index: 999;
     background: none;
-	/*margin-top: -70px;*/
+    font-family: $proxima-nova;
+}
+
+.navbar-home {
+    background: none;
     padding-top: 20px;
     text-transform: uppercase;
 }
 
-nav.navbar-home a {
-    font-size: 13px !important;
+
+.navbar-nav > li > a {
     font-weight: 500 !important;
     padding: 5px 25px;
+    font-size: 13px !important;
+    padding-top: 20px !important;
+    color: #fff !important;
+    margin: 0 10px;
 }
 
-nav.navbar-home.shrink-home a:hover {
-    color: $bezier !important;
-}
 
-nav.navbar-home.shrink-home, nav.navbar-home.final {
-    background: white !important;
+.navbar-fixed-top {
     margin-top: 0px;
     padding-top: 0px;
     border-bottom: 1px solid $mercury;
     height: 60px;
-}
-
-.shrink-home, .final {
-    background: white !important;
-	/*margin-top: -60px;*/;
-}
-
-nav.navbar-home.navbar-initial {
-	/*margin-top: -10px;*/;
-}
-
-.navbar-fixed-top {
     transition: all 0.5s ease;
+    background: white !important;
 }
 
-
-/* navbar left */
-
-.navbar-left li a {
-    padding-top: 10px !important;
-    font-size: 18px !important;
-    font-weight: 700 !important;
-}
-
-/* navbar left hover */
-
-.navbar-left li a:hover {
-    color: $bezier !important;
-}
-
-/* navbar left shrinked */
-
-nav.shrink-home .navbar-left li a,  nav.final .navbar-left li a {
-    color: $bezier !important;
-    padding-top: 20px !important;
-    font-weight: 700 !important;
-    font-size: 24px !important;
-    transition: font-size 0.1s ease;
-}
-
-/* navbar left shrinked hover */
-
-nav.shrink-home .navbar-left li a:hover, nav.final .navbar-left li a:hover {
-    opacity: 0.9 !important;
-}
 
 /* navbar right */
-
-.navbar-right li {
-    padding: 0 10px;
-}
 
 p.navbar-btn {
     padding-top: 5px;
@@ -324,48 +272,50 @@ p.navbar-btn {
 /* navbar right hover */
 
 .navbar-right li a:hover {
-    color: $bezier !important;
+    color: $bezier;
     transition: all 0.3s ease-in;
-}
-
-p.navbar-btn a:hover {
-    color: #ffffff !important;
-    transition: background 0.2s ease-in;
 }
 
 /* navbar right shrinked  */
 
-nav.navbar-home.shrink-home a, nav.navbar-home.final a {
-    color: #8A959E !important;
+
+
+.navbar-header a.navbar-brand {
+    font-size: 21px;
+    font-weight: 800;
+    color: #fff;
 }
 
-nav.navbar-home.shrink-home a.btn, nav.navbar-home.final a.btn {
-    color: #ffffff !important;
-    background: $bezier;
-    border: 1px solid $bezier !important;
+.navbar-header a.navbar-brand:hover {
+    color: #fff;
 }
 
-nav.navbar-home.final a {
-    color: #8A959E !important;
+.shrink-home a.navbar-brand {
+    color: $bezier;
+    padding-top: 20px !important;
+    transition: font-size 0.1s ease;
 }
 
-nav.navbar-home.final a.btn {
-    color: #ffffff !important;
-    background: $bezier;
-    border: 1px solid $bezier !important;
+.shrink-home a.navbar-brand:hover {
+    color: $bezier;
 }
 
-/* navbar right shrinked hover */
-
-nav.navbar-home.shrink-home a.btn:hover {
-    opacity: 0.8;
+.shrink-home .navbar-right li a {
+    color: $aluminium !important;
 }
 
-nav.navbar-home.final a.btn:hover {
-    opacity: 0.8;
+.shrink-home .navbar-right li a:hover {
+    color: $bezier;
 }
 
 
+.shrink-home .navbar-right li a.btn {
+    color: #fff !important;
+}
+
+.navbar-right li a.btn:hover {
+    color: #fff !important;
+}
 
 
 
