@@ -31,9 +31,7 @@ analytics.page()
 
 <body id="main">
 <% if content_for?(:navbar) %>
-    <%= yield(:navbar) %>
-<% else %>
-   <%= render 'layouts/header' unless @disable_navbar %>
+    <%= yield(:navbar) %>  
 <% end %>
 
 <%= render 'layouts/messages'  %>

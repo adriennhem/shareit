@@ -3,16 +3,18 @@ class EnrollmentsController < ApplicationController
 	before_action :redirect_to_signup, only: [:new]
 
 	def new
+		@lecture = Lecture.find(params[:lecture_id])
 		@disable_navbar = true 
 		@disable_footer = true
-		@lecture = Lecture.find_by(params[:lecture_id])
-		@enrollment = Enrollment.new(lecture_id: @lecture.id, user_id: current_user.id)
+		@enrollment = Enrollment.new
 	end
 
 
 	def create 
+		@disable_navbar = true 
+		@disable_footer = true
 		@lecture = Lecture.find_by(params[:id])
-		@enrollment = Enrollment.new(lecture_id: @lecture.id, user_id: current_user.id)
+		@enrollment = Enrollment.new(lecture_id: params[:lecture_id], user_id: current_user.id)
 	    charge_error = nil
 
 	    if @enrollment.valid?

@@ -2,7 +2,7 @@
 
 <div class="row row-payment ">
   <div class="container-fluid">
-    <h2 class="center weight600 mb-60">Start Learning: <br> <%= @lecture.title %></h2>
+    <h2 class="center weight600 mb-60">Start Learning: <%= @lecture.title %><br> </h2>
 
     <div class="col-md-12">
 
@@ -23,7 +23,7 @@
 
           <%= form_tag enrollments_path, id: "payment-form" do %>
             <span class="payment-errors"></span>
-            <%= hidden_field_tag :lecture_id, value: @lecture.id %>
+            <%= hidden_field_tag :lecture_id, params[:lecture_id] %>
             <%= hidden_field_tag :user_id, value: current_user.id %>
 
             <div class="form-row">
