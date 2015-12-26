@@ -33,7 +33,7 @@ analytics.page()
 <% if content_for?(:navbar) %>
     <%= yield(:navbar) %>
 <% else %>
-   <%= render 'layouts/header' %>
+   <%= render 'layouts/header' unless @disable_navbar %>
 <% end %>
 
 <%= render 'layouts/messages'  %>

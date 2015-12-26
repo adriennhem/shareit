@@ -3,6 +3,8 @@ class EnrollmentsController < ApplicationController
 	before_action :redirect_to_signup, only: [:new]
 
 	def new
+		@disable_navbar = true 
+		@disable_footer = true
 		@lecture = Lecture.find_by(params[:lecture_id])
 		@enrollment = Enrollment.new(lecture_id: @lecture.id, user_id: current_user.id)
 	end
@@ -15,8 +17,11 @@ class EnrollmentsController < ApplicationController
 
 	    if @enrollment.valid?
 	    begin
+
+	    	
 	      customer = Stripe::Customer.create(
-	        :email => 'example@stripe.com',
+	        :email => current_user.email,
+	        :coupon => params[:coupon],
 	        :card  => params[:stripeToken])
 
 	      charge = Stripe::Charge.create(
@@ -48,7 +53,7 @@ class EnrollmentsController < ApplicationController
 	private
 
 		def enrollment_params 
-			params.require(:enrollment).permit(:user_id, :lecture_id)
+			params.require(:enrollment).permit(:user_id, :lecture_id, :amount, :coupon)
 		end
 
 		def redirect_to_signup

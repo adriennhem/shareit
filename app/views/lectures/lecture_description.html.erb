@@ -30,14 +30,16 @@
 	</div>
 </div>
 
-<div data-no-turbolink>
-<%= link_to "Pay now", new_enrollment_path(controller: 'enrollment', action: 'new', lecture_id: @lecture.id) %>
-</div>
 
-<div class="row" id="enroll-band">
+<div class="row" id="enroll-band" data-no-turbolink>
 	<div class="container-fluid">
 		<div class="col-md-12">
-			<div class="col-md-7"><h2>ENROLL TODAY FOR JUST $49!</h2></div>
+			<div class="col-md-9"><h2>ENROLL TODAY FOR $99!       
+			<%= link_to "Enroll Now", new_enrollment_path(controller: 'enrollment', action: 'new', lecture_id: @lecture.id), class: "btn btn-large btn-bezier" %></h2> 
+	
+			</div>
+
+		
 		
 		</div>
 	</div>
