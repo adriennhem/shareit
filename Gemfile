@@ -23,6 +23,8 @@ gem 'mandrill-api'
 gem "font-awesome-rails"
 gem 'activeadmin', github: 'gregbell/active_admin'
 
+gem 'stripe'
+
 
 # WYSIWYG
 gem 'ckeditor', github: 'galetahub/ckeditor'

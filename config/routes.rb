@@ -40,12 +40,15 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  devise_for :users, :controllers => { :registrations => :registrations }
+  devise_for :users
 
-  resources :enrollments
+
+  
 
   get 'courses/:id', to: 'lectures#lecture_description', as: :lecture_description
 
+  
+    resources :enrollments
   resources :lectures do 
     resources :lessons
   end
