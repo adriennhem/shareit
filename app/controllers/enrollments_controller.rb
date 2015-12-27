@@ -1,6 +1,8 @@
 class EnrollmentsController < ApplicationController
 	before_action :authenticate_user!, except: [:new]
 	before_action :redirect_to_signup, only: [:new]
+	# before_filter :sanitize_params
+
 
 	def new
 		@lecture = Lecture.find(params[:lecture_id])
@@ -24,14 +26,14 @@ class EnrollmentsController < ApplicationController
 	def create 
 		@disable_navbar = true 
 		@disable_footer = true
+		
 		@lecture = Lecture.find_by(params[:id])
-		@enrollment = Enrollment.new(lecture_id: params[:lecture_id], user_id: current_user.id)
+		@enrollment = Enrollment.new(enrollment_params)
 	    charge_error = nil
 
 	    if @enrollment.valid?
 	    begin
-
-	    	
+  		@amount = params[:stripeAmount]
 	      customer = Stripe::Customer.create(
 	        :email => current_user.email,
 	        :coupon => params[:coupon],
@@ -39,7 +41,7 @@ class EnrollmentsController < ApplicationController
 
 	      charge = Stripe::Charge.create(
 	        :customer    => customer.id,
-	        :amount      => 5000,
+	        :amount      => @amount,
 	        :description => 'Rails Stripe customer',
 	        :currency    => 'usd')
 
@@ -66,7 +68,7 @@ class EnrollmentsController < ApplicationController
 	private
 
 		def enrollment_params 
-			params.require(:enrollment).permit(:user_id, :lecture_id, :amount, :coupon)
+			params.require(:enrollment).permit(:user_id, :lecture_id, :amount)
 		end
 
 		def redirect_to_signup
@@ -76,6 +78,9 @@ class EnrollmentsController < ApplicationController
 			end
 		end
 
-		
+	
+		# def sanitize_params
+		# 	params[:amount] = params[:amount].to_i
+		# end
 
 end

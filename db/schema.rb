@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151226122204) do
+ActiveRecord::Schema.define(version: 20151227170302) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -110,13 +110,23 @@ ActiveRecord::Schema.define(version: 20151226122204) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "coupons", force: :cascade do |t|
+    t.string   "code"
+    t.integer  "discount_percent"
+    t.datetime "expires_at"
+    t.string   "description"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
   create_table "enrollments", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "lecture_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "amount"
-    t.string   "coupon"
+    t.integer  "coupon_id"
+    t.integer  "stripe_id"
   end
 
   add_index "enrollments", ["lecture_id"], name: "index_enrollments_on_lecture_id"

@@ -15,21 +15,23 @@
         <p class="ps-payment margin-s">P.S: We charge you only for the class</p>
       </div>
 
-
       <div class="col-md-5">
         <div class="form-payment">
           <h3 class="weight600 center mb-40">One-off Payment</h3>
           
 
-          <%= form_tag enrollments_path, id: "payment-form" do %>
+          <%= form_for @enrollment, :url => { :action => "create" }, :html => { :id => "payment-form" }  do |f| %>
+
             <span class="payment-errors"></span>
-            <%= hidden_field_tag :lecture_id, params[:lecture_id] %>
-            <%= hidden_field_tag :user_id, value: current_user.id %>
+            <%= f.hidden_field :lecture_id, { value: params[:lecture_id].to_i } %>
+            <%= f.hidden_field :user_id, { value: current_user.id } %>
+         
+
 
             <div class="form-row">
               <label>
                 <span>Card Number</span> <i class="fa fa-cc-amex"></i> <i class="fa fa-cc-mastercard"></i> <i class="fa fa-cc-visa"></i> <i class="fa fa-cc-stripe"></i>
-                <input type="text" size="35" data-stripe="number"/>
+                <input value="4242424242424242" type="text" size="35" data-stripe="number"/>
               </label>
             </div>
 
@@ -41,10 +43,10 @@
               <div class="float-right">
               <label>
                 <span>Expiration (MM/YYYY)</span>
-                <input type="text" size="3" data-stripe="exp-month"/>
+                <input value="09" type="text" size="3" data-stripe="exp-month"/>
               </label>
               <span> / </span>
-              <input type="text" size="5" data-stripe="exp-year"/>
+              <input value="2020" type="text" size="5" data-stripe="exp-year"/>
             </div>
             </div>
 
@@ -87,6 +89,8 @@
               var token = response.id;
               // Insert the token into the form so it gets submitted to the server
               $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+              $form.append($('<input type="hidden" value="<%= @lecture.amount %>" name="stripeAmount" />'));
+              $form.append($('<%= f.hidden_field :amount, { value: @lecture.amount }  %>'));
               // and submit
               $form.get(0).submit();
             }
