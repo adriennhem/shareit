@@ -23,7 +23,9 @@ gem 'mandrill-api'
 gem "font-awesome-rails"
 gem 'activeadmin', github: 'gregbell/active_admin'
 
+# Payment Related
 gem 'stripe'
+gem 'receipts'
 
 
 # WYSIWYG

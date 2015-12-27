@@ -9,6 +9,17 @@ class EnrollmentsController < ApplicationController
 		@enrollment = Enrollment.new
 	end
 
+	def show
+		@enrollment = current_user.enrollments.find(params[:id])
+	    respond_to do |format|
+	      format.pdf {
+	        send_data @enrollment.receipt.render,
+	          filename: "#{@enrollment.created_at.strftime("%Y-%m-%d")}-workshopr-receipt.pdf",
+	          type: "application/pdf",
+	          disposition: :inline
+	      }
+    end
+  end
 
 	def create 
 		@disable_navbar = true 
