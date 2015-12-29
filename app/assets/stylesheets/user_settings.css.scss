@@ -1,0 +1,82 @@
+@import 'config';
+
+.user-settings-pad {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.tab-content {
+	background: #fff;
+	border: $border;
+	border-top: none;
+}
+
+.row-user-settings {
+	position: relative;
+	top: 100px;
+}
+
+.tab-content label {
+	color: $text;
+	font-size: 18px;
+	font-weight: 400;
+}
+
+.tab-content input {
+	height: 50px;
+	font-size: 18px;
+}
+
+
+.nav-tabs li > a {
+	font-size: 18px;
+	font-weight: 500;
+}
+
+
+.table-receipt {
+	font-size: 18px;
+	font-weight: 400;
+	color: $text;
+	border-color: rgba(0,0,0,0);
+}
+
+.fa-file-o {
+	color: $bezier;
+} 
+
+.no-border-top {
+	border-top: none !important;
+}
+
+.profile-picture {
+	 background-color: white;
+    border: 1px solid #d9d9d9;
+
+    overflow: hidden;
+    text-align: center;
+    img { width: 100% }
+}
+
+.nav-profile-picture {
+	height: 50px;
+	width: 50px;
+	border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+}
+
+.preview-profile-picture {
+	height: 100px;
+	width: 100px;
+	border-radius: 50px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    position: relative;
+    top: -80px;
+    left: -250px;
+}
+
+.fa-user-secret {
+	color: $body;
+}

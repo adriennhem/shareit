@@ -13,11 +13,12 @@ class Enrollment < ActiveRecord::Base
         name: "Workshopr",
         address: "12 Blair Street, E140NY",
         email: "hello@workshopr.me",
-        logo: Rails.root.join("app/assets/images/social-icons_01.jpg")
+        logo: Rails.root.join("app/assets/images/invoice-logo.jpg")
       },
       line_items: [
-        ["Date",           created_at.to_s],
-        ["Account Billed", "#{user.email}"],
+        ["Date",           "#{created_at.strftime('%Y,%m,%d')}"],
+        ["Account Billed", "#{user.name} #{user.email}"],
+        ["Amount",   "$#{amount / 100}.00"],
         ["Product",        "#{lecture.title}"],
       ],
     )

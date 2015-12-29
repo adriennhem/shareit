@@ -5,6 +5,7 @@ class EnrollmentsController < ApplicationController
 
 
 	def new
+
 		@lecture = Lecture.find(params[:lecture_id])
 		@disable_navbar = true 
 		@disable_footer = true
@@ -36,7 +37,6 @@ class EnrollmentsController < ApplicationController
   		@amount = params[:stripeAmount]
 	      customer = Stripe::Customer.create(
 	        :email => current_user.email,
-	        :coupon => params[:coupon],
 	        :card  => params[:stripeToken])
 
 	      charge = Stripe::Charge.create(
@@ -56,6 +56,7 @@ class EnrollmentsController < ApplicationController
 	      render :new
 	    else	
 	      @enrollment.save
+	      ConfirmationEnrollmentMailer.confirmation_enrollment(current_user, @lecture, @enrollment).deliver
 	      redirect_to profile_path(current_user)
 		  flash[:success] = "You have successfully enrolled."
 	    end

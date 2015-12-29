@@ -1,51 +1,125 @@
-
- 
+<% content_for :navbar do %>
+  <%= render 'layouts/sidebar' %>
+<% end %>
 
 <div class="row" id="dashboard-header" data-no-turbolink>
 <h1 class="dashboard-title">Settings</h1>
-<% if @projects.exists? %>
-  <%= link_to new_project_path, class: "btn btn-bezier-round" do %>
-      <i class="fa fa-plus"></i> Project
-    <% end %> 
-<% end %>
-
-<div class="width550 settings margin-s mb-60">
-
-    <%= link_to :back do %>
-  <i class="fa fa-arrow-left"></i> Back
-<% end %>
-
-<div id="edit-settings">
-
-
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-  
-   <%= f.input :first_name %>
-   <%= f.input :last_name %>
-   <%= f.input :email %>
-   <%= f.input :picture, as: :file %>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-  
-   <%= f.input :password, label: "(leave blank if you don't want to change it)", input_html: {  autocomplete: "off" } %>
-   <%= f.input :password_confirmation, input_html: {  autocomplete: "off" } %>
-   <%= f.input :current_password, input_html: { label: "(we need your current password to confirm your changes)", autocomplete: "off" } %>
-
- <%= f.button :button, "Update", class: "btn-orange", data: {disable_with: "Update <i class='fa fa-spinner fa-spin'></i>"} %>
-<% end %>
-
-
-<!-- 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p> -->
-
-
-
-</div>
-
 </div>
 
 
+<div class="row row-user-settings">
+  <div class="container-fluid">
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" id="user-settings-tab" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Account Settings</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Password</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Billing</a></li>
+    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Help</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active user-settings-pad" id="home">
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "dashboard-edit-form", method: :put }) do |f| %>
+          <%= devise_error_messages! %>
+
+          <div class="form-group">
+           <%= f.input :name, label: 'Name', input_html: { class: 'form-control' } %>
+          </div>
+
+           
+          <div class="form-group">
+           <%= f.input :email, label: 'Email', input_html: { class: 'form-control' } %>
+          </div>
+
+          <div class="form-group">
+           <%= f.input :picture, label: 'Profile Picture' %>
+           <div class="current-picture float-right">
+             <% if current_user.picture? %>
+              <%= image_tag("#{current_user.picture.url(:thumb)}", class: "profile-picture preview-profile-picture") %>
+              <% else %>
+              <i class="fa fa-user-secret"></i>
+             <% end %>
+           </div>
+          </div>
+                    
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
+
+          <div class="form-group">
+          <%= f.button :button, "Save Changes", class: "btn-bezier btn btn-large", data: {disable_with: "Update <i class='fa fa-spinner fa-spin'></i>"} %>
+          <% end %>
+          </div>
+
+    </div>
+
+    <div role="tabpanel" class="tab-pane user-settings-pad" id="profile">
+       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "dashboard-edit-form", method: :put }) do |f| %>
+          <%= devise_error_messages! %>
+          <div class="form-group">
+           <%= f.input :current_password, input_html: { autocomplete: "off", class: "form-control" } %>
+          </div>
+          <div class="form-group">
+           <%= f.input :password, label: "New Password", input_html: {  autocomplete: "off", class: "form-control" } %>
+          </div>
+          <div class="form-group">
+           <%= f.input :password_confirmation, label: "Confirm New Password", input_html: {  autocomplete: "off", class: "form-control" } %>
+          </div>
+    
+          <div class="form-group margin-s">
+           <%= f.button :button, "Save Changes", class: "btn-bezier btn btn-large", data: {disable_with: "Update <i class='fa fa-spinner fa-spin'></i>"} %>
+           </div>
+        <% end %>
+
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="messages">
+    <table class="table-receipt table">
+       <tr>
+         <th class="no-border-top">Date</th>
+         <th class="no-border-top">Course</th>
+         <th class="no-border-top">Amount</th>
+         <th class="no-border-top">Receipt</th>
+       </tr>
+       <% @user.enrollments.each do |enrollment| %>
+       <tr>
+         <td><%= enrollment.created_at.strftime("%Y, %m, %d") %></td>
+         <td><%= enrollment.lecture.title %></td>
+         <td><%= number_to_currency(enrollment.amount / 100) %></td>
+         <td><%= link_to enrollment_path(enrollment, format: :pdf) do %>
+          <i class="fa fa-file-o"></i>
+         <% end %>
+         </td>
+       </tr>
+       <% end %>
+
+  
+ 
+    </table>
+      
+    </div>
+
+    <div role="tabpanel" class="tab-pane user-settings-pad" id="settings">...</div>
+  </div>
+
+  </div>
+</div>
+
+<script>
+    $('#user-settings-tab a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+    });
+
+    // store the currently selected tab in the hash value
+    $("ul.nav-tabs > li > a").on("shown.bs.tab", function (e) {
+        var id = $(e.target).attr("href").substr(1);
+        window.location.hash = id;
+    });
+
+    // on load of the page: switch to the currently selected tab
+    var hash = window.location.hash;
+    $('#user-settings-tab a[href="' + hash + '"]').tab('show');
+</script>

@@ -16,9 +16,6 @@
 
 <div class="row" id="enrolled-courses">
 
-<% @enrollments.each do |enrollment| %>
-<%= link_to 'Show', enrollment_path(enrollment, format: :pdf), class: "btn btn-bezier" %>
-<% end %>
 
 
 		<% @user.lectures.each do |lecture| %>

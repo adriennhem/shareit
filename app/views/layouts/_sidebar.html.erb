@@ -4,10 +4,17 @@
                 <li class="sidebar-brand">
                     <%= link_to "W.", root_path %>
                 </li>
+                <li class="center mb-20">
+                <% if current_user.picture? %>
+                  <%= image_tag("#{current_user.picture.url(:thumb)}", class: "profile-picture nav-profile-picture") %>
+              <% else %>
+              <i class="fa fa-user-secret"></i>
+             <% end %>
+                </li>
                 <li>
                     <%= link_to profile_path(current_user) do %>
                         <% if current_user.student? %>
-                            <i class="fa fa-tachometer"></i> <span>Dashboard</span>
+                            <i class="fa fa-graduation-cap"></i> <span>My Courses</span>
                         <% end %>
                         <% if current_user.company? %>
                             <i class="fa fa-sticky-note"></i> <span>My Projects</span>
@@ -17,14 +24,14 @@
                 <li>
                      <% if current_user.student? %>
                         <%= link_to lectures_path do %>
-                            <i class="fa fa-book"></i></i> <span>Courses</span>
+                            <i class="fa fa-book"></i></i> <span>Course Library</span>
                         <% end %>
                     <% end %>
                   
                 </li>
                 <li>
-                    <%= link_to edit_user_registration_path, remote: true do %>
-                    <i class="fa fa-cog"></i> <span>Settings</span>
+                    <%= link_to edit_user_registration_path do %>
+                    <i class="fa fa-cog"></i> <span>My Account</span>
                     <% end %>
                 </li>
                 

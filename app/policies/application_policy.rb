@@ -47,6 +47,12 @@ class ApplicationPolicy
     record.user_id == user.id
   end
 
+
+    def is_enrolled?
+      user.enrollments.where(lecture_id: params[:lecture_id]).exists?
+    end
+
+
   def scope
     Pundit.policy_scope!(user, record.class)
   end

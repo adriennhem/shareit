@@ -1,0 +1,4 @@
+class EnrollmentPolicy < ApplicationPolicy
+
+
+end
