@@ -77,6 +77,18 @@
     left: -250px;
 }
 
+
 .fa-user-secret {
-	color: $body;
+	color: #fff;
+	font-size: 36px !important;
+	border: $border;
+	border-radius: 50%;
+	padding: 10px 10px 10px 5px;
+
 }
+
+.current-picture i.fa-user-secret {
+	padding-left: 10px;
+	color: $body;
+	}
+

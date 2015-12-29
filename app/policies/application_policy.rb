@@ -48,9 +48,7 @@ class ApplicationPolicy
   end
 
 
-    def is_enrolled?
-      user.enrollments.where(lecture_id: params[:lecture_id]).exists?
-    end
+   
 
 
   def scope

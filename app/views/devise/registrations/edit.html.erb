@@ -12,15 +12,17 @@
 
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" id="user-settings-tab" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Account Settings</a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Password</a></li>
-    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Billing</a></li>
-    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Help</a></li>
+    <li role="presentation" class="active"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Account Settings</a></li>
+    <li role="presentation"><a href="#password" aria-controls="password" role="tab" data-toggle="tab">Password</a></li>
+    <% if current_user.student? %>
+    <li role="presentation"><a href="#billing" aria-controls="billing" role="tab" data-toggle="tab">Billing</a></li>
+    <% end %>
+    <li role="presentation"><a href="#help" aria-controls="help" role="tab" data-toggle="tab">Help</a></li>
   </ul>
 
   <!-- Tab panes -->
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active user-settings-pad" id="home">
+    <div role="tabpanel" class="tab-pane active user-settings-pad" id="settings">
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "dashboard-edit-form", method: :put }) do |f| %>
           <%= devise_error_messages! %>
 
@@ -55,7 +57,7 @@
 
     </div>
 
-    <div role="tabpanel" class="tab-pane user-settings-pad" id="profile">
+    <div role="tabpanel" class="tab-pane user-settings-pad" id="password">
        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "dashboard-edit-form", method: :put }) do |f| %>
           <%= devise_error_messages! %>
           <div class="form-group">
@@ -74,8 +76,8 @@
         <% end %>
 
     </div>
-
-    <div role="tabpanel" class="tab-pane" id="messages">
+    <% if current_user.student? %>
+    <div role="tabpanel" class="tab-pane" id="billing">
     <table class="table-receipt table">
        <tr>
          <th class="no-border-top">Date</th>
@@ -94,14 +96,11 @@
          </td>
        </tr>
        <% end %>
-
-  
- 
     </table>
       
     </div>
-
-    <div role="tabpanel" class="tab-pane user-settings-pad" id="settings">...</div>
+    <% end %>
+    <div role="tabpanel" class="tab-pane user-settings-pad" id="help">...</div>
   </div>
 
   </div>
