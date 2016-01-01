@@ -1,6 +1,7 @@
 ActiveAdmin.register Lecture do
-  menu label: "Lectures", parent: "Products", priority: 2
+  menu label: "Courses", parent: "Courses", priority: 2
   filter :category
+  filter :teacher 
 
   index do
     column :title, sortable: true
@@ -54,7 +55,6 @@ ActiveAdmin.register Lecture do
   f.inputs "Lectures", :multipart => true, :class => 'expandable in' do
     f.input :category_id
     f.input :teacher_id, label: 'Teacher', as: :select, collection: Teacher.all.map {|t| [t.name, t.id]}
-    f.input :teacher_id
     f.input :amount
     f.input :title
     f.input :permalink

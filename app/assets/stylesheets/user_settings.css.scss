@@ -92,3 +92,32 @@
 	color: $body;
 	}
 
+
+/* User Projects */
+
+.row-user-projects {
+	position: relative;
+	top: 90px;
+}
+
+.project-box {
+	width: 320px;
+	background: #fff;
+	border: $border;
+	border-bottom: none;
+}
+
+.project-box-body, .project-box-footer {
+	padding-left: 10px;
+}
+
+.project-box-footer {
+	background: #F2F2F2;
+	border-bottom: $border;
+}
+
+.project-box-published-at {
+	padding: 15px 0;
+	color: $heading;
+	font-weight: 400;
+}

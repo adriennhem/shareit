@@ -1,5 +1,5 @@
 ActiveAdmin.register Category do
-  menu parent: "Products", priority: 1
+  menu parent: "Courses", priority: 1
 
 
   # See permitted parameters documentation:
@@ -14,6 +14,6 @@ ActiveAdmin.register Category do
   #   permitted << :other if resource.something?
   #   permitted
   # end
-
+  filter :name
 
 end

@@ -19,11 +19,11 @@
 
 
 		<% @user.lectures.each do |lecture| %>
-		  <div class="col-md-6">
+		  <div class="col-md-4">
 	         <div class="dashboard-student-box">
 				<%= image_tag(lecture.picture.url) %>
 				<%= link_to lecture do %>	
-		           <h2 class="center"><%= lecture.title %></h2> 
+		        <h3 class="center"><%= lecture.title %></h3> 
 		        <% end %> 
 		        <p class="center by-teacher">by <%= lecture.teacher.name %></p>
 	           
@@ -33,7 +33,7 @@
 		            <p class="completed-lessons">
 		            <%= lecture.lessons.select{ |l| l.users.include? current_user }.count %> /  <%= lecture.lessons.size %> lessons completed
 		            </p>
-		            <p><%= lecture.percent_completed_by(current_user) %></p>
+		         
 		        </div>   
 
 	        </div>

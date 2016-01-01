@@ -9,4 +9,12 @@ def show
 	@disable_footer = true
 end
 
+
+def user_projects
+	@user = current_user
+	@projects = Project.includes(:offers_made).where(user_id: @user.id)
+	@disable_footer = true
+	
+end
+
 end

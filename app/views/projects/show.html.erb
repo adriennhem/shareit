@@ -14,7 +14,7 @@
   <%= f.error_notification %>
   	  <%= f.hidden_field :user_id, { value: "@user.id" } %>
   	  <%= f.hidden_field :project_id, { value: "@project.id" } %>
-	<%= f.button :submit, "Accept Project", class: "btn btn-bezier-round" %>
+	<%= f.button :submit, "Accept Project", class: "btn btn-bezier btn-small" %>
   <% end %>
 	<% end %>
 
@@ -32,8 +32,8 @@
 
 
 
-
-<div class="container-project col-md-12">
+<div class="row row-show-projects">
+<div class="container-fluid container-project">
 	<div class="container-project-left col-md-8">
 		
 	<h2>Description</h2>
@@ -50,15 +50,19 @@
 
 		
 		<h2>Project Info</h2>
+
 		<div class="project-info-box">
 			<h3>Date of creation</h3>
 			<p><%= @project.created_at %></p>
 		</div>
+
 		<div class="project-info-box">
 			<h3>Date of creation</h3>
 			<p><%= @project.created_at %></p>
 		</div>
+
 		<h2>About the company</h2>
+		
 		<div class="project-info-box">
 			<h3>Date of creation</h3>
 			<p><%= @project.created_at %></p>
@@ -72,4 +76,4 @@
 	</div>
 </div>
 
-
+</div>

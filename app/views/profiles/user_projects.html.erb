@@ -1,0 +1,40 @@
+
+<% content_for :navbar do %>
+    <%= render 'layouts/sidebar' %>
+<% end %>
+
+
+<div class="row" id="dashboard-header" data-no-turbolink>
+<h1 class="dashboard-title">My Projects</h1>
+</div>
+
+
+<div class="row row-user-projects">
+	<div class="container-fluid">
+
+<% @user.project_buying.each do |project| %>
+<div class="col-md-4">
+<div class="project-box">
+	<div class="project-box-img">
+		<i class="fa fa-file-image-o"></i>
+	</div>
+	<div class="project-box-body mb-20">
+		<h3 class="project-box-company weight400"><%= link_to project.company_name, project %></h2>
+		<h4 class="project-box-title mb-20 weight400"><%= project.title %></h3>
+		<p class="project-box-description">
+			<%= project.body %>
+		</p>
+	</div>
+	<div class="project-box-footer">
+		<p class="project-box-published-at">Published on: <%= project.created_at.strftime('%Y, %m, %d') %></p>
+	</div>
+	
+</div>
+
+</div>
+<% end %>
+
+
+	</div>
+</div>
+

@@ -20,6 +20,13 @@ ActiveAdmin.register Post do
   #   permitted << :other if resource.something?
   #   permitted
   # end
+filter :tags 
+filter :blog_category
+filter :title
+filter :user
+filter :content
+filter :published, as: :radio
+
 
   show do |post|
     panel "Post" do

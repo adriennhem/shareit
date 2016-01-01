@@ -48,7 +48,7 @@ ActiveAdmin.register User do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :admin, :first_name, :last_name, :picture, :email, :role, :password, :password_confirmation, :biography, :twitter_url, :linkedin_url, :google_plus
+  permit_params :admin, :first_name, :last_name, :picture, :email, :role, :password, :password_confirmation, :biography, :twitter_url, :linkedin_url, :google_plus, enrollments_attributes: [:user_id, :lecture_id, :amount]
   # or
   #
   # permit_params do
@@ -76,6 +76,13 @@ ActiveAdmin.register User do
       f.input :password
       f.input :password_confirmation
       f.input :picture, :as => :file, :hint => f.image_tag(f.user.picture.url(:medium)) 
+    f.inputs "Enrollments", :class => 'inputs expandable in' do
+    f.has_many :enrollments do |c|
+    c.input :lecture_id
+    c.input :user_id
+    c.input :amount
+    end
+  end
     end
     f.actions
   end

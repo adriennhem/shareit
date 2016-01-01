@@ -15,6 +15,8 @@ permit_params :title, :permalink
 #   permitted
 # end
 
+filter :title
+
   form :html => { :enctype => "multipart/form-data", :class => 'expandable in' } do |f|
     f.inputs "Blog Categories", :multipart => true, :class => 'expandable in' do
       f.input :title

@@ -14,11 +14,18 @@
 // Active Admin's got SASS!
 @import "active_admin/mixins";
 @import "active_admin/base";
-
+@import "config";
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
+
+* {
+	text-shadow: none;
+	box-shadow: none;
+	color: $text;
+
+}
 
 .cke_chrome {
   width: 79.5% !important;
@@ -31,13 +38,13 @@
 }
 
 #title_bar {
-	background:#F5F5F5;
+	background:$body;
 	border:none;
 	box-shadow:none;
 }
 
 #header {
-	background:#FF3266;
+	background:#FF0066;
 	border:none;
 }
 

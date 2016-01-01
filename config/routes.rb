@@ -27,10 +27,10 @@ Rails.application.routes.draw do
 
 
   get '/change_locale/:locale', to: 'settings#change_locale', as: :change_locale
- 
-  # resources :tutorials
+  
   resources :profiles
 
+get '/user_projects', to: 'profiles#user_projects', as: :user_projects
 
 
   resources :projects do

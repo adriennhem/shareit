@@ -195,7 +195,6 @@ ActiveAdmin.setup do |config|
     config.namespace :admin do |admin|
       admin.build_menu :default do |menu|
         menu.add label: "Back to Site", url: "/", priority: 0
-        menu.add label: "Products", priority: 1
       end
     end
 

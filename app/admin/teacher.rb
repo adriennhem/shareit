@@ -1,5 +1,7 @@
 ActiveAdmin.register Teacher do
-  menu parent: "Products", priority: 3
+  menu parent: "Courses", priority: 3
+
+  filter :name
 
   index do
     column :name

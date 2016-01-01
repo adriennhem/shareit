@@ -22,6 +22,13 @@
                     <% end %>
                 </li>
                 <li>
+                   <% if current_user.student? %>
+                    <%= link_to user_projects_path do %>
+                            <i class="fa fa-sticky-note"></i>  <span>My Projects</span>
+                            <% end %>
+                        <% end %>
+                </li>
+                <li>
                      <% if current_user.student? %>
                         <%= link_to lectures_path do %>
                             <i class="fa fa-book"></i></i> <span>Course Library</span>
