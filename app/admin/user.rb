@@ -76,13 +76,6 @@ ActiveAdmin.register User do
       f.input :password
       f.input :password_confirmation
       f.input :picture, :as => :file, :hint => f.image_tag(f.user.picture.url(:medium)) 
-    f.inputs "Enrollments", :class => 'inputs expandable in' do
-    f.has_many :enrollments do |c|
-    c.input :lecture_id
-    c.input :user_id
-    c.input :amount
-    end
-  end
     end
     f.actions
   end

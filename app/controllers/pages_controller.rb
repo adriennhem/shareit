@@ -3,6 +3,10 @@ class PagesController < ApplicationController
   	@lecture = Lecture.first
   end
 
+  def home_company
+  
+  end
+
   def about
   end
 

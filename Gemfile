@@ -26,6 +26,9 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 # Payment Related
 gem 'stripe'
 gem 'receipts'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+
 
 
 # WYSIWYG

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
   root 'pages#home'
+
+  get '/company' => 'pages#home_company'
   
   get '/about' => 'pages#about'
 
@@ -53,6 +55,8 @@ get '/user_projects', to: 'profiles#user_projects', as: :user_projects
     resources :lessons
   end
 
+  resources :certificates 
+  
   resources :user_lessons
 
   # Blog

@@ -1,11 +1,9 @@
 class EnrollmentsController < ApplicationController
 	before_action :authenticate_user!, except: [:new]
 	before_action :redirect_to_signup, only: [:new]
-	# before_filter :sanitize_params
 
 
 	def new
-
 		@lecture = Lecture.find(params[:lecture_id])
 		@disable_navbar = true 
 		@disable_footer = true
@@ -79,9 +77,5 @@ class EnrollmentsController < ApplicationController
 			end
 		end
 
-	
-		# def sanitize_params
-		# 	params[:amount] = params[:amount].to_i
-		# end
 
 end
