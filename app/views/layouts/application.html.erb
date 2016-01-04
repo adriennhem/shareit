@@ -19,27 +19,21 @@ analytics.page()
 }}();
 </script>
 
-
-
 </head>
 
-<script type="text/javascript">
-    mixpanel.track_links(".footer a", "click footer link", {
-        "referrer": document.referrer
-    });
-</script>
+
 
 <body id="main">
 <% if content_for?(:navbar) %>
     <%= yield(:navbar) %>  
 <% end %>
 
-<%= render 'layouts/messages'  %>
+<div class="pages-message">
+  <%= render 'layouts/messages'  %>
+</div>
+
 <div class="container-fluid">
-
-
 <%= yield %>
-
 <%= render 'layouts/footer' unless @disable_footer %>
 </div>
 

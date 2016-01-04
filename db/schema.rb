@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151228113343) do
+ActiveRecord::Schema.define(version: 20160102085602) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -148,8 +148,8 @@ ActiveRecord::Schema.define(version: 20151228113343) do
   create_table "lectures", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.integer  "category_id"
     t.string   "picture_file_name"
     t.string   "picture_content_type"
@@ -164,6 +164,7 @@ ActiveRecord::Schema.define(version: 20151228113343) do
     t.string   "slug"
     t.string   "permalink"
     t.integer  "amount"
+    t.boolean  "published",            default: false
   end
 
   add_index "lectures", ["slug"], name: "index_lectures_on_slug", unique: true
@@ -213,6 +214,8 @@ ActiveRecord::Schema.define(version: 20151228113343) do
     t.datetime "updated_at",   null: false
     t.string   "title"
     t.integer  "lecture_id"
+    t.text     "blurb"
+    t.string   "location"
   end
 
   create_table "seos", force: :cascade do |t|

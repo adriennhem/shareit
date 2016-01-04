@@ -71,7 +71,7 @@ end
   private
 
     def project_params
-      params.require(:project).permit(:company_name, :phone_number, :body, :user_id, :title, :lecture_id)
+      params.require(:project).permit(:company_name, :phone_number, :body, :user_id, :title, :lecture_id, :location, :blurb)
     end
 end
 

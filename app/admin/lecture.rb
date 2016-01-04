@@ -53,6 +53,7 @@ ActiveAdmin.register Lecture do
 
   form :html => { :enctype => "multipart/form-data", :class => 'expandable in' } do |f|
   f.inputs "Lectures", :multipart => true, :class => 'expandable in' do
+    f.input :published 
     f.input :category_id
     f.input :teacher_id, label: 'Teacher', as: :select, collection: Teacher.all.map {|t| [t.name, t.id]}
     f.input :amount

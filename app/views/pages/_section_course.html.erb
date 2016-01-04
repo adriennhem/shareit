@@ -1,9 +1,11 @@
 <div class="row section-course">
-	<div class="center">
-	<h2 class="bezier weight800">Check out our first class</h2>
-		<h2><%= link_to @lecture.title, lecture_description_path(@lecture) %></h2>
-		<div class="mb-150">
-	    	<%= @lecture.video.html_safe %>
+	<div class="center mb-150">
+	<h2 class="bezier uppercase">Start Learning Now</h2>
+	    	
+	         <div class="home-course-box dashboard-student-box">
+				<%= image_tag(@lecture.picture.url) %>
+		        <h3 class="center"><%= @lecture.title %></h3> 
+		        <p class="center by-teacher">by <%= @lecture.teacher.name %></p>
 		</div>
 	</div>
 </div>
