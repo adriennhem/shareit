@@ -1,0 +1,63 @@
+@import 'config';
+
+/* CONTACT US */
+
+.row-header {
+	height: 150px; 
+	background: #333333;
+}
+
+.contact-form {
+	width: 450px;
+	margin: 0 auto;
+	margin-bottom: 100px;
+}
+
+.contact-form textarea {
+	height: 150px;
+ }
+
+.contact-form input, .contact-form textarea {
+    width: 418px !important;
+    margin-bottom: 10px;
+}
+
+/* ABOUT */
+
+
+img.profile {
+    border-radius: 150px;
+}
+
+.story {
+	margin-top: 100px;
+	font-size: 21px;
+	line-height: 1.5em;
+}
+
+.about-team {
+	margin-bottom: 100px;
+}
+
+.about-team p {
+	font-size: 21px;
+}
+
+/* OUR RULES */
+
+.header-rules { 
+	font-size: 16px;
+}
+
+.rules-body h3 {
+	font-size: 32px;
+}
+
+.rules-body h4 {
+	font-size: 28px;
+}
+
+.rules-body p {
+	font-size: 21px;
+	line-height: 28px;
+}

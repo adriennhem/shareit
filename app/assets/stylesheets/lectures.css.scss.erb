@@ -94,6 +94,9 @@ span.help-inline {
     color: red;
 }
 
+.weight400 {
+    font-weight: 400;
+}
 
 .weight600 {
     font-weight: 600;
@@ -113,13 +116,19 @@ span.help-inline {
     margin: 0 auto;
 }
 
+.width760 {
+  width: 700px;
+  margin: 0 auto;  
+}
+
 .width960 {
     max-width: 960px;
     margin: 0 auto;
 }
 
-
-
+.color-text {
+    color: $text-blog;
+}
 //--------------------------------------------------------------
 // POSITION
 // --------------------------------------------------------------
@@ -146,6 +155,10 @@ span.help-inline {
 
 .margin-l-l {
     margin-left: 50px;
+}
+
+.mb-100 {
+    margin-bottom: 100px;
 }
 
 .mb-60 {
@@ -312,22 +325,6 @@ p.navbar-btn {
     color: #fff !important;
 }
 
-
-
-
-//--------------------------------------------------------------
-// Rules
-// --------------------------------------------------------------
-
-#rules {
-    background: url('<%= asset_path("bg-light.jpeg") %>') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 300px;
-    margin: -50px 0 0 0;
-}
 
 
 //--------------------------------------------------------------
@@ -713,30 +710,6 @@ h3.panel-title {
 // --------------------------------------------------------------
 
 
-#index-about {
-    background: url('<%= asset_path("bg-home-2.jpeg") %>') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 110px;
-    margin: -70px 0 0 0;
-}
-
-img.profile {
-    border-radius: 150px;
-}
-
-.story {
-    font-family: $proxima-nova;
-    font-weight: 100;
-    font-size: 18px;
-}
-
-.col-md-12.mb-60.margin-s p {
-    font-family: $proxima-nova;
-    font-weight: 100;
-}
 
 
 //--------------------------------------------------------------
@@ -779,78 +752,6 @@ img.profile {
     color: $bezier;
 }
 
-
-//--------------------------------------------------------------
-//  Blog
-// --------------------------------------------------------------
-
-#blog {
-    background: url(http://i58.tinypic.com/23st89f.jpg) no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 300px;
-}
-
-
-
-//--------------------------------------------------------------
-//  Contact
-// --------------------------------------------------------------
-
-
-#index-contact {
-    background: url('<%= asset_path("bg-contact.jpeg") %>') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 300px;
-    margin: -70px 0 0 0;
-}
-
-h1.contact, h2.contact-sub {
-    font-size: 36px;
-    font-weight: 100;
-    color: #ffffff;
-}
-
-.container-contact {
-    margin: 70px auto;
-}
-
-.container-contact p {
-    margin-bottom: 20px;
-}
-
-.container-contact input.btn-primary-big {
-    background: $shamrock !important;
-    border-color: $shamrock !important;
-    padding: 15px 30px;
-}
-
-.container-contact input.btn-primary-big:hover {
-    color: #fff !important;
-    background: $mine-shaft !important;
-    border-color: $mine-shaft !important;
-}
-
-#contact-form input {
-    width: 418px !important;
-    margin-bottom: 10px;
-}
-
-#contact-form input[type="submit"] {
-    height: 50px;
-    border-radius: 0;
-    text-shadow: none;
-    box-shadow: none;
-}
-
-#contact-form input[type="submit"]:hover {
-    opacity: 0.9;
-}
 
 //--------------------------------------------------------------
 //  Edit Settings 
@@ -1316,7 +1217,7 @@ h1.dashboard-title {
     z-index: 999;
 }
 
-#dashboard-header a, input[type="submit"].btn-bezier {
+#dashboard-header a {
     float: right;
     margin-top: -35px;
     margin-right: 20px;

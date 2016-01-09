@@ -19,8 +19,6 @@ Rails.application.routes.draw do
 
   get '/help-center' => 'pages#help_center'
 
-  get 'pages/blog'
-
   get 'pages/signout'
 
 

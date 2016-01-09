@@ -3,35 +3,27 @@
 </script>
 
  <% content_for :navbar do %>
-      <%= render 'pages/header_home_2' %>
+      <%= render 'layouts/navbar_blog' %>
  <% end %>
 
-<div class="row">
-  <div id="index-contact">
-    <div class="heading">
-       <h1 class="contact">Get in touch with us</h1>
-    </div>
-  </div>
+<div class="row row-header mb-40">
+     <h1 class="contact center uppercase white margin-s">Get in touch with us</h1>
+     <p class="center white weight600">Write us to let you know what's on your mind.</p>
 </div>
 
-
-<div class="container-contact width550">
-
-
-<div id="contact-form">
+<div class="contact-form">
   <%= simple_form_for @contact do |f| %>
     <%= f.input :name, :required => true %>
     <%= f.input :email, :required => true %>
-    <%= f.input :message, :as => :text, :required => true %>
+    <%= f.input :message, as: :text, :required => true, input_html: {rows: 5, size: 140} %>
       <div class= "hidden">
       <%= f.input :nickname, :hint => 'Leave this field blank!' %>
     </div>
     <div>
       </br>
-      <%= f.button :submit, 'Send message', :class=> "btn-bezier" %>
+      <%= f.button :submit, 'Send message', class: "btn-bezier btn-large" %>
     </div>
   <% end %>
 </div>
 
-</div>
 
