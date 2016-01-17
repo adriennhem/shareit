@@ -5,8 +5,80 @@
 
 <%= simple_form_for(@project) do |f| %>
   <%= f.error_notification %>
+
+   <h2>About You</h2>
+
+      <div class="new-project-section col-md-12">
+        <div class="new-project-section-title col-md-3">
+          <h3>Company name</h3>
+        </div>
+        <div class="new-project-section-body col-md-9">
+          <%= f.input :company_name, label: false %>
+        </div>
+      </div>
+
+        <div class="new-project-section col-md-12">
+        <div class="new-project-section-title col-md-3">
+          <h3>Industry</h3>
+        </div>
+        <div class="new-project-section-body col-md-9">
+          <%= f.input :industry, label: false %>
+        </div>
+      </div>
+
+
+      <div class="new-project-section col-md-12">
+        <div class="new-project-section-title col-md-3">
+          <h3>Where are you based?</h3>
+        </div>
+        <div class="new-project-section-body col-md-9">
+          <%= f.input :location, label: false %>
+          <p>City, Country, ...</p>
+        </div>
+      </div>
+
+        <div class="new-project-section col-md-12">
+        <div class="new-project-section-title col-md-3">
+          <h3>Main Contact</h3>
+        </div>
+        <div class="new-project-section-body col-md-9">
+          <%= f.input :main_contact, label: false %>
+          <p>City, Country, ...</p>
+        </div>
+      </div>
+
+          <div class="new-project-section col-md-12">
+        <div class="new-project-section-title col-md-3">
+          <h3>Main Contact Email</h3>
+        </div>
+        <div class="new-project-section-body col-md-9">
+          <%= f.input :main_contact_email, label: false %>
+          <p>City, Country, ...</p>
+        </div>
+      </div>
+
+      <div class="new-project-section col-md-12">
+      <div class="new-project-section-title col-md-3">
+        <h3>Phone number</h3>
+      </div>
+      <div class="new-project-section-body col-md-9">
+       <%= f.input :phone_number, label: false %>
+      </div>
+    </div>
+
+       <div class="new-project-section col-md-12">
+        <div class="new-project-section-title col-md-3">
+          <h3>Company Description</h3>
+        </div>
+        <div class="new-project-section-body col-md-9">
+          <%= f.input :company_description, as: :text, label: false %>
+          <p>City, Country, ...</p>
+        </div>
+      </div>
+
     
     <h2>Project description</h2>
+
     <div class="new-project-section col-md-12">
       <div class="new-project-section-title col-md-3">
         <h3>Title</h3>
@@ -23,56 +95,81 @@
       </div>
       <div class="new-project-section-body col-md-9">
         <%= f.select(:lecture_id, options_for_select(@lecture_options)) %>
-        <p>Find out which course is it related to <%= link_to 'Here', root_path %></p>
+        <p>Find out which course is it related to <%= link_to 'Here', 'https://workshoprsupport.zendesk.com/hc/en-us', target: '_blank' %></p>
       </div>
     </div>
 
+        <div class="new-project-section col-md-12">
+        <div class="new-project-section-title col-md-3">
+          <h3>Project Context</h3>
+        </div>
+        <div class="new-project-section-body col-md-9">
+          <%= f.input :project_context, as: :text, label: false %>
+          <p>City, Country, ...</p>
+        </div>
+      </div>
+
+
+        <div class="new-project-section col-md-12">
+        <div class="new-project-section-title col-md-3">
+          <h3>Project Goals</h3>
+        </div>
+        <div class="new-project-section-body col-md-9">
+          <%= f.input :goal, as: :text, label: false %>
+          <p>City, Country, ...</p>
+        </div>
+      </div>
+
+
+        <div class="new-project-section col-md-12">
+        <div class="new-project-section-title col-md-3">
+          <h3>Project Goals</h3>
+        </div>
+        <div class="new-project-section-body col-md-9">
+          <%= f.input :deadline, label: false %>
+          <p>City, Country, ...</p>
+        </div>
+      </div>
+
+
+        <div class="new-project-section col-md-12">
+        <div class="new-project-section-title col-md-3">
+          <h3>Estimated Project Duration</h3>
+        </div>
+        <div class="new-project-section-body col-md-9">
+          <%= f.input :estimated_duration, label: false %>
+          <p>City, Country, ...</p>
+        </div>
+      </div>
+
+
+
+
+
+
+    <div class="new-project-section col-md-12">
+    <div class="new-project-section-title col-md-3">
+        <h3>Short Description</h3>
+      </div>
       <div class="new-project-section-body col-md-9">
-        <%= f.input :blurb, label: false %>
+        <%= f.input :blurb, label: false, input_html: { rows: '5', style: 'width: 100%'} %>
         <p>Create a catchy description, to attract more students!</p>
       </div>
-    </div>
+      </div>
 
-      <div class="new-project-section col-md-12">
+
+
+    <div class="new-project-section col-md-12">
       <div class="new-project-section-title col-md-3">
         <h3>Detailed Description</h3>
       </div>
       <div class="new-project-section-body col-md-9">
-       <%= f.input :body, as: :wysihtml5 %>
+         <%= f.input :body, as: :wysihtml5, input_html: { rows: '15', style: 'width: 100%'} %>
         <p>Detail as much as possible to enable students to better understand</p>
       </div>
     </div>
 
-    <h2>About You</h2>
-
-      <div class="new-project-section col-md-12">
-        <div class="new-project-section-title col-md-3">
-          <h3>Company name</h3>
-        </div>
-        <div class="new-project-section-body col-md-9">
-          <%= f.input :company_name, label: false %>
-        </div>
-      </div>
-
-
-      <div class="new-project-section col-md-12">
-        <div class="new-project-section-title col-md-3">
-          <h3>Where are you based?</h3>
-        </div>
-        <div class="new-project-section-body col-md-9">
-          <%= f.input :location, label: false %>
-        </div>
-      </div>
-
-
-      <div class="new-project-section col-md-12">
-      <div class="new-project-section-title col-md-3">
-        <h3>Phone number</h3>
-      </div>
-      <div class="new-project-section-body col-md-9">
-       <%= f.input :phone_number, label: false %>
-      </div>
-    </div>
+   
 
     <%= f.button :submit, "Launch your project!", class: "btn btn-bezier btn-project" %>
 

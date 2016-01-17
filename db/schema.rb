@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160102085602) do
+ActiveRecord::Schema.define(version: 20160117155311) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -210,12 +210,20 @@ ActiveRecord::Schema.define(version: 20160102085602) do
     t.string   "phone_number"
     t.text     "body"
     t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.string   "title"
     t.integer  "lecture_id"
     t.text     "blurb"
     t.string   "location"
+    t.string   "industry"
+    t.text     "company_description"
+    t.text     "project_context"
+    t.time     "estimated_duration"
+    t.datetime "deadline"
+    t.text     "goal"
+    t.string   "main_contact"
+    t.string   "main_contact_email"
   end
 
   create_table "seos", force: :cascade do |t|

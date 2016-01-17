@@ -28,9 +28,6 @@ $(window).scroll(function() {
   }
 }); 
 
-
-
-
 };
 
 $(document).ready(ready);

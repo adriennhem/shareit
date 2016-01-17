@@ -5,7 +5,7 @@
 <div class="row" id="dashboard-header" data-no-turbolink>
 	<h1 class="dashboard-title"><%= @project.title %></h1>
 	<% if policy(@project).update? %>
-		<%= link_to edit_project_path(@project), class: "btn btn-bezier-round" do %> 
+		<%= link_to edit_project_path(@project), class: "btn btn-bezier" do %> 
 			<i class="fa fa-pencil-square-o"></i> Edit
 		<% end %> 
 	<% end %>

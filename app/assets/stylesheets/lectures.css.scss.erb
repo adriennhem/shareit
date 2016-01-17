@@ -823,9 +823,16 @@ button.btn-project {
 }
 
 
+
 //--------------------------------------------------------------
 //  Lecture SHOW
 // --------------------------------------------------------------
+
+#dashboard-header .btn-bezier {
+    position: absolute;
+    top: 20px;
+    right: 200px;
+}
 
 #dashboard-header p {
     position: absolute;
@@ -939,11 +946,10 @@ h2.locked {
 }
 
 .unlocked {
-    margin-left: 38px;
+    margin-left: 0px;
 }
 
 .unlocked h2 {
-    margin-left: 35px;
     font-size: 24px;
 }
 
@@ -972,6 +978,11 @@ h2.locked {
 
 p.project-paragraph {
     margin-top: 70px;
+}
+
+.download-certificate {
+    padding: 20px 0;
+    font-size: 24px;
 }
 
 
@@ -1058,7 +1069,7 @@ progress[value]::-webkit-progress-value {
 
 .show-lesson-description p {
     font-size: 20px;
-    color: $body;
+    color: $text;
     font-weight: 300;
 }
 
@@ -1219,7 +1230,6 @@ h1.dashboard-title {
 
 #dashboard-header a {
     float: right;
-    margin-top: -35px;
     margin-right: 20px;
     position: fixed;
     right: 50px;
@@ -1257,7 +1267,6 @@ input.cked {
 /* Project Show Box */
 
 
-
 .container-project {
     position: relative;
     top: 100px;
@@ -1269,6 +1278,7 @@ input.cked {
 }
 
 .container-project h2 {
+    color: $heading;
     margin-top: 20px;
     font-size: 20px;
     margin-bottom: 40px;
@@ -1291,6 +1301,10 @@ input.cked {
     border-radius: 5px;
 }
 
+.project-info-description {
+    color: $text;
+    font-size: 18px;
+}
 
 /* LECTURE DESCRIPTION */
 

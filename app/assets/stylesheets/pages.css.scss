@@ -1,5 +1,24 @@
 @import 'config';
 
+
+/* MAIN */
+
+.alert-website {
+	position: absolute;
+	text-align: center;
+	z-index: 0;
+    width:100%;
+    height: 50px;
+    padding-top:10px;
+    padding-left: 20px;
+    padding-bottom:5px;
+    background: $bezier;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+
+
 /* CONTACT US */
 
 .row-header {
