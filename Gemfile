@@ -29,7 +29,7 @@ gem 'receipts'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 
-gem 'puma'
+
 
 
 
