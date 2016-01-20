@@ -9,9 +9,9 @@ class OffersController < ApplicationController
     authorize @offer
     if @offer.save
         AcceptMailer.accept(@seller, @project, @buyer).deliver
-        redirect_to @project, notice: 'Project accepted!'
+        redirect_to @project, notice: 'Project accepted! This project is available in "My Projects"'
     else
-        redirect_to :back, notice: 'Only one student per project'
+        redirect_to :back, notice: 'You can accept one project per course'
     end
 end
 
@@ -29,7 +29,7 @@ def destroy
     @project = Project.find(params[:project_id])
     @offer = @project.offers.where(project_id: @project.id)
     @offer.destroy_all
-    redirect_to @project, :notice => "Offer Deleted"
+    redirect_to @project, :notice => "Your Project has been successfully republished"
 end
 
 private

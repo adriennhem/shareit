@@ -1,10 +1,13 @@
 class RegistrationsController < Devise::RegistrationsController
-  layout 'dashboard'
+  layout 'devise_layout', except: [:update]
+  layout 'dashboard', only: [:update]
   before_filter :no_header_footer
 
 
 
   protected
+
+
 
    def after_update_path_for(resource)
       edit_user_registration_path

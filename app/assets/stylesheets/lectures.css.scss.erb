@@ -588,15 +588,10 @@ p.enrolled-users {
 // Devise Layout 
 // --------------------------------------------------------------
 
-body#devise {
-    margin-top: 10px;
-    min-height: 100%;
-    background: url('<%= asset_path("signin.jpg") %>') no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+.devise {
+    background: $wild-sand;
 }
+
 
 #devise-signup {
     margin: -60px 0 0 0;
@@ -604,6 +599,7 @@ body#devise {
 }
 
 .panel-devise {
+    padding-top: 50px;
     width: 500px;
     margin: 0 auto;
 }
@@ -648,7 +644,7 @@ h3.panel-title {
 .panel-body input {
     width: 460px !important;
     margin: 10px 0;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .panel-body input.btn-bezier {
@@ -668,9 +664,14 @@ h3.panel-title {
 
 .panel-body select {
     border: none;
+    font-weight: 400;
     background: $tuna;
     color: #ffffff;
-    font-weight: 100;
+}
+
+
+.font20 {
+    font-size: 20px;
 }
 
 

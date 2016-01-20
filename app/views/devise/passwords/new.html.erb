@@ -11,8 +11,10 @@
   <div class="panel-body">
    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, id: 'reset_password') do |f| %>
   <%= devise_error_messages! %>
-  <%= f.input :email %>
-  <%= f.button :submit, 'Send me reset password instructions', class: 'btn-bezier' %>
+  <div class="form-group">
+  <%= f.input :email, input_html: { class: "form-control"} %>
+  </div>
+  <%= f.button :submit, 'Send me reset password instructions', class: 'font20 btn-bezier' %>
 <% end %>
   </div>
 </div> 

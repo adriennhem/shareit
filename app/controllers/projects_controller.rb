@@ -36,7 +36,7 @@ class ProjectsController < InheritedResources::Base
     @project = Project.find(params[:id])
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to @project, notice: 'Project was successfully updated.'  }
+        format.html { redirect_to @project, notice: 'Project was successfully updated'  }
       else
         format.html { render :edit }
       end
@@ -49,7 +49,7 @@ def create
   @lecture_options = Lecture.all.map{|u| [u.title, u.id]}
 	@project = current_user.project_selling.build(project_params)
 	if @project.save 
-		flash[:success] = "You have successfully created a project."
+		flash[:success] = "You have successfully created a project"
 		redirect_to profile_path(current_user)
 	else 
 		render action: 'new'
@@ -62,7 +62,7 @@ end
     @project = Project.find(params[:id])
     @project.destroy
     respond_to do |format|
-      format.html { redirect_to profile_path(current_user), notice: 'Project was successfully republished.' }
+      format.html { redirect_to profile_path(current_user), notice: 'Project was successfully deleted' }
       format.js { head :no_content }
     end
     authorize @project
