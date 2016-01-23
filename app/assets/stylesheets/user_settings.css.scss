@@ -1,5 +1,11 @@
 @import 'config';
 
+.devise .dashboard-title {
+	padding-left: 170px;
+} 
+
+
+
 .user-settings-pad {
 	padding-top: 50px;
 	padding-bottom: 50px;
@@ -14,6 +20,8 @@
 .row-user-settings {
 	position: relative;
 	top: 100px;
+	width:1150px;
+	padding-left: 205px;
 }
 
 .tab-content label {

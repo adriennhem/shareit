@@ -1,6 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
-  layout 'devise_layout', except: [:update]
-  layout 'dashboard', only: [:update]
+  # layout 'devise_layout', except: [:update]
+  # layout 'dashboard', only: [:update]
   before_filter :no_header_footer
 
 

@@ -25,6 +25,10 @@ mixpanel.init("0efcf03757a7792f069573d96e8b82d6");</script><!-- end Mixpanel -->
 
 <body class="devise">
 
+<% if content_for?(:navbar) %>
+    <%= yield(:navbar) %>
+<% end %>
+
 <%= render 'layouts/messages'  %>
 
 

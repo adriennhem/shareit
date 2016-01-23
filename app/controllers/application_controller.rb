@@ -16,11 +16,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_out_path_for(resource)
     # return the path based on resource
-    pages_signout_path
-  end
-
-  def after_update_path_for(resource)
-      profile_path(current_user)
+    root_path
   end
 
    def configure_permitted_parameters
