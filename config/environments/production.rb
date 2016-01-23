@@ -78,27 +78,14 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Devise set up mailer
-  config.action_mailer.default_url_options = { host: 'wwww.workshopr.me' }
+  config.action_mailer.default_url_options = { host: 'www.workshopr.me' }
 
   # Rails.application.routes.default_url_options[:host] = 'evening-ravine-8683.herokuapp.com'
 
 
+config.action_mailer.perform_deliveries = true
+config.action_mailer.raise_delivery_errors = false
 
-   config.action_mailer.delivery_method = :smtp
-          config.action_mailer.perform_deliveries = true
-          config.action_mailer.raise_delivery_errors = false
-          config.action_mailer.default :charset => "utf-8"
-          config.action_mailer.smtp_settings = {
-              :port => '587',
-              :address => 'smtp.mandrillapp.com',
-              :user_name => ENV['MANDRILL_NAME'],
-              :password => ENV['MANDRILL_PASSWORD'],
-              :domain => 'heroku.com',
-              :authentication => :plain
-            }
-        ActionMailer::Base.delivery_method = :smtp
-        config.action_controller.include_all_helpers = true
-        ActionMailer::Base.default :from => 
 
 
   # Added for paperclip 
