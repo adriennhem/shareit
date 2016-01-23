@@ -78,15 +78,9 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Devise set up mailer
-  config.action_mailer.default_url_options = { host: 'www.workshopr.me' }
+  config.action_mailer.default_url_options = { host: 'secure-tor-9037.herokuapp.com' }
 
   # Rails.application.routes.default_url_options[:host] = 'evening-ravine-8683.herokuapp.com'
-config.action_mailer.smtp_settings = {
-  :address   => "smtp.mandrillapp.com",
-  :port      => 25,
-  :user_name => ENV["MANDRILL_NAME"],
-  :password  => ENV["MANDRILL_PASSWORD"]
-}
 
 
   config.action_mailer.delivery_method = :smtp
