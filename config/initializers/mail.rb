@@ -5,7 +5,6 @@ ActionMailer::Base.smtp_settings = {
 	user_name: ENV['MANDRILL_NAME'],
 	password: ENV['MANDRILL_PASSWORD'],
 	authentification: "login",
-	domain: "workshopr.me"
 
 }
 
