@@ -4,7 +4,7 @@ ActionMailer::Base.smtp_settings = {
 	enables_starttls_auto: true,
 	user_name: ENV['MANDRILL_NAME'],
 	password: ENV['MANDRILL_PASSWORD'],
-	authentification: "login",
+	authentification: "login"
 
 }
 
