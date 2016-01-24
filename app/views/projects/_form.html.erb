@@ -14,6 +14,7 @@
         </div>
         <div class="new-project-section-body col-md-9">
           <%= f.input :logo, as: :file, label: false %>
+          <p>JPEG, PNG, or BMP | 5MB file limit</p>
         </div>
       </div>
 
@@ -23,69 +24,62 @@
 
       <div class="new-project-section col-md-12">
         <div class="new-project-section-title col-md-3">
-          <h3>Company name</h3>
+          <h3>Company name *</h3>
         </div>
         <div class="new-project-section-body col-md-9">
-          <%= f.input :company_name, label: false %>
+          <%= f.input :company_name, label: false, input_html: { class: 'form-control' } %>
         </div>
       </div>
 
         <div class="new-project-section col-md-12">
         <div class="new-project-section-title col-md-3">
-          <h3>Industry</h3>
+          <h3>Industry *</h3>
         </div>
         <div class="new-project-section-body col-md-9">
-          <%= f.input :industry, label: false %>
+          <%= f.input :industry, label: false, input_html: { class: 'form-control' }  %>
         </div>
       </div>
 
 
       <div class="new-project-section col-md-12">
         <div class="new-project-section-title col-md-3">
-          <h3>Where are you based?</h3>
+          <h3>Where are you based? *</h3>
         </div>
         <div class="new-project-section-body col-md-9">
-          <%= f.input :location, label: false %>
-          <p>City, Country, ...</p>
+          <%= f.input :location, label: false, input_html: { class: 'form-control' } %>
         </div>
       </div>
 
         <div class="new-project-section col-md-12">
         <div class="new-project-section-title col-md-3">
-          <h3>Main Contact</h3>
+          <h3>Name of the person to contact *</h3>
         </div>
         <div class="new-project-section-body col-md-9">
-          <%= f.input :main_contact, label: false %>
-          <p>City, Country, ...</p>
+          <%= f.input :main_contact, label: false, input_html: { class: 'form-control' } %>
+           <p>Only the student who accepts the discovery project can see this information</p>
         </div>
       </div>
 
           <div class="new-project-section col-md-12">
         <div class="new-project-section-title col-md-3">
-          <h3>Main Contact Email</h3>
+          <h3>Email address of the contact *</h3>
         </div>
         <div class="new-project-section-body col-md-9">
-          <%= f.input :main_contact_email, label: false %>
-          <p>City, Country, ...</p>
+          <%= f.input :main_contact_email, label: false, input_html: { class: 'form-control' } %>
+          <p>Students may need additional information about your goal. Only the student who accepts the discovery project can see this information</p>
         </div>
       </div>
 
-      <div class="new-project-section col-md-12">
-      <div class="new-project-section-title col-md-3">
-        <h3>Phone number</h3>
-      </div>
-      <div class="new-project-section-body col-md-9">
-       <%= f.input :phone_number, label: false %>
-      </div>
-    </div>
 
        <div class="new-project-section col-md-12">
         <div class="new-project-section-title col-md-3">
-          <h3>Company Description</h3>
+          <h3>Company Description *</h3>
         </div>
         <div class="new-project-section-body col-md-9">
-          <%= f.input :company_description, as: :text, label: false %>
-          <p>City, Country, ...</p>
+          <%= f.input :company_description, as: :text, label: false, input_html: { maxlength: @maximum_length, id: 'company_description_text', rows: 5, cols: 60 } %>
+          
+
+          <p>If you would only have 30 seconds to explain what you do? <br> Characters left: <span id="counter" data-maximum-length="<%= @maximum_length %>"><%= @maximum_length %></span></p>
         </div>
       </div>
 
@@ -94,17 +88,17 @@
 
     <div class="new-project-section col-md-12">
       <div class="new-project-section-title col-md-3">
-        <h3>Title</h3>
+        <h3>Title *</h3>
       </div>
       <div class="new-project-section-body col-md-9">
-        <%= f.input :title, label: false %>
+        <%= f.input :title, label: false, input_html: { class: 'form-control' } %>
         <p>Make your title catchy, to attract more students!</p>
       </div>
     </div>
 
      <div class="new-project-section col-md-12">
       <div class="new-project-section-title col-md-3">
-        <h3>Related Course</h3>
+        <h3>Related Course *</h3>
       </div>
       <div class="new-project-section-body col-md-9">
         <%= f.select(:lecture_id, options_for_select(@lecture_options)) %>
@@ -114,7 +108,7 @@
 
         <div class="new-project-section col-md-12">
         <div class="new-project-section-title col-md-3">
-          <h3>Project Context</h3>
+          <h3>Project Context *</h3>
         </div>
         <div class="new-project-section-body col-md-9">
           <%= f.input :project_context, as: :text, label: false %>
@@ -125,7 +119,7 @@
 
         <div class="new-project-section col-md-12">
         <div class="new-project-section-title col-md-3">
-          <h3>Project Goals</h3>
+          <h3>Project Goals *</h3>
         </div>
         <div class="new-project-section-body col-md-9">
           <%= f.input :goal, as: :text, label: false %>
@@ -136,18 +130,18 @@
 
         <div class="new-project-section col-md-12">
         <div class="new-project-section-title col-md-3">
-          <h3>Project Goals</h3>
+          <h3>Deadline *</h3>
         </div>
         <div class="new-project-section-body col-md-9">
-          <%= f.input :deadline, label: false %>
-          <p>City, Country, ...</p>
+          <%= f.input :deadline, as: :date %>
+          <p>We recommend setting a project duration of 45 days or less. Shorter durations tend to have higher success rates. Once your project has launched, it won’t be possible to change your project duration.</p>
         </div>
       </div>
 
 
         <div class="new-project-section col-md-12">
         <div class="new-project-section-title col-md-3">
-          <h3>Estimated Project Duration</h3>
+          <h3>Estimated Project Duration *</h3>
         </div>
         <div class="new-project-section-body col-md-9">
           <%= f.input :estimated_duration, label: false %>
@@ -162,7 +156,7 @@
 
     <div class="new-project-section col-md-12">
     <div class="new-project-section-title col-md-3">
-        <h3>Short Description</h3>
+        <h3>Short Description *</h3>
       </div>
       <div class="new-project-section-body col-md-9">
         <%= f.input :blurb, label: false, input_html: { rows: '5', style: 'width: 100%'} %>
@@ -174,7 +168,7 @@
 
     <div class="new-project-section col-md-12">
       <div class="new-project-section-title col-md-3">
-        <h3>Detailed Description</h3>
+        <h3>Detailed Description *</h3>
       </div>
       <div class="new-project-section-body col-md-9">
          <%= f.input :body, as: :wysihtml5, input_html: { rows: '15', style: 'width: 100%'} %>
@@ -187,5 +181,21 @@
     <%= f.button :submit, "Launch your project!", class: "btn btn-bezier btn-project" %>
 
 <% end %>
+
+
+<script>
+    $(document).ready(function() {
+      var company_description_text = $("#company_description_text");
+      var counter     = $("#counter");
+      var max_length  = counter.data("maximum-length");
+
+      company_description_text.keyup(function() {
+          counter.text(max_length - $(this).val().length);
+      });
+
+    });
+
+
+</script>
 
 </div>

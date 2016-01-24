@@ -21,6 +21,7 @@ class ProjectsController < InheritedResources::Base
   def new
     @lecture_options = Lecture.all.map{|u| [u.title, u.id]}
   	@project = Project.new
+    @maximum_length = Project.validators_on( :company_description ).first.options[:maximum]
     authorize @project
     @disable_footer = true
   end 

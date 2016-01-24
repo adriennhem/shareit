@@ -6,5 +6,5 @@ class Project < ActiveRecord::Base
 
 	scope :no_offer, ->  { includes(:offers).where( :offers => { :project_id => nil } ) }
 
-	
+	validates :company_description, length: { maximum: 250 }
 end
