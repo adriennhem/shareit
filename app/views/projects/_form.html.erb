@@ -9,10 +9,10 @@
    <h2>About You</h2>
       
        <div class="new-project-section col-md-12">
-        <div class="new-project-section-title col-md-3">
+        <div class="new-project-section-title col-md-4">
           <h3>Company Logo</h3>
         </div>
-        <div class="new-project-section-body col-md-9">
+        <div class="new-project-section-body col-md-8">
           <%= f.input :logo, as: :file, label: false %>
           <p>JPEG, PNG, or BMP | 5MB file limit</p>
         </div>
@@ -23,48 +23,48 @@
     
 
       <div class="new-project-section col-md-12">
-        <div class="new-project-section-title col-md-3">
+        <div class="new-project-section-title col-md-4">
           <h3>Company name *</h3>
         </div>
-        <div class="new-project-section-body col-md-9">
+        <div class="new-project-section-body col-md-8">
           <%= f.input :company_name, label: false, input_html: { class: 'form-control' } %>
         </div>
       </div>
 
         <div class="new-project-section col-md-12">
-        <div class="new-project-section-title col-md-3">
+        <div class="new-project-section-title col-md-4">
           <h3>Industry *</h3>
         </div>
-        <div class="new-project-section-body col-md-9">
-          <%= f.input :industry, label: false, input_html: { class: 'form-control' }  %>
+        <div class="new-project-section-body col-md-8">
+          <%= f.select :industry, options_for_select([ "Agency", "Consulting / Services", "Ecommerce", "Education", "Government", "Media & Entertainment", "Non-Profit", "Retail", "Technology", "Other"  ])  %>
         </div>
       </div>
 
 
       <div class="new-project-section col-md-12">
-        <div class="new-project-section-title col-md-3">
+        <div class="new-project-section-title col-md-4">
           <h3>Where are you based? *</h3>
         </div>
-        <div class="new-project-section-body col-md-9">
-          <%= f.input :location, label: false, input_html: { class: 'form-control' } %>
+        <div class="new-project-section-body col-md-8">
+          <%= f.input :location, label: false, input_html: { class: 'form-control', id: 'pac-input' } %>
         </div>
       </div>
 
         <div class="new-project-section col-md-12">
-        <div class="new-project-section-title col-md-3">
-          <h3>Name of the person to contact *</h3>
+        <div class="new-project-section-title col-md-4">
+          <h3>Full name of the person to contact *</h3>
         </div>
-        <div class="new-project-section-body col-md-9">
+        <div class="new-project-section-body col-md-8">
           <%= f.input :main_contact, label: false, input_html: { class: 'form-control' } %>
            <p>Only the student who accepts the discovery project can see this information</p>
         </div>
       </div>
 
           <div class="new-project-section col-md-12">
-        <div class="new-project-section-title col-md-3">
+        <div class="new-project-section-title col-md-4">
           <h3>Email address of the contact *</h3>
         </div>
-        <div class="new-project-section-body col-md-9">
+        <div class="new-project-section-body col-md-8">
           <%= f.input :main_contact_email, label: false, input_html: { class: 'form-control' } %>
           <p>Students may need additional information about your goal. Only the student who accepts the discovery project can see this information</p>
         </div>
@@ -72,10 +72,10 @@
 
 
        <div class="new-project-section col-md-12">
-        <div class="new-project-section-title col-md-3">
+        <div class="new-project-section-title col-md-4">
           <h3>Company Description *</h3>
         </div>
-        <div class="new-project-section-body col-md-9">
+        <div class="new-project-section-body col-md-8">
           <%= f.input :company_description, as: :text, label: false, input_html: { maxlength: @maximum_length, id: 'company_description_text', rows: 5, cols: 60 } %>
           
 
@@ -87,78 +87,56 @@
     <h2>Project description</h2>
 
     <div class="new-project-section col-md-12">
-      <div class="new-project-section-title col-md-3">
+      <div class="new-project-section-title col-md-4">
         <h3>Title *</h3>
       </div>
-      <div class="new-project-section-body col-md-9">
+      <div class="new-project-section-body col-md-8">
         <%= f.input :title, label: false, input_html: { class: 'form-control' } %>
         <p>Make your title catchy, to attract more students!</p>
       </div>
     </div>
 
      <div class="new-project-section col-md-12">
-      <div class="new-project-section-title col-md-3">
+      <div class="new-project-section-title col-md-4">
         <h3>Related Course *</h3>
       </div>
-      <div class="new-project-section-body col-md-9">
+      <div class="new-project-section-body col-md-8">
         <%= f.select(:lecture_id, options_for_select(@lecture_options)) %>
         <p>Find out which course is it related to <%= link_to 'Here', 'https://workshoprsupport.zendesk.com/hc/en-us', target: '_blank' %></p>
       </div>
     </div>
 
-        <div class="new-project-section col-md-12">
-        <div class="new-project-section-title col-md-3">
-          <h3>Project Context *</h3>
-        </div>
-        <div class="new-project-section-body col-md-9">
-          <%= f.input :project_context, as: :text, label: false %>
-          <p>City, Country, ...</p>
-        </div>
-      </div>
+
 
 
         <div class="new-project-section col-md-12">
-        <div class="new-project-section-title col-md-3">
+        <div class="new-project-section-title col-md-4">
           <h3>Project Goals *</h3>
         </div>
-        <div class="new-project-section-body col-md-9">
+        <div class="new-project-section-body col-md-8">
           <%= f.input :goal, as: :text, label: false %>
-          <p>City, Country, ...</p>
+          <p>What do you want to achieve?</p>
         </div>
       </div>
 
 
         <div class="new-project-section col-md-12">
-        <div class="new-project-section-title col-md-3">
+        <div class="new-project-section-title col-md-4">
           <h3>Deadline *</h3>
         </div>
-        <div class="new-project-section-body col-md-9">
+        <div class="new-project-section-body col-md-8">
           <%= f.input :deadline, as: :date %>
           <p>We recommend setting a project duration of 45 days or less. Shorter durations tend to have higher success rates. Once your project has launched, it won’t be possible to change your project duration.</p>
         </div>
       </div>
 
 
-        <div class="new-project-section col-md-12">
-        <div class="new-project-section-title col-md-3">
-          <h3>Estimated Project Duration *</h3>
-        </div>
-        <div class="new-project-section-body col-md-9">
-          <%= f.input :estimated_duration, label: false %>
-          <p>City, Country, ...</p>
-        </div>
-      </div>
-
-
-
-
-
 
     <div class="new-project-section col-md-12">
-    <div class="new-project-section-title col-md-3">
+    <div class="new-project-section-title col-md-4">
         <h3>Short Description *</h3>
       </div>
-      <div class="new-project-section-body col-md-9">
+      <div class="new-project-section-body col-md-8">
         <%= f.input :blurb, label: false, input_html: { rows: '5', style: 'width: 100%'} %>
         <p>Create a catchy description, to attract more students!</p>
       </div>
@@ -167,10 +145,10 @@
 
 
     <div class="new-project-section col-md-12">
-      <div class="new-project-section-title col-md-3">
+      <div class="new-project-section-title col-md-4">
         <h3>Detailed Description *</h3>
       </div>
-      <div class="new-project-section-body col-md-9">
+      <div class="new-project-section-body col-md-8">
          <%= f.input :body, as: :wysihtml5, input_html: { rows: '15', style: 'width: 100%'} %>
         <p>Detail as much as possible to enable students to better understand</p>
       </div>
@@ -194,6 +172,13 @@
       });
 
     });
+
+google.maps.event.addDomListener(window, 'load', function () {
+            var places = new google.maps.places.Autocomplete(document.getElementById('pac-input'));
+            google.maps.event.addListener(places, 'place_changed', function () {
+                var place = places.getPlace();
+            });
+        });
 
 
 </script>
