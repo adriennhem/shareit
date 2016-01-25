@@ -26,6 +26,13 @@ class ProjectsController < InheritedResources::Base
     @disable_footer = true
   end 
 
+  def complete
+    project = Project.find(params[:id])
+    project.complete
+    redirect_to project
+    authorize project
+  end
+
   def edit 
     @lecture_options = Lecture.all.map{|u| [u.title, u.id]}
     @project = Project.find(params[:id])

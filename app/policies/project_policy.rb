@@ -15,6 +15,10 @@ class ProjectPolicy < ApplicationPolicy
 		is_owner?
 	end
 
+	def complete?
+		is_owner?
+	end
+
 	def edit?
 		is_owner?
 	end

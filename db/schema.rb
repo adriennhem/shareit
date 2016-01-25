@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160118195115) do
+ActiveRecord::Schema.define(version: 20160125202029) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -210,8 +210,8 @@ ActiveRecord::Schema.define(version: 20160118195115) do
     t.string   "phone_number"
     t.text     "body"
     t.integer  "user_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "title"
     t.integer  "lecture_id"
     t.text     "blurb"
@@ -228,6 +228,7 @@ ActiveRecord::Schema.define(version: 20160118195115) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+    t.boolean  "completed",           default: false
   end
 
   create_table "seos", force: :cascade do |t|
