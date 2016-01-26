@@ -7,7 +7,7 @@ class Project < ActiveRecord::Base
 	scope :no_offer, ->  { includes(:offers).where( :offers => { :project_id => nil } ) }
 
 	validates :company_description, length: { maximum: 250 }
-	validates_presence_of :company_name, :body, :user_id, :title, :lecture_id, :blurb, :location, :industry, :company_description, :goal, :main_contact, :main_contact_email
+	validates_presence_of :company_name, :body, :user_id, :title, :blurb, :location, :industry, :company_description, :goal, :main_contact, :main_contact_email
 
 	
 end
