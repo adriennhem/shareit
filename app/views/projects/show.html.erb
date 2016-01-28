@@ -34,49 +34,64 @@
 </div>
 
 
+<div class="row row-show-project">
 
-<div class="row row-show-projects">
+
 <div class="container-fluid container-project">
+
+	<div class="col-md-12 mb-20">
+		<div class="col-md-2"><%= image_tag(@project.logo.url(:thumb)) %></div>
+		<div class="col-md-10 show-project-titles">
+			<h2><%= @project.title %></h2>
+			<h3>by <%= @project.company_name %></h3>
+			<button class="btn btn-medium btn-bezier button-show-project">Ends in <%= (@project.deadline.to_i - Time.now.to_i) / 86_400 %> Days</button>
+			
+			
+		</div>
+
+
+	</div>
+
 	<div class="container-project-left col-md-8">
-		
-	<h2>Description</h2>
+		<h5>Goals</h5>
+		<div class="project-info-description">
+			<%= @project.goal %> 
+		</div>
+
+
+		<h5>Description</h5>
 		<div class="project-info-description">
 			<%= @project.body.html_safe %> 
 		</div>
+	</div>
+
+
+	<div class="container-project-right col-md-4">	
+
 		
 
-	
+		<h5>Contacts</h5>
+		
+		<div class="project-info-box">
+			<p><i class="fa fa-user"></i>  <%= @project.main_contact %> <br>  <%= @project.main_contact_email %></p>
+		</div>
+
+		<h5>About <%= @project.company_name %></h5>
+		
+		<div class="project-info-box">
+			<p><i class="fa fa-map-marker"></i>  <%= @project.location %></p>
+		</div>
+
+		<div class="project-info-box">
+			<p><i class="fa fa-industry"></i> <%= @project.industry %></p>
+		</div>
+
+		<div class="project-info-box">
+			<p><i class="fa fa-info-circle"></i> <br> <%= @project.company_description %></p>
+		</div>
 
 
 	</div>
-	<div class="container-project-right col-md-4">
 
-		
-		<h2>Project Info</h2>
-
-		<div class="project-info-box">
-			<h3>Date of creation</h3>
-			<p><%= @project.created_at %></p>
-		</div>
-
-		<div class="project-info-box">
-			<h3>Date of creation</h3>
-			<p><%= @project.created_at %></p>
-		</div>
-
-		<h2>About the company</h2>
-		
-		<div class="project-info-box">
-			<h3>Date of creation</h3>
-			<p><%= @project.created_at %></p>
-		</div>
-		<div class="project-info-box">
-			<h3>Date of creation</h3>
-			<p><%= @project.created_at %></p>
-		</div>
-
-		
-	</div>
-</div>
-
+  </div>
 </div>
