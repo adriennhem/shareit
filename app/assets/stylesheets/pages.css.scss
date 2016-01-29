@@ -76,11 +76,20 @@ img.profile {
 	font-size: 32px;
 }
 
+
+h4 .fa-check {
+	margin-left: -35px;
+	font-size: 28px !important;
+}
+
 .rules-body h4 {
 	font-size: 28px;
 }
 
 .rules-body p {
 	font-size: 21px;
-	line-height: 28px;
+	line-height: 1.5em;
+	font-weight: 400;
+	color: $text-blog;
+	margin-bottom: 20px;
 }
