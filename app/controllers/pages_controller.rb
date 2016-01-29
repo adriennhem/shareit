@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
   	@lecture = Lecture.first
+    @disable_newsletter = true
   end
 
   def home_company

@@ -340,7 +340,7 @@ p.navbar-btn {
 // --------------------------------------------------------------
 
 #section-image {
-    background: url('<%= asset_path("bg-home-2.jpg") %>') no-repeat center center fixed;
+    background: url('https://s3-us-west-2.amazonaws.com/workshopr-picture/assets/pictures/bg-home-2.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -389,7 +389,11 @@ a.btn-bezier-inverse.home {
 .section-customers {
 	padding-top:25px;
     background: $hint-red;
-    height: 80px;
+    height: 120px;
+}
+
+.section-customers img {
+   margin-right: 30px;
 }
   
 .section-customers a {

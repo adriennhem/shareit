@@ -5,7 +5,7 @@
         <li class="bezier weight800">WORKSHOPR</li>
         <li><%= link_to 'Who we are', about_path %></li>
         <li><%= link_to 'Blog', blog_path %></li>
-        <li><%= link_to 'Help Center', 'https://workshoprsupport.zendesk.com/hc/en-us' %></li>
+        <li><%= link_to 'Help Center', 'https://workshoprsupport.zendesk.com/hc/en-us', target: '_blank' %></li>
         <li><%= link_to 'Our Rules', help_center_rules_path %></li>
         <li><%= link_to 'Projects Guidelines', help_center_project_guidelines_path %></li>
         <li><%= link_to "Contact Us", contacts_path %></li>
@@ -21,13 +21,11 @@
         <li><%= link_to 'Instagram', 'https://instagram.com/Workshopr', target: '_blank' %></li>
       </ul>
     </li>
-    <li class="col-md-3 col-xs-12">
-      <ul class="margin-s ">
-       <li class="bezier weight800">NEWSLETTER</li>
-       <li><span>Want to get exclusive offers? Join our email newsletter</span></li>
-       <li><%= render 'pages/newsletter'%></li>
-      </ul>
-    </li>
+    
+      
+       <%= render 'pages/newsletter' unless @disable_newsletter %>
+      
+    
   </ul>
 </div>
 

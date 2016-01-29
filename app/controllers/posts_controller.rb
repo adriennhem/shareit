@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 	layout 'blog'
 	
 	def index
+	 @disable_newsletter = true
 	 @blog_category_options = BlogCategory.all.map{|u| [u.title, u.id]}
 	 @posts = policy_scope(Post) 
 	 if params[:tag]
