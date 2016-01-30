@@ -22,7 +22,7 @@
 
 .navbar-default a.navbar-brand {
 	font-family: $proxima-nova;
-	font-weight: 700;
+	font-weight: 800;
 	text-transform: uppercase;
 	margin-left: 10px;
 }
@@ -66,7 +66,7 @@ div[aria-expanded="true"] a.btn-bezier {
 /* ROW SEARCH */
 
 .row-search {
-	background: rgba(0,0,0,0.8);
+	background: $blue-charcoal;
 	height: 150px;
 }
 
@@ -126,7 +126,7 @@ div[aria-expanded="true"] a.btn-bezier {
 
 .row-promotion {
 	height: 300px;
-	background: rgba(0,0,0,0.8);
+	background: $blue-charcoal;
 }
 
 .row-promotion p {
@@ -148,6 +148,7 @@ input.opt-in-email {
 }
 
 /* SHOW POST */
+
 
 .row-post {
 	width: 100%;

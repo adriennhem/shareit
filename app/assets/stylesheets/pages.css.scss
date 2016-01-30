@@ -22,9 +22,38 @@
 }
 
 
+
+/* HOMEPAGE */
+
+
 .fa-chevron-circle-down {
-	margin-top: 10px;
+	margin-top: 60px;
+   font-size: 32px !important;
+    color:$bezier;
 }
+
+.main-title-benefits {
+	margin-top: 80px;
+	margin-bottom: 130px;
+}
+
+/* COMPANY PAGE */
+
+.section-benefits-company h2 {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.section-benefits-company p {
+	margin: 0 auto;
+	width:500px;
+    line-height: 1.5em;
+    font-size: 22px;
+    margin-bottom: 40px;
+}
+
+
 
 
 
@@ -32,7 +61,11 @@
 
 .row-header {
 	height: 150px; 
-	background: #333333;
+	background: $blue-charcoal;
+}
+
+.row-header h1 {
+	margin-top: 55px;
 }
 
 .contact-form {
