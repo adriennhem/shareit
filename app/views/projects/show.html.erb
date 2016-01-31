@@ -22,7 +22,8 @@
 				
 		<% if @project.offers.exists? && current_user.company? %>
 
-		<%= link_to 'Republish', project_offer_path(@project, @offer), class: "btn-bezier-round republish", method: :delete %> 
+		<%= link_to 'Republish', project_offer_path(@project, @offer), class: "btn btn-bezier republish", method: :delete, data: { confirm: 'Are you sure you want to republish this project?'} %> 
+		 <%= link_to "Mark Complete", complete_path, class: " btn btn-bezier complete", data: { confirm: 'Are you sure you want to mark this project as complete, you cannot go back?'} %>
 
 		<% end %>
 
@@ -35,6 +36,8 @@
 
 
 <div class="row row-show-project">
+
+
 
 
 <div class="container-fluid container-project">

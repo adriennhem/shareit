@@ -26,6 +26,13 @@ class ProjectsController < InheritedResources::Base
     @disable_footer = true
   end 
 
+  def complete
+  @project = Project.find(params[:id])
+  @project.mark_completed!
+  redirect_to :back
+  authorize @project
+  end
+
  
 
   def edit 

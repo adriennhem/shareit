@@ -37,6 +37,7 @@
 		  <% end %>
 
 		  <h2>Ends in <%= (project.deadline.to_i - Time.now.to_i) / 86_400 %> Days</h2>
+
 		  <h3>Published <%= project.created_at.strftime("%b %d, %Y") %></h3>
 		  
 		</div>	

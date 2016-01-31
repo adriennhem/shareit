@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   get 'pages/signout'
 
-
+  get '/complete/:id', to: 'projects#complete', as: 'complete'
 
 
 

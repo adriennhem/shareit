@@ -12,5 +12,7 @@ class Project < ActiveRecord::Base
 	validates :company_description, length: { maximum: 250 }
 	validates_presence_of :company_name, :body, :user_id, :title, :blurb, :location, :industry, :company_description, :goal, :main_contact, :main_contact_email
 
-	
+	def mark_completed!
+ 	 self.update_attribute(:completed, true)
+	end
 end
