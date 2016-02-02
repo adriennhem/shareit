@@ -62,10 +62,10 @@ def create
 		flash[:success] = "You have successfully created a project"
 		redirect_to profile_path(current_user)
 	else 
+    @disable_footer = true
 		render action: 'new'
 	end
-  authorize @project 
-  
+  authorize @project   
 end	
 
   def destroy

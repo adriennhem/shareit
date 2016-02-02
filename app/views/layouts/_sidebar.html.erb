@@ -17,14 +17,14 @@
                             <i class="fa fa-graduation-cap"></i> <span>My Courses</span>
                         <% end %>
                         <% if current_user.company? %>
-                            <i class="fa fa-sticky-note"></i> <span>My Projects</span>
+                            <i class="fa fa-sticky-note"></i> <span>My Challenges</span>
                         <% end %> 
                     <% end %>
                 </li>
                 <li>
                    <% if current_user.student? %>
                     <%= link_to user_projects_path do %>
-                            <i class="fa fa-sticky-note"></i>   <span>My Projects</span>
+                            <i class="fa fa-sticky-note"></i>   <span>My Challenges</span>
                             <% end %>
                         <% end %>
                 </li>

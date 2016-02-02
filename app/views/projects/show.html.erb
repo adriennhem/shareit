@@ -3,7 +3,7 @@
 <% end %>
 
 <div class="row" id="dashboard-header" data-no-turbolink>
-	<h1 class="dashboard-title"><%= @project.title %></h1>
+	<h1 class="dashboard-title">Challenge Description</h1>
 	<% if policy(@project).update? %>
 		<%= link_to edit_project_path(@project), class: "btn btn-bezier" do %> 
 			<i class="fa fa-pencil-square-o"></i> Edit
@@ -14,7 +14,7 @@
   <%= f.error_notification %>
   	  <%= f.hidden_field :user_id, { value: "@user.id" } %>
   	  <%= f.hidden_field :project_id, { value: "@project.id" } %>
-	<%= f.button :submit, "Accept Project", class: "btn btn-bezier btn-small" %>
+	<%= f.button :submit, "Accept Challenge", class: "btn btn-bezier btn-small" %>
   <% end %>
 	<% end %>
 
@@ -71,13 +71,15 @@
 
 	<div class="container-project-right col-md-4">	
 
-		
+		<% if current_user.offers_made(project_id: @project.id) %>
 
 		<h5>Contacts</h5>
+		
 		
 		<div class="project-info-box">
 			<p><i class="fa fa-user"></i>  <%= @project.main_contact %> <br>  <%= @project.main_contact_email %></p>
 		</div>
+		<% end %>
 
 		<h5>About <%= @project.company_name %></h5>
 		

@@ -10,7 +10,7 @@
 <h1 class="dashboard-title">My Projects</h1>
 <% if @projects.exists? %>
 	<%= link_to new_project_path, class: "btn btn-bezier" do %>
-			<i class="fa fa-plus"></i> Project
+			<i class="fa fa-plus"></i> Challenge
 		<% end %> 
 <% end %>	
 
@@ -27,21 +27,21 @@
 	
 	<div class="col-md-4">
 		<div class="panel-home-project">
-		<div data-no-turbolink>
-			<%= link_to project_path(project), method: :delete, data: {confirm: 'Are you sure you want to delete this project?'}  do %> <i class="fa fa-trash-o"></i><% end %> 
-			<%= link_to edit_project_path(project) do %><i class="fa fa-pencil-square-o"></i><% end %> 
-		
-		  </div>
-		  <%= link_to project do %>
-		  <h2><%= project.title %></h2>
-		  <% end %>
+			<div data-no-turbolink class="clear">
+				<%= link_to project_path(project), method: :delete, data: {confirm: 'Are you sure you want to delete this project?'}  do %> <i class="fa fa-trash-o"></i><% end %> 
+				<%= link_to edit_project_path(project) do %><i class="fa fa-pencil-square-o"></i><% end %> 
+			  </div>
+
+			 <h2><%= link_to "#{truncate(project.title, length: 40)}", project %></h2>
+				  
+		  
 
 		  <h2>Ends in <%= (project.deadline.to_i - Time.now.to_i) / 86_400 %> Days</h2>
 
 		  <h3>Published <%= project.created_at.strftime("%b %d, %Y") %></h3>
 		  
 		</div>	
-		</div>
+	</div>
 
 
 

@@ -4,7 +4,6 @@
 
 
 <%= simple_form_for(@project) do |f| %>
-  <%= f.error_notification %>
 
    <h2>About You</h2>
       
@@ -56,7 +55,7 @@
         </div>
         <div class="new-project-section-body col-md-8">
           <%= f.input :main_contact, label: false, input_html: { class: 'form-control' } %>
-           <p>Only the student who accepts the discovery project can see this information</p>
+           <p>Only the student who accepted the challenge will see this field</p>
         </div>
       </div>
 
@@ -66,7 +65,7 @@
         </div>
         <div class="new-project-section-body col-md-8">
           <%= f.input :main_contact_email, label: false, input_html: { class: 'form-control' } %>
-          <p>Students may need additional information about your goal. Only the student who accepts the discovery project can see this information</p>
+          <p>Students may need additional information about your goal. Only the student who accepted the challenge will see this field</p>
         </div>
       </div>
 
@@ -84,7 +83,7 @@
       </div>
 
     
-    <h2>Project description</h2>
+    <h2>Challenge description</h2>
 
     <div class="new-project-section col-md-12">
       <div class="new-project-section-title col-md-4">
@@ -111,7 +110,7 @@
 
         <div class="new-project-section col-md-12">
         <div class="new-project-section-title col-md-4">
-          <h3>Project Goals *</h3>
+          <h3>Challenge Goals *</h3>
         </div>
         <div class="new-project-section-body col-md-8">
           <%= f.input :goal, as: :text, label: false, input_html: { rows: 5, cols: 50} %>
@@ -126,7 +125,7 @@
         </div>
         <div class="new-project-section-body col-md-8">
           <%= f.input :deadline, as: :date %>
-          <p>We recommend setting a project duration of 45 days or less. Shorter durations tend to have higher success rates. Once your project has launched, it won’t be possible to change your project duration.</p>
+          <p>We recommend setting a challenge duration of 45 days or less. Shorter durations tend to have higher success rates.</p>
         </div>
       </div>
 
@@ -156,7 +155,7 @@
 
    
 
-    <%= f.button :submit, "Launch your project!", class: "btn btn-bezier btn-project" %>
+    <%= f.button :submit, "Launch your challenge!", class: "btn btn-bezier btn-project" %>
 
 <% end %>
 

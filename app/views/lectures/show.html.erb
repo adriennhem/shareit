@@ -77,7 +77,7 @@
 			
 <% if @lecture.percent_completed_by(current_user) == 100 %>
 <div class="unlocked margin-s">
-<h2>Unlocked projects!</h2>
+<h2>Unlocked challenges!</h2>
 
 		<% @projects.each do |project| %> 
 			<%= link_to project do %>
@@ -94,7 +94,7 @@
 <% end %>
 			
 <% if @lecture.percent_completed_by(current_user) != 100 %>
-	<h2 class="locked center margin-s"><i class="fa fa-lock"></i> Complete this course to unlock projects</h2>
+	<h2 class="locked center margin-s"><i class="fa fa-lock"></i> Complete this course to unlock challenges</h2>
 <% end %>
 
 	</div>
