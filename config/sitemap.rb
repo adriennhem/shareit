@@ -17,6 +17,9 @@ SitemapGenerator::Sitemap.create do
   #
   add '/blog'
   add '/contacts'
+  add '/company'
+  add '/about'
+  add '/help-center/rules'
   #
   #   add articles_path, :priority => 0.7, :changefreq => 'daily'
   #
