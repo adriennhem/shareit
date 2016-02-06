@@ -1,4 +1,4 @@
-JQuery ->
+$ ->
   Stripe.setPublishableKey('pk_test_jPUNWcSjJrzBvyPbzSJKmnyo');
 
   $('#payment-form').submit (event) ->

@@ -13,8 +13,8 @@
 //= require jquery
 //= require active_admin/base
 //= require ckeditor/init
-//= require bootstrap-sprockets
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require turbolinks
 //= require bootstrap-wysihtml5
 //= require_tree .
