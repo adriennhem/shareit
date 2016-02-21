@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_filter :expire_hsts
   before_action :set_locale 
   layout :layout_by_resource
 	include Pundit
@@ -47,6 +48,11 @@ def set_locale
   end
   I18n.locale = l
 end
+
+private
+  def expire_hsts
+    response.headers["Strict-Transport-Security"] = 'max-age=0'
+  end
 
  
   
