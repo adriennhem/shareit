@@ -1,11 +1,16 @@
 
+<%= image_tag("logo.png") %>
 
 <h1>certificate of completion</h1>
 
 <p>This award certifies that</p>
 
-
+<h2><%= current_user.name %></h2>
 
 <p>Has successfully completed the course</p>
 
 <h2><%= @lecture.title %></h2>
+
+<p>This <%= current_user.user_lessons.where(lecture_id: @lecture.id) %></p>
+
+<%= image_tag("logo.png") %>
