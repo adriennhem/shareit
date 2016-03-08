@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
-  before_filter :expire_hsts
+  # before_filter :expire_hsts
   before_action :set_locale 
   layout :layout_by_resource
 	include Pundit
