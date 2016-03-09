@@ -56,10 +56,12 @@ class ProjectsController < InheritedResources::Base
   end
 
 def create 
+  @user = current_user
   @lecture_options = Lecture.all.map{|u| [u.title, u.id]}
 	@project = current_user.project_selling.build(project_params)
 	if @project.save 
-		flash[:success] = "You have successfully created a project"
+    NewChallengeMailer.new_challenge(@project).deliver
+		flash[:success] = "You have successfully created a Challenge, a member of our team will review it shortly"
 		redirect_to profile_path(current_user)
 	else 
     @disable_footer = true

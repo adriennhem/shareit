@@ -8,7 +8,8 @@ class Project < ActiveRecord::Base
     validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/
 
 	scope :no_offer, ->  { includes(:offers).where( :offers => { :project_id => nil } ) }
-
+	scope :approved, -> { where(approved: true) }
+	
 	validates :company_description, length: { maximum: 250 }
 	validates_presence_of :company_name, :body, :user_id, :title, :blurb, :location, :industry, :company_description, :goal, :main_contact, :main_contact_email
 

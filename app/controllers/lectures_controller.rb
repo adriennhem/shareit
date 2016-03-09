@@ -20,7 +20,7 @@ class LecturesController < ApplicationController
   # GET /lectures/1
   # GET /lectures/1.json
   def show
-    @projects = Project.where(lecture_id: @lecture.id).no_offer 
+    @projects = Project.where(lecture_id: @lecture.id).no_offer.approved
     @teacher = Teacher.all
     authorize @lecture
     @disable_footer = true
@@ -69,6 +69,6 @@ class LecturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lecture_params
-      params.require(:lecture).permit(:title, :description, :category_id, :picture, :teacher_id, :video, :enrollment_id, :learning_outcomes, :long_description, :teacher_description, :background_image, :permalink)
+      params.require(:lecture).permit(:title, :description, :category_id, :picture, :teacher_id, :video, :enrollment_id, :learning_outcomes, :long_description, :teacher_description, :background_image, :permalink, :approved)
     end
 end

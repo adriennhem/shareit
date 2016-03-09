@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160125202029) do
+ActiveRecord::Schema.define(version: 20160309184208) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -229,6 +229,7 @@ ActiveRecord::Schema.define(version: 20160125202029) do
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
     t.boolean  "completed",           default: false
+    t.boolean  "approved",            default: false
   end
 
   create_table "seos", force: :cascade do |t|
