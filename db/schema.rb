@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160309184208) do
+ActiveRecord::Schema.define(version: 20160309192736) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -165,6 +165,7 @@ ActiveRecord::Schema.define(version: 20160309184208) do
     t.string   "permalink"
     t.integer  "amount"
     t.boolean  "published",            default: false
+    t.string   "waiting_list"
   end
 
   add_index "lectures", ["slug"], name: "index_lectures_on_slug", unique: true

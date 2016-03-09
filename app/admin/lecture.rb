@@ -4,6 +4,7 @@ ActiveAdmin.register Lecture do
   filter :teacher 
 
   index do
+    column :published, sortable: true
     column :title, sortable: true
     column :category, sortable: true
     column :teacher, sortable: true
@@ -39,8 +40,8 @@ ActiveAdmin.register Lecture do
  
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  permit_params :amount, :title, :description, :created_at, :updated_at, :category_id, :name, :picture_file_name, :teacher_id, :video, :permalink, 
-  :picture, :picture_content_type, :picture_file_size, :picture_updated_at, :learning_outcomes, :long_description, :teacher_description, :background_image,
+  permit_params :amount, :title, :description, :created_at, :updated_at, :category_id, :name, :picture_file_name, :teacher_id, :video, :permalink, :published,
+  :picture, :waiting_list, :picture_content_type, :picture_file_size, :picture_updated_at, :learning_outcomes, :long_description, :teacher_description, :background_image,
   chapters_attributes: [:id, :title, :description, :number, :total_duration, lessons_attributes: [:id, :title, :description, :vid, :etape, :short_description, :video_duration]]
 
   # or
@@ -54,6 +55,7 @@ ActiveAdmin.register Lecture do
   form :html => { :enctype => "multipart/form-data", :class => 'expandable in' } do |f|
   f.inputs "Lectures", :multipart => true, :class => 'expandable in' do
     f.input :published 
+    f.input :waiting_list
     f.input :category_id
     f.input :teacher_id, label: 'Teacher', as: :select, collection: Teacher.all.map {|t| [t.name, t.id]}
     f.input :amount

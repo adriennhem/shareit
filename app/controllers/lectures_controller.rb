@@ -9,9 +9,9 @@ class LecturesController < ApplicationController
   def index
     if params[:category]
       @category_id = Category.find_by(name: params[:category]).id
-      @lectures = Lecture.where(category_id: @category_id).order("created_at DESC")
+      @lectures = Lecture.where(category_id: @category_id).order("created_at DESC").published
     else
-      @lectures = Lecture.all
+      @lectures = Lecture.published
     end
     authorize @lectures
     @disable_footer = true
