@@ -6,11 +6,9 @@
 				<%= image_tag(@lecture.try(:picture).try(:url)) %>
 		        <h3 class="center"><%= @lecture.try(:title) %></h3> 
 		        <p class="center by-teacher">by <%= @lecture.try(:teacher).try(:name) %></p>
-		        <% if @lecture.published %>
-		        	<%= link_to "Start Learning Now", lecture_description_path(@lecture), class: "btn btn-medium btn-bezier mb-40" %>
-	        	<% else %>
+		    
+	
 			        <%= link_to "Join The Waiting List", "#{@lecture.try(:waiting_list)}", class: "btn btn-medium btn-bezier mb-40" %> 
-			        <% end %>  
 
 		</div>
 	</div>
