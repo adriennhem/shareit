@@ -31,6 +31,10 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :enrollments
 
+  def is_admin  
+    self.admin?
+  end
+
   def made_offer?(project)
     self.offers_made.include?(project)
   end

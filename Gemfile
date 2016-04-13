@@ -33,6 +33,8 @@ gem 'wkhtmltopdf-binary'
 
 
 
+
+
 # WYSIWYG
 gem 'ckeditor', github: 'galetahub/ckeditor'
 

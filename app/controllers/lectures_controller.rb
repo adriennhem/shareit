@@ -7,10 +7,9 @@ class LecturesController < ApplicationController
   # GET /lectures
   # GET /lectures.json
   def index
-    if params[:category]
-      @category_id = Category.find_by(name: params[:category]).id
-      @lectures = Lecture.where(category_id: @category_id).order("created_at DESC").published
-    else
+    if current_user.admin?
+      @lectures = Lecture.all
+    else 
       @lectures = Lecture.published
     end
     authorize @lectures
