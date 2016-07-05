@@ -42,6 +42,13 @@ GIT
       mime-types
       mimemagic (= 0.3.0)
 
+GIT
+  remote: git://github.com/wazery/vider.git
+  revision: 9647256685a0ee0f4712267e0ce715207a99e972
+  specs:
+    vider (0.0.1)
+      rails (>= 4.1.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -361,8 +368,12 @@ DEPENDENCIES
   stripe
   turbolinks!
   uglifier (>= 1.3.0)
+  vider!
   web-console (~> 2.0)
   whenever
   wicked_pdf
   will_paginate
   wkhtmltopdf-binary
+
+BUNDLED WITH
+   1.11.2

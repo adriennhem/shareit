@@ -23,9 +23,6 @@ Rails.application.routes.draw do
 
   get '/complete/:id', to: 'projects#complete', as: 'complete'
 
-
-
-
   get '/change_locale/:locale', to: 'settings#change_locale', as: :change_locale
   
   resources :profiles
@@ -60,6 +57,9 @@ get '/user_projects', to: 'profiles#user_projects', as: :user_projects
   # Blog
   get '/blog' => 'posts#index'
   get 'blog/:id', to: 'posts#show', as: :post
+
+
+  get 'feed' => 'posts#feed', format: 'rss'
 
   get 'tags/:tag', to: 'posts#index', as: :tag
   get 'blog_category/:blog_category', to: 'posts#index', as: :blog_category

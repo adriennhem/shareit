@@ -15,6 +15,6 @@
 //= require ckeditor/init
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require turbolinks
+//= require jquery.vide
 //= require bootstrap-wysihtml5
 //= require_tree .

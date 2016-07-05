@@ -29,7 +29,8 @@ gem 'receipts'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 
-
+# Video background
+gem 'vider', github: 'wazery/vider'
 
 
 
