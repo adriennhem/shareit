@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get '/contact' => 'pages#contact'
 
+  get '/upcoming' => 'pages#upcoming'
+
   match '/contacts', to: 'contacts#new', via: 'get'
   resources "contacts", only: [:new, :create]
 
@@ -63,6 +65,8 @@ get '/user_projects', to: 'profiles#user_projects', as: :user_projects
 
   get 'tags/:tag', to: 'posts#index', as: :tag
   get 'blog_category/:blog_category', to: 'posts#index', as: :blog_category
+
+  get '/:id', to: 'landing_pages#show', as: :landing_page
 
 
 

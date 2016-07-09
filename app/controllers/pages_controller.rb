@@ -5,7 +5,6 @@ class PagesController < ApplicationController
   end
 
   def home_company
-  
   end
 
   def about
@@ -15,6 +14,7 @@ class PagesController < ApplicationController
   end
 
   def upcoming
+    @disable_footer = true
   end
 
   def signout
