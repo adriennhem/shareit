@@ -14,9 +14,6 @@ class PagesController < ApplicationController
   def contact
   end
 
-  def upcoming
-  end
-
   def signout
     render layout: 'devise_layout'
   end
