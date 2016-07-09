@@ -5,7 +5,6 @@ class PagesController < ApplicationController
   end
 
   def home_company
-  
   end
 
   def about
@@ -13,6 +12,7 @@ class PagesController < ApplicationController
 
   def contact
   end
+
 
   def signout
     render layout: 'devise_layout'
