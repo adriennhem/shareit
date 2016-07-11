@@ -4,5 +4,4 @@ class LandingPage < ActiveRecord::Base
 
 	# Validations
 	validates :permalink, uniqueness: true, presence: true
-
 end
