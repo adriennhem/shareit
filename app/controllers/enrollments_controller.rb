@@ -5,9 +5,16 @@ class EnrollmentsController < ApplicationController
 
 	def new
 		@lecture = Lecture.find(params[:lecture_id])
-		@disable_navbar = true 
-		@disable_footer = true
+		@enrollments = Enrollment.all
 		@enrollment = Enrollment.new
+		if @enrollments.where(user_id: current_user.id, lecture_id: @lecture.id).present?
+			flash[:error] = "You're already enrolled to this class"
+	        redirect_to profile_path(current_user)
+	      else
+	        render :new
+		  end
+		@disable_navbar = true 
+		@disable_footer = true	
 	end
 
 	def show
@@ -57,6 +64,10 @@ class EnrollmentsController < ApplicationController
 	      ConfirmationEnrollmentMailer.confirmation_enrollment(current_user, @lecture, @enrollment).deliver
 	      redirect_to profile_path(current_user)
 		  flash[:success] = "You have successfully enrolled."
+		  require 'slack-notifier'
+	      notifier = Slack::Notifier.new "https://hooks.slack.com/services/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", channel: '#workshopr-general',
+	                                              username: 'Dean Notifier'
+	      notifier.ping "#{current_user.email} has enrolled to #{@lecture.title} !"
 	    end
 	  else
 	    flash[:error] = 'You have already registered for this class'
@@ -76,6 +87,7 @@ class EnrollmentsController < ApplicationController
 				redirect_to new_user_registration_path
 			end
 		end
+
 
 
 end

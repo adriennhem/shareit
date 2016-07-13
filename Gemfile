@@ -34,6 +34,9 @@ gem 'wkhtmltopdf-binary'
 # Video background
 gem 'vider', github: 'wazery/vider'
 
+# Slack Notifier
+gem 'slack-notifier'
+
 
 
 

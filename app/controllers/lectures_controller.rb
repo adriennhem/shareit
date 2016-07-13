@@ -26,6 +26,7 @@ class LecturesController < ApplicationController
   end
 
   def lecture_description
+    @enrollments = Enrollment.all
     @lecture = Lecture.friendly.find(params[:id]) 
     skip_authorization
   end
@@ -70,4 +71,6 @@ class LecturesController < ApplicationController
     def lecture_params
       params.require(:lecture).permit(:title, :description, :category_id, :picture, :teacher_id, :video, :enrollment_id, :learning_outcomes, :long_description, :teacher_description, :background_image, :permalink, :approved)
     end
+
+    
 end

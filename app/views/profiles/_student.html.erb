@@ -22,7 +22,7 @@ $(document).on('page:change', function () {
 <div class="row" id="dashboard-header" data-no-turbolink>
 	<h1 class="dashboard-title">enrolled courses</h1>
 	<% if !@user.lectures.exists? %>
-		<%= link_to lectures_path, class: "btn btn-bezier-round" do %>
+		<%= link_to lectures_path, class: "btn btn-bezier btn-small" do %>
 				Join a course!
 		<% end %> 
 	<% end %>	

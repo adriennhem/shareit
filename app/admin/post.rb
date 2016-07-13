@@ -1,6 +1,13 @@
 ActiveAdmin.register Post do
   menu parent: "Blog", priority: 2
 
+  after_create do |post|
+    require 'slack-notifier'
+    notifier = Slack::Notifier.new "https://hooks.slack.com/services/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", channel: '#workshopr-general',
+                                          username: 'Blog Notifier'
+    notifier.ping "#{current_user.name} has published a new blog post ! Go check on the [Blog](http://www.workshopr.me/blog) !"
+  end
+
   index do
     column :published, sortable: true
     column :title, sortable: true
