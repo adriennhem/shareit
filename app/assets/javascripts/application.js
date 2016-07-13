@@ -13,6 +13,7 @@
 //= require jquery
 //= require active_admin/base
 //= require ckeditor/init
+//= require activeadmin-expandable
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require jquery.vide

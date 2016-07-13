@@ -2,34 +2,79 @@
       <%= render 'layouts/navbar_blog' %>
  <% end %>
 
-<div class="row" id="top-band">
-	<div class="container-fluid center">
-	<h1><%= @lecture.title %></h1>
+
+
+<h1 class="center uppercase bezier"><%= @lecture.title %></h1>
 	
-	</div>
+<div class="landing-header-video center margin-s">
+	<%= @lecture.video.html_safe %>
 </div>
 
-<div class="row" id="teacher-band">
-	<div class="container-fluid">
-		<div class="col-md-12 center">
-			<div class="col-md-4"><%= image_tag @lecture.teacher.picture.url(:medium) %></div>
-			<div class="col-md-5">In just one month, I'll teach you how to keep your projects on time, on spec, and under budget <br> Alex Bisker, You Project Management Instructor</div>
-		</div>
-	</div>
+<div class="row landing-navbar-container">
+<div class="container-fluid ">
+	<ul class="landing-navbar nav">
+		<li><a href="#learn">1. Learn</a></li>
+		<li><a href="#practice">2. Practice</a></li>
+		<li><a href="#hired">3. Get Hired</a></li>
+	</ul>
+	<%= link_to 'Enroll Now for $99', new_enrollment_path(controller: 'enrollment', action: 'new', lecture_id: @lecture.id, amount: @lecture.amount), class: "btn btn-medium btn-bezier pull-right" %>
+</div>
 </div>
 
-<div class="row" id="course-description-detail">
-	<div class="container">
-		<div class="col-md-12 lecture-description-video">
-			<%= @lecture.video.html_safe %>
-		</div>
-		<div class="col-md-12 course-description-body">
-			<h2>About this course</h2>
-			<%= @lecture.description %>
-		</div>
-	</div>
-</div>
 
+<div class="landing-body">
+
+
+<div id="learn" class="padding-top-xxl">
+	<h2 class="mb-60">1. Learn</h2>
+		<div class="learn-body">
+
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet recusandae iusto distinctio ea, delectus beatae vitae alias repudiandae hic quasi voluptatem numquam, iure consectetur pariatur minima soluta blanditiis atque, impedit.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas repudiandae, obcaecati aspernatur magni, aliquid explicabo laboriosam, hic placeat deleniti sed quae autem. Cum dicta hic quibusdam, illo numquam voluptates.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet recusandae iusto distinctio ea, delectus beatae vitae alias repudiandae hic quasi voluptatem numquam, iure consectetur pariatur minima soluta blanditiis atque, impedit.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas repudiandae, obcaecati aspernatur magni, aliquid explicabo laboriosam, hic placeat deleniti sed quae autem. Cum dicta hic quibusdam, illo numquam voluptates.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet recusandae iusto distinctio ea, delectus beatae vitae alias repudiandae hic quasi voluptatem numquam, iure consectetur pariatur minima soluta blanditiis atque, impedit.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas repudiandae, obcaecati aspernatur magni, aliquid explicabo laboriosam, hic placeat deleniti sed quae autem. Cum dicta hic quibusdam, illo numquam voluptates.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet recusandae iusto distinctio ea, delectus beatae vitae alias repudiandae hic quasi voluptatem numquam, iure consectetur pariatur minima soluta blanditiis atque, impedit.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas repudiandae, obcaecati aspernatur magni, aliquid explicabo laboriosam, hic placeat deleniti sed quae autem. Cum dicta hic quibusdam, illo numquam voluptates.
+</div>
+		
+	</div>
+
+<div id="practice" class="padding-top-xxl">
+	<h2 class="mb-60">2. Practice</h2>
+		<div class="learn-body">
+
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet recusandae iusto distinctio ea, delectus beatae vitae alias repudiandae hic quasi voluptatem numquam, iure consectetur pariatur minima soluta blanditiis atque, impedit.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas repudiandae, obcaecati aspernatur magni, aliquid explicabo laboriosam, hic placeat deleniti sed quae autem. Cum dicta hic quibusdam, illo numquam voluptates.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet recusandae iusto distinctio ea, delectus beatae vitae alias repudiandae hic quasi voluptatem numquam, iure consectetur pariatur minima soluta blanditiis atque, impedit.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas repudiandae, obcaecati aspernatur magni, aliquid explicabo laboriosam, hic placeat deleniti sed quae autem. Cum dicta hic quibusdam, illo numquam voluptates.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet recusandae iusto distinctio ea, delectus beatae vitae alias repudiandae hic quasi voluptatem numquam, iure consectetur pariatur minima soluta blanditiis atque, impedit.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas repudiandae, obcaecati aspernatur magni, aliquid explicabo laboriosam, hic placeat deleniti sed quae autem. Cum dicta hic quibusdam, illo numquam voluptates.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet recusandae iusto distinctio ea, delectus beatae vitae alias repudiandae hic quasi voluptatem numquam, iure consectetur pariatur minima soluta blanditiis atque, impedit.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas repudiandae, obcaecati aspernatur magni, aliquid explicabo laboriosam, hic placeat deleniti sed quae autem. Cum dicta hic quibusdam, illo numquam voluptates.
+</div>
+		
+	</div>
+
+<div id="hired" class="padding-top-xxl mb-60">
+	<h2 class="mb-60">3. Hired</h2>
+		<div class="learn-body">
+
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet recusandae iusto distinctio ea, delectus beatae vitae alias repudiandae hic quasi voluptatem numquam, iure consectetur pariatur minima soluta blanditiis atque, impedit.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas repudiandae, obcaecati aspernatur magni, aliquid explicabo laboriosam, hic placeat deleniti sed quae autem. Cum dicta hic quibusdam, illo numquam voluptates.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet recusandae iusto distinctio ea, delectus beatae vitae alias repudiandae hic quasi voluptatem numquam, iure consectetur pariatur minima soluta blanditiis atque, impedit.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas repudiandae, obcaecati aspernatur magni, aliquid explicabo laboriosam, hic placeat deleniti sed quae autem. Cum dicta hic quibusdam, illo numquam voluptates.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet recusandae iusto distinctio ea, delectus beatae vitae alias repudiandae hic quasi voluptatem numquam, iure consectetur pariatur minima soluta blanditiis atque, impedit.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas repudiandae, obcaecati aspernatur magni, aliquid explicabo laboriosam, hic placeat deleniti sed quae autem. Cum dicta hic quibusdam, illo numquam voluptates.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet recusandae iusto distinctio ea, delectus beatae vitae alias repudiandae hic quasi voluptatem numquam, iure consectetur pariatur minima soluta blanditiis atque, impedit.
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas repudiandae, obcaecati aspernatur magni, aliquid explicabo laboriosam, hic placeat deleniti sed quae autem. Cum dicta hic quibusdam, illo numquam voluptates.
+</div>
+		
+	</div>
+
+
+</div>
 
 <div class="row" id="enroll-band" data-no-turbolink>
 	<div class="container-fluid">

@@ -38,7 +38,7 @@ mixpanel.init("90c27582e3a07a77868efb56a4d2dbc7");
 
 
 
-<body id="main">
+<body id="main" data-spy="scroll" data-target=".landing-navbar" data-offset="50">
 <% if content_for?(:navbar) %>
     <%= yield(:navbar) %>  
 <% end %>

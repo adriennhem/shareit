@@ -149,6 +149,11 @@ span.help-inline {
 
  //----- MARGIN ---- //
 
+.padding-top-xxl {
+    padding-top: 70px;
+}
+
+
 .padding-top-xl {
     padding-top: 60px;
 }
@@ -243,6 +248,10 @@ span.help-inline {
 
 .bezier {
     color: #ff0066;
+}
+
+.hidden {
+    display: none;
 }
 
 
@@ -562,6 +571,8 @@ p.enrolled-users {
 .lecture-index-description a.btn-bezier {
     margin-top: 15px;
 }
+
+
 
 
 //--------------------------------------------------------------
@@ -1251,50 +1262,56 @@ h1.dashboard-title {
 
 /* LECTURE DESCRIPTION */
 
-/* TOP BAND */
 
-#top-band {
-    background: url('<%= asset_path("bg-about.jpg") %>') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 400px;
-    padding-top: 100px;
+.landing-header-video {
+    max-width: 760px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    margin-top: 40px;
 }
 
-#top-band h1 {
-    font-size: 56px;
-    color: #fff;
-    text-transform: uppercase;
+.landing-navbar-container {
+    height:80px;
+    border: 1px solid #eee;
+    padding-top: 19px;
+   
 }
 
-a.btn-bezier.big {
-    padding: 10px 50px;
-    font-size: 22px;
-    text-transform: none;
+.landing-navbar-container .container-fluid {
+    max-width: 760px;
+    margin-bottom: 100px;
 }
 
-/* TEACHER BAND */
-
-#teacher-band {
-    height: 150px;
-    background: $hint-red;
+.landing-navbar {
+    max-width: 500px;
+    list-style: none;
+    display: inline-block;
 }
 
-#teacher-band img {
-    border-radius: 50%;
-    margin-top: -20px;
+.landing-navbar li {
+    float: left;
+    margin-right: 20px;
+    font-weight: 500;
+    font-size: 18px;
 }
 
-#teacher-band .col-md-4 {
-    text-align: right;
+
+.landing-navbar-fixed {
+    height: 80px;
 }
 
-#teacher-band .col-md-5 {
-    text-align: left;
-    padding-top: 10px;
+/* LECTURE DESCRIPTION CONTENT */
+
+.landing-body {
+    max-width: 760px;
+    margin: 0 auto; 
 }
+
+.margin-body {
+    margin-top: 140px;
+}
+
+
 
 /* COURSE DETAIL */
 

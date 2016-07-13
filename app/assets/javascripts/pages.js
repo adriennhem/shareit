@@ -14,6 +14,18 @@ $(window).scroll(function() {
   }
 }); 
 
+$(window).scroll(function() {
+  if ($(document).scrollTop() > 670) {
+  	$('.landing-body').addClass('margin-body');
+  	$('.landing-navbar-container').addClass('navbar-fixed-top');
+    $('.landing-navbar-container').addClass('landing-navbar-fixed');
+  } else {
+  	$('.landing-body').removeClass('margin-body');
+  	$('.landing-navbar-container').removeClass('navbar-fixed-top');
+    $('.landing-navbar-container').removeClass('landing-navbar-fixed');
+  }
+}); 
+
 };
 
 $(document).ready(ready);

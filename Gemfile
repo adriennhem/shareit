@@ -22,6 +22,8 @@ gem 'mandrill-api'
 # ActiveAdmin
 gem "font-awesome-rails"
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'activeadmin_expandable_inputs'
+
 
 # Payment Related
 gem 'stripe'

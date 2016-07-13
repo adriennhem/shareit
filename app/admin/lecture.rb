@@ -52,8 +52,8 @@ ActiveAdmin.register Lecture do
   #   permitted
   # end
 
-  form :html => { :enctype => "multipart/form-data", :class => 'expandable in' } do |f|
-  f.inputs "Lectures", :multipart => true, :class => 'expandable in' do
+  form :html => { :enctype => "multipart/form-data"} do |f|
+  f.inputs "Lectures", :multipart => true, :class => 'inputs expandable out' do
     f.input :published 
     f.input :waiting_list
     f.input :category_id
@@ -69,13 +69,13 @@ ActiveAdmin.register Lecture do
     f.input :learning_outcomes, as: :ckeditor
     f.input :picture, :as => :file, :hint => f.image_tag(f.lecture.picture.url(:medium)) 
   end
-  f.inputs "Chapters", :class => 'inputs expandable in' do
-    f.has_many :chapters, sortable: :number do |c|
+  f.inputs "Chapters", :class => "inputs expandable out hidden" do
+    f.has_many :chapters, sortable: :number, :class => "inputs expandable in" do |c|
       c.input :title
       c.input :description
       c.input :number
       c.input :total_duration
-      c.has_many :lessons, :class => 'inputs expandable in' do |d|
+      c.has_many :lessons, :class => 'inputs expandable out' do |d|
         d.input :etape
         d.input :title
         d.input :short_description
