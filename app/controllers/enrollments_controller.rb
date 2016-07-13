@@ -6,15 +6,18 @@ class EnrollmentsController < ApplicationController
 	def new
 		@lecture = Lecture.find(params[:lecture_id])
 		@enrollments = Enrollment.all
-		@enrollment = Enrollment.new
+		@enrollment = Enrollment.new(user_id: current_user.id, lecture_id: @lecture.id)
+		@disable_navbar = true 
+		@disable_footer = true	
+
 		if @enrollments.where(user_id: current_user.id, lecture_id: @lecture.id).present?
 			flash[:error] = "You're already enrolled to this class"
 	        redirect_to profile_path(current_user)
 	      else
 	        render :new
+
 		  end
-		@disable_navbar = true 
-		@disable_footer = true	
+
 	end
 
 	def show
@@ -35,26 +38,54 @@ class EnrollmentsController < ApplicationController
 		
 		@lecture = Lecture.find_by(params[:id])
 		@enrollment = Enrollment.new(enrollment_params)
-	    charge_error = nil
+		charge_error = nil
 
 	    if @enrollment.valid?
 	    begin
-  		@amount = params[:stripeAmount]
-	      customer = Stripe::Customer.create(
-	        :email => current_user.email,
-	        :card  => params[:stripeToken])
 
-	      charge = Stripe::Charge.create(
-	        :customer    => customer.id,
-	        :amount      => @amount,
-	        :description => 'Rails Stripe customer',
-	        :currency    => 'usd')
+	     # Amount in cents
+		  @amount = 9900
+		  @final_amount = @amount
 
-	   
+		  @code = params[:couponCode]
 
-	      rescue Stripe::CardError => e
-	      charge_error = e.message
-	      end
+		  if !@code.blank?
+		    @discount = get_discount(@code)
+
+		    if @discount.nil?
+		      flash[:error] = 'Coupon code is not valid or expired.'
+		      redirect_to new_charge_path
+		      return
+		    else
+		      @discount_amount = @amount * @discount
+		      @final_amount = @amount - @discount_amount.to_i
+		    end
+
+		    charge_metadata = {
+		      :coupon_code => @code,
+		      :coupon_discount => (@discount * 100).to_s + '%'
+		    }
+		  end
+
+		  charge_metadata ||= {}
+
+		  customer = Stripe::Customer.create(
+		    :email => params[:stripeEmail],
+		    :source  => params[:stripeToken]
+		  )
+		  Stripe::Charge.create(
+		    :customer    => customer.id,
+		    :amount      => @final_amount,
+		    :description => 'Rails Stripe customer',
+		    :currency    => 'usd',
+		    :metadata    => charge_metadata
+		  )
+		rescue Stripe::CardError => e
+		  flash[:error] = charge_error
+		  redirect_to new_charge_path
+		end
+
+		
 
 	    if charge_error
 	      flash[:error] = charge_error
@@ -78,7 +109,7 @@ class EnrollmentsController < ApplicationController
 	private
 
 		def enrollment_params 
-			params.require(:enrollment).permit(:user_id, :lecture_id, :amount)
+			params.require(:enrollment).permit(:user_id, :lecture_id)
 		end
 
 		def redirect_to_signup
@@ -87,6 +118,18 @@ class EnrollmentsController < ApplicationController
 				redirect_to new_user_registration_path
 			end
 		end
+
+		COUPONS = {
+  'RAVINGSAVINGS' => 0.20,
+  'SUMMERSALE' => 0.50
+}
+
+def get_discount(code)
+  # Normalize user input
+  code = code.gsub(/ +/, '')
+  code = code.upcase
+  COUPONS[code]
+end
 
 
 

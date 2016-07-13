@@ -18,6 +18,31 @@
       <div class="col-md-5">
         <div class="form-payment">
           <h3 class="weight600 center mb-40">One-off Payment</h3>
+
+
+          <%= form_for @enrollment do |f| %>
+  <% if flash[:error].present? %>
+    <div id="error_explanation">
+      <p><%= flash[:error] %></p>
+    </div>
+  <% end %>
+  <p>
+    <label class="amount">
+      <span>Amount: $99.00</span>
+    </label>
+  </p>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :lecture_id, value: @lecture.id %>
+  <p>
+    <%= label_tag(:couponCode, 'Coupon:') %>
+    <%= text_field_tag(:couponCode) %>
+  </p>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_test_jPUNWcSjJrzBvyPbzSJKmnyo"
+          data-description="Your Purchase"
+          data-locale="auto"></script>
+<% end %>
           
 
           <%= form_for @enrollment, :url => { :action => "create" }, :html => { :id => "payment-form" }  do |f| %>
