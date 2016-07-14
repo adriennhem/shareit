@@ -1,5 +1,5 @@
 ActiveAdmin.register Lesson do
-  permit_params :title, :descriptions, :vid, :etape, :short_description, :video_duration
+  permit_params :title, :descriptions, :vid, :etape, :short_description, :video_duration, :preview_link
   
   belongs_to :chapter
 
@@ -16,6 +16,7 @@ ActiveAdmin.register Lesson do
         f.input :etape
         f.input :title
         f.input :short_description
+        f.input :preview_link
         f.input :vid
         f.input :video_duration
         f.input :description, :as => :ckeditor

@@ -8,7 +8,7 @@ class UserLessonsController < ApplicationController
    		redirect_to [@lesson.lecture, @lesson.next] 
     else
       flash[:success] = "You have already completed this lesson"
-      redirect_to(:back)
+      redirect_to [@lesson.lecture, @lesson.next] 
     end
   end
 

@@ -40,9 +40,9 @@ ActiveAdmin.register Lecture do
  
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  permit_params :amount, :title, :description, :created_at, :updated_at, :category_id, :name, :picture_file_name, :teacher_id, :video, :permalink, :published,
+  permit_params :learn_description, :practice_description, :hired_description, :amount, :title, :description, :created_at, :updated_at, :category_id, :name, :picture_file_name, :teacher_id, :video, :permalink, :published,
   :picture, :waiting_list, :picture_content_type, :picture_file_size, :picture_updated_at, :learning_outcomes, :long_description, :teacher_description, :background_image,
-  chapters_attributes: [:id, :title, :description, :number, :total_duration, lessons_attributes: [:id, :title, :description, :vid, :etape, :short_description, :video_duration]]
+  chapters_attributes: [:id, :title, :description, :number, :total_duration, lessons_attributes: [:id, :title, :description, :vid, :etape, :short_description, :video_duration, :preview_link]]
 
   # or
   #
@@ -53,7 +53,8 @@ ActiveAdmin.register Lecture do
   # end
 
   form :html => { :enctype => "multipart/form-data"} do |f|
-  f.inputs "Lectures", :multipart => true, :class => 'inputs expandable out' do
+  button "Main Lecture Settings", class: 'btn-toggle', type: 'button'    
+  f.inputs "Lectures", :multipart => true, :class => 'lecture-inputs' do
     f.input :published 
     f.input :waiting_list
     f.input :category_id
@@ -61,23 +62,28 @@ ActiveAdmin.register Lecture do
     f.input :amount
     f.input :title
     f.input :permalink
-    f.input :video 
+    f.input :video, input_html: {rows: 1} 
     f.input :background_image
     f.input :teacher_description, as: :ckeditor
-    f.input :description
+    f.input :description, input_html: {rows: 2}
+    f.input :learn_description, as: :ckeditor
+    f.input :practice_description, as: :ckeditor 
+    f.input :hired_description, as: :ckeditor  
     f.input :long_description, as: :ckeditor
     f.input :learning_outcomes, as: :ckeditor
     f.input :picture, :as => :file, :hint => f.image_tag(f.lecture.picture.url(:medium)) 
   end
-  f.inputs "Chapters", :class => "inputs expandable out hidden" do
+  f.inputs "Chapters", :class => "inputs" do
     f.has_many :chapters, sortable: :number, :class => "inputs expandable in" do |c|
       c.input :title
-      c.input :description
+      c.input :description, input_html: {rows: 2} 
       c.input :number
       c.input :total_duration
       c.has_many :lessons, :class => 'inputs expandable out' do |d|
+      button "toggle", class: 'btn-toggle', type: 'button'
         d.input :etape
         d.input :title
+        d.input :preview_link
         d.input :short_description
         d.input :vid
         d.input :video_duration

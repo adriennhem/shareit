@@ -2,92 +2,87 @@
       <%= render 'layouts/navbar_blog' %>
  <% end %>
 
-
-
 <h1 class="center uppercase bezier"><%= @lecture.title %></h1>
-	
-<div class="landing-header-video center margin-s">
-	<%= @lecture.video.html_safe %>
+
+<div class="row">
+<div class="landing-header-video margin-s col-md-12 clear">
+	<div class="col-md-7  center">
+		<%= @lecture.video.html_safe %>
+	</div>
+	<div class="col-md-5">
+		<h2>Adrien Nhem</h2>
+		<p><%= @lecture.teacher.biography %></p>
+	</div>
+</div>
 </div>
 
 <div class="row landing-navbar-container">
-<div class="container-fluid ">
-	<ul class="landing-navbar nav">
-		<li><a href="#learn">1. Learn</a></li>
-		<li><a href="#practice">2. Practice</a></li>
-		<li><a href="#hired">3. Get Hired</a></li>
-	</ul>
-	<%= link_to 'Enroll Now for $99', new_enrollment_path(controller: 'enrollment', action: 'new', lecture_id: @lecture.id, amount: @lecture.amount), class: "btn btn-medium btn-bezier pull-right" %>
-</div>
+	<div class="container-fluid ">
+		<ul class="landing-navbar nav">
+			<li><a href="#learn">1. Learn</a></li>
+			<li><a href="#practice">2. Practice</a></li>
+			<li><a href="#hired">3. Get Hired</a></li>
+		</ul>
+		<%= link_to 'Enroll Now for $99', new_enrollment_path(controller: 'enrollment', action: 'new', lecture_id: @lecture.id, amount: @lecture.amount), class: "btn btn-medium btn-bezier pull-right" %>
+	</div>
 </div>
 
-
+<!-- START LANDING BODY -->
 <div class="landing-body">
+	<div id="learn" class="padding-top-xxl">
+		<h2 class="mb-60 bezier">1. Learn</h2>
+			<div class="landing-body-content">
+				<div class="learn-body clear">
+				<%= @lecture.learn_description.html_safe %>
+				<h2 class="bezier margin-s">Curriculum</h2>
+				</div>
 
+				
+				 <% @lecture.chapters.each do |chapter| %>
+					<h2 class="lecture-description-chapter"><%= chapter.title %></h2>
+					<% chapter.lessons.each do |lesson| %>
+						<div class="col-md-12 page-header">
+							<p class="lecture-description-lesson"><%= lesson.title %> <span><%= lesson.video_duration %>
+							<% if lesson.preview_link.present? %>
+								<%= lesson.preview_link.html_safe %>
+								<% end %> </p>			
+						</div>
+					<% end %>
+				<% end %>
+				<!-- END OF CHAPTER LOOP -->
+				</div>
 
-<div id="learn" class="padding-top-xxl">
-	<h2 class="mb-60">1. Learn</h2>
-		<div class="learn-body">
-
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet recusandae iusto distinctio ea, delectus beatae vitae alias repudiandae hic quasi voluptatem numquam, iure consectetur pariatur minima soluta blanditiis atque, impedit.
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas repudiandae, obcaecati aspernatur magni, aliquid explicabo laboriosam, hic placeat deleniti sed quae autem. Cum dicta hic quibusdam, illo numquam voluptates.
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet recusandae iusto distinctio ea, delectus beatae vitae alias repudiandae hic quasi voluptatem numquam, iure consectetur pariatur minima soluta blanditiis atque, impedit.
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas repudiandae, obcaecati aspernatur magni, aliquid explicabo laboriosam, hic placeat deleniti sed quae autem. Cum dicta hic quibusdam, illo numquam voluptates.
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet recusandae iusto distinctio ea, delectus beatae vitae alias repudiandae hic quasi voluptatem numquam, iure consectetur pariatur minima soluta blanditiis atque, impedit.
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas repudiandae, obcaecati aspernatur magni, aliquid explicabo laboriosam, hic placeat deleniti sed quae autem. Cum dicta hic quibusdam, illo numquam voluptates.
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet recusandae iusto distinctio ea, delectus beatae vitae alias repudiandae hic quasi voluptatem numquam, iure consectetur pariatur minima soluta blanditiis atque, impedit.
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas repudiandae, obcaecati aspernatur magni, aliquid explicabo laboriosam, hic placeat deleniti sed quae autem. Cum dicta hic quibusdam, illo numquam voluptates.
-</div>
-		
 	</div>
 
-<div id="practice" class="padding-top-xxl">
-	<h2 class="mb-60">2. Practice</h2>
-		<div class="learn-body">
-
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet recusandae iusto distinctio ea, delectus beatae vitae alias repudiandae hic quasi voluptatem numquam, iure consectetur pariatur minima soluta blanditiis atque, impedit.
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas repudiandae, obcaecati aspernatur magni, aliquid explicabo laboriosam, hic placeat deleniti sed quae autem. Cum dicta hic quibusdam, illo numquam voluptates.
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet recusandae iusto distinctio ea, delectus beatae vitae alias repudiandae hic quasi voluptatem numquam, iure consectetur pariatur minima soluta blanditiis atque, impedit.
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas repudiandae, obcaecati aspernatur magni, aliquid explicabo laboriosam, hic placeat deleniti sed quae autem. Cum dicta hic quibusdam, illo numquam voluptates.
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet recusandae iusto distinctio ea, delectus beatae vitae alias repudiandae hic quasi voluptatem numquam, iure consectetur pariatur minima soluta blanditiis atque, impedit.
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas repudiandae, obcaecati aspernatur magni, aliquid explicabo laboriosam, hic placeat deleniti sed quae autem. Cum dicta hic quibusdam, illo numquam voluptates.
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet recusandae iusto distinctio ea, delectus beatae vitae alias repudiandae hic quasi voluptatem numquam, iure consectetur pariatur minima soluta blanditiis atque, impedit.
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas repudiandae, obcaecati aspernatur magni, aliquid explicabo laboriosam, hic placeat deleniti sed quae autem. Cum dicta hic quibusdam, illo numquam voluptates.
-</div>
-		
+	<div id="practice" class="padding-top-xxl">
+		<h2 class="mb-60 bezier">2. Practice</h2>
+			<div class="landing-body-content">
+				<%= @lecture.practice_description.html_safe %>
+				<h2>Latest Challenge for this class</h2>
+			</div>
 	</div>
 
-<div id="hired" class="padding-top-xxl mb-60">
-	<h2 class="mb-60">3. Hired</h2>
-		<div class="learn-body">
-
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet recusandae iusto distinctio ea, delectus beatae vitae alias repudiandae hic quasi voluptatem numquam, iure consectetur pariatur minima soluta blanditiis atque, impedit.
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas repudiandae, obcaecati aspernatur magni, aliquid explicabo laboriosam, hic placeat deleniti sed quae autem. Cum dicta hic quibusdam, illo numquam voluptates.
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet recusandae iusto distinctio ea, delectus beatae vitae alias repudiandae hic quasi voluptatem numquam, iure consectetur pariatur minima soluta blanditiis atque, impedit.
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas repudiandae, obcaecati aspernatur magni, aliquid explicabo laboriosam, hic placeat deleniti sed quae autem. Cum dicta hic quibusdam, illo numquam voluptates.
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet recusandae iusto distinctio ea, delectus beatae vitae alias repudiandae hic quasi voluptatem numquam, iure consectetur pariatur minima soluta blanditiis atque, impedit.
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas repudiandae, obcaecati aspernatur magni, aliquid explicabo laboriosam, hic placeat deleniti sed quae autem. Cum dicta hic quibusdam, illo numquam voluptates.
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet recusandae iusto distinctio ea, delectus beatae vitae alias repudiandae hic quasi voluptatem numquam, iure consectetur pariatur minima soluta blanditiis atque, impedit.
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptas repudiandae, obcaecati aspernatur magni, aliquid explicabo laboriosam, hic placeat deleniti sed quae autem. Cum dicta hic quibusdam, illo numquam voluptates.
-</div>
-		
+	<div id="hired" class="padding-top-xxl mb-60">
+		<h2 class="mb-60 bezier">3. Hired</h2>
+			<div class="landing-body-content">
+				<%= @lecture.hired_description.html_safe %>
+			</div>			
 	</div>
-
-
 </div>
+<!-- END LANDING BODY -->
+
+
 
 <div class="row" id="enroll-band" data-no-turbolink>
 	<div class="container-fluid">
 		<div class="col-md-12">
 			<div class="col-md-9"><h2>ENROLL TODAY FOR $99!       
 			<%= link_to "Enroll Now", new_enrollment_path(controller: 'enrollment', action: 'new', lecture_id: @lecture.id, amount: @lecture.amount), class: "btn btn-large btn-bezier" %></h2> 
-	
 			</div>
-
-		
-		
 		</div>
 	</div>
 </div>
+
+
 
 
