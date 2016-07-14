@@ -6,4 +6,12 @@ class Lesson < ActiveRecord::Base
 
 	validates :etape, uniqueness: true
 
+def next
+  self.class.where("id > ?", self.id).where("etape > ?", etape).first
+end
+
+def previous
+   self.class.where("id > ?", self.id).where("etape < ?", etape).last
+ end
+
 end

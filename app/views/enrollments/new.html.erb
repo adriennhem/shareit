@@ -33,6 +33,7 @@
   </p>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.hidden_field :lecture_id, value: @lecture.id %>
+  <%= f.hidden_field :amount, value: @amount %>
   <p>
     <%= label_tag(:couponCode, 'Coupon:') %>
     <%= text_field_tag(:couponCode) %>

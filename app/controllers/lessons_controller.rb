@@ -14,6 +14,7 @@ class LessonsController < ApplicationController
     # @next = @lecture.lessons.where("etape > ?", params[:etape]).order(:etape).first 
   end
 
+
   # POST /lessons.json
   def create
     @chapter = Chapter.find(params[:chapter_id])

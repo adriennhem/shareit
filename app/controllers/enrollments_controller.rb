@@ -76,7 +76,7 @@ class EnrollmentsController < ApplicationController
 		  Stripe::Charge.create(
 		    :customer    => customer.id,
 		    :amount      => @final_amount,
-		    :description => 'Rails Stripe customer',
+		    :description => @lecture.title,
 		    :currency    => 'usd',
 		    :metadata    => charge_metadata
 		  )
@@ -109,7 +109,7 @@ class EnrollmentsController < ApplicationController
 	private
 
 		def enrollment_params 
-			params.require(:enrollment).permit(:user_id, :lecture_id)
+			params.require(:enrollment).permit(:user_id, :lecture_id, :amount)
 		end
 
 		def redirect_to_signup
