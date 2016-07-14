@@ -16,4 +16,5 @@ class Project < ActiveRecord::Base
 	def mark_completed!
  	 self.update_attribute(:completed, true)
 	end
+
 end
