@@ -42,7 +42,7 @@ ActiveAdmin.register Lecture do
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   permit_params :learn_description, :practice_description, :hired_description, :amount, :title, :description, :created_at, :updated_at, :category_id, :name, :picture_file_name, :teacher_id, :video, :permalink, :published,
   :picture, :waiting_list, :picture_content_type, :picture_file_size, :picture_updated_at, :learning_outcomes, :long_description, :teacher_description, :background_image,
-  chapters_attributes: [:id, :title, :description, :number, :total_duration, lessons_attributes: [:id, :title, :description, :vid, :etape, :short_description, :video_duration, :preview_link]]
+  chapters_attributes: [:id, :title, :description, :number, :total_duration, :_destroy, lessons_attributes: [:id, :title, :description, :vid, :etape, :short_description, :video_duration, :preview_link, :_destroy]]
 
   # or
   #
@@ -52,7 +52,8 @@ ActiveAdmin.register Lecture do
   #   permitted
   # end
 
-  form :html => { :enctype => "multipart/form-data"} do |f|
+  form :html => { :enctype => "multipart/form-data", class: 'form-lecture'} do |f|
+  panel "Main Lecture Settings", class: "lecture-main-settings" do 
   button "Main Lecture Settings", class: 'btn-toggle', type: 'button'    
   f.inputs "Lectures", :multipart => true, :class => 'lecture-inputs' do
     f.input :published 
@@ -73,22 +74,24 @@ ActiveAdmin.register Lecture do
     f.input :learning_outcomes, as: :ckeditor
     f.input :picture, :as => :file, :hint => f.image_tag(f.lecture.picture.url(:medium)) 
   end
-  f.inputs "Chapters", :class => "inputs" do
+  end
+  panel "Chapters" do
+  f.inputs "Chapters", :class => "inputs aa-box-chapters" do
     f.has_many :chapters, sortable: :number, :class => "inputs expandable in" do |c|
       c.input :title
       c.input :description, input_html: {rows: 2} 
       c.input :number
       c.input :total_duration
-      c.has_many :lessons, :class => 'inputs expandable out' do |d|
-      button "toggle", class: 'btn-toggle', type: 'button'
+      c.has_many :lessons, :class => 'inputs expandable out' do |d|   
         d.input :etape
         d.input :title
         d.input :preview_link
-        d.input :short_description
-        d.input :vid
+        d.input :short_description, input_html: {rows: 2} 
+        d.input :vid, input_html: {rows: 2} 
         d.input :video_duration
         d.input :description, :as => :ckeditor
       end
+    end
     end
   end
 

@@ -10,9 +10,9 @@
         <h3 class="weight600 center">What you'll get for $99</h3>
         <ul class="margin-s benefits-list">
           <li class="mb-20">Get access to the course for one year</li>
-          <li>Take part to one professional projects to discover the industry (if available)</li>
+          <li>Get Access to one challenge related to the course (if available)</li>
         </ul>
-        <p class="ps-payment margin-s">P.S: We charge you only for the class</p>
+        <p class="ps-payment margin-s">P.S: We charge you only for the course</p>
       </div>
 
       <div class="col-md-5">
@@ -28,7 +28,7 @@
   <% end %>
   <p>
     <label class="amount">
-      <span>Amount: $99.00</span>
+      <span>You'll pay: $99.00</span>
     </label>
   </p>
   <%= f.hidden_field :user_id, value: current_user.id %>
@@ -46,87 +46,7 @@
 <% end %>
           
 
-          <%= form_for @enrollment, :url => { :action => "create" }, :html => { :id => "payment-form" }  do |f| %>
-
-            <span class="payment-errors"></span>
-            <%= f.hidden_field :lecture_id, { value: params[:lecture_id].to_i } %>
-            <%= f.hidden_field :user_id, { value: current_user.id } %>
-         
-
-
-            <div class="form-row">
-              <label>
-                <span>Card Number</span> <i class="fa fa-cc-amex"></i> <i class="fa fa-cc-mastercard"></i> <i class="fa fa-cc-visa"></i> <i class="fa fa-cc-stripe"></i>
-                <input value="4242424242424242" type="text" size="35" data-stripe="number"/>
-              </label>
-            </div>
-
-            <div class="form-row margin-xs">
-              <label>
-                <span>CVC</span>
-                <input value="123" type="text" size="4" data-stripe="cvc"/>
-              </label>
-              <div class="float-right">
-              <label>
-                <span>Expiration (MM/YYYY)</span>
-                <input value="09" type="text" size="3" data-stripe="exp-month"/>
-              </label>
-              <span> / </span>
-              <input value="2020" type="text" size="5" data-stripe="exp-year"/>
-            </div>
-            </div>
-
-            
-
-
-
-            <button class="btn-success btn btn-large margin-xs" type="submit">Submit Payment</button>
-
-
-
-
-            <script type="text/javascript">
-            // This identifies your website in the createToken call below
-            Stripe.setPublishableKey('pk_test_jPUNWcSjJrzBvyPbzSJKmnyo');
-            // ...
-
-            jQuery(function($) {
-            $('#payment-form').submit(function(event) {
-              var $form = $(this);
-
-              // Disable the submit button to prevent repeated clicks
-              $form.find('button').prop('disabled', true);
-
-              Stripe.card.createToken($form, stripeResponseHandler);
-
-              // Prevent the form from submitting with the default action
-              return false;
-            });
-
-            function stripeResponseHandler(status, response) {
-            var $form = $('#payment-form');
-
-            if (response.error) {
-              // Show the errors on the form
-              $form.find('.payment-errors').text(response.error.message);
-              $form.find('button').prop('disabled', false);
-            } else {
-              // response contains id and card, which contains additional card details
-              var token = response.id;
-              // Insert the token into the form so it gets submitted to the server
-              $form.append($('<input type="hidden" name="stripeToken" />').val(token));
-              $form.append($('<input type="hidden" value="<%= @lecture.amount %>" name="stripeAmount" />'));
-              $form.append($('<%= f.hidden_field :amount, { value: @lecture.amount }  %>'));
-              // and submit
-              $form.get(0).submit();
-            }
-          };
-          });
-
-
-            </script>
-
-            <% end %>
+        
         </div>
       </div>
 

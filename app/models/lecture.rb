@@ -7,8 +7,8 @@
 
 	has_many :outlines
 	has_many :chapters
-	has_many :lessons, through: :chapters, dependent: :destroy 
-	accepts_nested_attributes_for :chapters
+	has_many :lessons, through: :chapters
+	accepts_nested_attributes_for :chapters, allow_destroy: true
 
 	# For course user relationship 
 	has_many :enrollments 
