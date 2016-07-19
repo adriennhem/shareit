@@ -6,7 +6,7 @@
 	belongs_to :teacher
 
 	has_many :outlines
-	has_many :chapters
+	has_many :chapters, dependent: :destroy
 	has_many :lessons, through: :chapters
 	accepts_nested_attributes_for :chapters, allow_destroy: true
 

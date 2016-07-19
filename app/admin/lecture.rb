@@ -75,14 +75,15 @@ ActiveAdmin.register Lecture do
     f.input :picture, :as => :file, :hint => f.image_tag(f.lecture.picture.url(:medium)) 
   end
   end
-  panel "Chapters" do
+  
   f.inputs "Chapters", :class => "inputs aa-box-chapters" do
     f.has_many :chapters, sortable: :number, :class => "inputs expandable in" do |c|
       c.input :title
       c.input :description, input_html: {rows: 2} 
       c.input :number
       c.input :total_duration
-      c.has_many :lessons, :class => 'inputs expandable out' do |d|   
+      c.input :_destroy, :as => :boolean, :required => false, :label => 'Remove'
+      c.has_many :lessons, :class => 'inputs expandable out inputs-lesson' do |d|   
         d.input :etape
         d.input :title
         d.input :preview_link
@@ -90,10 +91,10 @@ ActiveAdmin.register Lecture do
         d.input :vid, input_html: {rows: 2} 
         d.input :video_duration
         d.input :description, :as => :ckeditor
+        d.input :_destroy, :as => :boolean, :required => false, :label => 'Remove'
       end
     end
     end
-  end
 
   f.actions
 end

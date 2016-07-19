@@ -14,6 +14,16 @@ ActiveAdmin.register Chapter do
       f.input :description
       f.input :number
       f.input :total_duration
+      f.has_many :lessons, :class => 'inputs expandable out inputs-lesson' do |d|   
+        d.input :etape
+        d.input :title
+        d.input :preview_link
+        d.input :short_description, input_html: {rows: 2} 
+        d.input :vid, input_html: {rows: 2} 
+        d.input :video_duration
+        d.input :description, :as => :ckeditor
+        d.input :_destroy, :as => :boolean, :required => false, :label => 'Remove'
+      end
     end
   f.actions
 end
