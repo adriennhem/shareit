@@ -4,7 +4,7 @@ ActiveAdmin.register Chapter do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :id, :title, :description, :number, :total_duration, lessons_attributes: [:id, :title, :description, :vid, :etape, :short_description, :video_duration]
+  permit_params :id, :title, :description, :number, :total_duration, lessons_attributes: [:id, :title, :description, :vid, :etape, :short_description, :video_duration, :preview_link]
   #
   # or
   #
@@ -14,7 +14,8 @@ ActiveAdmin.register Chapter do
       f.input :description
       f.input :number
       f.input :total_duration
-      f.has_many :lessons, :class => 'inputs expandable out inputs-lesson' do |d|   
+    end
+      f.has_many :lessons, :class => 'inputs expandable out inputs-lesson' do |d| 
         d.input :etape
         d.input :title
         d.input :preview_link
@@ -24,7 +25,6 @@ ActiveAdmin.register Chapter do
         d.input :description, :as => :ckeditor
         d.input :_destroy, :as => :boolean, :required => false, :label => 'Remove'
       end
-    end
   f.actions
 end
 
