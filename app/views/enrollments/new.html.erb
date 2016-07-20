@@ -40,7 +40,7 @@
   </p>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="pk_test_jPUNWcSjJrzBvyPbzSJKmnyo"
+          data-key="<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>"
           data-description="Your Purchase"
           data-locale="auto"></script>
 <% end %>
