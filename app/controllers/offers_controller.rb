@@ -29,7 +29,7 @@ def destroy
     @project = Project.find(params[:project_id])
     @offer = @project.offers.where(project_id: @project.id)
     @offer.destroy_all
-    redirect_to @project, :notice => "Your Project has been successfully republished"
+    redirect_to profile_path(current_user), :notice => "Your Project has been successfully republished"
 end
 
 private

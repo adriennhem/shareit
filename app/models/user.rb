@@ -39,4 +39,9 @@ class User < ActiveRecord::Base
     self.offers_made.include?(project)
   end
 
+
+  def completed_lecture?(lecture)
+    self.user_lessons.include?(lecture)
+  end
+
 end

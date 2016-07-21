@@ -31,5 +31,14 @@
       uncompleted_lessons_in_course = self.lessons - user.user_lessons
       100 * ( uncompleted_lessons_in_course.count.to_f / self.lessons.count.to_f)
     end
+
+    def lessons_completed_by(user)
+    	self.lessons.count.to_i - user.user_lessons.count.to_i
+    end
+
+    def lecture_completed?(user)
+    	self.lessons_completed_by(user) == 0
+    end
+
     
 end

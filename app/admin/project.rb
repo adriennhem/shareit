@@ -12,7 +12,7 @@ end
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :approved
+permit_params :approved, :lecture_id, :completed, :company_name, :phone_number, :body, :user_id, :title, :lecture_id, :blurb, :location, :industry, :company_description, :project_context, :deadline, :goal, :main_contact, :main_contact_email
 #
 # or
 #

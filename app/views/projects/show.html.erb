@@ -13,7 +13,7 @@
 			<i class="fa fa-pencil-square-o"></i> Edit
 		<% end %> 
 	<% end %>
-	<% if policy(@project).is_student? %>
+	<% if policy(@project).is_student? && @project.offers.empty? %>
 		<%= simple_form_for([@project, @project.offers.build]) do |f| %>
   <%= f.error_notification %>
   	  <%= f.hidden_field :user_id, { value: "@user.id" } %>
