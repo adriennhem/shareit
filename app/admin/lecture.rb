@@ -76,7 +76,7 @@ ActiveAdmin.register Lecture do
       c.input :number
       c.input :total_duration
       c.input :_destroy, :as => :boolean, :required => false, :label => 'Remove'
-      c.has_many :lessons, sortable: :etape, :class => 'inputs expandable out inputs-lesson' do |d|   
+      c.has_many :lessons, :class => 'inputs expandable out inputs-lesson' do |d|   
         d.input :etape
         d.input :title
         d.input :preview_link
