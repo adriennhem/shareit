@@ -33,9 +33,6 @@ ActiveAdmin.register Lecture do
       end
     end
   end
-
-
-
   
  
   # See permitted parameters documentation:
@@ -57,22 +54,18 @@ ActiveAdmin.register Lecture do
   button "Main Lecture Settings", class: 'btn-toggle', type: 'button'    
   f.inputs "Lectures", :multipart => true, :class => 'lecture-inputs' do
     f.input :published 
+    f.input :picture, :as => :file, :hint => f.image_tag(f.lecture.picture.url(:medium)) 
     f.input :waiting_list
-    f.input :category_id
+    f.input :category_id, as: :select, collection: Category.all.map {|t| [t.name, t.id]}
     f.input :teacher_id, label: 'Teacher', as: :select, collection: Teacher.all.map {|t| [t.name, t.id]}
     f.input :amount
     f.input :title
     f.input :permalink
     f.input :video, input_html: {rows: 1} 
-    f.input :background_image
-    f.input :teacher_description, as: :ckeditor
     f.input :description, input_html: {rows: 2}
     f.input :learn_description, as: :ckeditor
     f.input :practice_description, as: :ckeditor 
     f.input :hired_description, as: :ckeditor  
-    f.input :long_description, as: :ckeditor
-    f.input :learning_outcomes, as: :ckeditor
-    f.input :picture, :as => :file, :hint => f.image_tag(f.lecture.picture.url(:medium)) 
   end
   end
   
@@ -83,7 +76,7 @@ ActiveAdmin.register Lecture do
       c.input :number
       c.input :total_duration
       c.input :_destroy, :as => :boolean, :required => false, :label => 'Remove'
-      c.has_many :lessons, :class => 'inputs expandable out inputs-lesson' do |d|   
+      c.has_many :lessons, sortable: :etape, :class => 'inputs expandable out inputs-lesson' do |d|   
         d.input :etape
         d.input :title
         d.input :preview_link

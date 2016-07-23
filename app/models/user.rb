@@ -40,8 +40,8 @@ class User < ActiveRecord::Base
   end
 
 
-  def completed_lecture?(lecture)
-    self.user_lessons.include?(lecture)
+  def completed_lecture?(lesson)
+    self.user_lessons.include?(lesson)
   end
 
 end

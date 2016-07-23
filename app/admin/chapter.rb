@@ -1,5 +1,4 @@
 ActiveAdmin.register Chapter do
-
   belongs_to :lecture
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -15,7 +14,7 @@ ActiveAdmin.register Chapter do
       f.input :number
       f.input :total_duration
     end
-      f.has_many :lessons, :class => 'inputs expandable out inputs-lesson' do |d| 
+      f.has_many :lessons, sortable: :etape, :class => 'inputs expandable out inputs-lesson' do |d| 
         d.input :etape
         d.input :title
         d.input :preview_link
