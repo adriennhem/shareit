@@ -19,7 +19,7 @@
 	<div class="lecture mb-60 width960">
 
 
-	   <% @lecture.chapters.each do |chapter| %>
+	   <% @chapters.each do |chapter| %>
 	   <div class="chapter-section">
 			<h2 class="title-chapter">
 				<%= chapter.title %><span class="chapter-duration"><%= chapter.total_duration %> minutes</span>
@@ -27,7 +27,7 @@
 			</div>
 			<div class="row">
 				<ul class="list-lesson">
-					<% chapter.lessons.each do |lesson| %>
+					<% chapter.lessons.sort { | a, b | a.etape <=> b.etape }.each do |lesson| %>
 						<div class="section-lesson col-md-12">
 							<%= link_to [@lecture, lesson] do %>
 								<div class="section-left-lesson col-md-10">
