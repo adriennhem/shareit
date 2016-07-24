@@ -2,17 +2,17 @@
   <%= render 'layouts/sidebar' %>
 <% end %>
 
-<div class="row" id="dashboard-header" data-no-turbolink>
-	<h1 class="dashboard-title"><%= @lesson.title %></h1>
+<div class="row" id="dashboard-header">
+
+	<h1 class="dashboard-title"><%= link_to @lesson.title, @lecture, class: 'bezier' %></h1>
 	
-    <%= link_to 'Mark as complete', user_lessons_path(@user_lesson, user_lesson: {user_id: current_user.id, lesson_id: @lesson.id}, lesson_id: @lesson.id), :method => :post, class: 'btn btn-bezier pull-right' %>
-  
-
-
-     
+    <%= link_to 'Mark as complete', user_lessons_path(@user_lesson, user_lesson: {user_id: current_user.id, lesson_id: @lesson.id}, lesson_id: @lesson.id), :method => :post, class: 'complete-button btn btn-bezier pull-right' %>     
 </div>
 
 <div class="row" id="show-lesson">
+
+
+
     <div class="margin-s lesson-video">
         <%= @lesson.vid.html_safe %>
     </div>
