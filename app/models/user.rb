@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  devise :timeoutable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   enum role: {student: 1, company: 2, author: 3}
