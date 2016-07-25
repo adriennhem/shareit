@@ -4,7 +4,7 @@
 
 <div class="row" id="dashboard-header" data-no-turbolink>
 
-	<h1 class="dashboard-title"><%= @lecture.title %> </h1>
+	<h1 class="dashboard-title bezier"><%= @lecture.title %> </h1>
 
 	
 </div>
@@ -32,7 +32,7 @@
 							<%= link_to [@lecture, lesson] do %>
 								<div class="section-left-lesson col-md-10">
 									<h3><%= lesson.title %> <span><%= lesson.video_duration %></span></h3>
-									<p class="hello"><%= truncate(lesson.short_description, length: 70 ) %></p>
+									<p class="hello"><%= lesson.short_description %></p>
 								</div>
 								<div class="section-right-lesson col-md-2">
 									<% lesson.user_lessons.where(user_id: current_user.id).each do |f|  %>
