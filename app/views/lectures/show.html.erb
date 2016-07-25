@@ -52,8 +52,7 @@
 
 <!-- end row#show-lecture -->
 
-			
-<% if @lecture.lecture_completed?(current_user) %>
+	<% if @lecture.lecture_completed?(current_user) %>
 
 	
 		<div class="chapter-section">
@@ -72,7 +71,7 @@
 
 
 
-<div class="unlocked margin-s">
+<div class="unlocked">
 <h2>Unlocked challenges!</h2>
 	<% @projects.each do |project| %> 
 		<%= link_to project do %>
@@ -89,15 +88,16 @@
 <% else %>
 <div class="row">
 	<div class="locked">
-		<h2 class="locked margin-s"><i class="fa fa-lock"></i> Complete this course to unlock challenges</h2>
+		<h2 class="margin-s"><i class="fa fa-lock"></i> Complete this course to unlock challenges</h2>
 	</div>
 </div>
 	
 <% end %>
 		
 
-	</div>
+		
 
+	</div>
 
 
 
