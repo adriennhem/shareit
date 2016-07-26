@@ -1,15 +1,16 @@
 <div class="row section-course">
 	<div class="center mb-150">
-	<h2 class="bezier uppercase">Start Learning Now</h2>
-	    	
+	<h2 class="bezier uppercase">Start Learning Now</h2> 	
 	         <div class="home-course-box dashboard-student-box">
 				<%= image_tag(@lecture.try(:picture).try(:url)) %>
 		        <h3 class="center"><%= @lecture.try(:title) %></h3> 
 		        <p class="center by-teacher">by <%= @lecture.try(:teacher).try(:name) %></p>
-		    
-	
+				<% if @lecture.published? %>
+					<%= link_to "Enroll Now", lecture_description_path(@lecture), class: "btn btn-medium btn-bezier mb-40" %>
+				<% else %>
 			        <%= link_to "Join The Waiting List", "#{@lecture.try(:waiting_list)}", class: "btn btn-medium btn-bezier mb-40" %> 
 
+			    <% end %>
 		</div>
 	</div>
 </div>
