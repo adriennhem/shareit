@@ -7,7 +7,7 @@ class Lesson < ActiveRecord::Base
 	validates :etape, uniqueness: true
 
 	def next
-    	self.class.where("etape > ?", self.etape).first
+    	self.where("etape > ?", self.etape).first
   	end
 
 	def previous
