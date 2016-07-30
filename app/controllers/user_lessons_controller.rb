@@ -1,7 +1,7 @@
 class UserLessonsController < ApplicationController
 
   def create
-    @lesson = Lesson.find_by_id(params[:etape])
+    @lesson = Lesson.find_by_id(params[:lesson_id])
     @user_lesson = UserLesson.create(user_lesson_params)
     if @user_lesson.save
       flash[:success] = "You rock! Keep up ;)"
