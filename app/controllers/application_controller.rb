@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
     :picture
   )}
     devise_parameter_sanitizer.for(:sign_up) << :role 
-
+    devise_parameter_sanitizer.for(:sign_up) << :name 
   end
 
   def layout_by_resource

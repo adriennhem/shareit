@@ -45,4 +45,8 @@ class User < ActiveRecord::Base
     self.user_lessons.include?(lesson)
   end
 
+  def latest_completed_lesson
+    self.user_lessons.order(created_at: :desc).first
+  end
+
 end

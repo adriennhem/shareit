@@ -29,7 +29,6 @@ gem 'activeadmin_expandable_inputs'
 gem 'stripe'
 gem 'receipts'
 gem 'wicked_pdf'
-gem 'wkhtmltopdf-binary'
 
 # Video background
 gem 'vider', github: 'wazery/vider'
@@ -83,6 +82,7 @@ gem 'sqlite3', group: :development
 group :production do 
 	gem 'rails_12factor'
 	gem 'pg'
+  gem 'wkhtmltopdf-heroku'
   
 end
 
@@ -90,6 +90,7 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'wkhtmltopdf-binary-edge', '~> 0.12.2.1'
 
   # Rspec test 
   gem 'rspec-rails', '~>3.0'

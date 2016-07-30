@@ -27,7 +27,9 @@ class EnrollmentsController < ApplicationController
 	        send_data @enrollment.receipt.render,
 	          filename: "#{@enrollment.created_at.strftime("%Y-%m-%d")}-workshopr-receipt.pdf",
 	          type: "application/pdf",
-	          disposition: :inline
+	          disposition: :inline,
+	          orientation: 'Landscape',
+	          encoding: utf-8
 	      }
     end
   end

@@ -43,9 +43,11 @@ mixpanel.init("90c27582e3a07a77868efb56a4d2dbc7");
     <%= yield(:navbar) %>  
 <% end %>
 
+<% if notice.present? %>
 <div class="pages-message">
   <%= render 'layouts/messages'  %>
 </div>
+<% end %>
 
 <div class="container-fluid">
 <%= yield %>
