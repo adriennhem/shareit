@@ -155,7 +155,7 @@
 
    
 
-    <%= f.button :submit, "Launch your challenge!", class: "btn btn-bezier btn-project" %>
+    <%= f.button :submit, "Submit your challenge for review!", class: "btn btn-bezier btn-project" %>
 
 <% end %>
 
@@ -172,12 +172,15 @@
 
     });
 
+    $("input.datepicker").datepicker();
+
 google.maps.event.addDomListener(window, 'load', function () {
             var places = new google.maps.places.Autocomplete(document.getElementById('pac-input'));
             google.maps.event.addListener(places, 'place_changed', function () {
                 var place = places.getPlace();
             });
         });
+
 
 
 </script>
