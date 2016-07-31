@@ -7,12 +7,13 @@
 </script>
 
 
-<div class="row" id="dashboard-header" data-no-turbolink>
-	<h1 class="dashboard-title">Challenge Builder</h1>
+<div class="row" id="dashboard-header">
+	<h1 class="dashboard-title bezier">Challenge Builder</h1>
 </div>
 
 
-<h2 class="center new-project-title">Start Building A Challenge</h2>
+<h2 class="center new-project-title">Start Building A Challenge <%= link_to 'Need help?', 'http://www.twitter.com', target: '_blank', class: 'help-label label label-default' %></h2>
+
 
 	<%= render 'projects/form.html.erb' %>
 

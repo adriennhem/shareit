@@ -4,8 +4,8 @@
 
 <%= favicon_link_tag 'favicon2.ico' %>    
   <title> Workshopr - Learn. Practice. Get Hired! </title>
-	<script src="//use.typekit.net/dbo8byh.js"></script>
-	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <script src="//use.typekit.net/dbo8byh.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_PLACE_KEY'] %>&libraries=places"></script>
@@ -25,21 +25,28 @@ mixpanel.init("90c27582e3a07a77868efb56a4d2dbc7");</script><!-- end Mixpanel -->
 
 
 
+
+
+
 <% if content_for?(:navbar) %>
     <%= yield(:navbar) %>
 <% end %>
 
-
+<%= render 'layouts/messages_dashboard'  %>
   
 
 <div class="col-md-12 dashboard-padding-left">
   <div id="dashboard">
-   <%= render 'layouts/messages_dashboard'  %>
+   
     <%= yield %>
   </div>
 </div>  
                   
                       <%= render 'layouts/footer' unless @disable_footer %>
+
+
+
+                      
 </body>
 </html>
 

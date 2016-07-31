@@ -88,10 +88,8 @@ a:hover {
     border-radius: 0;
     height: 50px;
     z-index: 0;
-    max-width:1133px;
-    overflow: hidden;
-    padding-left: 37px;
     padding-bottom:5px;
+    text-align: center;
 }
 
 
@@ -251,6 +249,10 @@ span.help-inline {
 
 .hidden {
     display: none;
+}
+
+.block {
+    display: block;
 }
 
 
@@ -763,11 +765,17 @@ h3.panel-title {
     margin: 0 auto;
 }
 
-button.btn-project {
+.help-label {
+    font-size: 14px;
+    background-color: #ff0066;
     position: relative;
-    top: 20px;
-    margin: 3000px 20px;
+    left: 10px;
+    top: -5px;
 }
+
+
+
+
 
 .new-project-title {
     position: relative;
@@ -1100,6 +1108,10 @@ progress[value]::-webkit-progress-value {
 
 /* Dashboard company */
 
+.row-dashboard-home {
+    padding-left: 40px;
+}
+
 .row-projects {
     margin-top: 50px;
 }
@@ -1198,6 +1210,8 @@ a.edit-button {
     border: 1px solid #d5d9da;
     padding: 15px 15px;
     width: 303px;
+    position: relative;
+    left: 40px;
 }
 
 .panel-home-project h2 {

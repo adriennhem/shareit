@@ -1,0 +1,68 @@
+/* Bootstrap Variables */
+/* Navbar */
+.row-projects {
+  position: relative;
+  top: 70px; }
+
+#projects-empty h2 {
+  font-weight: 600; }
+
+/* Edit project */
+input.cked {
+  margin-top: 10px; }
+
+/* Project Show Box */
+.row-show-project {
+  position: relative;
+  top: 100px; }
+
+.container-project {
+  border: 1px solid #d5d9da;
+  margin: 0 auto;
+  width: 95%;
+  background: #fff;
+  padding-top: 30px; }
+
+.button-show-project {
+  border-radius: 20px; }
+
+.show-project-titles h2 {
+  font-size: 28px; }
+
+.show-project-titles h3 {
+  font-size: 26px; }
+
+.show-project-titles h4 {
+  font-size: 20px; }
+
+.row-show-project h5 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-top: 20px; }
+
+.row-show-project h6 {
+  font-size: 18px; }
+
+.container-project h2 {
+  color: #323232; }
+
+.container-project h3 {
+  color: #323232;
+  font-weight: 400; }
+
+.container-project-left {
+  padding-right: 40px; }
+
+.project-info-box {
+  margin-bottom: 10px;
+  background: #FAFAFA;
+  padding: 5px 20px;
+  border-radius: 5px; }
+
+.project-info-description {
+  color: #656565;
+  font-size: 18px; }
+
+.row-show-projects {
+  position: relative;
+  top: 100px; }
