@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   get '/change_locale/:locale', to: 'settings#change_locale', as: :change_locale
   
+
   resources :profiles
 
 get '/user_projects' => 'profiles#user_projects', as: :user_projects
@@ -33,14 +34,15 @@ get '/user_projects' => 'profiles#user_projects', as: :user_projects
 
   
 
-  get 'courses/:id', to: 'lectures#lecture_description', as: :lecture_description
 
   
   
   resources :enrollments
 
-  resources :lectures do 
-    resources :lessons
+
+  get 'courses/:id', to: 'lectures#lecture_description', as: :lecture_description
+  resources :lectures, only: [:index, :show] do 
+    resources :lessons, only: [:show]
   end
 
   resources :certificates 

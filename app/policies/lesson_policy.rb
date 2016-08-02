@@ -1,18 +1,5 @@
 class LessonPolicy < ApplicationPolicy
-	def create?
-		false
-	end
-
-	def update?
-		false
-	end
-
 	def show?
-		# lesson.lecture_id == lecture.id or LecturePolicy.new(lecture, Lecture.find(lesson.lecture.id)).show?
-	end
-
-
-	def edit?
-		false
+		user.enrollments.where(lecture_id: @record.chapter.lecture_id).exists?
 	end
 end
