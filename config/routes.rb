@@ -14,13 +14,6 @@ Rails.application.routes.draw do
   match '/contacts', to: 'contacts#new', via: 'get'
   resources "contacts", only: [:new, :create]
 
-  get '/help-center/rules' => 'pages#rules'
-
-  get '/help-center/project-guidelines' => 'pages#helpme'
-
-  get '/help-center' => 'pages#help_center'
-
-  get 'pages/signout'
 
   get '/complete/:id', to: 'projects#complete', as: 'complete'
 
@@ -46,7 +39,9 @@ get '/user_projects', to: 'profiles#user_projects', as: :user_projects
   get 'courses/:id', to: 'lectures#lecture_description', as: :lecture_description
 
   
-    resources :enrollments
+  
+  resources :enrollments
+
   resources :lectures do 
     resources :lessons
   end

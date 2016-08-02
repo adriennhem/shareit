@@ -3,10 +3,12 @@ before_action :authenticate_user!
 layout "dashboard"
 
 def show
-	@user = current_user
-	@enrollments = @user.enrollments.all
-	@projects = @user.project_selling.all
 	@disable_footer = true
+	if current_user.student?
+		@enrollments = current_user.enrollments.order(created_at: :asc)
+	else 
+		@projects = current_user.project_selling.order(created_at: :asc)
+	end
 end
 
 

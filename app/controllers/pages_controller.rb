@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-  	@lecture = Lecture.first
+  	@lecture = Lecture.last
     @disable_newsletter = true
   end
 
@@ -12,20 +12,4 @@ class PagesController < ApplicationController
 
   def contact
   end
-
-
-  def signout
-    render layout: 'devise_layout'
-  end
-
-  def blog
-  	@posts = Post.all
-  end
-
-  def rules
-  end
-
-  def help_center
-  end
-
 end

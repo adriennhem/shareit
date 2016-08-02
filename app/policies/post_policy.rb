@@ -1,7 +1,7 @@
 class PostPolicy < ApplicationPolicy
 
 	def show?
-		record.published?
+		record.published? || !user.nil? && user.admin?
 	end
 
 
@@ -9,14 +9,9 @@ class PostPolicy < ApplicationPolicy
 	    def resolve
 	      if !user.nil? && user.admin?
 	        scope.all
-	    	else
-	        scope.where(:published => true)
-		    end
 	      else
-	      scope.where(:published => true)
+	        scope.where(published: true)
+	      end
 	    end
-		end
-
-
-
+	end
 end

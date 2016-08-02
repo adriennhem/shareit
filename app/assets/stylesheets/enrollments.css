@@ -1,0 +1,43 @@
+/* Bootstrap Variables */
+/* Navbar */
+.payment-logo {
+  font-size: 21px;
+  color: #323232;
+  position: absolute;
+  top: 5%;
+  left: 5%; }
+
+.row-payment {
+  position: relative;
+  top: 100px; }
+
+.row-payment h2 {
+  font-size: 42px;
+  line-height: 1.5em; }
+
+.benefits-list {
+  font-size: 24px; }
+
+.ps-payment {
+  font-size: 18px; }
+
+.form-payment {
+  background: whitesmoke;
+  padding: 10px 10px;
+  color: #3c454e; }
+
+.form-row .float-right {
+  margin-right: 60px; }
+
+#payment-form {
+  padding: 10px 10px; }
+
+.form-row span {
+  margin-bottom: 20px; }
+
+.form-row i {
+  font-size: 30px;
+  color: #a1a9ae; }
+
+.fa-cc-amex {
+  margin-left: 20px; }

@@ -18,4 +18,6 @@ class Post < ActiveRecord::Base
 	validates :user_id, presence: true
 	validates :title, presence: true
 	validates :content, presence: true
+
+	scope :published, -> { where(published: true) } 
 end

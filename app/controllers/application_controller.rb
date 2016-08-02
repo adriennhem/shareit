@@ -37,6 +37,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def disable_footer 
+    @disable_footer = true
+  end 
+
 
 
 def set_locale

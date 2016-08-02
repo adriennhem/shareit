@@ -22,7 +22,7 @@
 	validates :permalink, uniqueness: true
 
 	# attributes
-	has_attached_file :picture, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+	has_attached_file :picture, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "https://s3-us-west-2.amazonaws.com/workshopr-picture/assets/pictures/missing.jpg"
   	validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 
   	scope :published, -> { where(published: true) }

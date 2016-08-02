@@ -4,7 +4,7 @@
 
 <div class="row" id="dashboard-header" data-no-turbolink>
 	<h1 class="dashboard-title bezier">enrolled courses</h1>
-	<% if !@user.lectures.exists? %>
+	<% if current_user.lectures.empty? %>
 		<%= link_to lectures_path, class: "btn btn-bezier btn-small" do %>
 				Join a course!
 		<% end %> 
@@ -18,7 +18,7 @@
 
 
 
-		<% @user.lectures.each do |lecture| %>
+		<% current_user.lectures.each do |lecture| %>
 		  <div class="col-md-4">
 	         <div class="dashboard-student-box">
 				<%= image_tag(lecture.picture.url) %>

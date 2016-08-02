@@ -2,11 +2,10 @@
     mixpanel.track("Visit Dashboard Home")
 </script>
 
-<% if @user.student? %>
+<% if current_user.student? %>
 	 <%= render 'profiles/student' %>
+	<% else %>
+	<%= render 'profiles/company' %>
 <% end %>
 
-<% if @user.company? %>
-	 <%= render 'profiles/company' %>
-<% end %>
 
