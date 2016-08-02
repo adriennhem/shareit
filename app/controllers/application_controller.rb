@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?
   # before_filter :expire_hsts
   before_action :set_locale 
   layout :layout_by_resource
@@ -11,8 +11,11 @@ class ApplicationController < ActionController::Base
   
 
   def after_sign_in_path_for(resource)
-    # redirect to lecture/admin for admins
-    profile_path(current_user)
+    if current_user.admin?
+      admin_dashboard_path
+    else
+      profile_path(current_user)
+    end
   end
 
   def after_sign_out_path_for(resource)

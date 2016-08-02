@@ -8,9 +8,6 @@ Rails.application.routes.draw do
   
   get '/about' => 'pages#about'
 
-  get '/contact' => 'pages#contact'
-  
-
   match '/contacts', to: 'contacts#new', via: 'get'
   resources "contacts", only: [:new, :create]
 
@@ -21,7 +18,7 @@ Rails.application.routes.draw do
   
   resources :profiles
 
-get '/user_projects', to: 'profiles#user_projects', as: :user_projects
+get '/user_projects' => 'profiles#user_projects', as: :user_projects
 
 
   resources :projects do

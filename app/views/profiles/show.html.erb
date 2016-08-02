@@ -4,7 +4,9 @@
 
 <% if current_user.student? %>
 	 <%= render 'profiles/student' %>
-	<% else %>
+<% elsif current_user.admin? %>
+	<%= link_to 'Go to admin dashboard', admin_dashboard_path, class: 'btn btn-large btn-bezier' %>
+<% else %>
 	<%= render 'profiles/company' %>
 <% end %>
 

@@ -3,30 +3,11 @@ class LecturePolicy < ApplicationPolicy
 		true
 	end
 
-	def create?
-		false
-	end
-
 	def show?
-		true
+		user.enrollments.where(lecture_id: record.id).exists?
 	end
 
 	def lecture_description
 		true
 	end
-
-	def update?
-		false
-	end
-
-	def edit?
-		false
-	end
-
-	 class Scope < Scope
-	    def resolve
-	        scope.where(:id => user.enrollments.select(:lecture_id))
-	    end
-	  end
-
 end

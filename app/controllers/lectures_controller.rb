@@ -1,7 +1,7 @@
 class LecturesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :lecture_description]
   before_action :disable_footer, except: [:lecture_description]
-  before_action :set_lecture, only: [:show]
+  before_action :set_lecture, except: [:index]
   after_action :verify_authorized, except: [:lecture_description]
   layout 'dashboard', except: [:lecture_description]
 
@@ -18,13 +18,11 @@ class LecturesController < ApplicationController
 
   def show
     @chapters = @lecture.chapters.order(number: :asc)
-    @projects = Project.where(lecture_id: @lecture.id).no_offer.approved
-    @teacher = Teacher.all
+    @projects = @lecture.projects.no_offer.approved
     authorize @lecture
   end
 
   def lecture_description
-    @lecture = Lecture.friendly.find(params[:id]) 
   end
 
   private
