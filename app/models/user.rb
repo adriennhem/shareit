@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_attached_file :picture, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  has_attached_file :picture, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "https://s3-us-west-2.amazonaws.com/workshopr-picture/assets/pictures/missing.jpg"
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
   validates :email, uniqueness: true
   # validates_format_of :email, with: /\@grenoble-em\.com/, message: "You should have an email from grenoble-em.com", if: ->(user) { user.role == 'student' }
