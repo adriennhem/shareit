@@ -10,12 +10,15 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 //= require jquery
+//= require jquery_ujs
+//= require jquery.turbolinks
+//= require jquery.vide
 //= require active_admin/base
 //= require ckeditor/init
 //= require activeadmin-expandable
-//= require jquery_ujs
 //= require bootstrap-sprockets
-//= require jquery.vide
 //= require bootstrap-wysihtml5
+//= require turbolinks
 //= require_tree .
