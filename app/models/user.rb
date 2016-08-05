@@ -48,5 +48,4 @@ class User < ActiveRecord::Base
   def latest_completed_lesson
     self.user_lessons.order(created_at: :desc).first
   end
-
 end

@@ -17,8 +17,7 @@ class LecturesController < ApplicationController
 
 
   def show
-    @chapters = @lecture.chapters.order(number: :asc)
-    @lessons = @lecture.lessons.order(etape: :desc)
+    @chapters = @lecture.chapters.includes(:lessons)
     @projects = @lecture.projects.no_offer.approved
     authorize @lecture
   end

@@ -1,5 +1,78 @@
 @import 'config';
 
+/* Dashboard company */
+
+.row-dashboard-home {
+    padding-left: 40px;
+}
+
+.row-projects {
+    margin-top: 50px;
+}
+
+.row-projects .col-md-5 {
+    margin-left: 20px;
+}
+
+.box-project {
+    width: 400px;
+    height: 320px;
+    border: 1px solid $zircon;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px #F8F8F8;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+}
+
+.box-project h2 {
+    color: $bezier;
+    font-weight: 500;
+    font-size: 28px;
+}
+
+/* Projects company */
+
+.panel-home-project {
+    background: #fff;
+    border: 1px solid #d5d9da;
+    padding: 15px 15px;
+    width: 303px;
+    position: relative;
+    left: 40px;
+}
+
+.panel-home-project h2 {
+    font-size: 22px;
+    font-weight: 500;
+    color: $heading;
+    display: block;
+}
+
+.panel-home-project h2:hover {
+    color: $bezier;
+}
+
+.panel-home-project h3, .panel-home-project i {
+    font-size: 16px;
+    font-weight: 300;
+    color: #a1a9ae;
+}
+
+.panel-home-project h3 {
+    margin-top: 100px;
+}
+
+.panel-home-project i {
+    margin-top: 25px;
+    padding-right: 10px;
+    float: right;
+}
+
+.panel-home-project i:hover {
+    color: $bezier;
+}
+
+
 
 .row-projects {
     position: relative;
@@ -90,4 +163,116 @@ input.cked {
 .row-show-projects {
     position: relative;
     top: 100px;
+}
+
+
+
+
+/* NEW PROJECT */
+
+
+
+.new-project-title {
+    position: relative;
+    top: 80px;
+    font-weight: 600;
+}
+
+.new-project h2 {
+    padding: 30px 30px;
+    color: $heading;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.new-project h3 {
+    color: $heading;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.new-project p {
+    margin-top: 5px;
+    color: $text;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+.new-project-section {
+    background: #FAfAFA;
+    margin: 10px 30px;
+    padding: 10px 0;
+    width: 95%;
+}
+
+.new-project input {
+    color: $raven;
+    font-weight: 300;
+    width: 500px;
+}
+
+.new-project input[type="submit"] {
+    margin: 30px 250px;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 10px;
+}
+
+#dashboard-rules {
+    background: #fff;
+    position: relative;
+    top: 25px;
+}
+
+
+
+
+
+/* Show Project */
+
+.panel-project {
+    position: relative;
+    top: 70px;
+}
+
+.panel-project-left {
+    /*margin-left:-30px;*/
+    margin-top: -20px;
+}
+
+.panel-section-title {
+    background: #fff;
+    border: 1px solid #d5d9da;
+    /*box-shadow: 1px 1px 1px 1px #CECECE;*/;
+}
+
+.panel-section-title h2 {
+    color: #3C454E;
+    font-weight: 500;
+    padding: 10px 10px;
+    font-size: 20px;
+}
+
+.panel-section-body {
+    border: 1px solid #d5d9da;
+    margin-top: -10px;
+    background: #ffffff;
+    /*box-shadow: 1px 1px 1px 1px #CECECE;*/;
+}
+
+.panel-section-body p {
+    color: #a1a9ae;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 10px 10px;
+}
+
+.panel-project-right .panel-section {
+    /*margin-left:10px;*/
+    margin-top: -20px;
+}
+
+a.edit-button {
+    margin-left: 15px;
 }

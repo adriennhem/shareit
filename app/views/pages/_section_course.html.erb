@@ -1,8 +1,8 @@
 
 <% unless @lecture.nil? %>
-<div class="row section-course">
+<div class="row section-course padding-top-xl">
 	<div class="center mb-150">
-	<h1>Start Learning Now</h1> 	
+	<h1 class="mb-40 white">Start your first Workshop now</h1> 	
 	         <div class="home-course-box dashboard-student-box">
 				<%= image_tag(@lecture.try(:picture).try(:url)) %>
 		        <h3 class="center"><%= @lecture.try(:title) %></h3> 
@@ -14,6 +14,15 @@
 
 			    <% end %>
 		</div>
+		<div class="col-md-6">
+			<h2 class="white">Industry tools</h2>
+			<p class="white">During each Workshop you will not only learn concepts and techniques but you'll also learn how to apply them by using industry standard tools</p>
+		</div>
+		<div class="col-md-6 margin-s">
+			<%= image_tag('https://s3-us-west-2.amazonaws.com/workshopr-picture/assets/pictures/slack_monochrome_white.png', height: 70) %>
+			<p class="white">A Workshop gives you access to a Slack channel where teachers and students provide you support and advice</p>
+		</div>
+		
 	</div>
 </div>
 <% end %>

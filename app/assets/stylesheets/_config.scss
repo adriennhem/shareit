@@ -1,10 +1,11 @@
 
-$proxima-nova: "proxima-nova", sans-serif !important;
+$proxima-nova: "proxima-nova-soft", sans-serif !important;
 
 $bg-home-grey: #EDEFF0;
 
 $white: #FFFFFF;
 
+/* Use in profiles controller */
 $grey-chateau: #A0A1A3;
 
 $steel:#666666;
@@ -59,7 +60,7 @@ $border:1px solid #d5d9da;
 
 $text:#656565;
 
-$heading: #323232;
+$heading: #384047;
 
 $text-blog:rgba(0,0,0,0.8);
 
@@ -75,8 +76,3 @@ $navbar-border-radius:0px;
 $navbar-default-border:none;
 
 $page-header-border-color:#D4D4D4;
-
-
-/* Navbar */
-
-$navbar-default-link-color:$bezier;

@@ -13,13 +13,13 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-home-right navbar-right">
       <% if user_signed_in? %>
         <li> <%= link_to profile_path(current_user), class: "link-navbar-blog" do %>
              <i class="fa fa-tachometer"></i> <span>My Dashboard</span>
              <% end %>
         </li>
-        <% if current_user.try(:admin?) %>
+        <% if current_user.admin? %>
         <li> <%= link_to admin_root_path, class: "link-navbar-blog" do %>
              <i class="fa fa-user"></i> <span>Admin Dashboard</span>
              <% end %>
@@ -29,7 +29,7 @@
           <p class="navbar-btn"> <%= link_to 'Sign Out',  destroy_user_session_path, method: :delete, class: "btn btn-bezier btn-small" %></p>
         </li>
       <% else %>
-         <li> <%= link_to new_user_registration_path, class: "white" do %>
+         <li> <%= link_to new_user_registration_path do %>
              <i class="fa fa-user-plus"></i> <span>Register</span>
              <% end %>
         </li>
@@ -37,9 +37,9 @@
           <%= link_to 'Sign In', new_user_session_path %>
         </li>
         <% if controller_name == "pages" && action_name === "home_company" %>
-          <li><p class="navbar-btn"><%= link_to "I'm a Student", root_path, class: "btn btn-success btn-small" %> </p> </li>
+          <li><%= link_to "I'm a Student", root_path %></li>
         <% else  %>
-          <li><p class="navbar-btn"><%= link_to "I'm a Company", company_path, class: "btn btn-success btn-small" %> </p> </li>
+          <li><%= link_to "I'm a Company", company_path %></li>
         <% end %>
       <% end %>
       </ul>

@@ -25,7 +25,7 @@
 				<%= link_to lecture do %>	
 		        <h3 class="center"><%= lecture.title %></h3> 
 		        <% end %> 
-		        <p class="center by-teacher">by <%= lecture.teacher.name %></p>
+		        <p class="center by-teacher">by <%= lecture.try(:teacher) %></p>
 	           
 				<div class="section-box-bottom">
 		           <progress max="<%= lecture.lessons.size %>" value="<%= lecture.lessons.select{ |l| l.users.include? current_user }.count  %>">

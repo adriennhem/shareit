@@ -1,0 +1,89 @@
+
+//--------------------------------------------------------------
+// NAVBAR
+// --------------------------------------------------------------
+
+@import 'config';
+
+
+/* navbar */
+
+.navbar-default {
+    height: 50px;
+    z-index: 999;
+    background: none;
+}
+
+.navbar-home {
+    background: none;
+    padding-top: 20px;
+}
+
+
+.navbar-home li a {
+    font-weight: 600;
+    font-size: 15px;
+    color: #fff !important;
+}
+
+
+.navbar-fixed-top {
+    margin-top: 0px;
+    padding-top: 5px;
+    border-bottom: 1px solid $mercury;
+    height: 60px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+
+/* navbar right hover */
+
+.navbar-right li a:hover {
+    color: $bezier;
+    transition: all 0.3s ease-in;
+}
+
+/* navbar right shrinked  */
+
+
+
+.navbar-header a.navbar-brand {
+    font-size: 21px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.navbar-header a.navbar-brand:hover {
+    color: #fff;
+}
+
+.shrink-home a.navbar-brand {
+    color: $bezier;
+    padding-top: 20px !important;
+    transition: font-size 0.1s ease;
+}
+
+.shrink-home a.navbar-brand:hover {
+    color: $bezier;
+}
+
+.shrink-home .navbar-right li a {
+    color: $aluminium !important;
+}
+
+.shrink-home .navbar-right li a:hover {
+    color: $bezier;
+}
+
+
+.shrink-home .navbar-right li a.btn {
+    color: #fff !important;
+}
+
+.navbar-right li a.btn:hover {
+    color: #fff !important;
+}
+
+

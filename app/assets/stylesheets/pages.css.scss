@@ -25,40 +25,10 @@ blockquote {
     clear: both;
 }
 
-
-
-
 //--------------------------------------------------------------
 // HOMEPAGE
 // --------------------------------------------------------------
 
-
-#homepage {
-	font-family: "proxima-nova-soft",sans-serif !important;
-	font-style: normal;
-	font-weight: 400;
-}
-
-#homepage h1 {
-	font-size: 36px;
-	font-weight: 600;
-
-}
-
-#homepage h2 {
-	font-size: 30px;
-}
-
-
-
-#homepage h2 {
-	font-weight: 600;
-}
-
-
-#homepage p {
-	font-weight: 300;
-}
 
 /* SECTION COURSE BENEFITS */
 
@@ -193,7 +163,7 @@ a.btn-bezier-inverse.home {
 }
 
 .section-customers img {
-   margin-right: 60px;
+   margin-right: 50px;
 }
   
 
@@ -225,12 +195,12 @@ a.btn-bezier-inverse.home {
 /* SECTION COURSES */
 
 .section-course {
-    background: $bg-home-grey;
+    background: $bezier;
+    padding-bottom: 50px;
 }
 
 .section-course h2 {
     margin-top: 50px;
-    margin-bottom: 50px;
 }
 
 
@@ -241,6 +211,11 @@ a.btn-bezier-inverse.home {
 
 .home-course-box img {
     max-width: 100%;
+}
+
+.section-course .col-md-6 {
+    padding-right: 100px;
+    padding-left: 50px;
 }
 
 
@@ -295,16 +270,10 @@ a.btn-bezier-inverse.home {
 }
 
 
+/* SECTION FAQ */
 
-
-
-/* HOMEPAGE */
-
-
-.fa-chevron-circle-down {
-	margin-top: 60px;
-   font-size: 32px !important;
-    color:$bezier;
+.section-faq {
+    background: $bg-home-grey;
 }
 
 
@@ -351,7 +320,8 @@ a.btn-bezier-inverse.home {
 
 .row-header {
 	height: 150px; 
-	background: $blue-charcoal;
+/*	background: $blue-charcoal;*/
+    background: $bezier;
 }
 
 .row-header h1 {
@@ -381,17 +351,21 @@ img.profile {
 }
 
 .story {
+    width: 500px;
 	margin-top: 100px;
 	font-size: 21px;
 	line-height: 1.5em;
+    margin: 0 auto;
 }
 
 .about-team {
 	margin-bottom: 100px;
+    margin: 0 auto;
 }
 
 .about-team p {
-	font-size: 21px;
+	font-size: 18px;
+    line-height: 30px !important;
 }
 
 /* OUR RULES */

@@ -29,16 +29,14 @@
 				<ul class="list-lesson">
 					<% chapter.lessons.sort { | a, b | a.etape <=> b.etape }.each do |lesson| %>
 						<div class="section-lesson col-md-12">
-							<%= link_to [@lecture, lesson] do %>
+							<%= link_to lecture_lesson_path(@lecture, lesson) do %>
 								<div class="section-left-lesson col-md-10">
 									<h3><%= lesson.title %> <span><%= lesson.video_duration %></span></h3>
 									<p class="hello"><%= lesson.short_description %></p>
 								</div>
 								<div class="section-right-lesson col-md-2">
-									<% lesson.user_lessons.where(user_id: current_user.id).each do |f|  %>
-										<% if f.completed %>
+									<% if lesson.is_complete(current_user)  %>
 											<i class="fa fa-check"></i> 
-										<% end %>
 									<% end %>
 									<% end %>
 								</div>			
