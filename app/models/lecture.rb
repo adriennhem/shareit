@@ -39,6 +39,4 @@
     def lecture_completed?(user)
     	self.lessons_completed_by(user) == 0
     end
-
-    
 end

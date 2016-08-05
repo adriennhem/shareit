@@ -35,7 +35,7 @@
 									<p class="hello"><%= lesson.short_description %></p>
 								</div>
 								<div class="section-right-lesson col-md-2">
-									<% if lesson.is_complete(current_user)  %>
+									<% if lesson.is_complete?(current_user) %>
 											<i class="fa fa-check"></i> 
 									<% end %>
 									<% end %>
@@ -71,6 +71,7 @@
 
 <div class="unlocked">
 <h2>Unlocked challenges!</h2>
+<% if @projects.exists? %>
 	<% @projects.each do |project| %> 
 		<%= link_to project do %>
 		<div class="panel-project-lecture col-md-3 margin-s mb-60">
@@ -91,7 +92,7 @@
 </div>
 	
 <% end %>
-		
+		<% end %>
 
 		
 

@@ -18,7 +18,7 @@ class Lesson < ActiveRecord::Base
    		self.class.where("etape < ?", etape).order(etape: :asc).last
  	end
 
- 	def is_complete(user)
- 		self.user_lessons.where(user_id: user.id, lesson_id: self.id).exists?
+ 	def is_complete?(user)
+ 		user_lessons.exists?(user_id: user.id, lesson_id: self.id)
  	end
 end

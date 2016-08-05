@@ -40,11 +40,6 @@ class User < ActiveRecord::Base
     self.offers_made.include?(project)
   end
 
-
-  def completed_lecture?(lesson)
-    self.user_lessons.include?(lesson)
-  end
-
   def latest_completed_lesson
     self.user_lessons.order(created_at: :desc).first
   end
