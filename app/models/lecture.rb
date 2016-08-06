@@ -32,11 +32,9 @@
       100 * ( uncompleted_lessons_in_course.count.to_f / self.lessons.count.to_f)
     end
 
-    def lessons_completed_by(user)
-    	self.lessons.count.to_i - user.user_lessons.count.to_i
-    end
+    def lecture_is_complete?(user)
+    	total_completed_lessons = lessons.includes(:user_lessons).where('user_id = ?', user.id).references(:user_lessons)
+    	lessons.count == total_completed_lessons.count 
 
-    def lecture_completed?(user)
-    	self.lessons_completed_by(user) == 0
     end
 end

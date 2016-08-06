@@ -50,7 +50,7 @@
 
 <!-- end row#show-lecture -->
 
-	<% if @lecture.lecture_completed?(current_user) %>
+	<% if @lecture.lecture_is_complete?(current_user) %>
 
 	
 		<div class="chapter-section">
