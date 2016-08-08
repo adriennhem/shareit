@@ -52,7 +52,7 @@
 				<ul class="list-lesson">
 					<% chapter.lessons.sort { | a, b | a.etape <=> b.etape }.each do |lesson| %>
 						<div class="section-lesson col-md-12">
-							<%= link_to lecture_lesson_path(@lecture, lesson) do %>
+						
 								<div class="section-left-lesson col-md-8">
 									<h3><%= lesson.title %> <span><%= lesson.video_duration %></span></h3>
 									<p class="hello"><%= lesson.short_description %></p>
@@ -60,7 +60,6 @@
 								<div class="section-right-lesson col-md-2">
 									<% if lesson.preview_link.present? %>
 											<%= link_to 'Preview', "#{lesson.preview_link}", class: 'bezier' %> 
-									<% end %>
 									<% end %>
 								</div>			
 						</div>
