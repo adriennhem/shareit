@@ -46,7 +46,7 @@ class EnrollmentsController < ApplicationController
 	    begin
 
 	     # Amount in cents
-		  @amount = 9900
+		  @amount = @lecture.amount
 		  @final_amount = @amount
 
 		  @code = params[:couponCode]

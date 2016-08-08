@@ -17,38 +17,60 @@
 </div>
 
 <div class="row landing-navbar-container">
-	<div class="container-fluid ">
+	<div class="container-fluid" data-turbolinks="false">
 		<ul class="landing-navbar nav">
-			<li><a href="#learn">1. Learn</a></li>
-			<li><a href="#practice">2. Practice</a></li>
-			<li><a href="#hired">3. Get Hired</a></li>
+			<li><a href="#learn" class="bezier">1. Learn</a></li>
+			<li><a href="#practice" class="bezier">2. Practice</a></li>
+			<li><a href="#hired" class="bezier">3. Get Hired</a></li>
 		</ul>
-		<%= link_to 'Enroll Now for $99', new_enrollment_path(controller: 'enrollment', action: 'new', lecture_id: @lecture.id, amount: @lecture.amount), class: "btn btn-medium btn-bezier pull-right" %>
+		<%= link_to 'Enroll Now for $99', new_enrollment_path(controller: 'enrollment', action: 'new', lecture_id: @lecture.id), class: "btn btn-medium btn-bezier pull-right" %>
 	</div>
 </div>
 
 <!-- START LANDING BODY -->
 <div class="landing-body">
+
+
 	<div id="learn" class="padding-top-xxl">
 		<h2 class="mb-60 bezier">1. Learn</h2>
 			<div class="landing-body-content">
 				<div class="learn-body clear">
+
 				<%= @lecture.learn_description.html_safe %>
-				<h2 class="bezier margin-s">Curriculum</h2>
+				
 				</div>
+				<h2 class="bezier margin-s">Curriculum</h2>
 
 				
-				 <% @lecture.chapters.each do |chapter| %>
-					<h2 class="lecture-description-chapter"><%= chapter.title %></h2>
-					<% chapter.lessons.each do |lesson| %>
-						<div class="col-md-12 page-header">
-							<p class="lecture-description-lesson"><%= lesson.title %> <span><%= lesson.video_duration %>
-							<% if lesson.preview_link.present? %>
-								<%= lesson.preview_link.html_safe %>
-								<% end %> </p>			
+			 <% @chapters.each do |chapter| %>
+	   <div class="chapter-section">
+			<h2 class="title-chapter">
+				<%= chapter.title %><span class="chapter-duration"><%= chapter.total_duration %> minutes</span>
+			</h2> 
+			</div>
+			<div class="row">
+				<ul class="list-lesson">
+					<% chapter.lessons.sort { | a, b | a.etape <=> b.etape }.each do |lesson| %>
+						<div class="section-lesson col-md-12">
+							<%= link_to lecture_lesson_path(@lecture, lesson) do %>
+								<div class="section-left-lesson col-md-8">
+									<h3><%= lesson.title %> <span><%= lesson.video_duration %></span></h3>
+									<p class="hello"><%= lesson.short_description %></p>
+								</div>
+								<div class="section-right-lesson col-md-2">
+									<% if lesson.preview_link.present? %>
+											<%= link_to 'Preview', "#{lesson.preview_link}", class: 'bezier' %> 
+									<% end %>
+									<% end %>
+								</div>			
 						</div>
 					<% end %>
-				<% end %>
+				</ul>
+			</div>
+
+
+		<% end %> <!-- END OF CHAPTER LOOP -->
+
 				<!-- END OF CHAPTER LOOP -->
 				</div>
 
@@ -77,7 +99,7 @@
 	<div class="container-fluid">
 		<div class="col-md-12">
 			<div class="col-md-9"><h2>ENROLL TODAY FOR $99!       
-			<%= link_to "Enroll Now", new_enrollment_path(controller: 'enrollment', action: 'new', lecture_id: @lecture.id, amount: @lecture.amount), class: "btn btn-large btn-bezier" %></h2> 
+			<%= link_to "Enroll Now", new_enrollment_path(controller: 'enrollment', action: 'new', lecture_id: @lecture.id), class: "btn btn-large btn-bezier" %></h2> 
 			</div>
 		</div>
 	</div>

@@ -2,7 +2,7 @@
 
 .payment-logo {
 	font-size: 21px;
-	color: $heading;
+	font-weight: 600;
 	position: absolute;
 	top: 5%;
 	left: 5%;
@@ -19,13 +19,13 @@
 }
 
 .benefits-list {
-	font-size: 24px;
+	font-size: 20px;
 }
 
-.ps-payment {
-	font-size: 18px;
-}
 
+.stripe-button {
+	color: $bezier;
+}
 
 .form-payment {
 	background: $wild-sand;

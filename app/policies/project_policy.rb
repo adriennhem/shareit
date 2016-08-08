@@ -20,7 +20,7 @@ class ProjectPolicy < ApplicationPolicy
 	end
 
 	def edit?
-		is_owner?
+		is_owner? && !record.approved
 	end
 
 	def show?

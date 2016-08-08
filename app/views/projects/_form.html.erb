@@ -124,8 +124,8 @@
           <h3>Deadline *</h3>
         </div>
         <div class="new-project-section-body col-md-8">
-          <%= f.input :deadline, as: :date %>
-          <p>We recommend setting a challenge duration of 45 days or less. Shorter durations tend to have higher success rates.</p>
+          <%= f.hidden_field :deadline %>
+          <h3>Each challenge has a deadline of 45 days</h3>
         </div>
       </div>
 
@@ -148,7 +148,7 @@
         <h3>Detailed Description *</h3>
       </div>
       <div class="new-project-section-body col-md-8">
-         <%= f.input :body, as: :wysihtml5, input_html: { rows: '15', style: 'width: 100%'} %>
+         <%= f.input :body, as: :wysihtml5, label: false, input_html: { rows: '15', style: 'width: 100%'} %>
         <p>Detail as much as possible to enable students to better understand</p>
       </div>
     </div>

@@ -12,21 +12,19 @@
 <div class="row row-user-projects">
 	<div class="container-fluid">
 
-<% @user.project_buying.each do |project| %>
-<div class="col-md-4">
-<div class="project-box">
-	<div class="project-box-body mb-20">
-		<h3 class="project-box-company weight400"><%= link_to project.company_name, project %></h2>
-		<h4 class="project-box-title mb-20 weight400"><%= project.title %></h3>
-	</div>
-	<div class="project-box-footer">
-		<p class="project-box-published-at">Published on: <%= project.created_at.strftime('%Y, %m, %d') %></p>
-	</div>
-	
-</div>
-
-</div>
+	<% current_user.project_buying.each do |project| %> 
+		<%= link_to project do %>
+		<div class="panel-project-lecture col-md-3 margin-s mb-60">
+			<h3><%= project.title %></h3>
+			  <div data-no-turbolink>
+			  	<p>by <%= project.company_name %></p>
+			  	<span class="label label-default project-paragraph">Ends in <%= distance_of_time_in_words(project.approved_date, project.approved_date + 45.days)  %></span>
+			  </div>
+		</div>	
+	<% end %>
 <% end %>
+
+
 
 
 	</div>

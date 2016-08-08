@@ -17,4 +17,6 @@ class Project < ActiveRecord::Base
  	 self.update_attribute(:completed, true)
 	end
 
+	
+
 end

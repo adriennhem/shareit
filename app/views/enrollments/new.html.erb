@@ -1,8 +1,8 @@
-<span class="payment-logo weight800 uppercase bezier">Workshopr</span>
+<span class="payment-logo bezier">Workshopr</span>
 
 <div class="row row-payment ">
   <div class="container-fluid">
-    <h2 class="center weight600 mb-60">Start Learning: <%= @lecture.title %><br> </h2>
+    <h2 class="center mb-60">Get started with: <%= @lecture.title %><br> </h2>
 
     <div class="col-md-12">
 
@@ -10,9 +10,9 @@
         <h3 class="weight600 center">What you'll get for $99</h3>
         <ul class="margin-s benefits-list">
           <li class="mb-20">Get access to the course for one year</li>
-          <li>Get Access to one challenge related to the course (if available)</li>
+          <li class="mb-20">Get Access to challenges related to the course</li>
+          <li>Get access to the private Slack channel where you can get precious advice from teachers, companies, and other students</li>
         </ul>
-        <p class="ps-payment margin-s">P.S: We charge you only for the course</p>
       </div>
 
       <div class="col-md-5">
@@ -33,15 +33,19 @@
   </p>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.hidden_field :lecture_id, value: @lecture.id %>
-  <%= f.hidden_field :amount, value: @amount %>
+  <%= f.hidden_field :amount, value: @final_amount %>
   <p>
     <%= label_tag(:couponCode, 'Coupon:') %>
     <%= text_field_tag(:couponCode) %>
   </p>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>"
-          data-description="Your Purchase"
+          data-key="<%= ENV['PUBLISHABLE_KEY'] %>"
+          data-name="Workshopr LTD"
+          data-description="<%= @lecture.title %>"
+          data-amount="9900"
+          data-email="<%= current_user.email %>"
+          data-image="https://s3-us-west-2.amazonaws.com/workshopr-picture/assets/pictures/logo-certificate.jpg"
           data-locale="auto"></script>
 <% end %>
           

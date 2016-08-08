@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160723111539) do
+ActiveRecord::Schema.define(version: 20160808125611) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -110,23 +110,12 @@ ActiveRecord::Schema.define(version: 20160723111539) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "coupons", force: :cascade do |t|
-    t.string   "code"
-    t.integer  "discount_percent"
-    t.datetime "expires_at"
-    t.string   "description"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
   create_table "enrollments", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "lecture_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "amount"
-    t.integer  "coupon_id"
-    t.integer  "stripe_id"
   end
 
   add_index "enrollments", ["lecture_id"], name: "index_enrollments_on_lecture_id"
@@ -144,150 +133,6 @@ ActiveRecord::Schema.define(version: 20160723111539) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
-
-  create_table "knowledge_base_articles", force: :cascade do |t|
-    t.string   "title"
-    t.string   "slug"
-    t.text     "description"
-    t.datetime "published_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "knowledge_base_categories", force: :cascade do |t|
-    t.string   "title"
-    t.string   "slug"
-    t.text     "description"
-    t.integer  "category_id"
-    t.integer  "position",     default: 0
-    t.datetime "published_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "knowledge_base_categories", ["category_id"], name: "index_knowledge_base_categories_on_category_id"
-  add_index "knowledge_base_categories", ["slug"], name: "index_knowledge_base_categories_on_slug", unique: true
-
-  create_table "knowledge_base_category_article_associations", force: :cascade do |t|
-    t.integer  "category_id"
-    t.integer  "article_id"
-    t.integer  "position",    default: 0
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "knowledge_base_category_article_associations", ["article_id"], name: "index_knowledge_base_c_a_association_on_article_id"
-  add_index "knowledge_base_category_article_associations", ["category_id"], name: "index_knowledge_base_c_a_association_on_category_id"
-
-  create_table "knowledge_base_sectionables_attachments_attachments", force: :cascade do |t|
-    t.string  "title"
-    t.string  "file"
-    t.integer "attachment_list_id"
-    t.text    "description"
-  end
-
-  add_index "knowledge_base_sectionables_attachments_attachments", ["attachment_list_id"], name: "index_knowledge_base_attachments_on_attachment_list_id"
-
-  create_table "knowledge_base_sectionables_attachments_lists", force: :cascade do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "style"
-    t.string   "title"
-  end
-
-  create_table "knowledge_base_sectionables_galleries", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "style"
-  end
-
-  create_table "knowledge_base_sectionables_gallery_images", force: :cascade do |t|
-    t.string   "caption"
-    t.string   "image"
-    t.integer  "position",   default: 0
-    t.integer  "gallery_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "knowledge_base_sectionables_gallery_images", ["gallery_id"], name: "index_knowledge_base_sectionables_gallery_images_on_gallery_id"
-
-  create_table "knowledge_base_sectionables_images", force: :cascade do |t|
-    t.text     "caption"
-    t.string   "image"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "style"
-  end
-
-  create_table "knowledge_base_sectionables_links_links", force: :cascade do |t|
-    t.string   "title"
-    t.string   "url"
-    t.integer  "position",    default: 0
-    t.integer  "links_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "description"
-  end
-
-  create_table "knowledge_base_sectionables_links_lists", force: :cascade do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "style"
-  end
-
-  create_table "knowledge_base_sectionables_list_items", force: :cascade do |t|
-    t.string   "title"
-    t.text     "body"
-    t.integer  "position",   default: 0
-    t.integer  "list_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "knowledge_base_sectionables_list_items", ["list_id"], name: "index_knowledge_base_sectionables_list_items_on_list_id"
-
-  create_table "knowledge_base_sectionables_lists", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "image"
-    t.string   "style"
-  end
-
-  create_table "knowledge_base_sectionables_texts", force: :cascade do |t|
-    t.string   "heading"
-    t.text     "lead"
-    t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "image"
-    t.string   "style"
-  end
-
-  create_table "knowledge_base_sectionables_videos", force: :cascade do |t|
-    t.string   "url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "style"
-    t.string   "title"
-  end
-
-  create_table "knowledge_base_sections", force: :cascade do |t|
-    t.integer  "sectionable_id"
-    t.string   "sectionable_type"
-    t.integer  "position",         default: 0
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "container_id"
-    t.string   "container_type"
-  end
-
-  add_index "knowledge_base_sections", ["container_id", "container_type"], name: "index_knowledge_base_sections_on_container"
-  add_index "knowledge_base_sections", ["sectionable_id", "sectionable_type"], name: "index_knowledge_base_sections_on_sectionable"
 
   create_table "landing_pages", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -325,7 +170,6 @@ ActiveRecord::Schema.define(version: 20160723111539) do
     t.text     "description"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.integer  "lecture_id"
     t.text     "vid"
     t.integer  "etape"
     t.integer  "chapter_id"
@@ -370,9 +214,7 @@ ActiveRecord::Schema.define(version: 20160723111539) do
     t.string   "location"
     t.string   "industry"
     t.text     "company_description"
-    t.text     "project_context"
-    t.time     "estimated_duration"
-    t.datetime "deadline"
+    t.integer  "deadline",            default: 45
     t.text     "goal"
     t.string   "main_contact"
     t.string   "main_contact_email"
@@ -382,6 +224,7 @@ ActiveRecord::Schema.define(version: 20160723111539) do
     t.datetime "logo_updated_at"
     t.boolean  "completed",           default: false
     t.boolean  "approved",            default: false
+    t.datetime "approved_date"
   end
 
   create_table "seos", force: :cascade do |t|

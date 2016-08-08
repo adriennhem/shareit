@@ -1,5 +1,11 @@
 @import 'config';
 
+
+.label-default {
+    background: $bezier;
+}
+
+
 /* Dashboard company */
 
 .row-dashboard-home {
@@ -122,6 +128,7 @@ input.cked {
 }
 
 .row-show-project h5 {
+    font-weight: 600;
     font-size: 24px;
     margin-bottom: 20px;
     margin-top: 20px;

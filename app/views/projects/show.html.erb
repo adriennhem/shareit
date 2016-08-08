@@ -8,7 +8,7 @@
 
 <div class="row" id="dashboard-header" data-no-turbolink>
 	<h1 class="dashboard-title">Challenge Description</h1>
-	<% if policy(@project).update? %>
+	<% if policy(@project).update? && !@project.approved %>
 		<%= link_to edit_project_path(@project), class: "btn btn-bezier" do %> 
 			<i class="fa fa-pencil-square-o"></i> Edit
 		<% end %> 
@@ -47,11 +47,15 @@
 <div class="container-fluid container-project">
 
 	<div class="col-md-12 mb-20">
+		<% if @project.logo.url == '/images/thumb/missing.png' %>
 		<div class="col-md-2"><%= image_tag(@project.logo.url(:thumb)) %></div>
+		<% end %>
 		<div class="col-md-10 show-project-titles">
 			<h2><%= @project.title %></h2>
 			<h3>by <%= @project.company_name %></h3>
-			<button class="btn btn-medium btn-bezier button-show-project">Ends in <%= (@project.deadline.to_i - Time.now.to_i) / 86_400 %> Days</button>
+			<% if @project.approved %>
+			 <span class="label label-default">Ends in <%= distance_of_time_in_words(@project.approved_date, @project.approved_date + 45.days)  %></span>
+			 <% end %>
 			
 			
 		</div>

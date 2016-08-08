@@ -49,53 +49,46 @@
 		<% end %> <!-- END OF CHAPTER LOOP -->
 
 <!-- end row#show-lecture -->
-
-	<% if @lecture.lecture_is_complete?(current_user) %>
-
-	
-		<div class="chapter-section">
-			<h2 class="title-chapter">
-				Get Your Certificate !
-			</h2> 
+<% if @lecture.lecture_is_complete?(current_user) %>
+	<div class="chapter-section">
+		<h2 class="title-chapter">Get Your Certificate !</h2> 
+	</div>
+	<div class="row">
+		<ul class="list-lesson">
+			<div class="section-lesson download-certificate center col-md-12">
+				<%= link_to 'Download Certificate', certificate_path(format: :pdf), target: "_blank", class: 'bezier' %>
 			</div>
+		</ul>		
+	</div> 
+
+	<div class="unlocked">
+		<h2>Unlocked challenges!</h2>
+		<% if @projects.exists? && @projects.size >= 1 %>
+			<% @projects.each do |project| %> 
+				<%= link_to project do %>
+					<div class="panel-project-lecture col-md-3 margin-s mb-60">
+						<h3><%= project.title %></h3>
+						  <div data-no-turbolink>
+						  	<p>by <%= project.company_name %></p>
+						  	<span class="label label-default project-paragraph">Ends in <%= distance_of_time_in_words(project.approved_date, project.approved_date + 45.days)  %></span>
+						  </div>
+					</div>	
+				<% end %>
+			<% end %>
+		<% elsif @projects.size == 0 %>	
 			<div class="row">
-			  <ul class="list-lesson">
-				<div class="section-lesson download-certificate center col-md-12">
-					<%= link_to 'Download Certificate', certificate_path(format: :pdf), target: "_blank" %>
+				<div class="locked">
+					<h2 class="margin-s"> Oops... we're out of challenge! Come back later</h2>
 				</div>
-				</ul>
-			
-</div> 
-
-
-
-<div class="unlocked">
-<h2>Unlocked challenges!</h2>
-<% if @projects.exists? %>
-	<% @projects.each do |project| %> 
-		<%= link_to project do %>
-		<div class="panel-project-lecture col-md-3 margin-s mb-60">
-			<h3><%= project.title %></h3>
-			  <div data-no-turbolink>
-			  	<p>by <%= project.company_name %></p>
-			  	<p class="project-paragraph">Created on <%= project.created_at.strftime("%b %d, %Y") %></p>
-			  </div>
-		</div>	
-	<% end %>
-	<% end %>
-	</div>
-<% else %>
-<div class="row">
-	<div class="locked">
-		<h2 class="margin-s"><i class="fa fa-lock"></i> Complete this course to unlock challenges</h2>
-	</div>
-</div>
-	
-<% end %>
+			</div>
+		<% else %>
+			<div class="row">
+				<div class="locked">
+					<h2 class="margin-s"><i class="fa fa-lock"></i> Complete this course to unlock challenges</h2>
+				</div>
+			</div>
 		<% end %>
-
-		
-
+	<% end %>
 	</div>
 
 
