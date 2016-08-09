@@ -15,12 +15,12 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-blog-right navbar-right">
       <% if user_signed_in? %>
-        <li> <%= link_to profile_path(current_user), class: "link-navbar-blog" do %>
+        <li> <%= link_to profile_path(current_user) do %>
              <i class="fa fa-tachometer"></i> <span>My Dashboard</span>
              <% end %>
         </li>
         <% if current_user.try(:admin?) %>
-        <li> <%= link_to admin_root_path, class: "link-navbar-blog" do %>
+        <li> <%= link_to admin_root_path do %>
              <i class="fa fa-user"></i> <span>Admin Dashboard</span>
              <% end %>
         </li>

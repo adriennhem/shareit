@@ -59,7 +59,7 @@
 								</div>
 								<div class="section-right-lesson col-md-2">
 									<% if lesson.preview_link.present? %>
-											<%= link_to 'Preview', "#{lesson.preview_link}", class: 'bezier' %> 
+											<%= lesson.preview_link.html_safe %> 
 									<% end %>
 								</div>			
 						</div>

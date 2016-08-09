@@ -3,7 +3,6 @@ class PostsController < ApplicationController
 	layout 'blog'
 	
 	def index
-	 @disable_newsletter = true
 	 @blog_category_options = BlogCategory.all.map{|u| [u.title, u.id]}
 	 if params[:tag]
     	@posts = Post.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 3)
