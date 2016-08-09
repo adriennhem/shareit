@@ -111,7 +111,7 @@ class EnrollmentsController < ApplicationController
 	private
 
 		def enrollment_params 
-			params.require(:enrollment).permit(:user_id, :lecture_id, :amount)
+			params.require(:enrollment).permit(:user_id, :lecture_id)
 		end
 
 		def redirect_to_signup

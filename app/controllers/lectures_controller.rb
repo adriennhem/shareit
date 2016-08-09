@@ -23,6 +23,7 @@ class LecturesController < ApplicationController
   end
 
   def lecture_description
+    @project = @lecture.projects.last
     @chapters = @lecture.chapters.includes(:lessons)
   end
 

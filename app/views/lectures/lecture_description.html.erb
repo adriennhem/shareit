@@ -51,7 +51,7 @@
 			<div class="row">
 				<ul class="list-lesson">
 					<% chapter.lessons.sort { | a, b | a.etape <=> b.etape }.each do |lesson| %>
-						<div class="section-lesson col-md-12">
+						<div class="section-lesson-landing col-md-12">
 						
 								<div class="section-left-lesson col-md-8">
 									<h3><%= lesson.title %> <span><%= lesson.video_duration %></span></h3>
@@ -75,15 +75,24 @@
 
 	</div>
 
-	<div id="practice" class="padding-top-xxl">
+	<div id="practice" class="padding-top-xxl clear">
 		<h2 class="mb-60 bezier">2. Practice</h2>
 			<div class="landing-body-content">
 				<%= @lecture.practice_description.html_safe %>
-				<h2>Latest Challenge for this class</h2>
+				<h3 class="margin-s">That's what you could do!</h3>
+			
+
+				<div class="panel-project-lecture col-md-3 margin-s">
+					<h3><%= @project.title if @project %></h3>  
+				  	<p>by <%= @project.company_name %></p>
+				  	<p><%= @project.blurb %></p>
+				  	<span class="label label-default ends-in-lecture-description">Ends in <%= distance_of_time_in_words(@project.approved_date, @project.approved_date + 45.days)  %></span>
+				</div>	
+
 			</div>
 	</div>
 
-	<div id="hired" class="padding-top-xxl mb-60">
+	<div id="hired" class="padding-top-xxl mb-60 clear">
 		<h2 class="mb-60 bezier">3. Hired</h2>
 			<div class="landing-body-content">
 				<%= @lecture.hired_description.html_safe %>
