@@ -16,7 +16,7 @@
     <div class="margin-s lesson-video">
         <%= @lesson.vid.html_safe %>
     </div>
-<% if !@lesson.description.nil? %>
+<% if @lesson.description.present? %>
     <div class="margin-s show-lesson-description mb-60"><%=  @lesson.description.html_safe %>
 
     </div>
