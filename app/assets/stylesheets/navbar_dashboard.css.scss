@@ -1,0 +1,60 @@
+@import 'config';
+
+
+.dashboard {
+	background: #EDEDED;
+}
+
+.navbar-dashboard {
+	background: $blue-charcoal;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 150;
+}
+
+.navboard-dashboard-logo {
+	color: #ffffff;
+	font-size: 40px;
+}
+
+.navbar-dashboard-left {
+	background: $bezier;
+	padding-right: 70px;
+	padding-left: 70px;
+}
+
+.navbar-dashboard-left a {
+	line-height: 70px;
+}
+
+
+.navbar-dashboard-wrapper li {
+	padding-right: 70px;
+	height: 70px;
+	float: left;
+	display: inline-block;
+}
+
+.navbar-dashboard-wrapper li a {
+	line-height: 70px;
+	font-size: 18px;
+	color: #999999;
+}
+
+.navbar-dashboard-wrapper li a:hover {
+	color: #ffffff;
+}
+
+
+
+/* Main curriculum page */
+
+
+.row-curriculum {
+	position: relative;
+	top: 300px;
+}
+
+
+

@@ -50,16 +50,7 @@
 
 <!-- end row#show-lecture -->
 <% if @lecture.lecture_is_complete?(current_user) %>
-	<div class="chapter-section">
-		<h2 class="title-chapter">Get Your Certificate !</h2> 
-	</div>
-	<div class="row">
-		<ul class="list-lesson">
-			<div class="section-lesson download-certificate center col-md-12">
-				<%= link_to 'Download Certificate', certificate_path(format: :pdf), target: "_blank", class: 'bezier' %>
-			</div>
-		</ul>		
-	</div> 
+	
 
 	<div class="unlocked">
 		<h2>Unlocked challenges!</h2>
