@@ -5,13 +5,13 @@ class PostsController < ApplicationController
 	def index
 	 @blog_category_options = BlogCategory.all.map{|u| [u.title, u.id]}
 	 if params[:tag]
-    	@posts = Post.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 3)
+    	@posts = Post.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 9)
   	  elsif params[:blog_category] 
-  	  	@posts = Post.where(blog_category: params[:blog_category]).paginate(:page => params[:page], :per_page => 3)
+  	  	@posts = Post.where(blog_category: params[:blog_category]).paginate(:page => params[:page], :per_page => 9)
   	  elsif user_signed_in? && current_user.admin?
-  	  	@posts = Post.all.paginate(:page => params[:page], :per_page => 3)
+  	  	@posts = Post.all.paginate(:page => params[:page], :per_page => 9).order(created_at DESC)
 	  else 
-    	@posts = Post.published.paginate(:page => params[:page], :per_page => 3)
+    	@posts = Post.published.paginate(:page => params[:page], :per_page => 9)
 	  end 
     end
 

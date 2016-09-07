@@ -1,0 +1,74 @@
+<div class="row">
+	<div class="section-tools col-md-12">
+		<h1 class="center">Running a challenge has never been easier. Take the tour.</h1>
+
+		<div class="col-md-3">
+			<ul class="tools-tour">
+				<li class="tour-active" dir="https://s3-us-west-2.amazonaws.com/workshopr-picture/assets/pictures/tour1.png"><span>Test</span></li>
+				<li><span>Test 2</span></li>
+				<li><span>Test 3</span></li>
+				<li><span>Test 4</span></li>
+				<li><span>Test 5</span></li>
+			</ul>
+		</div>
+
+		<div class="cold-md-9 pull-right" id="image">
+			<%= image_tag("https://s3-us-west-2.amazonaws.com/workshopr-picture/assets/pictures/tour1.png", class: "tour-image") %>
+		</div>
+	</div>
+</div>
+
+
+<script>
+
+$(document).ready(function(){
+	
+	
+	$('li').click(function(){
+		
+		var imgpath = $(this).attr('dir');
+		
+		$('#image').html('<img src='+imgpath+' height="700px">');
+		
+	});
+	
+	
+	$('.btn').click(function(){
+		
+		$('#thumbs').fadeIn(500);
+		$('#image').animate({marginTop:'-100px'},200);
+		$(this).hide();
+		
+		$('#hide').fadeIn('slow');
+		
+	});
+	
+	
+	$('#hide').click(function(){
+		
+		$('#thumbs').fadeOut(500,function (){
+		$('#image').animate({marginTop:'50px'},200);
+		});
+		
+		$(this).hide();
+		$('#show').fadeIn('slow');
+		
+	});
+	
+	
+});
+
+
+$(document).ready(function(){
+
+	var selector = '.tools-tour li';
+
+	$(selector).on('click', function(){
+	    $(selector).removeClass('tour-active');
+	    $(this).addClass('tour-active');
+	});
+});
+
+
+
+</script>
