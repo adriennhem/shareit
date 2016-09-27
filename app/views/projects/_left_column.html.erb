@@ -1,0 +1,13 @@
+
+		<h5>Goals</h5>
+		<div class="project-info-description">
+			<%= @project.goal %> 
+		</div>
+
+
+		<h5>Description</h5>
+		<div class="project-info-description">
+			<%= @project.body.html_safe %> 
+      <%= render 'modal_project' %>
+
+		</div>

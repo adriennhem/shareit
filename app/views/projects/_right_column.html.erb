@@ -1,0 +1,96 @@
+		
+
+		
+
+		<h5><%= current_user.student? ? "My Submission" : "All Submissions" %></h5>
+
+		<div class="project-info-box">
+
+
+		<% if policy(@project).is_owner? %>
+
+			<a class="bezier" data-toggle="modal" data-target="#myModal">
+			   <i class="fa fa-file"></i> View all submissions
+			</a>
+
+		<% end %>	
+
+	
+
+			<!-- There should be only submission, does not show the different attachment -->
+				
+
+			
+
+			<!-- Confirm submission -->
+		
+		<% if current_user.offers_made.where(project_id: @project.id).exists? && current_user.student? %>
+			
+					
+			<% if current_user.attachments.where(project_id: @project.id).empty? && current_user.student?  %> 
+				<%= simple_form_for @attachment do |f| %>
+		  			<%= f.error_notification %>
+		  	 		<%= f.hidden_field :user_id, { value: current_user.id } %>
+		  	 		<%= f.hidden_field :project_id, { value: @project.id } %>
+		  	 		<%= f.input :document, label: false %>
+					<%= f.button :submit, "Submit your work", class: "btn btn-bezier btn-attachment" %>
+		  		<% end %>	
+		  	<% elsif current_user.student? && current_user.attachments.where(project_id: @project.id).present? %>
+
+		  	<%= link_to 'My Submission', @user_attachment.document.url, download: @user_attachment.document.url %>
+		  		
+			<% end %>
+
+
+			<% end %>
+
+		
+
+		
+
+
+
+			<p>
+				<i class="fa fa-user"></i> <%= @project.offers.count if @project.offers %>
+			</p>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<h5>Contacts</h5>
+		
+		
+		<div class="project-info-box">
+			<p><i class="fa fa-user"></i>  <%= @project.main_contact %> <br>  <%= @project.main_contact_email %></p>
+		</div>
+
+
+		<h5>About <%= @project.company_name %></h5>
+		
+		<div class="project-info-box">
+			<p><i class="fa fa-map-marker"></i>  <%= @project.location %></p>
+		</div>
+
+		<div class="project-info-box">
+			<p><i class="fa fa-industry"></i> <%= @project.industry %></p>
+		</div>
+
+		<div class="project-info-box">
+			<p><i class="fa fa-info-circle"></i> <br> <%= @project.company_description %></p>
+		</div>
+
+

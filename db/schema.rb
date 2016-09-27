@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160808125611) do
+ActiveRecord::Schema.define(version: 20160914212051) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(version: 20160808125611) do
   add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace"
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+
+  create_table "add_user_id_to_attachments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -64,6 +71,17 @@ ActiveRecord::Schema.define(version: 20160808125611) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
+  create_table "attachments", force: :cascade do |t|
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+    t.integer  "user_id"
+    t.integer  "project_id"
+  end
+
   create_table "blog_categories", force: :cascade do |t|
     t.string   "title"
     t.datetime "created_at", null: false
@@ -80,11 +98,12 @@ ActiveRecord::Schema.define(version: 20160808125611) do
   create_table "chapters", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.integer  "number"
     t.integer  "lecture_id"
     t.string   "total_duration"
+    t.boolean  "core_chapter",   default: false
   end
 
   add_index "chapters", ["lecture_id"], name: "index_chapters_on_lecture_id"
@@ -168,14 +187,15 @@ ActiveRecord::Schema.define(version: 20160808125611) do
   create_table "lessons", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.text     "vid"
     t.integer  "etape"
     t.integer  "chapter_id"
     t.string   "short_description"
     t.string   "video_duration"
     t.string   "preview_link"
+    t.boolean  "core_lesson",       default: false
   end
 
   create_table "offers", force: :cascade do |t|

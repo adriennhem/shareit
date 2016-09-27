@@ -52,13 +52,14 @@ class EnrollmentsController < ApplicationController
 		  @code = params[:couponCode]
 
 		  if !@code.blank?
-		    @discount = get_discount(@code)
+		    @discount = get_discount(@enrollment.id, @code)
 
 		    if @discount.nil?
 		      flash[:error] = 'Coupon code is not valid or expired.'
 		      redirect_to new_charge_path
 		      return
 		    else
+		    	# if 100% discount terminates
 		      @discount_amount = @amount * @discount
 		      @final_amount = @amount - @discount_amount.to_i
 		    end
@@ -126,7 +127,8 @@ class EnrollmentsController < ApplicationController
   'SUMMERSALE' => 0.50
 }
 
-def get_discount(code)
+# Enrollment.id 
+def get_discount(enrollment_id, code)
   # Normalize user input
   code = code.gsub(/ +/, '')
   code = code.upcase

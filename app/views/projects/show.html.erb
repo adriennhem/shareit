@@ -13,36 +13,25 @@
 			<i class="fa fa-pencil-square-o"></i> Edit
 		<% end %> 
 	<% end %>
-	<% if policy(@project).is_student? && @project.offers.empty? %>
-		<%= simple_form_for([@project, @project.offers.build]) do |f| %>
-  <%= f.error_notification %>
-  	  <%= f.hidden_field :user_id, { value: "@user.id" } %>
-  	  <%= f.hidden_field :project_id, { value: "@project.id" } %>
-	<%= f.button :submit, "Accept Challenge", class: "btn btn-bezier btn-small" %>
-  <% end %>
-	<% end %>
 
-	<% if policy(@project).is_owner? && !@project.offers.empty? %>
+
+	<% if policy(@project).is_owner? && @project.offers.exists? %>
 				
-		<% if @project.offers.exists? && current_user.company? %>
-
-		<%= link_to 'Republish', project_offer_path(@project, @offer), class: "btn btn-bezier republish", method: :delete, data: { confirm: 'Are you sure you want to republish this project?'} %> 
+		<%= link_to 'Republish', project_offer_path(@project, @offers), class: "btn btn-bezier republish", method: :delete, data: { confirm: 'Are you sure you want to republish this project?'} %> 
 		 <%= link_to "Mark Complete", complete_path, class: " btn btn-bezier complete", data: { confirm: 'Are you sure you want to mark this project as complete, you cannot go back?'} %>
 
+	<% elsif policy(@project).show? && current_user.student? && !@project.offers.exists? %>
+
+		<%= simple_form_for [@project, @offer] do |f| %>
+			<%= f.hidden_field :user_id, value: current_user.id %>
+			<%= f.button :submit, "Accept Challenge", class: " btn btn-bezier complete" %>
 		<% end %>
-
-	
-
-
 
 	<% end %> 
 </div>
 
 
 <div class="row row-show-project">
-
-
-
 
 <div class="container-fluid container-project">
 
@@ -54,57 +43,18 @@
 			<h2><%= @project.title %></h2>
 			<h3>by <%= @project.company_name %></h3>
 			<% if @project.approved %>
-			 <span class="label label-default">Ends in <%= distance_of_time_in_words(@project.approved_date, @project.approved_date + 45.days)  %></span>
+			 	<span class="label label-default">Ends in <%= distance_of_time_in_words(@project.approved_date, @project.approved_date + 45.days)  %></span>
 			 <% end %>
-			
-			
 		</div>
-
-
 	</div>
-
+	
 	<div class="container-project-left col-md-8">
-		<h5>Goals</h5>
-		<div class="project-info-description">
-			<%= @project.goal %> 
-		</div>
-
-
-		<h5>Description</h5>
-		<div class="project-info-description">
-			<%= @project.body.html_safe %> 
-		</div>
-	</div>
-
+		<%= render 'left_column' %>
+	</div>	
+	
 
 	<div class="container-project-right col-md-4">	
-
-		<% if current_user.offers_made(project_id: @project.id) %>
-
-		<h5>Contacts</h5>
-		
-		
-		<div class="project-info-box">
-			<p><i class="fa fa-user"></i>  <%= @project.main_contact %> <br>  <%= @project.main_contact_email %></p>
-		</div>
-		<% end %>
-
-		<h5>About <%= @project.company_name %></h5>
-		
-		<div class="project-info-box">
-			<p><i class="fa fa-map-marker"></i>  <%= @project.location %></p>
-		</div>
-
-		<div class="project-info-box">
-			<p><i class="fa fa-industry"></i> <%= @project.industry %></p>
-		</div>
-
-		<div class="project-info-box">
-			<p><i class="fa fa-info-circle"></i> <br> <%= @project.company_description %></p>
-		</div>
-
-
+		<%= render 'right_column' %>
 	</div>
-
   </div>
 </div>

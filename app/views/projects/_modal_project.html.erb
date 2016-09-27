@@ -1,0 +1,32 @@
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h3 class="modal-title" id="myModalLabel"><%= @project.title %></h3>
+      </div>
+      
+      <div class="modal-body">
+        <table class="table-project">
+          <tr>
+            <th>Student Name</th>
+            <th>Submission Available</th>
+          </tr>
+          <% @attachments.each do |attachment| %>
+            <tr>
+              <td><%= attachment.user.name %></td>  
+              <!-- If exist then show the download link, if not then show not available, make safer link for Amazon S3 -->
+              <td><%= link_to 'View Sub', attachment.document.url, download: attachment.document.url, target: '_blank', class: 'bezier' %></td>
+            </tr>
+         <% end %> 
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

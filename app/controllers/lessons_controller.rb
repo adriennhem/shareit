@@ -1,18 +1,19 @@
 class LessonsController < ApplicationController 
+  layout 'dashboard'
   before_action :set_lesson
   before_action :disable_footer
+  before_action :disable_navbar 
   before_action :authenticate_user!, only: :show  
-  layout 'dashboard'
   
   def show
     authorize @lesson 
-  end
+  end 
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_lesson
       @lecture = Lecture.find(params[:lecture_id])
-      @lesson = Lesson.friendly.find(params[:id])
+      # can't find lesson if there is whitespace. 
+      @lesson = @lecture.lessons.friendly.find(params[:id])
     end
-
 end

@@ -3,6 +3,7 @@ class Project < ActiveRecord::Base
 	belongs_to :seller, class_name: 'User', foreign_key: :user_id
 	has_many :offers, dependent: :destroy
 	has_many :buyers, class_name: 'User', through: :offers
+	has_many :attachments
 
 	has_attached_file :logo, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
     validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/
@@ -16,7 +17,4 @@ class Project < ActiveRecord::Base
 	def mark_completed!
  	 self.update_attribute(:completed, true)
 	end
-
-	
-
 end

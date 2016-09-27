@@ -13,7 +13,11 @@ class ProjectsController < InheritedResources::Base
 
   def show
     @project = Project.find(params[:id])
-    @offer = @project.offers.all
+    @attachment = Attachment.new 
+    @user_attachment = Attachment.where(user_id: current_user.id, project_id: @project.id).last
+    @attachments = Attachment.where(project_id: @project.id)
+    @offer = Offer.new
+    @offers = @project.offers.all
     authorize @project 
     @disable_footer = true
   end
