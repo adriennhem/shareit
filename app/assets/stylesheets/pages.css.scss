@@ -79,7 +79,7 @@ blockquote {
 .section-workshop-benefits-content a {
 	font-weight: 600;
 	font-size: 18px;
-	color: #3498db;
+	color: #13D0AB;
 }
 
 
@@ -113,7 +113,7 @@ blockquote {
 
 
 #section-image, #section-image-company  {
-    height: 540px;
+    height: 560px;
     margin: -70px 0 0 0;
 }
 
@@ -157,9 +157,9 @@ a.btn-bezier-inverse.home {
 /* SECTION CUSTOMERS */
 
 .section-customers {
-	padding-top:20px;
-    background: $wild-sand;
-    height: 100px;
+	padding-top:10px;
+    background: #DADFE2;
+    height: 80px;
 }
 
 .section-customers img {
@@ -200,6 +200,7 @@ a.btn-bezier-inverse.home {
 }
 
 .section-course h2 {
+    font-size: 24px;
     margin-top: 50px;
 }
 
@@ -271,6 +272,11 @@ a.btn-bezier-inverse.home {
 
 
 /* SECTION FAQ */
+
+#faq {
+    background-color: $bezier;
+    padding-bottom: 50px;
+}
 
 .section-faq {
     background: $bg-home-grey;

@@ -16,7 +16,7 @@
 		<h1 class="tk-jaf-bernina-sans uppercase white">Blog</h1>
 		<%= form_tag(blog_path, class: "search-form form-horizontal", :method => "get") do %>
 		<div class="form-group">
-		<label for="blog-search" class="tk-jaf-bernina-sans col-sm-6 col-xs-12 control-label">I really want to read</label>
+		<label for="blog-search" class="tk-jaf-bernina-sans col-sm-6 col-xs-12 control-label white">I really want to read</label>
 	      <%= select_tag :blog_category, options_for_select(@blog_category_options), prompt: "everything", onchange: "this.form.submit();", id: "blog-search", class: "form-control search-input" %>  
 	      </div>
 	  <% end %>
