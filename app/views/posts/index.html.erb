@@ -39,7 +39,7 @@
 	 		<%= link_to post do %>	
 				<h2 class="tk-jaf-bernina-sans heading-blog"><%= post.title %></h2>
 			<% end %>	
-				<p class="tk-freight-text-pro text-blog weight400"><%= truncate(post.summary, length: 120) %></p>
+				<p class="tk-freight-text-pro text-blog weight400"><%= truncate(post.summary, length: 131) %></p>
 				<% if current_user.try(:admin?) %>
 				<p class="bezier weight400">Published: <%= post.published %> </p>
 				<% end %>
