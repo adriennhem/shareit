@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
     extend FriendlyId
     friendly_id :permalink, use: :finders
+
+    after_save :update_permalink
     
 	acts_as_taggable_on :tags
 	# basic assossiations 
@@ -19,5 +21,11 @@ class Post < ActiveRecord::Base
 	validates :title, presence: true
 	validates :content, presence: true
 
-	scope :published, -> { where(published: true) } 
+	scope :published, -> { where(published: true) }
+
+	private 
+
+	def update_permalink
+		update_column(:permalink, title.rstrip.downcase.gsub(/\s/, "-")) 
+	end 
 end
