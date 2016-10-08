@@ -38,7 +38,8 @@ gem 'vider', github: 'wazery/vider'
 # Slack Notifier
 gem 'slack-notifier'
 
-
+# Realtime 
+gem 'pusher'
 
 
 

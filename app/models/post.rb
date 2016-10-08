@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
     extend FriendlyId
     friendly_id :permalink, use: :finders
 
-    after_save :update_permalink
+    after_save :update_permalink, :new_post
     
 	acts_as_taggable_on :tags
 	# basic assossiations 
@@ -28,4 +28,10 @@ class Post < ActiveRecord::Base
 	def update_permalink
 		update_column(:permalink, title.rstrip.downcase.gsub(/\s/, "-")) 
 	end 
+
+	def new_post
+		Pusher.trigger('blog_index', 'new_post', {
+	      title: self.title,
+	    })
+	end
 end

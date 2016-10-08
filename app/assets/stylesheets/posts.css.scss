@@ -5,6 +5,17 @@
 @import 'config';
 	
 
+.blog-notification {
+	width: 100%;
+	background: blue;
+	position: absolute;
+	top: 100px;
+	height: 50px;
+	color: #fff;
+	z-index: 1000px;
+	text-align: center;
+}	
+
 .white {
 	color: #fff !important;
 }

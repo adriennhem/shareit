@@ -1,6 +1,34 @@
 <% set_meta_tags site: "Workshopr", title: "Blog" %>
 
 <% set_meta_tags description: "Learn with the Workshopr team. We are here to educate about startup related topics such as social media, coding, productivity tools, etc ..." %>
+<script src="https://js.pusher.com/3.2/pusher.min.js"></script>
+<script>
+
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('e8b645a2bf5643e79867', {
+      cluster: 'eu',
+      encrypted: true
+    });
+
+    var channel = pusher.subscribe('blog_index');
+    channel.bind('new_post', function(data) {
+      var message = "A new blog post: " + data.title + "has been published please refresh the page";
+       var div = document.createElement('div');
+       div.innerHTML = message;
+       div.setAttribute('class', 'alert-website');
+       document.body.appendChild(div);
+       setTimeout(function() {
+	   $(div).fadeOut
+	    ();
+		  }, 4000);
+    });
+
+
+
+</script>
+
 
  <% content_for :navbar do %>
       <%= render 'layouts/navbar_blog' %>
@@ -24,10 +52,10 @@
 	 
 	</div>
 </div>
-
+ <div class="notification"></div>
 
 <div class="row row-blog blog mb-60">
-	<div class="container-fluid">
+	<div id="" class="container-fluid">
 	<% @posts.each do |post| %>
  		<div data-no-turbolink class="col-xs-12 col-sm-6 col-md-4 mb-60">
  			<%= link_to post do %>

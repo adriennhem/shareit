@@ -4,7 +4,7 @@
       <ul class="margin-s">
         <li class="bezier weight800">WORKSHOPR</li>
         <li><%= link_to 'Who we are', about_path %></li>
-        <li><%= link_to 'Blog', blog_path %></li>
+        <li><%= link_to 'Blog', blog_path,  data: { turbolinks: false } %></li>
         <li><%= link_to 'Help Center', 'https://workshoprsupport.zendesk.com/hc/en-us', target: '_blank' %></li>
         <li><%= link_to "Contact Us", contacts_path %></li>
         <li><%= link_to "Terms of Service" %></li>
