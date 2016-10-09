@@ -1,3 +1,3 @@
 class Seo < ActiveRecord::Base
-	belongs_to :post, polymorphic: true
+	belongs_to :post
 end

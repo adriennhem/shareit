@@ -18,7 +18,7 @@ ActiveAdmin.register Post do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :title, :content, :blog_category_id, :user_id, :published, :tag_list, :permalink, :picture, :summary, seos_attributes: [:title, :description, :keywords]
+  permit_params :title, :content, :blog_category_id, :user_id, :published, :tag_list, :permalink, :picture, :summary, seo_attributes: [:id, :title, :description, :keywords, :_destroy]
   #
   # or
   #
@@ -65,11 +65,13 @@ filter :published, as: :radio
     f.input :summary
     f.input :content, :as => :ckeditor
 
-  f.inputs "SEO", :for => [:seo, f.object.seo || Seo.new] do |s|
+  f.inputs "SEO" do
+    f.has_many :seo, allow_destroy: true do |s|
       s.input :title
       s.input :description
       s.input :keywords
     end
+  end
   end
   f.actions
 end
