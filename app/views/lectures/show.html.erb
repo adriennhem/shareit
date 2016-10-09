@@ -19,7 +19,7 @@
 	<div class="lecture mb-60 width960">
 
 
-	   <% @chapters.each do |chapter| %>
+	   <% @chapters.sort { | a, b | a.number <=> b.number }.each do |chapter| %>
 	   <div class="chapter-section">
 			<h2 class="title-chapter">
 				<%= chapter.title %><span class="chapter-duration"><%= chapter.total_duration %> minutes</span>

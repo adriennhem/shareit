@@ -18,7 +18,7 @@ class LecturesController < ApplicationController
 
   def show
     @chapters = @lecture.chapters.includes(:lessons)
-    @projects = @lecture.projects.no_offer.approved
+    @projects = @lecture.projects.approved
     authorize @lecture
   end
 
