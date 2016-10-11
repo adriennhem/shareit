@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <%= favicon_link_tag 'favicon2.ico' %>    
 <% if content_for?(:title_page) %>
     <title><%= yield(:title_page) %></title>
@@ -53,6 +53,8 @@ mixpanel.init("90c27582e3a07a77868efb56a4d2dbc7");
 <%= yield %>
 <%= render 'layouts/footer' unless @disable_footer %>
 </div>
+
+
 
 </body>
 </html>

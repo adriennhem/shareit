@@ -91,6 +91,7 @@ config.action_mailer.raise_delivery_errors = false
   # Added for paperclip 
   config.paperclip_defaults = {
   :storage => :s3,
+  :s3_protocol => :https,
   :s3_host_name => 's3-us-west-2.amazonaws.com',
   :s3_credentials => {
     :bucket => ENV["S3_BUCKET_NAME"],
