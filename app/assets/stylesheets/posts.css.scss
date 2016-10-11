@@ -221,49 +221,6 @@ input.opt-in-email {
 }
 
 
-
-/* Custom, iPhone Retina */ 
-@media only screen and (min-width : 320px) {
-	
-.search-input {
-	margin-left: 30%;
-	margin-right: 10%;
-	width: 70%;
-}
-
-.container-content {
-		max-width: 95%;
-	} 
-
-.row-post h1 {
-	font-size: 34px;
-	line-height: 38px;
-}
-	
-.row-post-content h2 {
-	font-size: 28px;
-	line-height: 31px;
-}
-
-.row-post-content h3 {
-	font-size: 24px;
-	line-height: 28px; 
-}
-
-.row-post-content h4 {
-	font-size: 21px;
-	line-height: 25px;
-}
-
-.row-post-content p, .row-post-content strong, .row-post-content blockquote, .row-post-content ul li, .row-post-content ol li, .row-post-content a {
-		font-size: 18px;
-		line-height: 27px;
-}
-
-}
-
-
-
 @media (max-width: 768px) {
 
 .search-input {
