@@ -113,9 +113,10 @@ blockquote {
 
 
 #section-image, #section-image-company  {
-    height: 560px;
     margin: -70px 0 0 0;
+    height: calc(100vh - 80px);
 }
+
 
 
 .container-section-image h1, .container-section-image h2 {
@@ -167,8 +168,29 @@ a.btn-bezier-inverse.home {
 }
 
 
+.bandy {
+    margin-top: 15px;
+}
+
+.wisembly {
+    margin-top: 17px;
+}
+
+.incredibly {
+    margin-top: 5px;
+}
+
 .boush { 
-margin-top: 10px }
+    margin-top: 15px
+}
+
+.tedx {
+    margin-top: 15px;
+}
+
+.frogvalley {
+
+}
 
 
 /* SECTION BENEFITS */
