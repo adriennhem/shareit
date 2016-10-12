@@ -278,6 +278,40 @@ input.opt-in-email {
 	margin-top: 1.2em;
 }
 
+
+/* CALL TO ACTION */
+
+
+.cta {
+	text-align: center;
+}
+
+a.btn-company {
+	padding: .75em 2em;
+	color: #ffffff;
+	font-weight: bold;
+	background: #52A1ED;
+}
+
+a.btn-company:hover {
+	background: #32CEAB;
+	transition: all 0.2s ease;	
+}
+
+a.btn-student {
+	padding: .75em 2em;
+	color: #ffffff;
+	font-weight: bold;
+	text-align: center;
+	background: #32CEAB;
+}
+
+a.btn-student:hover {
+	background: #52A1ED;
+	transition: all 0.2s ease;	
+}
+
+
 /* DISCOVER */
 
 .media {
