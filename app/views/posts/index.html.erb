@@ -64,7 +64,7 @@
 			<%= link_to blog_path(blog_category: post.blog_category.id) do %>	
 	 			<h3 class="tk-jaf-bernina-sans uppercase bezier"><%= post.blog_category.title %></h3>
  			<% end %>
-	 		<%= link_to post do %>	
+	 		<%= link_to post, data: { turbolinks: false } do %>	
 				<h2 class="tk-jaf-bernina-sans heading-blog"><%= post.title %></h2>
 			<% end %>	
 				<p class="tk-freight-text-pro text-blog weight400"><%= truncate(post.summary, length: 131) %></p>
