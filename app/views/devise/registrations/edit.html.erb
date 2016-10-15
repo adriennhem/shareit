@@ -15,7 +15,7 @@
     <li role="presentation" class="active"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Account Settings</a></li>
     <li role="presentation"><a href="#password" aria-controls="password" role="tab" data-toggle="tab">Password</a></li>
     <% if current_user.student? %>
-    <!-- <li role="presentation"><a href="#billing" aria-controls="billing" role="tab" data-toggle="tab">Billing</a></li> -->
+    <li role="presentation"><a href="#billing" aria-controls="billing" role="tab" data-toggle="tab">Billing</a></li>
     <% end %>
     
   </ul>
@@ -77,6 +77,35 @@
 
     </div>
 
+    <% if current_user.student? %>
+    <div role="tabpanel" class="tab-pane user-settings-pad" id="billing">
+
+
+    <div role="tabpanel" class="tab-pane" id="billing">
+    <table class="table-receipt table">
+       <tr>
+         <th class="no-border-top">Date</th>
+         <th class="no-border-top">Course</th>
+         <th class="no-border-top">Amount</th>
+         <th class="no-border-top">Receipt</th>
+       </tr>
+       <% @user.enrollments.each do |enrollment| %>
+       <tr>
+         <td><%= enrollment.created_at.strftime("%Y, %m, %d") %></td>
+         <td><%= enrollment.lecture.title %></td>
+         <td><%= number_to_currency(enrollment.amount / 100) %></td>
+         <td><%= link_to enrollment_path(enrollment, format: :pdf) do %>
+          <i class="fa fa-file-o"></i>
+         <% end %>
+         </td>
+       </tr>
+       <% end %>
+    </table>
+      
+    </div>
+   
+    </div>
+    <% end %> 
     
   </div>
 

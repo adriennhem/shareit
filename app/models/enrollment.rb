@@ -1,13 +1,23 @@
 class Enrollment < ActiveRecord::Base
+  before_create :update_uuid
+
   belongs_to :user 
   belongs_to :lecture
   validates :user_id, presence: true
   validates :lecture_id, presence: true 
   validates :lecture, uniqueness: { scope: :user, message: "should happen once per user" }
 
+  def update_uuid
+    self.update_column(:uuid, SecureRandom.uuid)
+  end
+
+  def to_param
+    uuid
+  end
+
   def receipt 
   	Receipts::Receipt.new(
-      id: id,
+      id: uuid,
       product: lecture.title,
       company: {
         name: "Workshopr",

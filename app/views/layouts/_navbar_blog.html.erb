@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-blog">
+<nav class="navbar navbar-blog">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -8,39 +8,58 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "Workshopr.", root_path, class: 'navbar-brand', data: { turbolinks: false } %>
+      <%= link_to "Workshopr.", root_path, class: 'uppercase', data: { turbolinks: false } %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-blog-right navbar-right">
+      <ul class="nav navbar-nav navbar-home-right navbar-right">
       <% if user_signed_in? %>
-        <li> <%= link_to profile_path(current_user) do %>
+        <li> <%= link_to profile_path(current_user), class: "link-navbar-blog" do %>
              <i class="fa fa-tachometer"></i> <span>My Dashboard</span>
              <% end %>
         </li>
-        <% if current_user.try(:admin?) %>
-        <li> <%= link_to admin_root_path do %>
+         <li> 
+           <%= link_to 'Blog', blog_path, class: "link-navbar-blog" %>   
+        </li>
+        <% if current_user.admin? %>
+        <li> <%= link_to admin_root_path, class: "link-navbar-blog" do %>
              <i class="fa fa-user"></i> <span>Admin Dashboard</span>
              <% end %>
         </li>
         <% end %>
+        <% if controller_name == "pages" && action_name === "home_company" %>
+          <li><%= link_to "I'm a Student", root_path, data: { turbolinks: false } %></li>
+        <% else  %>
+          <li><%= link_to "I'm a Company", company_path, data: { turbolinks: false } %></li>
+        <% end %>
         <li>
-          <%= link_to 'Sign Out',  destroy_user_session_path, method: :delete %>
+          <p class="navbar-btn"> <%= link_to 'Sign Out',  destroy_user_session_path, method: :delete, class: "btn btn-bezier btn-small" %></p>
         </li>
+
       <% else %>
          <li> <%= link_to new_user_registration_path do %>
              <i class="fa fa-user-plus"></i> <span>Register</span>
-             <% end %>
+        <% end %>
         </li>
-        <li>
+         <li>
           <%= link_to 'Sign In', new_user_session_path %>
         </li>
+         <li> 
+           <%= link_to 'Blog', blog_path, class: "link-navbar-blog" %>   
+        </li>
+      <% if controller_name == "pages" && action_name === "home_company" %>
+          <li><%= link_to "I'm a Student", root_path, data: { turbolinks: false } %></li>
+        <% else  %>
+          <li><%= link_to "I'm a Company", company_path, data: { turbolinks: false } %></li>
+        <% end %>
       <% end %>
       </ul>
 
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+
 
 

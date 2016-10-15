@@ -87,3 +87,24 @@
 }
 
 
+/* NAVBAR BLOG */
+
+.navbar-brand--blog {
+
+}
+
+.navbar-blog li a {
+    margin-top: 10px;
+    color: $aluminium;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.navbar-blog li a:hover {
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    background: none;
+}
+
+

@@ -31,12 +31,6 @@ get '/user_projects' => 'profiles#user_projects', as: :user_projects
 
   devise_for :users, controllers: {registrations: 'registrations'}
 
-
-  
-
-
-  
-  
   resources :enrollments
 
   resources :attachments

@@ -21,7 +21,7 @@ class EnrollmentsController < ApplicationController
 	end
 
 	def show
-		@enrollment = current_user.enrollments.find(params[:id])
+		@enrollment = current_user.enrollments.find_by_uuid(params[:id])
 	    respond_to do |format|
 	      format.pdf {
 	        send_data @enrollment.receipt.render,
@@ -29,7 +29,7 @@ class EnrollmentsController < ApplicationController
 	          type: "application/pdf",
 	          disposition: :inline,
 	          orientation: 'Landscape',
-	          encoding: utf-8
+	          encoding: 'utf-8'
 	      }
     end
   end
@@ -112,7 +112,7 @@ class EnrollmentsController < ApplicationController
 	private
 
 		def enrollment_params 
-			params.require(:enrollment).permit(:user_id, :lecture_id)
+			params.require(:enrollment).permit(:user_id, :lecture_id, :amount, :uuid)
 		end
 
 		def redirect_to_signup
