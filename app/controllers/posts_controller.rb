@@ -17,7 +17,7 @@ class PostsController < ApplicationController
 
 	def show
 		authorize @post
-		@recommended_posts = Post.where(blog_category_id: @post.blog_category_id).last(3)
+		@recommended_posts = Post.where(blog_category_id: @post.blog_category_id, id: !@post.id).last(3)
 	end
 
 	def feed
