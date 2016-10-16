@@ -8,9 +8,12 @@
 
 /* navbar */
 
+nav {
+    z-index: 999;
+}
 
 .navbar-logo {
-    margin-top: 10px;
+    padding-top: 10px;
 }
 
 .navbar-default {
@@ -99,7 +102,7 @@
 /* NAVBAR BLOG */
 
 .navbar-blog .navbar-logo {
-    margin-top: 20px;
+    padding-top: 20px;
 }
 
 .navbar-blog li a {
