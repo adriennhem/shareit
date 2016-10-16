@@ -112,8 +112,12 @@ div[aria-expanded="true"] a.btn-bezier {
 	height: 410px;
 }
 
+.blog-featured-image-wrapper {
+	max-height: 233px;
+}
+
 .row-blog img {
-	max-height: 258px;
+	max-width: 100%;
 }
 
 .row-blog h3 {
@@ -133,6 +137,14 @@ div[aria-expanded="true"] a.btn-bezier {
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 26px;
+}
+
+.blog-featured a {
+	color: $bezier;
+}
+
+.blog-feature-comment-counts {
+	margin-left: 10px;
 }
 
 .row-promotion {
@@ -160,6 +172,9 @@ input.opt-in-email {
 
 /* SHOW POST */
 
+.gif {
+	max-width: 100%; 
+}
 
 .row-post {
 	width: 100%;
@@ -254,8 +269,8 @@ input.opt-in-email {
 }
 
 .row-post-content p, .row-post-content strong, .row-post-content blockquote, .row-post-content ul li, .row-post-content ol li, .row-post-content a {
-		font-size: 18px;
-		line-height: 27px;
+		font-size: 21px;
+		line-height: 28px;
 }
 }
 
