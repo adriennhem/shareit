@@ -50,7 +50,7 @@
 		  </div>
 		  <div class="media-body">
 		  	<h4 class="weight400 media-heading bezier">Author</h3>
-		    <h5 class="media-heading weight800"><%= @post.user.email %></h4>
+		    <h5 class="media-heading weight800"><%= @post.user.full_name %></h4>
 		    <p><%= @post.user.biography.html_safe %></p>
 		    <p>Follow me:
 		     <% if @post.user.attribute_present?(:twitter_url) %>

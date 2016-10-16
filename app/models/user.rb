@@ -34,6 +34,10 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :enrollments
 
+  def full_name
+    "#{first_name} #{last_name}".titleize
+  end
+
   def is_admin  
     self.admin?
   end

@@ -69,7 +69,7 @@
 				<h2 class="tk-jaf-bernina-sans heading-blog"><%= post.title %></h2>
 			<% end %>	
 				<p class="tk-freight-text-pro text-blog weight400"><%= truncate(post.summary, length: 131) %></p>
-				<span class="bezier">By <%= post.user.name %></span><i class="bezier fa fa-comments blog-feature-comment-counts" aria-hidden="true"></i> <%= link_to 'comment', post_path(post, anchor: 'disqus_thread') %>
+				<span class="bezier">By <%= post.user.full_name %></span><i class="bezier fa fa-comments blog-feature-comment-counts" aria-hidden="true"></i> <%= link_to 'comment', post_path(post, anchor: 'disqus_thread') %>
 				<% if current_user.try(:admin?) %>
 				<p class="bezier weight400">Published: <%= post.published %> </p>
 				<% end %>
