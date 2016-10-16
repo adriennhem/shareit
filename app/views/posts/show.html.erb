@@ -102,9 +102,32 @@
 		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 </div>
 
-
-<div class="row-discover margin-s">
+<% if @recommended_posts %>
+<div class="row row-blog blog mb-60">
 	<div class="container-fluid">
-		<a data-sumome-discover-grid></a>
-	</div>
+
+	<h2 class="bezier center mb-40 uppercase">You might also like...</h2>
+
+	<% @recommended_posts.each do |post| %>
+ 		<div data-no-turbolink class="col-xs-12 col-sm-6 col-md-4 mb-60 blog-featured">	
+ 			<%= link_to post do %>
+				<%= image_tag post.picture.url(:medium) %>
+			<% end %>	
+			<%= link_to blog_path(blog_category: post.blog_category.id) do %>	
+	 			<h3 class="tk-jaf-bernina-sans uppercase bezier"><%= post.blog_category.title %></h3>
+ 			<% end %>
+	 		<%= link_to post, data: { turbolinks: false } do %>	
+				<h2 class="tk-jaf-bernina-sans heading-blog"><%= post.title %></h2>
+			<% end %>	
+				<p class="tk-freight-text-pro text-blog weight400"><%= truncate(post.summary, length: 131) %></p>
+				<span class="bezier">By <%= post.user.full_name %></span><i class="bezier fa fa-comments blog-feature-comment-counts" aria-hidden="true"></i> <%= link_to 'comment', post_path(post, anchor: 'disqus_thread') %>
+				<% if current_user.try(:admin?) %>
+				<p class="bezier weight400">Published: <%= post.published %> </p>
+				<% end %>
+				
+		</div>
+ 	<% end %>
+
+   </div>
 </div>
+<% end %>
