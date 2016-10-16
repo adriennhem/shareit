@@ -8,6 +8,11 @@
 
 /* navbar */
 
+
+.navbar-logo {
+    margin-top: 10px;
+}
+
 .navbar-default {
     height: 50px;
     z-index: 999;
@@ -24,6 +29,10 @@
     font-weight: 600;
     font-size: 15px;
     color: #fff !important;
+}
+
+.navbar-home li a:hover {
+    color: $bezier !important;
 }
 
 
@@ -74,7 +83,7 @@
 }
 
 .shrink-home .navbar-right li a:hover {
-    color: $bezier;
+    color: $bezier !important;
 }
 
 
@@ -89,21 +98,25 @@
 
 /* NAVBAR BLOG */
 
-.navbar-brand--blog {
-
+.navbar-blog .navbar-logo {
+    margin-top: 20px;
 }
 
 .navbar-blog li a {
     margin-top: 10px;
     color: $aluminium;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 15px;
 }
 
 .navbar-blog li a:hover {
     margin-top: 10px;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 15px;
+    background: none;
+}
+
+.navbar-blog li a:active {
     background: none;
 }
 

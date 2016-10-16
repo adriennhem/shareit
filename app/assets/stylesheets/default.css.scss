@@ -242,10 +242,15 @@ a.btn-blue, button.blue, input[type="submit"].btn-blue {
 }
 
 
-a.btn-bezier, button.btn-bezier, input[type="submit"].btn-bezier {
+a.btn-bezier, button.btn-bezier {
 	background: $bezier;
 	color: #ffffff;
 
+}
+
+input[type="submit"].btn-bezier {
+    background: #DADFE2;
+    color: $text;
 }
 
 a.btn-bezier-border, button.btn-bezier-border, input[type="submit"].btn-bezier-border {
