@@ -249,7 +249,13 @@ a.btn-bezier, button.btn-bezier {
 }
 
 input[type="submit"].btn-bezier {
-    background: #DADFE2;
+    background: $bezier;
+    color: #ffffff;
+   
+}
+
+input[type="submit"] {
+     background: #DADFE2;
     color: $text;
 }
 
