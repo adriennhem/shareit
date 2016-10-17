@@ -29,7 +29,7 @@
 		<div class="center">
  		<h4 class="tk-jaf-bernina-sans bezier uppercase"><%= @post.blog_category.title %></h4>
  		<h1 class="tk-jaf-bernina-sans"><%= @post.title %></h1>
- 		<p>by <%= @post.user.email %> published on <%= @post.created_at %> </p>
+ 		<p>by <%= @post.user.full_name %> published on <%= @post.created_at %> </p>
  		</div>
  	</div>
  </div>
@@ -121,9 +121,6 @@
 			<% end %>	
 				<p class="tk-freight-text-pro text-blog weight400"><%= truncate(post.summary, length: 131) %></p>
 				<span class="bezier">By <%= post.user.full_name %></span><i class="bezier fa fa-comments blog-feature-comment-counts" aria-hidden="true"></i> <%= link_to 'comment', post_path(post, anchor: 'disqus_thread') %>
-				<% if current_user.try(:admin?) %>
-				<p class="bezier weight400">Published: <%= post.published %> </p>
-				<% end %>
 				
 		</div>
  	<% end %>

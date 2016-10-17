@@ -1,21 +1,19 @@
 <script type="text/javascript">
-    mixpanel.track("Dashboard Index")
+    mixpanel.track("Course Index")
 </script>
 
 <% content_for :navbar do %>
-  <%= render 'layouts/sidebar' %>
+  <%= render 'layouts/navbar_blog' %>
 <% end %>
 
-
-<div class="row" id="dashboard-header" data-no-turbolink>
-  <h1 class="dashboard-title">course library</h1>
+<div class="row row-header mb-40">
+     <h1 class="contact center uppercase white margin-s">Courses</h1>
 </div>
 
+<div class="row mb-40">
 
-
-<div class="container-index-lecture">    
   <% @lectures.each do |lecture| %>
-    <div class="lecture-index-box col-lg-12 col-md-12">
+    <div class="lecture-index-box col-lg-10 col-md-10 col-xs-12 col-md-offset-1 mb-20">
 
       <div class="col-md-6 lecture-index-video">
         <%= lecture.video.html_safe %>
@@ -36,17 +34,18 @@
         <p class="lecture-description mb-20">
         <%= truncate(lecture.description, length: 210) %> 
         </p>
-
+        <% if lecture.waiting_list.empty? %>
         <%= link_to 'View Course', lecture_description_path(lecture), class: "btn btn-bezier btn-small" %>
-
+        <% else %>
+        <%= link_to 'Join the waiting list', lecture.waiting_list, class: "btn btn-bezier btn-small" %>
+        <% end %>
        
       </div>
 
     </div> 
   <% end %>
+
 </div>
-
-
   
           
          
