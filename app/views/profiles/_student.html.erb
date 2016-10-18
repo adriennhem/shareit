@@ -5,7 +5,7 @@
 <div class="row" id="dashboard-header" data-no-turbolink>
 	<h1 class="dashboard-title bezier">enrolled courses</h1>
 	<% if current_user.lectures.empty? %>
-		<%= link_to lectures_path, class: "btn btn-bezier btn-small" do %>
+		<%= link_to courses_path, class: "btn btn-bezier btn-small" do %>
 				Join a course!
 		<% end %> 
 	<% end %>	
