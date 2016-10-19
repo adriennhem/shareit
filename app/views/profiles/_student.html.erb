@@ -21,10 +21,10 @@
 		<% current_user.lectures.each do |lecture| %>
 		  <div class="col-md-4">
 	         <div class="dashboard-student-box">
-				<%= image_tag(lecture.picture.url) %>
-				<%= link_to lecture do %>	
+	         <%= link_to lecture do %>
+				<%= image_tag(lecture.picture.url) %>	
 		        <h3 class="center"><%= lecture.title %></h3> 
-		        <% end %> 
+		      <% end %> 
 		        <p class="center by-teacher">by <%= lecture.teacher.name %></p>
 	           
 				<div class="section-box-bottom">
