@@ -35,6 +35,7 @@ get '/user_projects' => 'profiles#user_projects', as: :user_projects
 
   resources :attachments
 
+
   get 'courses', to: 'lectures#index', as: :courses
   get 'courses/:id', to: 'lectures#lecture_description', as: :lecture_description
   resources :lectures, only: [:show] do 

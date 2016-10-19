@@ -1,5 +1,5 @@
 class Enrollment < ActiveRecord::Base
-  before_create :update_uuid
+  after_create :update_uuid
 
   belongs_to :user 
   belongs_to :lecture
@@ -8,7 +8,7 @@ class Enrollment < ActiveRecord::Base
   validates :lecture, uniqueness: { scope: :user, message: "should happen once per user" }
 
   def update_uuid
-    self.update_column(:uuid, SecureRandom.uuid)
+    self.update_attributes(uuid: SecureRandom.uuid)
   end
 
   def to_param

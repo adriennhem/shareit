@@ -17,6 +17,11 @@ class AttachmentsController < ApplicationController
 		redirect_to :back
 	end
 
+	# def download
+	#   @user_attachment = Attachment.find(params[:id])	
+	#   redirect_to @user_attachment.document.expiring_url(10)
+	# end
+
 	def attachment_params
 	    params.require(:attachment).permit(:project_id, :user_id, :document)
 	end

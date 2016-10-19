@@ -37,7 +37,11 @@
 		  		<% end %>	
 		  	<% elsif current_user.student? && current_user.attachments.where(project_id: @project.id).present? %>
 
-		  	<%= link_to 'My Submission', @user_attachment.document.url, download: @user_attachment.document.url %>
+		  	<%= link_to "Download File", @user_attachment.document.expiring_url(10), download: @user_attachment.document.expiring_url(10), target: '_blank', class: 'bezier' %> |
+
+		  	<%= link_to "Delete File", @user_attachment, method: :delete, class: 'bezier' %>
+			
+
 		  		
 			<% end %>
 
@@ -46,28 +50,11 @@
 
 		
 
-		
 
-
-
-			<p>
+			<p class="margin-xs">
 				<i class="fa fa-user"></i> <%= @project.offers.count if @project.offers %>
 			</p>
 		</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

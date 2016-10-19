@@ -144,10 +144,23 @@ div[aria-expanded="true"] a.btn-bezier {
 	margin-left: 10px;
 }
 
+/* NEWSLETTER */
+
 .row-promotion {
-	height: 265px;
+	max-height: 265px;
 	background: #52A1ED;
+	padding-top: 5%;
+	padding-bottom: 5%;
 }
+
+.title-newsletter {
+}
+
+.form-newsletter {
+	float: none;
+	margin: 0 auto;
+}
+
 
 .row-promotion p {
 	font-size: 30px;
@@ -158,13 +171,20 @@ div[aria-expanded="true"] a.btn-bezier {
 }
 
 input.opt-in-email {
-	width: 90%;
+	width: 100%;
 	height: 53px;
 	float: right;
 }
 
-.row-promotion .btn-bezier {
-	margin-left: -20px;
+
+.btn-newsletter {
+	width: 100%;
+	height: 52px;
+	font-size: 21px;
+}
+
+input.email {
+	border-radius: 0px;
 }
 
 /* SHOW POST */
