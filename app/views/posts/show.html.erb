@@ -29,7 +29,7 @@
 		<div class="center">
  		<h4 class="tk-jaf-bernina-sans bezier uppercase"><%= @post.blog_category.title %></h4>
  		<h1 class="tk-jaf-bernina-sans"><%= @post.title %></h1>
- 		<p>by <%= @post.user.full_name %> published on <%= @post.created_at %> </p>
+ 		<p>by <%= @post.user.full_name %>, Updated <%= @post.updated_at.strftime('%B %e, %Y') %> </p>
  		</div>
  	</div>
  </div>

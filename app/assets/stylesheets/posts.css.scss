@@ -30,45 +30,6 @@
 }
 
 
-/* NAVBAR BLOG */
-
-.navbar-blog a.navbar-brand {
-	font-weight: 600;
-	margin-left: 10px;
-	color: $bezier;
-	font-size: 21px;
-	padding-top: 20px;
-}
-
-.navbar-blog-right a {
-	color: $bezier;
-	font-size: 15px;
-	padding-top: 20px;
-}
-
-.navbar-blog a.navbar-brand:hover, .navbar-blog a:hover {
-	opacity: 0.8;
-	color: $bezier;
-}
-
-.navbar-toggle.collapsed {
-	background: $bezier;
-}
-
-div[aria-expanded="true"] {
-	background: #FFFFFF;
-	
-}
-
-div[aria-expanded="true"] a {
-	color: $bezier !important;
-	font-weight: 400;
-}
-
-div[aria-expanded="true"] a.btn-bezier {
-	margin-left: 15px;
-	color: #fff !important;
-}
 
 /* ROW SEARCH */
 
