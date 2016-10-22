@@ -3,6 +3,7 @@
 <% set_meta_tags description: "#{@post.seo.try(:description)}" %>
 <% set_meta_tags author: "#{@post.user.google_plus}" %>
 <% set_meta_tags publisher: "#{@post.user.google_plus}" %>
+<% set_meta_tags image_src: "#{@post.picture.url(:medium)}" %>
 
 
 <% set_meta_tags og: {	
