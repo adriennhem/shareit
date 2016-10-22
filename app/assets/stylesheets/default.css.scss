@@ -302,46 +302,41 @@ a.btn-bezier-border:hover, button.btn-bezier-border:hover, input[type="submit"].
 //  FOOTER
 // --------------------------------------------------------------
 
-
 .footer {
-    font-size: 14px;
+    padding: 20px 0;
 }
 
-
-.footer .col-md-4 {
-    padding-right: 50px;
+.footer .col-xs-12  {
+    text-align: center;
 }
 
-.footer ul li {
+.footer li {
     list-style: none;
+    float: left;
+    padding-left: 20px;
 }
 
-.footer ul li a {
-    color: $raven;
+.footer a {
+    color: $text;
 }
 
-#mc_embed_signup, .footer span  {
-    color: $raven;
-}
-
-.footer ul li a:hover {
-    color: $bezier !important;
-}
-
-.footer input.email {
-    width: 250px !important;
-    height: 32px !important;
-    border-radius: 0 !important;
-}
-
-.footer input {
-    margin-top: 10px;
-}
-
-.bezier, a.bezier {
+.footer a:hover, .footer i:hover {
     color: $bezier;
 }
 
+.footer-social-items i {
+    color: $text;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .footer-social-items-title {
+    display: none;
+  }
+
+  .footer-social-items i {
+    padding-left: 30px;  }
+}
 
 
 /*DASHBOARD*/

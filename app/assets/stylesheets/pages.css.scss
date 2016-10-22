@@ -232,8 +232,7 @@ a.btn-bezier-inverse.home {
 
 
 .home-course-box {
-   position: relative;
-   left: 35%;
+    margin: 0 auto;
 }
 
 .home-course-box img {
@@ -241,11 +240,13 @@ a.btn-bezier-inverse.home {
 }
 
 .section-course .col-md-6 {
-    padding-right: 100px;
-    padding-left: 50px;
+    text-align: center;
 }
 
-
+.section-course .col-md-6 p {
+    max-width: 320px;
+    margin: 0 auto;
+}
 
 
 /* Section 2 */

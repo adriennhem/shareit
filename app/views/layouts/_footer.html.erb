@@ -1,8 +1,10 @@
-<div class="row footer mb-60">
+<div class="row footer">
   <ul>
-    <li class="col-md-4">     
-      <ul class="margin-s">
-        <li class="bezier weight800">WORKSHOPR</li>
+  <li class="col-md-1 col-xs-12 mb-20">
+      <%= image_tag('https://s3-us-west-2.amazonaws.com/workshopr-picture/assets/pictures/workshopr_.png', height: 20) %>
+    </li>
+    <li class="col-md-6 col-xs-12 mb-20">     
+      <ul>
         <li><%= link_to 'Who we are', about_path %></li>
         <li><%= link_to 'Blog', blog_path,  data: { turbolinks: false } %></li>
         <li><%= link_to "Contact Us", contacts_path %></li>
@@ -10,20 +12,28 @@
         <li><%= link_to "Privacy Policy" %></li>
       </ul>
     </li>
-    <li class="col-md-4 col-xs-12">
-      <ul class="margin-s">
-        <li class="bezier weight800">SOCIAL</li>
-        <li><%= link_to 'Facebook', 'https://www.facebook.com/workshopr', target: '_blank' %></li>
-        <li><%= link_to 'Twitter', 'https://twitter.com/workshopr', target: '_blank' %></li>
-        <li><%= link_to 'Instagram', 'https://instagram.com/Workshopr', target: '_blank' %></li>
-        <li><a href="https://mixpanel.com/f/partner" rel="nofollow"><img src="//cdn.mxpnl.com/site_media/images/partner/badge_light.png" class="margin-s" alt="Mobile Analytics" /></a></li>
+    <li class="col-md-4 col-xs-12 mb-20">
+      <ul class="footer-social-items">
+        <li class="bezier weight800 footer-social-items-title">SOCIAL</li>
+        <li>
+          <%= link_to 'https://www.facebook.com/workshopr', target: '_blank' do %>
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+          <% end %>
+        </li>
+        <li>
+        <li>
+          <%= link_to 'https://twitter.com/workshopr', target: '_blank' do %>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to 'https://instagram.com/Workshopr', target: '_blank' do %>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          <% end %>
+        </li>
       </ul>
-    </li>
-    
-      
-       <%= render 'layouts/newsletter_footer' unless @disable_newsletter %>
-      
-    
+    </li>    
+       
   </ul>
 </div>
 

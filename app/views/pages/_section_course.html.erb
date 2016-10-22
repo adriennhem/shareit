@@ -1,9 +1,9 @@
 
 <% unless @lecture.nil? %>
 <div class="row section-course padding-top-xl">
-	<div class="center mb-150">
+	<div class="center mb-150 col-md-12 col-xs-12">
 	<h1 class="mb-40 white">Start your first Workshop now</h1> 	
-	         <div class="home-course-box dashboard-student-box">
+	         <div class="home-course-box dashboard-student-box col-md-offset-3">
 				<%= image_tag(@lecture.try(:picture).try(:url)) %>
 		        <h3 class="center"><%= @lecture.try(:title) %></h3> 
 		        <p class="center by-teacher">by <%= @lecture.try(:teacher).try(:name) %></p>
