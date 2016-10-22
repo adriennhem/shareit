@@ -108,6 +108,15 @@ blockquote {
 	left: 80px;
 }
 
+@media screen and (max-width: 600px) {
+  .section-workshop-benefits cite {
+    position: relative;
+    top: -10px;
+    left: 50px;
+}
+}
+
+
 
 /* COMPANY */
 
@@ -213,9 +222,6 @@ a.btn-bezier-inverse.home {
     font-weight: 400;
 }
 
-.benefit-box {
-    padding-left: 60px;
-}
 
 .section-benefits p {
     color: #7e8890;
