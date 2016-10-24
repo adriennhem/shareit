@@ -49,6 +49,11 @@ nav {
     background: white;
 }
 
+.navbar-fixed-top .navbar-toggle.collapsed {
+    background: $bezier;
+    color: $bezier;
+}
+
 
 /* navbar right hover */
 
