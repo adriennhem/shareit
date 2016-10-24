@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  after_create :notify_slack
   devise :timeoutable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -33,6 +34,11 @@ class User < ActiveRecord::Base
 
 
   accepts_nested_attributes_for :enrollments
+
+  def notify_slack
+    notifier = Slack::Notifier.new "https://hooks.slack.com/services/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", channel: '#general',
+                                              username: 'Workshopr Dean'
+  end
 
   def full_name
     "#{first_name} #{last_name}".titleize

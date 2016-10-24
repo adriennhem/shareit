@@ -18,6 +18,7 @@ gem 'bootstrap-wysihtml5-rails'
 gem 'jquery-turbolinks'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'will_paginate'
+gem 'rack-cors', :require => 'rack/cors'
 # Email sender
 gem 'mandrill-api'
 
