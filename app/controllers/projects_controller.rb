@@ -64,6 +64,9 @@ def create
   @lecture_options = Lecture.all.map{|u| [u.title, u.id]}
 	@project = current_user.project_selling.build(project_params)
 	if @project.save 
+    notifier = Slack::Notifier.new "https://hooks.slack.com/services/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", channel: '#general',
+                                              username: 'Workshopr Challenge'
+    notifier.ping "A new challenge has been published"
     NewChallengeMailer.new_challenge(@project).deliver
 		flash[:success] = "You have successfully created a Challenge, a member of our team will review it shortly"
 		redirect_to profile_path(current_user)

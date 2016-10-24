@@ -38,6 +38,11 @@ class User < ActiveRecord::Base
   def notify_slack
     notifier = Slack::Notifier.new "https://hooks.slack.com/services/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", channel: '#general',
                                               username: 'Workshopr Dean'
+    if self.role == "student"
+      notifier.ping "#You have a new student: #{self.email}"
+    else
+      notifier.ping "#You have a new company: #{self.email}"  
+    end
   end
 
   def full_name

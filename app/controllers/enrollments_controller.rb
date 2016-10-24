@@ -99,7 +99,7 @@ class EnrollmentsController < ApplicationController
 	      redirect_to profile_path(current_user)
 		  flash[:success] = "You have successfully enrolled."
 		  require 'slack-notifier'
-	      notifier = Slack::Notifier.new "https://hooks.slack.com/services/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", channel: '#workshopr-general',
+	      notifier = Slack::Notifier.new "https://hooks.slack.com/services/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", channel: '#general',
 	                                              username: 'Dean Notifier'
 	      notifier.ping "#{current_user.email} has enrolled to #{@lecture.title} !"
 	    end
