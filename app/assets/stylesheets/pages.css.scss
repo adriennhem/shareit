@@ -312,16 +312,6 @@ a.btn-bezier-inverse.home {
 }
 
 
-/* SECTION FAQ */
-
-#faq {
-    background-color: $bezier;
-    padding-bottom: 50px;
-}
-
-.section-faq {
-    background: $bg-home-grey;
-}
 
 
 
@@ -399,11 +389,12 @@ a.btn-bezier-inverse.home {
     padding: 5px 10px;
 }
 
+/* SECTION FAQ */
 
-/* Section FAQ */
-
-
-
+#faq {
+    background-color: $bezier;
+    padding-bottom: 50px;
+}
 
 .box-faq h2 {
     font-size: 20px;
@@ -412,21 +403,33 @@ a.btn-bezier-inverse.home {
 .box-faq {
     background: $wild-sand;
     border-radius: 10px;
-    max-width: 582px;
-    margin-left: 50px;
     padding: 5px 20px;
+    line-height: 30px;
     line-height: 30px;
 }
 
-.last-box-faq-2 {
- margin-top: -20px;
+
+@media (min-width:961px)  {
+    .box-faq {
+        margin-right: 20px;
+
+    }
+
+    .last-box-faq-2 {
+         margin-top: 20px;
+    }
+
+    .last-box-faq {
+         margin-top: -50px;
+    }
 }
 
-.last-box-faq {
- margin-top: -80px;
+
+@media (max-width:600px)  {
+    #faq .col-md-5 {
+        margin-top: 20px;
+    }
 }
-
-
 
 /* CONTACT US */
 
