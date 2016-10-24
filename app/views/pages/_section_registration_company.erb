@@ -1,17 +1,25 @@
 <div class="row" id="section2">
 	<div class="center mb-60">
 		<h2>Sign up and start publishing challenges now. It's completely free!</h2>
-    <div class="container">
+    <div class="col-md-12">
 		 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
-       <%= f.input :email, label: false, autocomplete: false, placeholder: 'EMAIL' %>
-       <%= f.input :password, label: false, autocomplete: false, placeholder: 'PASSWORD'   %>
-       <%= f.input :password_confirmation, label: false, autocomplete: false, placeholder: 'PASSWORD CONFIRMATION'   %>
+      <div class="col-md-3">
+       <%= f.input :email, label: false, autocomplete: false, placeholder: 'EMAIL', input_html: { class: 'form-control' } %>
+       </div>
+       <div class="col-md-3">
+       <%= f.input :password, label: false, autocomplete: false, placeholder: 'PASSWORD', input_html: { class: 'form-control' } %>
+       </div>
+       <div class="col-md-3">
+       <%= f.input :password_confirmation, label: false, autocomplete: false, placeholder: 'PASSWORD CONFIRMATION', input_html: { class: 'form-control' }    %>
+       </div>
        <%= f.hidden_field :role, { value: "company"} %>
-       <%= f.button :submit, "Sign up! It's free", class: "btn-bezier" %>
+       <div class="col-md-3">
+       <%= f.button :submit, "Sign up! It's free", class: "btn-bezier mb-20" %>
+       </div>
     <% end %>
     </div>
-    <p>Or <%= link_to 'Sign In', new_user_session_path %></p>
-  	<p>By clicking "Register!" I agree to Workshopr's Terms of Service.</p>
+    <p class="clear">Or <%= link_to 'Sign In', new_user_session_path %></p>
+  	<p>By registering I agree to Workshopr's Terms of Service.</p>
 	</div>	
 </div>

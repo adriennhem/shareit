@@ -266,7 +266,7 @@ a.btn-bezier-inverse.home {
 /* Section 2 */
 
 #section2 {
-    height: 500px;
+    min-height: 500px;
     text-align: center;
     background: #242B33;
 }
@@ -278,12 +278,11 @@ a.btn-bezier-inverse.home {
 }
 
 #section2 input {
-    width: 250px;
+    min-width: 250px;
     height: 70px;
     float: left;
     display: inline;
     margin-top: 50px;
-    margin-left: 10px;
     font-weight: 100;
     font-size: 15px;
 }
@@ -295,13 +294,12 @@ a.btn-bezier-inverse.home {
 }
 
 #section2 p {
-    margin-top: 50px;
     font-size: 13px;
     font-weight: 400;
     color: $grey-chateau;
 }
 
-#section2 p a {
+#section2 span, #section2 a  {
     color: $bezier;
     font-size: 16px;
     text-decoration: underline !important;
