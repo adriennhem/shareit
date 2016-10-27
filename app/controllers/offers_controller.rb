@@ -26,8 +26,8 @@ class OffersController < ApplicationController
 
     def destroy
         @project = Project.find(params[:project_id])
-        @offer = @project.offers.where(project_id: @project.id)
-        @offer.destroy_all
+        @offers = @project.offers
+        @offers.destroy_all
         redirect_to profile_path(current_user), :notice => "Your Project has been successfully republished"
     end
 

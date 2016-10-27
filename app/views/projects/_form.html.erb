@@ -70,15 +70,15 @@
       </div>
 
 
-       <div class="new-project-section col-md-12">
+       <div class="new-project-section col-md-12"> 
         <div class="new-project-section-title col-md-4">
           <h3>Company Description *</h3>
         </div>
         <div class="new-project-section-body col-md-8">
-          <%= f.input :company_description, as: :text, label: false, input_html: { maxlength: @maximum_length, id: 'company_description_text', rows: 5, cols: 60 } %>
+          <%= f.input :company_description, as: :text, label: false, input_html: { id: 'company_description_text', rows: 5, cols: 60 } %>
           
 
-          <p>If you would only have 30 seconds to explain what you do? <br> Characters left: <span id="counter" data-maximum-length="<%= @maximum_length %>"><%= @maximum_length %></span></p>
+          <p>If you would only have 30 seconds to explain what you do?</p>
         </div>
       </div>
 

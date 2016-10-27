@@ -18,8 +18,8 @@
             <th>Student Name</th>
             <th>Submission Available</th>
           </tr>
-          <% if @attachments %>
-          <% @attachments.each do |attachment| %>
+          <% if @project.attachments %>
+          <% @project.attachments.each do |attachment| %>
             <tr>
               <td><%= attachment.user.name %></td>  
               <!-- If exist then show the download link, if not then show not available, make safer link for Amazon S3 -->
