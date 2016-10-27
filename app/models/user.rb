@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
   has_many :project_buying, class_name: 'Project',
          through: :offers_made, source: :project
 
-  has_many :attachments
+  has_many :attachments, dependent: :destroy
 
 
   accepts_nested_attributes_for :enrollments

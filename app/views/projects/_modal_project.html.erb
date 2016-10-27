@@ -18,12 +18,14 @@
             <th>Student Name</th>
             <th>Submission Available</th>
           </tr>
+          <% if @attachments %>
           <% @attachments.each do |attachment| %>
             <tr>
               <td><%= attachment.user.name %></td>  
               <!-- If exist then show the download link, if not then show not available, make safer link for Amazon S3 -->
               <td><%= link_to 'View Sub', attachment.document.url, download: attachment.document.url, target: '_blank', class: 'bezier' %></td>
             </tr>
+         <% end %>
          <% end %> 
         </table>
       </div>
