@@ -81,7 +81,7 @@
 				<%= @lecture.practice_description.html_safe %>
 				<h3 class="margin-s">That's what you could do!</h3>
 			
-			<% if @project.approved? %>
+			<% if @project && @project.approved? %>
 				<div class="panel-project-lecture col-md-3 margin-s">
 					<h3><%= @project.title %></h3>  
 				  	<p>by <%= @project.company_name %></p>
