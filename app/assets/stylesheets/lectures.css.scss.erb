@@ -343,7 +343,7 @@ progress[value]::-webkit-progress-value {
 }
 
 .landing-navbar {
-    max-width: 500px;
+    /*max-width: 100%;*/
     list-style: none;
     display: inline-block;
 }
@@ -366,6 +366,37 @@ progress[value]::-webkit-progress-value {
     background: $wild-sand;
     width: 100%;
     margin-bottom: 5px;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  a.enroll-button {
+    clear: both;
+    position: relative;
+    top: 20px;
+    /*right: 25%;*/
+    width: 100%;
+}
+
+    .landing-navbar li {
+        float: left;
+        margin-right: 15px;
+        font-weight: 600;
+        font-size: 16px;
+}
+
+.navbar-fixed-top a.enroll-button {
+    clear: both;
+    position: relative;
+    top: 5px;
+    /*right: 25%;*/
+    width: 100%;
+}
+
+#enroll-band {
+    display: none;
+}
 }
 
 /* LECTURE DESCRIPTION CONTENT */

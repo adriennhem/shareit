@@ -23,7 +23,7 @@
 			<li><a href="#practice" class="bezier">2. Practice</a></li>
 			<li><a href="#hired" class="bezier">3. Get Hired</a></li>
 		</ul>
-		<%= link_to 'Enroll Now for $19', new_enrollment_path(controller: 'enrollment', action: 'new', lecture_id: @lecture.id), class: "btn btn-medium btn-bezier pull-right" %>
+		<%= link_to 'Enroll Now for $19', new_enrollment_path(controller: 'enrollment', action: 'new', lecture_id: @lecture.id), class: "btn btn-medium btn-bezier pull-right enroll-button" %>
 	</div>
 </div>
 
@@ -81,7 +81,7 @@
 				<%= @lecture.practice_description.html_safe %>
 				<h3 class="margin-s">That's what you could do!</h3>
 			
-			<% if @project %>
+			<% if @project.approved? %>
 				<div class="panel-project-lecture col-md-3 margin-s">
 					<h3><%= @project.title %></h3>  
 				  	<p>by <%= @project.company_name %></p>
@@ -94,7 +94,7 @@
 	</div>
 
 	<div id="hired" class="padding-top-xxl mb-60 clear">
-		<h2 class="mb-60 bezier">3. Hired</h2>
+		<h2 class="mb-20 bezier">3. Hired</h2>
 			<div class="landing-body-content">
 				<%= @lecture.hired_description.html_safe %>
 			</div>			
