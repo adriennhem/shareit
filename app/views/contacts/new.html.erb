@@ -2,9 +2,8 @@
     mixpanel.track("Visit Contact Us")
 </script>
 
-<% content_for :title_page do %>
-Workshopr - Contact Us
-<% end %>
+<% set_meta_tags site: "Workshopr", title: "Get in touch" %> 
+<% set_meta_tags description: "Let us know why you like what we do at Workshopr." %>
 
  <% content_for :navbar do %>
       <%= render 'layouts/navbar_blog' %>
