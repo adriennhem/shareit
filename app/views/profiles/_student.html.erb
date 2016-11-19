@@ -17,7 +17,7 @@
 <div class="row" id="enrolled-courses">
 
 
-
+<% if current_user.lectures.present? %>
 		<% current_user.lectures.each do |lecture| %>
 		  <div class="col-md-4">
 	         <div class="dashboard-student-box">
@@ -40,6 +40,34 @@
 	      </div> <!-- .lecture-box -->
         <% end %>
 
+        <% else %>
+
+
+<% @lectures.each do |lecture| %>
+
+<div class="col-md-4">
+	         <div class="dashboard-student-box">
+				<%= image_tag(lecture.picture.url) %>	
+		        <h3 class="center"><%= lecture.title %></h3> 
+
+		        <p class="center by-teacher">by <%= lecture.teacher.name %></p>
+	           
+
+	
+		           
+		            	<%= simple_form_for @enrollment do |f| %>
+			<%= f.hidden_field :user_id, value: current_user.id if current_user %>
+			<%= f.hidden_field :lecture_id, value: lecture.id %>
+			<%= f.hidden_field :amount, value: 0 %>
+			<%= f.button :submit, 'Free Enrollment Today', class: 'btn btn-medium btn-bezier enroll-button-dashboard uppercase' %>
+		<% end %>
+
+		         
+ 
+
+		        <% end %>
+
+<% end %>
 
 </div>	
 

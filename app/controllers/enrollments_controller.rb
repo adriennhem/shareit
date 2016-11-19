@@ -40,61 +40,61 @@ class EnrollmentsController < ApplicationController
 		
 		@lecture = Lecture.find_by(params[:id])
 		@enrollment = Enrollment.new(enrollment_params)
-		charge_error = nil
+		# charge_error = nil
 
-	    if @enrollment.valid?
-	    begin
+	 #    if @enrollment.valid?
+	 #    begin
 
-	     # Amount in cents
-		  @amount = @lecture.amount
-		  @final_amount = @amount
+	 #     # Amount in cents
+		#   @amount = @lecture.amount
+		#   @final_amount = @amount
 
-		  @code = params[:couponCode]
+		#   @code = params[:couponCode]
 
-		  if !@code.blank?
-		    @discount = get_discount(@enrollment.id, @code)
+		#   if !@code.blank?
+		#     @discount = get_discount(@enrollment.id, @code)
 
-		    if @discount.nil?
-		      flash[:error] = 'Coupon code is not valid or expired.'
-		      redirect_to new_charge_path
-		      return
-		    else
-		    	# if 100% discount terminates
-		      @discount_amount = @amount * @discount
-		      @final_amount = @amount - @discount_amount.to_i
-		    end
+		#     if @discount.nil?
+		#       flash[:error] = 'Coupon code is not valid or expired.'
+		#       redirect_to new_charge_path
+		#       return
+		#     else
+		#     	# if 100% discount terminates
+		#       @discount_amount = @amount * @discount
+		#       @final_amount = @amount - @discount_amount.to_i
+		#     end
 
-		    charge_metadata = {
-		      :coupon_code => @code,
-		      :coupon_discount => (@discount * 100).to_s + '%'
-		    }
-		  end
+		#     charge_metadata = {
+		#       :coupon_code => @code,
+		#       :coupon_discount => (@discount * 100).to_s + '%'
+		#     }
+		#   end
 
-		  charge_metadata ||= {}
+		#   charge_metadata ||= {}
 
-		  customer = Stripe::Customer.create(
-		    :email => params[:stripeEmail],
-		    :source  => params[:stripeToken]
-		  )
-		  Stripe::Charge.create(
-		    :customer    => customer.id,
-		    :amount      => @final_amount,
-		    :description => @lecture.title,
-		    :currency    => 'usd',
-		    :metadata    => charge_metadata
-		  )
-		rescue Stripe::CardError => e
-		  flash[:error] = charge_error
-		  redirect_to new_charge_path
-		end
+		#   customer = Stripe::Customer.create(
+		#     :email => params[:stripeEmail],
+		#     :source  => params[:stripeToken]
+		#   )
+		#   Stripe::Charge.create(
+		#     :customer    => customer.id,
+		#     :amount      => @final_amount,
+		#     :description => @lecture.title,
+		#     :currency    => 'usd',
+		#     :metadata    => charge_metadata
+		#   )
+		# rescue Stripe::CardError => e
+		#   flash[:error] = charge_error
+		#   redirect_to new_charge_path
+		# end
 
 		
 
-	    if charge_error
-	      flash[:error] = charge_error
-	      render :new
-	    else	
-	      @enrollment.save
+	 #    if charge_error
+	 #      flash[:error] = charge_error
+	 #      render :new
+	 #    else	
+	     if @enrollment.save
 	      ConfirmationEnrollmentMailer.confirmation_enrollment(current_user, @lecture, @enrollment).deliver
 	      redirect_to profile_path(current_user)
 		  flash[:success] = "You have successfully enrolled."
@@ -102,7 +102,7 @@ class EnrollmentsController < ApplicationController
 	      notifier = Slack::Notifier.new "https://hooks.slack.com/services/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", channel: '#general',
 	                                              username: 'Dean Notifier'
 	      notifier.ping "#{current_user.email} has enrolled to #{@lecture.title} !"
-	    end
+	    # end
 	  else
 	    flash[:error] = 'You have already registered for this class'
 	    render :new

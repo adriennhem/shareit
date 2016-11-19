@@ -23,7 +23,15 @@
 			<li><a href="#practice" class="bezier">2. Practice</a></li>
 			<li><a href="#hired" class="bezier">3. Get Hired</a></li>
 		</ul>
-		<%= link_to 'Enroll Now for $19', new_enrollment_path(controller: 'enrollment', action: 'new', lecture_id: @lecture.id), class: "btn btn-medium btn-bezier pull-right enroll-button" %>
+		
+		<%= simple_form_for @enrollment do |f| %>
+			<%= f.hidden_field :user_id, value: current_user.id if current_user %>
+			<%= f.hidden_field :lecture_id, value: @lecture.id if @lecture.id %>
+			<%= f.hidden_field :amount, value: 0 %>
+			<%= f.button :submit, 'Free Enrollment Today', class: 'btn btn-medium btn-bezier pull-right enroll-button uppercase' %>
+		<% end %>
+
+	
 	</div>
 </div>
 
@@ -102,17 +110,6 @@
 </div>
 <!-- END LANDING BODY -->
 
-
-
-<div class="row" id="enroll-band" data-no-turbolink>
-	<div class="container-fluid">
-		<div class="col-md-12">
-			<div class="col-md-9"><h2>ENROLL TODAY FOR $19!       
-			<%= link_to "Enroll Now", new_enrollment_path(controller: 'enrollment', action: 'new', lecture_id: @lecture.id), class: "btn btn-large btn-bezier" %></h2> 
-			</div>
-		</div>
-	</div>
-</div>
 
 
 <!--Start of Tawk.to Script-->

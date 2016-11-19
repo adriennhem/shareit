@@ -24,6 +24,7 @@ class LecturesController < ApplicationController
   def lecture_description
     @project = @lecture.projects.last
     @chapters = @lecture.chapters.includes(:lessons)
+    @enrollment = Enrollment.new
   end
 
   private
