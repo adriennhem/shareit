@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   enum role: {student: 1, company: 2, author: 3}
   
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   has_attached_file :picture, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "https://s3-us-west-2.amazonaws.com/workshopr-picture/assets/pictures/missing.jpg"
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
