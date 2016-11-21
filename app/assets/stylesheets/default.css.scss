@@ -250,8 +250,12 @@ a.btn-bezier, button.btn-bezier {
 
 input[type="submit"].btn-bezier {
     background: $bezier;
-    color: #ffffff;
-   
+    color: #ffffff; 
+}
+
+input[type="submit"].btn-bezier:hover {
+    background: #387BC9;
+    color: #ffffff; 
 }
 
 input[type="submit"] {
