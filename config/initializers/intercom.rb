@@ -117,4 +117,7 @@ IntercomRails.config do |config|
 
   # Enable secure mode
   config.api_secret = Rails.application.secrets.intercom_secure_mode_secret_key
+
+  # Session duration 
+  config.session_duration = 10 * 60 * 1000
 end

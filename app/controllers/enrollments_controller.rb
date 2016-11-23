@@ -95,6 +95,7 @@ class EnrollmentsController < ApplicationController
 	 #      render :new
 	 #    else	
 	     if @enrollment.save
+	      intercom.events.create(event_name: "Enrolled to #{@lecture.title}", email: current_user.email, created_at: Time.now)
 	      ConfirmationEnrollmentMailer.confirmation_enrollment(current_user, @lecture, @enrollment).deliver
 	      redirect_to profile_path(current_user)
 		  flash[:success] = "You have successfully enrolled."
