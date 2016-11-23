@@ -18,9 +18,12 @@
     <h2 class="section-workshop-benefits-content-heading">Top-notch curriculum</h2>
     <p class="section-workshop-benefits-content-description">Each Workshop was created by industry professionals who have knowledge of skills employers are looking for. You will learn at your own pace, using our practical teaching technique based on videos and challenges. 
     </p>
+    <% if @lecture.present? %>
     <%= link_to lecture_description_path(@lecture) do %>
       Get started now <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
     <% end %>
+    <% end %>
+    
     <blockquote class="section-workshop-benefits-testimony">
         <%= image_tag('testimony-pic-1.jpg') %>
         "I have learnt a smart methodology that I will apply in my first job."
@@ -39,8 +42,10 @@
     <p class="section-workshop-benefits-content-description">
       You will practice what you’ve learnt by taking part to challenges. We have cooperated with a broad range of companies that need your help on solving problems. That's your chance to get a recommendation. 
     </p>
-      <%= link_to lecture_description_path(@lecture) do %>
-      Start practicing <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+    <% if @lecture.present? %>
+        <%= link_to lecture_description_path(@lecture) do %>
+        Start practicing <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        <% end %>
       <% end %>
       <blockquote class="section-workshop-benefits-testimony">
         <%= image_tag('testimony-pic-2.jpg') %>

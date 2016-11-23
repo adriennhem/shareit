@@ -29,8 +29,6 @@ ActiveRecord::Schema.define(version: 20161019154915) do
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
 
   create_table "add_user_id_to_attachments", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -236,7 +234,6 @@ ActiveRecord::Schema.define(version: 20161019154915) do
     t.string   "location"
     t.string   "industry"
     t.text     "company_description"
-    t.integer  "deadline",            default: 45
     t.text     "goal"
     t.string   "main_contact"
     t.string   "main_contact_email"
@@ -247,6 +244,7 @@ ActiveRecord::Schema.define(version: 20161019154915) do
     t.boolean  "completed",           default: false
     t.boolean  "approved",            default: false
     t.datetime "approved_date"
+    t.integer  "deadline",            default: 45
   end
 
   create_table "seos", force: :cascade do |t|

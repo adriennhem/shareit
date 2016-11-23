@@ -21,6 +21,7 @@ gem 'will_paginate'
 gem 'rack-cors', :require => 'rack/cors'
 # Email sender
 gem 'newrelic_rpm'
+gem 'intercom-rails'
 
 # ActiveAdmin
 gem "font-awesome-rails"
