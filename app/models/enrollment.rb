@@ -36,7 +36,7 @@ class Enrollment < ActiveRecord::Base
   end
 
   def enrolled_course
-    intercom.events.create(
+    $intercom.events.create(
       :event_name => "enrolled to course", :created_at => Time.now.to_i,
       :email => user.email,
       :metadata => {
