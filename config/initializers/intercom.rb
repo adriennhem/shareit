@@ -123,7 +123,7 @@ IntercomRails.config do |config|
 
   config.user.custom_data = {
     :role => Proc.new { |user| user.role },
-    :last_enrollment_at => Proc.new { |user| user.last_enrollment_at },
-    :enrolled_course => Proc.new { |user| user.enrolled_course }
+    :last_enrollment_at => Proc.new { |user| user.enrollments.last_enrollment_at },
+    :enrolled_course => Proc.new { |user| user.enrollments.enrolled_course }
   }
 end
