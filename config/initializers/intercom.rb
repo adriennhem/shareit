@@ -122,6 +122,8 @@ IntercomRails.config do |config|
   config.session_duration = 10 * 60 * 1000
 
   config.user.custom_data = {
-    :role => Proc.new { |user| user.role }
+    :role => Proc.new { |user| user.role },
+    :last_enrollment_at => Proc.new { |user| user.last_enrollment_at },
+    :enrolled_course => Proc.new { |user| user.enrolled_course }
   }
 end

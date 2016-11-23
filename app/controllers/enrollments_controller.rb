@@ -97,7 +97,7 @@ class EnrollmentsController < ApplicationController
 	     if @enrollment.save
 	      ConfirmationEnrollmentMailer.confirmation_enrollment(current_user, @lecture, @enrollment).deliver
 	      intercom_custom_data.user[:enrolled_course] = '#{@lecture.title}'
-	      intercom_custom_data.user[:enrolled_at] = Time.now
+	      intercom_custom_data.user[:last_enrollment_at] = Time.now
 	      redirect_to profile_path(current_user)
 		  flash[:success] = "You have successfully enrolled."
 		  require 'slack-notifier'
