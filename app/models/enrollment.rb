@@ -1,5 +1,6 @@
 class Enrollment < ActiveRecord::Base
   after_create :update_uuid
+  after_create :enrolled_course
 
   belongs_to :user 
   belongs_to :lecture
@@ -33,6 +34,18 @@ class Enrollment < ActiveRecord::Base
       ],
     )
   end
+
+  def enrolled_course
+    intercom.events.create(
+      :event_name => "enrolled to course", :created_at => Time.now.to_i,
+      :email => user.email,
+      :metadata => {
+        "course" => self.lecture_id
+      }
+    )
+  end
+  
+
 
 
 end

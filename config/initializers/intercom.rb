@@ -1,7 +1,11 @@
+intercom = Intercom::Client.new(token: 'dG9rOjU5NjE5MjdlXzBkNGJfNDUyN184ZDgyX2QxZTkyMGM5YmUwYjoxOjA=')
+
+
 IntercomRails.config do |config|
   # == Intercom app_id
   #
   config.app_id = ENV["INTERCOM_APP_ID"] || "juibd27a"
+
 
   # == Intercom session_duration
   #
