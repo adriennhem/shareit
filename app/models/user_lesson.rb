@@ -8,6 +8,8 @@ class UserLesson < ActiveRecord::Base
   validates :user_id, presence: true
   validates :lesson_id, presence: true
 
+  protected
+
   def completed_lesson
   	$intercom.events.create(
   	  :event_name => "Completed lesson", :created_at => Time.now.to_i,
@@ -19,5 +21,4 @@ class UserLesson < ActiveRecord::Base
   	  }
   		)
   end
-  
 end
