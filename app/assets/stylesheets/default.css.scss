@@ -418,7 +418,7 @@ a.btn-bezier-border:hover, button.btn-bezier-border:hover, input[type="submit"].
     top: 68px;
     border-radius: 0;
     height: 50px;
-    z-index: 0;
+    z-index: 1000px;
     padding-bottom:5px;
     text-align: center;
 }
