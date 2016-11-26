@@ -1,17 +1,21 @@
+
+
 IntercomRails.config do |config|
   # == Intercom app_id
   #
   config.app_id = ENV["INTERCOM_APP_ID"] || "juibd27a"
 
+  # Declare global variable or can create new event
+  $intercom = Intercom::Client.new(token: 'dG9rOjU5NjE5MjdlXzBkNGJfNDUyN184ZDgyX2QxZTkyMGM5YmUwYjoxOjA=')
 
   # == Intercom session_duration
   #
-  # config.session_duration = 300000
+  config.session_duration = 300000
   # == Intercom secret key
   # This is required to enable secure mode, you can find it on your Setup
   # guide in the "Secure Mode" step.
   #
-  # config.api_secret = "..."
+  config.api_secret = "41a921fc2ea643e81d8d510924fecb4336c5d4e6"
 
   # == Enabled Environments
   # Which environments is auto inclusion of the Javascript enabled for
@@ -28,12 +32,12 @@ IntercomRails.config do |config|
   # == Include for logged out Users
   # If set to true, include the Intercom messenger on all pages, regardless of whether
   # The user model class (set below) is present. Only available for Apps on the Acquire plan.
-  # config.include_for_logged_out_users = true
+  config.include_for_logged_out_users = true
 
   # == User model class
   # The class which defines your user model
   #
-  # config.user.model = Proc.new { User }
+  config.user.model = Proc.new { User }
 
   # == Lead/custom attributes for non-signed up users
   # Pass additional attributes to for potential leads or
@@ -112,15 +116,6 @@ IntercomRails.config do |config|
   #
   # If you'd like to hide default launcher button uncomment this line
   # config.hide_default_launcher = true
-
-  # Allow chat for visitors
-  config.include_for_logged_out_users = true
-
-  # Enable secure mode
-  config.api_secret = Rails.application.secrets.intercom_secure_mode_secret_key
-
-  # Session duration 
-  config.session_duration = 10 * 60 * 1000
 
   config.user.custom_data = {
     :role => Proc.new { |user| user.role }

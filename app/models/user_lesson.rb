@@ -1,5 +1,5 @@
 class UserLesson < ActiveRecord::Base
-  after_create :completed_lesson	
+  after_create :intercom_completed_lesson	
   # This is the join table allowing the students to mark a lesson completed
   belongs_to :user 
   belongs_to :lesson
@@ -10,8 +10,8 @@ class UserLesson < ActiveRecord::Base
 
   protected
 
-  def completed_lesson
-  	intercom.events.create(
+  def intercom_completed_lesson
+  	$intercom.events.create(
   	  :event_name => "Completed lesson", :created_at => Time.now.to_i,
   	  :email => user.email,
   	  :metadata => {

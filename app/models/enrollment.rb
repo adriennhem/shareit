@@ -1,6 +1,6 @@
 class Enrollment < ActiveRecord::Base
   after_create :update_uuid
-  after_create :enrolled_course
+  after_create :intercom_new_enrollment
 
   belongs_to :user 
   belongs_to :lecture
@@ -37,7 +37,7 @@ class Enrollment < ActiveRecord::Base
 
   protected
 
-  def enrolled_course
+  def intercom_new_enrollment
     $intercom.events.create(
       :event_name => "Enrolled to course ", :created_at => Time.now.to_i,
       :email => user.email,
