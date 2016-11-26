@@ -11,7 +11,7 @@ class UserLesson < ActiveRecord::Base
   protected
 
   def completed_lesson
-  	$intercom.events.create(
+  	intercom.events.create(
   	  :event_name => "Completed lesson", :created_at => Time.now.to_i,
   	  :email => user.email,
   	  :metadata => {
@@ -19,6 +19,6 @@ class UserLesson < ActiveRecord::Base
   	  	"lesson" => self.lesson.title,
   	  	"step"   => self.lesson.etape	
   	  }
-  		)
+  	)
   end
 end

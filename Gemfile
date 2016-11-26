@@ -22,7 +22,6 @@ gem 'rack-cors', :require => 'rack/cors'
 # Email sender
 gem 'newrelic_rpm'
 gem 'intercom-rails'
-gem 'intercom', "~> 3.5.9"
 
 # ActiveAdmin
 gem "font-awesome-rails"

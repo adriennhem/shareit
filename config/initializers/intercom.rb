@@ -1,9 +1,3 @@
-require 'intercom'
-
-$intercom = Intercom::Client.new(app_id: 'juibd27a', token: 'dG9rOjU5NjE5MjdlXzBkNGJfNDUyN184ZDgyX2QxZTkyMGM5YmUwYjoxOjA=')
-
-
-
 IntercomRails.config do |config|
   # == Intercom app_id
   #
