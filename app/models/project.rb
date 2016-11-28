@@ -1,7 +1,6 @@
 class Project < ActiveRecord::Base
 	after_create :slack_notify_project
 
-
 	belongs_to :lecture
 	belongs_to :seller, class_name: 'User', foreign_key: :user_id
 	has_many :offers, dependent: :destroy
@@ -14,6 +13,7 @@ class Project < ActiveRecord::Base
 	# scope :no_offer, ->  { includes(:offers).where( :offers => { :project_id => nil } ) }
 	scope :approved, -> { where(approved: true) }
 	
+	validates :website_url, presence: true
 	validates :company_description, length: { maximum: 250 }
 	validates_presence_of :company_name, :body, :user_id, :title, :blurb, :location, :industry, :company_description, :goal, :main_contact, :main_contact_email
 

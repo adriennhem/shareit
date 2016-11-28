@@ -61,7 +61,7 @@ class ProjectsController < InheritedResources::Base
   private
 
   def project_params
-    params.require(:project).permit(:company_name, :phone_number, :body, :user_id, :title, :lecture_id, :location, :blurb, :deadline, :main_contact_email, :main_contact, :company_description, :industry, :goal, :logo )
+    params.require(:project).permit(:company_name, :phone_number, :body, :user_id, :title, :lecture_id, :location, :blurb, :deadline, :main_contact_email, :main_contact, :company_description, :industry, :goal, :logo, :website_url )
   end
 
   def set_project
