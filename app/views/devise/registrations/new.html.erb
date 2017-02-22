@@ -35,7 +35,7 @@ Workshopr - Sign Up
        <%= f.input :password_confirmation, label: false, placeholder: 'Password Confirmation', input_html: { class: "form-control"} %>
        </div>
 
-        <%= f.select(:role, User.roles.keys.reject {|role| role == "author"}.map {|role| [role.titleize,role]}) %>
+        <%= f.select(:role, User.roles.keys.reject {|role| role == "author" || role == "institution"}.map {|role| [role.titleize,role]}) %>
 
        <%= f.button :submit, 'Register', class: "font20 btn-bezier btn" %>
     <% end %>

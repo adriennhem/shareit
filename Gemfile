@@ -19,6 +19,9 @@ gem 'jquery-turbolinks'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'will_paginate'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'letter_avatar'
+gem 'avatarly'
+gem 'gravatarify', '~> 3.0.0'
 # Email sender
 gem 'newrelic_rpm'
 gem 'intercom-rails'
@@ -26,7 +29,7 @@ gem 'intercom', "~> 3.5.9"
 
 # ActiveAdmin
 gem "font-awesome-rails"
-gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
 gem 'activeadmin_expandable_inputs'
 
 
@@ -62,7 +65,8 @@ gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk', '< 2.0'
 
 # For authentification
-gem 'devise'
+gem 'devise', '~>4.2'
+gem 'devise_invitable', '~>1.7.0'
 
 
 gem 'jbuilder', '~> 2.0'

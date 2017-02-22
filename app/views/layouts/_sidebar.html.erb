@@ -8,7 +8,7 @@
                 <% if current_user.picture? %>
                   <%= image_tag("#{current_user.picture.url(:thumb)}", class: "profile-picture nav-profile-picture") %>
               <% else %>
-              <i class="fa fa-user-secret"></i>
+                  <%= gravatar_tag current_user.email, :size => 20 %>
              <% end %>
                 </li>
                 <li>

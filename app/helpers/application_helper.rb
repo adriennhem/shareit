@@ -1,5 +1,7 @@
 module ApplicationHelper
 
+include LetterAvatar::AvatarHelper	
+
 def resource_name
    :user
 end

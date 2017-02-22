@@ -29,11 +29,13 @@ get '/user_projects' => 'profiles#user_projects', as: :user_projects
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  devise_for :users, controllers: {registrations: 'registrations', sessions: 'sessions'}
+  devise_for :users, controllers: {registrations: 'registrations', sessions: 'sessions', invitations: 'users/invitations'}
 
   resources :enrollments
 
   resources :attachments
+
+  resources :subscribers
 
 
   get 'courses', to: 'lectures#index', as: :courses

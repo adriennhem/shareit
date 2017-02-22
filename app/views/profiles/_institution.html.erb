@@ -1,0 +1,61 @@
+
+<!-- Display how many students accepted -->
+<!-- Notification to say that invites have been sent -->
+
+<% content_for :navbar do %>
+	<%= render 'layouts/sidebar' %>
+<% end %>
+
+<div class="row" id="dashboard-header" data-no-turbolink>
+	<h1 class="dashboard-title bezier">Dashboard</h1>
+</div>
+
+
+
+
+<div class="container-fluid" id="main-dashboard-institution">
+
+<!-- Add the UI -->
+<!-- Allow people to enter more than one email address -->
+<!-- Style the email invite -->
+<%= simple_form_for(User.new, url: user_invitation_path, class: "main-dashboard-institution-form", remote: true) do |f| %>
+	<%= text_area_tag :user_emails %>
+	<%= f.button :submit, 'Invite User' %>
+<% end %>
+
+
+<%= @invited_users.size %>
+
+<!-- Add a table -->
+
+	
+	
+
+
+
+
+<div class="main-dashboard-institution-table col-md-8">
+<table>
+	<tr id=".main-dashboard-institution-table-heading">
+		<th>Email</th>
+		<th>Status</th>
+		<th>Enrolled Courses</th>
+	</tr>
+	<% @invited_users.each do |user| %>
+	<tr>
+		<td><%= user.email %></td>
+		<td>
+			<% if user.invitation_accepted? %>
+				<p>Accepted</p>
+			<% else %>
+				<p>Pending</p>	
+			<% end %>
+		</td>
+	</tr>
+	<% end %>
+</table>
+</div>
+	
+</div>
+
+

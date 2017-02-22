@@ -1,18 +1,21 @@
 class User < ActiveRecord::Base
+
+  has_many :invitations, :class_name => self.to_s, :as => :invited_by
+
   after_create :notify_slack
-  devise :timeoutable
+  devise :invitable, :timeoutable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  enum role: {student: 1, company: 2, author: 3}
+  enum role: {student: 1, company: 2, author: 3, institution: 4}
   
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+  devise :invitable, :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable, :invitable
 
   has_attached_file :picture, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "https://s3-us-west-2.amazonaws.com/workshopr-picture/assets/pictures/missing.jpg"
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
   validates :email, uniqueness: true
   # validates_format_of :email, with: /\@grenoble-em\.com/, message: "You should have an email from grenoble-em.com", if: ->(user) { user.role == 'student' }
-  validates :role, presence: true
+  validates :role, presence: true, on: :create
 
   # Relationship Posts
   has_many :posts 

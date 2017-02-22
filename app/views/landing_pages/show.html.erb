@@ -1,1 +1,9 @@
 <%= @landing_page.content.html_safe %>
+
+<div id="flash"></div>
+
+<%= simple_form_for @subscriber, remote: true do |f| %>
+	<%= f.hidden_field :landing_page_id, value: @landing_page.id %>
+	<%= f.input :email %>
+	<%= f.button :submit, 'Join the waiting list', class: 'btn btn-bezier' %>
+<% end %>

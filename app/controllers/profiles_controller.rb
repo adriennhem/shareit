@@ -3,6 +3,7 @@ before_action :authenticate_user!
 layout "dashboard"
 
 def show
+	@invited_users = User.where(invited_by: current_user.id)
 	@disable_footer = true
 	if current_user.student?
 		@enrollments = current_user.enrollments.order(created_at: :asc)
