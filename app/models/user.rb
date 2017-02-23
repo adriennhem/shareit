@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+
+
   has_many :invitations, :class_name => self.to_s, :as => :invited_by
 
   after_create :notify_slack
@@ -10,6 +12,8 @@ class User < ActiveRecord::Base
   
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :invitable
+
+  after_invitation_accepted :create_enrollment
 
   has_attached_file :picture, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "https://s3-us-west-2.amazonaws.com/workshopr-picture/assets/pictures/missing.jpg"
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
@@ -37,6 +41,12 @@ class User < ActiveRecord::Base
 
 
   accepts_nested_attributes_for :enrollments
+
+  def create_enrollment
+    if self.created_by_invite?
+      Enrollment.create(lecture_id:, user_id: self.id)
+    end
+  end
 
   def notify_slack
     notifier = Slack::Notifier.new "https://hooks.slack.com/services/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", channel: '#general',

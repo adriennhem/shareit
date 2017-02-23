@@ -35,6 +35,5 @@
     def lecture_is_complete?(user)
     	total_completed_lessons = lessons.includes(:user_lessons).where('user_id = ?', user.id).references(:user_lessons)
     	lessons.count == total_completed_lessons.count 
-
     end
 end
