@@ -13,56 +13,49 @@
 
 
 
-<div class="container" id="main-dashboard-institution">
+<div class="container-fluid" id="main-dashboard-institution">
 
-<!-- Add the UI -->
-<!-- Allow people to enter more than one email address -->
-<!-- Style the email invite -->
-<%= simple_form_for(User.new, url: user_invitation_path, class: "main-dashboard-institution-form", remote: true) do |f| %>
-	<%= text_area_tag :user_emails %>
-
-	<%= f.button :submit, 'Invite User' %>
-<% end %>
-
-
-
-
-<!-- Add a table -->
-
-	
-	
 
 
 <h2>Totals</h2>
 
-<div class="col-md-4">
-	<%= @invited_users.created_by_invite.size %>
-	<p>Invitations sent</p>
+<div class="col-md-4 main-dashboard-total-stats">
+	<span class="main-dashboard-number"><%= @invited_users.created_by_invite.size %></span>	
+	<span class="main-dashboard-text">Invitations <br> sent</span>
 </div>
-<div class="col-md-4">
-	<%= @invited_users.invitation_accepted.size %>
-	<p>Invitations accepted</p>
+<div class="col-md-4 main-dashboard-total-stats">
+	<span class="main-dashboard-number"><%= @invited_users.invitation_accepted.size %></span>
+	<span class="main-dashboard-text">Invitations <br> accepted</span>
 </div>
-<div class="col-md-4">
-	<%= @invited_users.invitation_not_accepted.size %>
-	<p>Invitations not accepted</p>
+<div class="col-md-4 main-dashboard-total-stats">
+	<span class="main-dashboard-number"><%= @invited_users.invitation_not_accepted.size %></span>
+	<span class="main-dashboard-text">Invitations <br> not accepted</span>
 </div>
 
+
+
+
+<h2 class="main-dashboard-institution-table-title">Students</h2>
+
+<%= simple_form_for(User.new, url: user_invitation_path) do |f| %>
+	<%= text_area_tag :user_emails, nil, placeholder: 'Copy paste and separate email addresses with ","', class: "form-control"%>
+	<%= f.button :submit, 'Send Invites', class: "btn-small btn-bezier" %>
+<% end %>
 
 <table class="main-dashboard-institution-table">
-	<tr id=".main-dashboard-institution-table-heading">
+	<tr id="main-dashboard-institution-table-heading">
 		<th>Email</th>
 		<th>Status</th>
 		<th>Enrolled Courses</th>
 	</tr>
 	<% @invited_users.each do |user| %>
-	<tr>
+	<tr class="main-dashboard-institution-table-row">
 		<td><%= user.email %></td>
 		<td>
 			<% if user.invitation_accepted? %>
-				<p>Accepted</p>
+				Accepted
 			<% else %>
-				<p>Pending</p>	
+				Pending	
 			<% end %>
 		</td>
 	</tr>

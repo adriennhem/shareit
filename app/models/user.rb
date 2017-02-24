@@ -42,11 +42,7 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :enrollments
 
-  def create_enrollment
-    if self.created_by_invite?
-      Enrollment.create(lecture_id:, user_id: self.id)
-    end
-  end
+
 
   def notify_slack
     notifier = Slack::Notifier.new "https://hooks.slack.com/services/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", channel: '#general',
