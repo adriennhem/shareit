@@ -12,7 +12,7 @@
     <p class="section-workshop-benefits-content-description">We believe anyone can learn to do amazing things. We’ve also seen that with the right skillset and experience, no matter what degree you have, you can land your dream job.
     </p>
     <p class="section-workshop-benefits-content-description">Our online courses that we call Workshops because they are highly practical, are the bridge to help you transition from higher education institutions to the job you want. You can design the future you want in few days. </p>
-    <%= link_to lecture_description_path(@lecture) if @lecture.present? do %>
+    <%= link_to 'Get started now', lecture_description_path(@lecture) if @lecture.present? do %>
       Start learning now <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
     <% end %>
   </div>
