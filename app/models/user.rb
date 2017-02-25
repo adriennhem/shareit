@@ -13,8 +13,6 @@ class User < ActiveRecord::Base
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :invitable
 
-  after_invitation_accepted :create_enrollment
-
   has_attached_file :picture, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "https://s3-us-west-2.amazonaws.com/workshopr-picture/assets/pictures/missing.jpg"
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
   validates :email, uniqueness: true
@@ -42,6 +40,16 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :enrollments
 
+  after_invitation_accepted :create_enrollment
+
+   # or move it to method
+
+   def create_enrollment
+    lectures = Lecture.all
+    lectures.each do |lecture|
+      self.enrollments.create(lecture_id: lecture.id, user_id: self.id)
+    end
+   end
 
 
   def notify_slack

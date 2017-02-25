@@ -58,6 +58,9 @@
 				Pending	
 			<% end %>
 		</td>
+		<td>
+			<%= user.lectures.last.title if user.lectures.any? %>
+		</td>
 	</tr>
 	<% end %>
 </table>
