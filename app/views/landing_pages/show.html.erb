@@ -1,9 +1,25 @@
-<%= @landing_page.content.html_safe %>
+ <% content_for :navbar do %>
+      <%= render 'layouts/navbar_blog' %>
+ <% end %>
 
-<div id="flash"></div>
+ <div id="flash"></div>
 
-<%= simple_form_for @subscriber, remote: true do |f| %>
-	<%= f.hidden_field :landing_page_id, value: @landing_page.id %>
-	<%= f.input :email %>
-	<%= f.button :submit, 'Join the waiting list', class: 'btn btn-bezier' %>
-<% end %>
+<h1 class="center uppercase bezier"><%= @landing_page.title %></h1>
+
+<div class="row">
+<div class="landing-header-video margin-s col-md-12 clear">
+	<div class="col-md-7  center">
+		<%= @landing_page.video_link.html_safe %>
+	</div>
+	<div class="col-md-5">
+		<h2><%= @landing_page.author_name %></h2>
+		<p><%= @landing_page.short_description %></p>
+		<%= simple_form_for @subscriber, remote: true do |f| %>
+			<%= f.hidden_field :landing_page_id, value: @landing_page.id %>
+			<%= f.input :email, label: false, placeholder: "Enter your email", input_html: { class: "form-control" } %>
+			<%= f.button :submit, 'Join the waiting list', class: 'btn btn-bezier btn-small margin-xs' %>
+		<% end %>
+	</div>
+</div>
+</div>
+

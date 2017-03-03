@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170222150726) do
+ActiveRecord::Schema.define(version: 20170303190011) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -154,10 +154,14 @@ ActiveRecord::Schema.define(version: 20170222150726) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "landing_pages", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.string   "permalink"
     t.text     "content"
+    t.text     "short_description"
+    t.string   "author_name"
+    t.string   "video_link"
+    t.string   "title"
   end
 
   create_table "lectures", force: :cascade do |t|
